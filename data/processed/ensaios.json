@@ -1,0 +1,1242 @@
+[
+  {
+    "codigo_origem": "4",
+    "nome": "Amônia"
+  },
+  {
+    "codigo_origem": "5",
+    "nome": "Bromato"
+  },
+  {
+    "codigo_origem": "10",
+    "nome": "Cloraminas"
+  },
+  {
+    "codigo_origem": "11",
+    "nome": "Cloretos"
+  },
+  {
+    "codigo_origem": "12",
+    "nome": "Clorito"
+  },
+  {
+    "codigo_origem": "16",
+    "nome": "Cor Aparente"
+  },
+  {
+    "codigo_origem": "23",
+    "nome": "Dureza Total"
+  },
+  {
+    "codigo_origem": "25",
+    "nome": "Fluoreto"
+  },
+  {
+    "codigo_origem": "29",
+    "nome": "Gosto e Odor"
+  },
+  {
+    "codigo_origem": "31",
+    "nome": "Nitrato (NO3-N)"
+  },
+  {
+    "codigo_origem": "32",
+    "nome": "Nitrito (NO2-N)"
+  },
+  {
+    "codigo_origem": "36",
+    "nome": "Odor"
+  },
+  {
+    "codigo_origem": "43",
+    "nome": "Sulfato"
+  },
+  {
+    "codigo_origem": "47",
+    "nome": "Sulfeto de Hidrogênio (H2S-S-2)"
+  },
+  {
+    "codigo_origem": "48",
+    "nome": "Turbidez"
+  },
+  {
+    "codigo_origem": "52",
+    "nome": "Clorofila a"
+  },
+  {
+    "codigo_origem": "56",
+    "nome": "Coliformes Totais (P/A)"
+  },
+  {
+    "codigo_origem": "57",
+    "nome": "Coliformes Totais (NMP)"
+  },
+  {
+    "codigo_origem": "58",
+    "nome": "Coliformes Totais (UFC)"
+  },
+  {
+    "codigo_origem": "60",
+    "nome": "Densidade de Cianobactérias"
+  },
+  {
+    "codigo_origem": "62",
+    "nome": "Escherichia coli (UFC)"
+  },
+  {
+    "codigo_origem": "63",
+    "nome": "Escherichia coli (NMP)"
+  },
+  {
+    "codigo_origem": "67",
+    "nome": "Microcistinas"
+  },
+  {
+    "codigo_origem": "68",
+    "nome": "Saxitoxinas"
+  },
+  {
+    "codigo_origem": "217",
+    "nome": "Alumínio"
+  },
+  {
+    "codigo_origem": "218",
+    "nome": "Antimônio"
+  },
+  {
+    "codigo_origem": "219",
+    "nome": "Arsênio"
+  },
+  {
+    "codigo_origem": "220",
+    "nome": "Bário"
+  },
+  {
+    "codigo_origem": "224",
+    "nome": "Cádmio"
+  },
+  {
+    "codigo_origem": "226",
+    "nome": "Chumbo"
+  },
+  {
+    "codigo_origem": "227",
+    "nome": "Cobre"
+  },
+  {
+    "codigo_origem": "229",
+    "nome": "Cromo"
+  },
+  {
+    "codigo_origem": "231",
+    "nome": "Ferro"
+  },
+  {
+    "codigo_origem": "233",
+    "nome": "Manganês"
+  },
+  {
+    "codigo_origem": "235",
+    "nome": "Mercúrio"
+  },
+  {
+    "codigo_origem": "237",
+    "nome": "Níquel"
+  },
+  {
+    "codigo_origem": "241",
+    "nome": "Selênio"
+  },
+  {
+    "codigo_origem": "243",
+    "nome": "Sódio"
+  },
+  {
+    "codigo_origem": "244",
+    "nome": "Urânio"
+  },
+  {
+    "codigo_origem": "249",
+    "nome": "Zinco"
+  },
+  {
+    "codigo_origem": "348",
+    "nome": "Benzo(a)pireno"
+  },
+  {
+    "codigo_origem": "356",
+    "nome": "Di(2-etilhexil)ftalato"
+  },
+  {
+    "codigo_origem": "382",
+    "nome": "2,4-diclorofenol"
+  },
+  {
+    "codigo_origem": "386",
+    "nome": "2,4,6-triclorofenol"
+  },
+  {
+    "codigo_origem": "392",
+    "nome": "Pentaclorofenol"
+  },
+  {
+    "codigo_origem": "396",
+    "nome": "g-HCH (y-HCH ou gama-Lindano)"
+  },
+  {
+    "codigo_origem": "397",
+    "nome": "Heptacloro"
+  },
+  {
+    "codigo_origem": "400",
+    "nome": "Endrin"
+  },
+  {
+    "codigo_origem": "412",
+    "nome": "Metoxicloro"
+  },
+  {
+    "codigo_origem": "417",
+    "nome": "Trifluralina"
+  },
+  {
+    "codigo_origem": "419",
+    "nome": "Simazina"
+  },
+  {
+    "codigo_origem": "421",
+    "nome": "Clorotalonil"
+  },
+  {
+    "codigo_origem": "422",
+    "nome": "Metribuzim"
+  },
+  {
+    "codigo_origem": "423",
+    "nome": "Alacloro"
+  },
+  {
+    "codigo_origem": "424",
+    "nome": "Metolacloro"
+  },
+  {
+    "codigo_origem": "429",
+    "nome": "Molinato"
+  },
+  {
+    "codigo_origem": "430",
+    "nome": "Diuron"
+  },
+  {
+    "codigo_origem": "431",
+    "nome": "Propanil"
+  },
+  {
+    "codigo_origem": "433",
+    "nome": "Pendimetalina"
+  },
+  {
+    "codigo_origem": "436",
+    "nome": "Terbufos"
+  },
+  {
+    "codigo_origem": "439",
+    "nome": "Paration-Metil"
+  },
+  {
+    "codigo_origem": "440",
+    "nome": "Malation"
+  },
+  {
+    "codigo_origem": "661",
+    "nome": "Cloreto de Vinila"
+  },
+  {
+    "codigo_origem": "665",
+    "nome": "Diclorometano (Cloreto de Metileno)"
+  },
+  {
+    "codigo_origem": "669",
+    "nome": "Clorofórmio"
+  },
+  {
+    "codigo_origem": "671",
+    "nome": "Tetracloreto de Carbono"
+  },
+  {
+    "codigo_origem": "672",
+    "nome": "Benzeno"
+  },
+  {
+    "codigo_origem": "673",
+    "nome": "Tricloroeteno (1,1,2-Tricloroeteno)"
+  },
+  {
+    "codigo_origem": "676",
+    "nome": "Tolueno"
+  },
+  {
+    "codigo_origem": "678",
+    "nome": "Tetracloroeteno"
+  },
+  {
+    "codigo_origem": "680",
+    "nome": "Monoclorobenzeno"
+  },
+  {
+    "codigo_origem": "682",
+    "nome": "Etilbenzeno"
+  },
+  {
+    "codigo_origem": "690",
+    "nome": "1,4-Diclorobenzeno"
+  },
+  {
+    "codigo_origem": "691",
+    "nome": "1,2-Diclorobenzeno"
+  },
+  {
+    "codigo_origem": "776",
+    "nome": "Escherichia coli (P/A)"
+  },
+  {
+    "codigo_origem": "777",
+    "nome": "Cloro Residual Livre"
+  },
+  {
+    "codigo_origem": "793",
+    "nome": "pH"
+  },
+  {
+    "codigo_origem": "833",
+    "nome": "Carbofurano"
+  },
+  {
+    "codigo_origem": "836",
+    "nome": "Carbaril"
+  },
+  {
+    "codigo_origem": "842",
+    "nome": "Metomil"
+  },
+  {
+    "codigo_origem": "856",
+    "nome": "Bentazona"
+  },
+  {
+    "codigo_origem": "863",
+    "nome": "2,4-D"
+  },
+  {
+    "codigo_origem": "871",
+    "nome": "AMPA"
+  },
+  {
+    "codigo_origem": "877",
+    "nome": "Glifosato+AMPA"
+  },
+  {
+    "codigo_origem": "905",
+    "nome": "Tebuconazol"
+  },
+  {
+    "codigo_origem": "912",
+    "nome": "Profenofos"
+  },
+  {
+    "codigo_origem": "913",
+    "nome": "Clorpirifós"
+  },
+  {
+    "codigo_origem": "924",
+    "nome": "Acrilamida"
+  },
+  {
+    "codigo_origem": "949",
+    "nome": "Sólidos Dissolvidos Totais"
+  },
+  {
+    "codigo_origem": "989",
+    "nome": "1,2-Dicloroetano"
+  },
+  {
+    "codigo_origem": "1108",
+    "nome": "Microcistinas"
+  },
+  {
+    "codigo_origem": "1109",
+    "nome": "Saxitoxinas"
+  },
+  {
+    "codigo_origem": "1181",
+    "nome": "SUB - Radioatividade Alfa"
+  },
+  {
+    "codigo_origem": "1184",
+    "nome": "SUB - Radioatividade Beta"
+  },
+  {
+    "codigo_origem": "1190",
+    "nome": "pH"
+  },
+  {
+    "codigo_origem": "1207",
+    "nome": "Cloro Residual Livre"
+  },
+  {
+    "codigo_origem": "2392",
+    "nome": "Ácidos Haloacéticos Totais"
+  },
+  {
+    "codigo_origem": "2393",
+    "nome": "Xilenos"
+  },
+  {
+    "codigo_origem": "2414",
+    "nome": "Benzeno"
+  },
+  {
+    "codigo_origem": "2519",
+    "nome": "Cloraminas"
+  },
+  {
+    "codigo_origem": "3871",
+    "nome": "Bromato"
+  },
+  {
+    "codigo_origem": "3873",
+    "nome": "Cloretos"
+  },
+  {
+    "codigo_origem": "3874",
+    "nome": "Clorito"
+  },
+  {
+    "codigo_origem": "3875",
+    "nome": "SUB - Fluoreto"
+  },
+  {
+    "codigo_origem": "3877",
+    "nome": "SUB - Nitrato (como N)"
+  },
+  {
+    "codigo_origem": "3878",
+    "nome": "SUB - Nitrito (como N)"
+  },
+  {
+    "codigo_origem": "3880",
+    "nome": "Sulfato"
+  },
+  {
+    "codigo_origem": "3882",
+    "nome": "Bromato"
+  },
+  {
+    "codigo_origem": "3904",
+    "nome": "Turbidez"
+  },
+  {
+    "codigo_origem": "4100",
+    "nome": "Benzeno"
+  },
+  {
+    "codigo_origem": "4107",
+    "nome": "Deltametrina"
+  },
+  {
+    "codigo_origem": "4131",
+    "nome": "Mancozebe"
+  },
+  {
+    "codigo_origem": "4133",
+    "nome": "Piraclostrobina"
+  },
+  {
+    "codigo_origem": "4134",
+    "nome": "Epoxiconazol"
+  },
+  {
+    "codigo_origem": "4135",
+    "nome": "Propiconazol"
+  },
+  {
+    "codigo_origem": "4270",
+    "nome": "Imidacloprido"
+  },
+  {
+    "codigo_origem": "4272",
+    "nome": "Bifentrina"
+  },
+  {
+    "codigo_origem": "4275",
+    "nome": "Tiametoxan"
+  },
+  {
+    "codigo_origem": "4276",
+    "nome": "Iprodiona"
+  },
+  {
+    "codigo_origem": "5679",
+    "nome": "Aldrin + dieldrin"
+  },
+  {
+    "codigo_origem": "5680",
+    "nome": "Clordano (cis + trans)"
+  },
+  {
+    "codigo_origem": "5682",
+    "nome": "DDT, todos os isômeros"
+  },
+  {
+    "codigo_origem": "5838",
+    "nome": "Epicloridrina"
+  },
+  {
+    "codigo_origem": "6014",
+    "nome": "SUB - Bactérias Heterotróficas"
+  },
+  {
+    "codigo_origem": "6015",
+    "nome": "SUB - Escherichia coli (UFC)"
+  },
+  {
+    "codigo_origem": "6178",
+    "nome": "Trihalometanos"
+  },
+  {
+    "codigo_origem": "6486",
+    "nome": "Carbendazim"
+  },
+  {
+    "codigo_origem": "6487",
+    "nome": "Benomil"
+  },
+  {
+    "codigo_origem": "6628",
+    "nome": "Amônia (NH3-N)"
+  },
+  {
+    "codigo_origem": "6998",
+    "nome": "1,4-Diclorobenzeno"
+  },
+  {
+    "codigo_origem": "7001",
+    "nome": "1,2-Diclorobenzeno"
+  },
+  {
+    "codigo_origem": "7003",
+    "nome": "Cloreto de Vinila"
+  },
+  {
+    "codigo_origem": "7011",
+    "nome": "Amônia (NH3-N)"
+  },
+  {
+    "codigo_origem": "7138",
+    "nome": "SUB - Gosto e Odor"
+  },
+  {
+    "codigo_origem": "7166",
+    "nome": "Amônia (NH3-N)"
+  },
+  {
+    "codigo_origem": "7171",
+    "nome": "Aldicarbe + Aldicarbe Sulfona + Aldicarbe Sulfóxido"
+  },
+  {
+    "codigo_origem": "7172",
+    "nome": "Clorpirifós + Clorpirifós-Oxon"
+  },
+  {
+    "codigo_origem": "7173",
+    "nome": "DDT (p,p- DDT+ p,p-DDD+ p,pDDE)"
+  },
+  {
+    "codigo_origem": "7205",
+    "nome": "Sulfeto (H2S não dissociado)"
+  },
+  {
+    "codigo_origem": "7271",
+    "nome": "1,4-Dioxano"
+  },
+  {
+    "codigo_origem": "7272",
+    "nome": "Ametrina"
+  },
+  {
+    "codigo_origem": "7273",
+    "nome": "Atrazina + S-Clorotriazinas (DeetilAtrazina - Dea, Deisopropil-Atrazina - Dia e Diaminoclorotriazina-Dact)"
+  },
+  {
+    "codigo_origem": "7274",
+    "nome": "Ciproconazol"
+  },
+  {
+    "codigo_origem": "7275",
+    "nome": "Difenoconazol"
+  },
+  {
+    "codigo_origem": "7276",
+    "nome": "Dimetoato + Ometoato"
+  },
+  {
+    "codigo_origem": "7277",
+    "nome": "Fipronil"
+  },
+  {
+    "codigo_origem": "7278",
+    "nome": "Flutriafol"
+  },
+  {
+    "codigo_origem": "7279",
+    "nome": "Hidroxi-Atrazina"
+  },
+  {
+    "codigo_origem": "7280",
+    "nome": "Mancozeb + ETU"
+  },
+  {
+    "codigo_origem": "7281",
+    "nome": "Metamidofós + Acefato"
+  },
+  {
+    "codigo_origem": "7282",
+    "nome": "Paraquate"
+  },
+  {
+    "codigo_origem": "7283",
+    "nome": "Picloram"
+  },
+  {
+    "codigo_origem": "7284",
+    "nome": "Propargito"
+  },
+  {
+    "codigo_origem": "7285",
+    "nome": "Protioconazol + ProticonazolDestio"
+  },
+  {
+    "codigo_origem": "7286",
+    "nome": "Tiodicarbe"
+  },
+  {
+    "codigo_origem": "7287",
+    "nome": "Tiram"
+  },
+  {
+    "codigo_origem": "7288",
+    "nome": "Clorato"
+  },
+  {
+    "codigo_origem": "7289",
+    "nome": "N-nitrosodimetilamina"
+  },
+  {
+    "codigo_origem": "7290",
+    "nome": "Cilindrospermopsinas"
+  },
+  {
+    "codigo_origem": "7291",
+    "nome": "Metribuzim"
+  },
+  {
+    "codigo_origem": "7324",
+    "nome": "Profenofós"
+  },
+  {
+    "codigo_origem": "7865",
+    "nome": "Razão de Nitrito e Nitrato"
+  },
+  {
+    "codigo_origem": "7898",
+    "nome": "Fluoreto"
+  },
+  {
+    "codigo_origem": "7955",
+    "nome": "Cloretos"
+  },
+  {
+    "codigo_origem": "7956",
+    "nome": "Fluoreto"
+  },
+  {
+    "codigo_origem": "7959",
+    "nome": "Sulfato"
+  },
+  {
+    "codigo_origem": "8013",
+    "nome": "Radioatividade Alfa"
+  },
+  {
+    "codigo_origem": "8014",
+    "nome": "Radioatividade Beta"
+  },
+  {
+    "codigo_origem": "8020",
+    "nome": "Amônia"
+  },
+  {
+    "codigo_origem": "8362",
+    "nome": "Mercúrio"
+  },
+  {
+    "codigo_origem": "8702",
+    "nome": "Soma das razões (Nitrato e Nitrito)"
+  },
+  {
+    "codigo_origem": "8779",
+    "nome": "Dureza total"
+  },
+  {
+    "codigo_origem": "10271",
+    "nome": "Permetrina Total"
+  },
+  {
+    "codigo_origem": "10496",
+    "nome": "Antimônio"
+  },
+  {
+    "codigo_origem": "10498",
+    "nome": "Alumínio"
+  },
+  {
+    "codigo_origem": "10500",
+    "nome": "Arsênio"
+  },
+  {
+    "codigo_origem": "10504",
+    "nome": "Bário"
+  },
+  {
+    "codigo_origem": "10508",
+    "nome": "Cádmio"
+  },
+  {
+    "codigo_origem": "10512",
+    "nome": "Chumbo"
+  },
+  {
+    "codigo_origem": "10515",
+    "nome": "Cromo"
+  },
+  {
+    "codigo_origem": "10516",
+    "nome": "Cobre"
+  },
+  {
+    "codigo_origem": "10525",
+    "nome": "Ferro"
+  },
+  {
+    "codigo_origem": "10528",
+    "nome": "Manganês"
+  },
+  {
+    "codigo_origem": "10531",
+    "nome": "Mercúrio"
+  },
+  {
+    "codigo_origem": "10534",
+    "nome": "Níquel"
+  },
+  {
+    "codigo_origem": "10544",
+    "nome": "Sódio"
+  },
+  {
+    "codigo_origem": "10546",
+    "nome": "Selênio"
+  },
+  {
+    "codigo_origem": "10550",
+    "nome": "Urânio"
+  },
+  {
+    "codigo_origem": "10554",
+    "nome": "Zinco"
+  },
+  {
+    "codigo_origem": "10662",
+    "nome": "Alumínio"
+  },
+  {
+    "codigo_origem": "10663",
+    "nome": "SUB - Cromo"
+  },
+  {
+    "codigo_origem": "10666",
+    "nome": "Chumbo"
+  },
+  {
+    "codigo_origem": "10668",
+    "nome": "Antimônio"
+  },
+  {
+    "codigo_origem": "10670",
+    "nome": "Arsênio"
+  },
+  {
+    "codigo_origem": "10671",
+    "nome": "Arsênio"
+  },
+  {
+    "codigo_origem": "10673",
+    "nome": "Bário"
+  },
+  {
+    "codigo_origem": "10674",
+    "nome": "Cádmio"
+  },
+  {
+    "codigo_origem": "10678",
+    "nome": "Cobre"
+  },
+  {
+    "codigo_origem": "10680",
+    "nome": "Níquel"
+  },
+  {
+    "codigo_origem": "10682",
+    "nome": "Selênio"
+  },
+  {
+    "codigo_origem": "10684",
+    "nome": "Urânio"
+  },
+  {
+    "codigo_origem": "10687",
+    "nome": "Ferro"
+  },
+  {
+    "codigo_origem": "10691",
+    "nome": "Manganês"
+  },
+  {
+    "codigo_origem": "10693",
+    "nome": "Sódio"
+  },
+  {
+    "codigo_origem": "10695",
+    "nome": "Zinco"
+  },
+  {
+    "codigo_origem": "10720",
+    "nome": "Mercúrio"
+  },
+  {
+    "codigo_origem": "10862",
+    "nome": "Sólidos Dissolvidos Totais"
+  },
+  {
+    "codigo_origem": "11643",
+    "nome": "Ácidos Haloacéticos Totais"
+  },
+  {
+    "codigo_origem": "11648",
+    "nome": "2,4-D"
+  },
+  {
+    "codigo_origem": "11649",
+    "nome": "Acrilamida"
+  },
+  {
+    "codigo_origem": "11891",
+    "nome": "Glifosato + AMPA"
+  },
+  {
+    "codigo_origem": "11892",
+    "nome": "Acrilamida"
+  },
+  {
+    "codigo_origem": "11893",
+    "nome": "Carbendazim"
+  },
+  {
+    "codigo_origem": "11894",
+    "nome": "2,4-D"
+  },
+  {
+    "codigo_origem": "11898",
+    "nome": "Aldicarbe + Aldicarbe Sulfona + Aldicarbe Sulfóxido"
+  },
+  {
+    "codigo_origem": "11899",
+    "nome": "Ametrina"
+  },
+  {
+    "codigo_origem": "11900",
+    "nome": "Atrazina + S-Clorotriazinas (DeetilAtrazina - Dea, Deisopropil-Atrazina - Dia e Diaminoclorotriazina-Dact)"
+  },
+  {
+    "codigo_origem": "11901",
+    "nome": "Ciproconazol"
+  },
+  {
+    "codigo_origem": "11902",
+    "nome": "Clorpirifós + Clorpirifós-Oxon"
+  },
+  {
+    "codigo_origem": "11903",
+    "nome": "Difenoconazol"
+  },
+  {
+    "codigo_origem": "11904",
+    "nome": "Dimetoato + Ometoato"
+  },
+  {
+    "codigo_origem": "11905",
+    "nome": "Epoxiconazol"
+  },
+  {
+    "codigo_origem": "11906",
+    "nome": "Fipronil"
+  },
+  {
+    "codigo_origem": "11907",
+    "nome": "Flutriafol"
+  },
+  {
+    "codigo_origem": "11908",
+    "nome": "Hidroxi-Atrazina"
+  },
+  {
+    "codigo_origem": "11909",
+    "nome": "Metamidofós + Acefato"
+  },
+  {
+    "codigo_origem": "11910",
+    "nome": "Paraquate"
+  },
+  {
+    "codigo_origem": "11911",
+    "nome": "Picloram"
+  },
+  {
+    "codigo_origem": "11912",
+    "nome": "Profenofós"
+  },
+  {
+    "codigo_origem": "11913",
+    "nome": "Propargito"
+  },
+  {
+    "codigo_origem": "11914",
+    "nome": "Protioconazol + ProticonazolDestio"
+  },
+  {
+    "codigo_origem": "11915",
+    "nome": "Tebuconazol"
+  },
+  {
+    "codigo_origem": "11916",
+    "nome": "Tiametoxan"
+  },
+  {
+    "codigo_origem": "11917",
+    "nome": "Tiodicarbe"
+  },
+  {
+    "codigo_origem": "11918",
+    "nome": "Tiram"
+  },
+  {
+    "codigo_origem": "11921",
+    "nome": "Carbofurano"
+  },
+  {
+    "codigo_origem": "11937",
+    "nome": "Carbofurano"
+  },
+  {
+    "codigo_origem": "11976",
+    "nome": "Acefato + Metamidofós"
+  },
+  {
+    "codigo_origem": "11977",
+    "nome": "Aldicarbe + Aldicarbe Sulfona + Aldicarbe Sulfóxido"
+  },
+  {
+    "codigo_origem": "11978",
+    "nome": "Carbendazim + Benomil"
+  },
+  {
+    "codigo_origem": "11979",
+    "nome": "Mancozebe + ETU"
+  },
+  {
+    "codigo_origem": "11980",
+    "nome": "Clorpirifós + Clorpirifós-oxon"
+  },
+  {
+    "codigo_origem": "11982",
+    "nome": "Tebuconazol"
+  },
+  {
+    "codigo_origem": "11990",
+    "nome": "Glifosato+AMPA"
+  },
+  {
+    "codigo_origem": "15141",
+    "nome": "Abamectina"
+  },
+  {
+    "codigo_origem": "15144",
+    "nome": "Captana"
+  },
+  {
+    "codigo_origem": "15145",
+    "nome": "Carboxina"
+  },
+  {
+    "codigo_origem": "15146",
+    "nome": "Carfentrazona-Etílica"
+  },
+  {
+    "codigo_origem": "15147",
+    "nome": "Cianamida"
+  },
+  {
+    "codigo_origem": "15148",
+    "nome": "Cipermetrina"
+  },
+  {
+    "codigo_origem": "15149",
+    "nome": "Cletodim"
+  },
+  {
+    "codigo_origem": "15150",
+    "nome": "Clorimurom-Etílico"
+  },
+  {
+    "codigo_origem": "15151",
+    "nome": "Cresoxim-Metílico"
+  },
+  {
+    "codigo_origem": "15152",
+    "nome": "Deltametrina"
+  },
+  {
+    "codigo_origem": "15153",
+    "nome": "Dicamba"
+  },
+  {
+    "codigo_origem": "15154",
+    "nome": "Diflubenzurom"
+  },
+  {
+    "codigo_origem": "15155",
+    "nome": "Diquate"
+  },
+  {
+    "codigo_origem": "15156",
+    "nome": "Ditianona"
+  },
+  {
+    "codigo_origem": "15157",
+    "nome": "Endosulfam (alfa, beta e sais)"
+  },
+  {
+    "codigo_origem": "15158",
+    "nome": "Etoxissulfurom"
+  },
+  {
+    "codigo_origem": "15159",
+    "nome": "Fenitrotiona"
+  },
+  {
+    "codigo_origem": "15160",
+    "nome": "Fenoxaprope-Petílico"
+  },
+  {
+    "codigo_origem": "15161",
+    "nome": "Fipronil"
+  },
+  {
+    "codigo_origem": "15162",
+    "nome": "Folpete"
+  },
+  {
+    "codigo_origem": "15163",
+    "nome": "Fomesafem"
+  },
+  {
+    "codigo_origem": "15164",
+    "nome": "Hexazinona"
+  },
+  {
+    "codigo_origem": "15165",
+    "nome": "Imazapir"
+  },
+  {
+    "codigo_origem": "15166",
+    "nome": "Imazetapir"
+  },
+  {
+    "codigo_origem": "15167",
+    "nome": "Indoxacarbe"
+  },
+  {
+    "codigo_origem": "15168",
+    "nome": "Iodosulfurom-Metílico"
+  },
+  {
+    "codigo_origem": "15169",
+    "nome": "Lambda-Cialotrina"
+  },
+  {
+    "codigo_origem": "15170",
+    "nome": "Mesotriona"
+  },
+  {
+    "codigo_origem": "15171",
+    "nome": "Metalaxil-M"
+  },
+  {
+    "codigo_origem": "15172",
+    "nome": "Metidationa"
+  },
+  {
+    "codigo_origem": "15173",
+    "nome": "Metsulfurom-Metílico"
+  },
+  {
+    "codigo_origem": "15185",
+    "nome": "Parationa Metílica"
+  },
+  {
+    "codigo_origem": "15186",
+    "nome": "Pendimentalina"
+  },
+  {
+    "codigo_origem": "15187",
+    "nome": "Picoxistrobina"
+  },
+  {
+    "codigo_origem": "15188",
+    "nome": "Piraclostrobina"
+  },
+  {
+    "codigo_origem": "15189",
+    "nome": "Pirimifós-Metílico"
+  },
+  {
+    "codigo_origem": "15190",
+    "nome": "Piriproxifeno"
+  },
+  {
+    "codigo_origem": "15191",
+    "nome": "Propanil"
+  },
+  {
+    "codigo_origem": "15192",
+    "nome": "Propiconazol"
+  },
+  {
+    "codigo_origem": "15193",
+    "nome": "Tembotriona"
+  },
+  {
+    "codigo_origem": "15194",
+    "nome": "Terbutilazina"
+  },
+  {
+    "codigo_origem": "15195",
+    "nome": "Tetraconazol"
+  },
+  {
+    "codigo_origem": "15196",
+    "nome": "Triciclazol"
+  },
+  {
+    "codigo_origem": "15198",
+    "nome": "Ácido Dicloroacético (DCAA)"
+  },
+  {
+    "codigo_origem": "15200",
+    "nome": "2,4-D + 2,4,5-T"
+  },
+  {
+    "codigo_origem": "15201",
+    "nome": "Aldrin + dieldrin"
+  },
+  {
+    "codigo_origem": "15202",
+    "nome": "Glifosato+AMPA"
+  },
+  {
+    "codigo_origem": "15203",
+    "nome": "g-HCH (y-HCH ou gama-Lindano)"
+  },
+  {
+    "codigo_origem": "15204",
+    "nome": "Malation"
+  },
+  {
+    "codigo_origem": "15205",
+    "nome": "Mancozebe + ETU"
+  },
+  {
+    "codigo_origem": "15206",
+    "nome": "Molinato"
+  },
+  {
+    "codigo_origem": "15207",
+    "nome": "Simazina"
+  },
+  {
+    "codigo_origem": "15208",
+    "nome": "Terbufos"
+  },
+  {
+    "codigo_origem": "15209",
+    "nome": "Tiametoxam"
+  },
+  {
+    "codigo_origem": "15210",
+    "nome": "1,4-Diclorobenzeno"
+  },
+  {
+    "codigo_origem": "15211",
+    "nome": "Monoclorobenzeno"
+  },
+  {
+    "codigo_origem": "15349",
+    "nome": "SUB - Amônia"
+  },
+  {
+    "codigo_origem": "15428",
+    "nome": "Cilindrospermopsinas"
+  },
+  {
+    "codigo_origem": "16700",
+    "nome": "SUB - Coliformes Totais (NMP)"
+  },
+  {
+    "codigo_origem": "16702",
+    "nome": "SUB - Escherichia coli - Determinação quantitativa pela técnica de tubos múltiplos (NMP)"
+  },
+  {
+    "codigo_origem": "16806",
+    "nome": "Metoxicloro"
+  },
+  {
+    "codigo_origem": "17079",
+    "nome": "SUB - Coliformes Totais (UFC)"
+  },
+  {
+    "codigo_origem": "17104",
+    "nome": "SUB - Escherichia coli (P/A)"
+  },
+  {
+    "codigo_origem": "17105",
+    "nome": "SUB - Coliformes Totais (P/A)"
+  },
+  {
+    "codigo_origem": "17120",
+    "nome": "SUB - Coliformes Totais - Determinação qualitativa pela técnica de tubos múltiplos modificados"
+  },
+  {
+    "codigo_origem": "17121",
+    "nome": "SUB - Escherichia coli - Determinação qualitativa pela técnica de tubos múltiplos modificados"
+  }
+]

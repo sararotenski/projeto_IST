@@ -1,0 +1,733 @@
+﻿legislacao;codigo_ensaio;classe;matriz;origem_amostra;valor_minimo;valor_maximo;unidade_medida;versao;data_inicio_vigencia;data_fim_vigencia;requer_validacao;observacao_validacao;arquivo_origem;linhas_origem
+Portaria GM/MS Nº888 5/21;4;;Água - BNU;Água Consumo Humano;0.000000;1.200000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;2,3
+Portaria GM/MS Nº888 5/21;5;;Água - BNU;Água Consumo Humano;0.000000;0.010000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;4
+Portaria GM/MS Nº888 5/21;10;ESPECIFICAÇÃO;Água - BNU;Água Consumo Humano;0.000000;4.000000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;5
+Portaria GM/MS Nº888 5/21;10;;Água - BNU;Água Consumo Humano;0.000000;4.000000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;6
+Portaria GM/MS Nº888 5/21;11;;Água - BNU;Água Consumo Humano;0.000000;250.000000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;7
+Portaria GM/MS Nº888 5/21;12;;Água - BNU;Água Consumo Humano;0.000000;0.700000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;8
+Portaria GM/MS Nº888 5/21;16;;Água - BNU;Água Consumo Humano;0.000000;15.000000;Pt/Co;1;;;false;;GM888_Agua_Consumo_Humano.csv;9
+Portaria GM/MS Nº888 5/21;23;;Água - BNU;Água Consumo Humano;0.000000;300.000000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;10
+Portaria GM/MS Nº888 5/21;25;;Água - BNU;Água Consumo Humano;0.000000;1.500000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;11
+Portaria GM/MS Nº888 5/21;29;;Água - BNU;Água Consumo Humano;0.000000;6.000000;Intensidade;1;;;false;;GM888_Agua_Consumo_Humano.csv;12
+Portaria GM/MS Nº888 5/21;31;;Água - BNU;Água Consumo Humano;0.000000;10.000000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;13
+Portaria GM/MS Nº888 5/21;32;;Água - BNU;Água Consumo Humano;0.000000;1.000000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;14
+Portaria GM/MS Nº888 5/21;36;;Água - BNU;Água Consumo Humano;0.000000;6.000000;Intensidade;1;;;false;;GM888_Agua_Consumo_Humano.csv;15,16
+Portaria GM/MS Nº888 5/21;43;;Água - BNU;Água Consumo Humano;0.000000;250.000000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;17,18
+Portaria GM/MS Nº888 5/21;47;;Água - BNU;Água Consumo Humano;0.000000;0.050000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;19
+Portaria GM/MS Nº888 5/21;48;;Água - BNU;Água Consumo Humano;0.000000;5.000000;NTU;1;;;false;;GM888_Agua_Consumo_Humano.csv;20
+Portaria GM/MS Nº888 5/21;52;;Água - BNU;Água Consumo Humano;0.000000;10.000000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;21
+Portaria GM/MS Nº888 5/21;56;;Água - BNU;Água Consumo Humano;0.000000;0.000001;Aus/Pres em 100mL;1;;;false;;GM888_Agua_Consumo_Humano.csv;22
+Portaria GM/MS Nº888 5/21;57;;Água - BNU;Água Consumo Humano;0.000000;1.000000;NMP/100 mL;1;;;false;;GM888_Agua_Consumo_Humano.csv;23
+Portaria GM/MS Nº888 5/21;58;;Água - BNU;Água Consumo Humano;0.000000;1.000000;UFC/100mL;1;;;false;;GM888_Agua_Consumo_Humano.csv;24
+Portaria GM/MS Nº888 5/21;60;;Água - BNU;Água Consumo Humano;0.000000;20000.000000;células/mL;1;;;false;;GM888_Agua_Consumo_Humano.csv;25
+Portaria GM/MS Nº888 5/21;62;;Água - BNU;Água Consumo Humano;0.000000;1.000000;UFC/100mL;1;;;false;;GM888_Agua_Consumo_Humano.csv;26
+Portaria GM/MS Nº888 5/21;63;;Água - BNU;Água Consumo Humano;0.000000;1.000000;NMP/100 mL;1;;;false;;GM888_Agua_Consumo_Humano.csv;27
+Portaria GM/MS Nº888 5/21;67;;Água - BNU;Água Consumo Humano;0.000000;1.000000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;28
+Portaria GM/MS Nº888 5/21;68;;Água - BNU;Água Consumo Humano;0.000000;3.000000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;29
+Portaria GM/MS Nº888 5/21;217;;Água - BNU;Água Consumo Humano;0.000000;0.200000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;30
+Portaria GM/MS Nº888 5/21;218;;Água - BNU;Água Consumo Humano;0.000000;0.006000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;31
+Portaria GM/MS Nº888 5/21;219;;Água - BNU;Água Consumo Humano;0.000000;0.010000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;32
+Portaria GM/MS Nº888 5/21;220;;Água - BNU;Água Consumo Humano;0.000000;0.700000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;33
+Portaria GM/MS Nº888 5/21;224;;Água - BNU;Água Consumo Humano;0.000000;0.003000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;34
+Portaria GM/MS Nº888 5/21;226;;Água - BNU;Água Consumo Humano;0.000000;0.010000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;35
+Portaria GM/MS Nº888 5/21;227;;Água - BNU;Água Consumo Humano;0.000000;2.000000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;36
+Portaria GM/MS Nº888 5/21;229;;Água - BNU;Água Consumo Humano;0.000000;0.050000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;37
+Portaria GM/MS Nº888 5/21;231;;Água - BNU;Água Consumo Humano;0.000000;0.300000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;38
+Portaria GM/MS Nº888 5/21;233;;Água - BNU;Água Consumo Humano;0.000000;0.100000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;39
+Portaria GM/MS Nº888 5/21;235;;Água - BNU;Água Consumo Humano;0.000000;0.001000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;40
+Portaria GM/MS Nº888 5/21;237;;Água - BNU;Água Consumo Humano;0.000000;0.070000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;41
+Portaria GM/MS Nº888 5/21;241;;Água - BNU;Água Consumo Humano;0.000000;0.040000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;42
+Portaria GM/MS Nº888 5/21;243;;Água - BNU;Água Consumo Humano;0.000000;200.000000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;43
+Portaria GM/MS Nº888 5/21;244;;Água - BNU;Água Consumo Humano;0.000000;0.030000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;44
+Portaria GM/MS Nº888 5/21;249;;Água - BNU;Água Consumo Humano;0.000000;5.000000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;45
+Portaria GM/MS Nº888 5/21;348;ESPECIFICAÇÃO;Água - BNU;Água Consumo Humano;0.000000;0.400000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;46
+Portaria GM/MS Nº888 5/21;348;;Água - BNU;Água Consumo Humano;0.000000;0.400000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;47
+Portaria GM/MS Nº888 5/21;356;;Água - BNU;Água Consumo Humano;0.000000;8.000000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;48
+Portaria GM/MS Nº888 5/21;382;;Água - BNU;Água Consumo Humano;0.000000;0.200000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;49
+Portaria GM/MS Nº888 5/21;386;;Água - BNU;Água Consumo Humano;0.000000;0.200000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;50
+Portaria GM/MS Nº888 5/21;392;;Água - BNU;Água Consumo Humano;0.000000;9.000000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;51
+Portaria GM/MS Nº888 5/21;396;;Água - BNU;Água Consumo Humano;0.000000;2.000000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;52
+Portaria GM/MS Nº888 5/21;417;;Água - BNU;Água Consumo Humano;0.000000;20.000000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;53
+Portaria GM/MS Nº888 5/21;419;;Água - BNU;Água Consumo Humano;0.000000;2.000000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;54
+Portaria GM/MS Nº888 5/21;421;;Água - BNU;Água Consumo Humano;0.000000;45.000000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;55
+Portaria GM/MS Nº888 5/21;422;;Água - BNU;Água Consumo Humano;0.000000;25.000000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;56
+Portaria GM/MS Nº888 5/21;423;;Água - BNU;Água Consumo Humano;0.000000;20.000000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;57
+Portaria GM/MS Nº888 5/21;424;;Água - BNU;Água Consumo Humano;0.000000;10.000000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;58
+Portaria GM/MS Nº888 5/21;429;;Água - BNU;Água Consumo Humano;0.000000;6.000000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;59
+Portaria GM/MS Nº888 5/21;430;;Água - BNU;Água Consumo Humano;0.000000;20.000000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;60
+Portaria GM/MS Nº888 5/21;436;;Água - BNU;Água Consumo Humano;0.000000;1.200000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;61
+Portaria GM/MS Nº888 5/21;440;;Água - BNU;Água Consumo Humano;0.000000;60.000000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;62
+Portaria GM/MS Nº888 5/21;661;;Água - BNU;Água Consumo Humano;0.000000;0.500000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;63
+Portaria GM/MS Nº888 5/21;665;;Água - BNU;Água Consumo Humano;0.000000;20.000000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;64
+Portaria GM/MS Nº888 5/21;671;;Água - BNU;Água Consumo Humano;0.000000;4.000000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;65
+Portaria GM/MS Nº888 5/21;673;;Água - BNU;Água Consumo Humano;0.000000;4.000000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;66
+Portaria GM/MS Nº888 5/21;676;;Água - BNU;Água Consumo Humano;0.000000;30.000000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;67
+Portaria GM/MS Nº888 5/21;678;;Água - BNU;Água Consumo Humano;0.000000;40.000000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;68
+Portaria GM/MS Nº888 5/21;680;;Água - BNU;Água Consumo Humano;0.000000;0.020000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;69
+Portaria GM/MS Nº888 5/21;682;;Água - BNU;Água Consumo Humano;0.000000;300.000000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;70
+Portaria GM/MS Nº888 5/21;690;;Água - BNU;Água Consumo Humano;0.000000;0.000300;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;71
+Portaria GM/MS Nº888 5/21;691;Àgua tratada;Água - BNU;Água Consumo Humano;0.000000;0.001000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;72
+Portaria GM/MS Nº888 5/21;776;;Água - BNU;Água Consumo Humano;0.000000;0.000001;Aus/Pres em 100mL;1;;;false;;GM888_Agua_Consumo_Humano.csv;73
+Portaria GM/MS Nº888 5/21;793;;Água - BNU;Água Consumo Humano;6.000000;9.000000;;1;;;true;Revisar: unidade não informada;GM888_Agua_Consumo_Humano.csv;75
+Portaria GM/MS Nº888 5/21;833;;Água - BNU;Água Consumo Humano;0.000000;7.000000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;76
+Portaria GM/MS Nº888 5/21;863;;Água - BNU;Água Consumo Humano;0.000000;30.000000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;77
+Portaria GM/MS Nº888 5/21;877;;Água - BNU;Água Consumo Humano;0.000000;500.000000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;78
+Portaria GM/MS Nº888 5/21;905;;Água - BNU;Água Consumo Humano;0.000000;180.000000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;79
+Portaria GM/MS Nº888 5/21;912;;Água - BNU;Água Consumo Humano;0.000000;0.300000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;80
+Portaria GM/MS Nº888 5/21;924;;Água - BNU;Água Consumo Humano;0.000000;0.500000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;81
+Portaria GM/MS Nº888 5/21;949;;Água - BNU;Água Consumo Humano;0.000000;500.000000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;82
+Portaria GM/MS Nº888 5/21;989;;Água - BNU;Água Consumo Humano;0.000000;5.000000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;83
+Portaria GM/MS Nº888 5/21;1109;;Água - BNU;Água Consumo Humano;0.000000;3.000000;ppb;1;;;false;;GM888_Agua_Consumo_Humano.csv;86
+Portaria GM/MS Nº888 5/21;1181;;Água - BNU;Água Consumo Humano;0.000000;0.500000;Bq/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;87
+Portaria GM/MS Nº888 5/21;1184;;Água - BNU;Água Consumo Humano;0.000000;1.000000;Bq/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;88
+Portaria GM/MS Nº888 5/21;1190;;Água - BNU;Água Consumo Humano;6.000000;9.000000;;1;;;true;Revisar: unidade não informada;GM888_Agua_Consumo_Humano.csv;89
+Portaria GM/MS Nº888 5/21;2392;;Água - BNU;Água Consumo Humano;0.000000;0.080000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;91
+Portaria GM/MS Nº888 5/21;2393;;Água - BNU;Água Consumo Humano;0.000000;500.000000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;92
+Portaria GM/MS Nº888 5/21;2414;;Água - BNU;Água Consumo Humano;0.000000;5.000000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;93,94
+Portaria GM/MS Nº888 5/21;2519;ESPECIFICAÇÃO;Água - BNU;Água Consumo Humano;0.000000;4.000000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;95
+Portaria GM/MS Nº888 5/21;2519;;Água - BNU;Água Consumo Humano;0.000000;4.000000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;96
+Portaria GM/MS Nº888 5/21;3871;;Água - BNU;Água Consumo Humano;0.000000;0.010000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;97,98,99
+Portaria GM/MS Nº888 5/21;3873;;Água - BNU;Água Consumo Humano;0.000000;250.000000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;100,101,102
+Portaria GM/MS Nº888 5/21;3874;;Água - BNU;Água Consumo Humano;0.000000;0.700000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;103,104
+Portaria GM/MS Nº888 5/21;3875;;Água - BNU;Água Consumo Humano;0.000000;1.500000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;105,106
+Portaria GM/MS Nº888 5/21;3877;;Água - BNU;Água Consumo Humano;0.000000;10.000000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;107,108,109
+Portaria GM/MS Nº888 5/21;3878;;Água - BNU;Água Consumo Humano;0.000000;1.000000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;110,111,112
+Portaria GM/MS Nº888 5/21;3880;;Água - BNU;Água Consumo Humano;0.000000;250.000000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;113,114,115,116
+Portaria GM/MS Nº888 5/21;3882;;Água - BNU;Água Consumo Humano;0.000000;0.010000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;117,118
+Portaria GM/MS Nº888 5/21;3904;;Água - BNU;Água Consumo Humano;0.000000;5.000000;NTU;1;;;false;;GM888_Agua_Consumo_Humano.csv;119
+Portaria GM/MS Nº888 5/21;4100;;Água - BNU;Água Consumo Humano;0.000000;5.000000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;120
+Portaria GM/MS Nº888 5/21;4134;;Água - BNU;Água Consumo Humano;0.000000;60.000000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;121
+Portaria GM/MS Nº888 5/21;4275;;Água - BNU;Água Consumo Humano;0.000000;36.000000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;122
+Portaria GM/MS Nº888 5/21;5679;;Água - BNU;Água Consumo Humano;0.000000;0.030000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;123
+Portaria GM/MS Nº888 5/21;5680;;Água - BNU;Água Consumo Humano;0.000000;0.200000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;124
+Portaria GM/MS Nº888 5/21;5682;;Água - BNU;Água Consumo Humano;0.000000;1.000000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;125
+Portaria GM/MS Nº888 5/21;5838;;Água - BNU;Água Consumo Humano;0.000000;0.400000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;126
+Portaria GM/MS Nº888 5/21;6178;;Água - BNU;Água Consumo Humano;0.000000;0.100000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;127
+Portaria GM/MS Nº888 5/21;6486;;Água - BNU;Água Consumo Humano;0.000000;120.000000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;128
+Portaria GM/MS Nº888 5/21;6628;;Água - BNU;Água Consumo Humano;0.000000;1.200000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;129,130
+Portaria GM/MS Nº888 5/21;6998;;Água - BNU;Água Consumo Humano;0.000000;0.000300;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;131,132
+Portaria GM/MS Nº888 5/21;7001;;Água - BNU;Água Consumo Humano;0.000000;0.001000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;133
+Portaria GM/MS Nº888 5/21;7003;;Água - BNU;Água Consumo Humano;0.000000;0.500000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;134,135
+Portaria GM/MS Nº888 5/21;7011;;Água - BNU;Água Consumo Humano;0.000000;1.200000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;136,137,138
+Portaria GM/MS Nº888 5/21;7138;;Água - BNU;Água Consumo Humano;0.000000;6.000000;;1;;;true;Revisar: unidade não informada;GM888_Agua_Consumo_Humano.csv;139
+Portaria GM/MS Nº888 5/21;7166;;Água - BNU;Água Consumo Humano;0.000000;1.200000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;140,141
+Portaria GM/MS Nº888 5/21;7171;;Água - BNU;Água Consumo Humano;0.000000;10.000000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;142
+Portaria GM/MS Nº888 5/21;7172;;Água - BNU;Água Consumo Humano;0.000000;30.000000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;143
+Portaria GM/MS Nº888 5/21;7173;;Água - BNU;Água Consumo Humano;0.000000;1.000000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;144
+Portaria GM/MS Nº888 5/21;7205;;Água - BNU;Água Consumo Humano;0.000000;0.050000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;145
+Portaria GM/MS Nº888 5/21;7271;;Água - BNU;Água Consumo Humano;0.000000;48.000000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;146
+Portaria GM/MS Nº888 5/21;7272;;Água - BNU;Água Consumo Humano;0.000000;60.000000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;147
+Portaria GM/MS Nº888 5/21;7273;;Água - BNU;Água Consumo Humano;0.000000;2.000000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;148
+Portaria GM/MS Nº888 5/21;7274;;Água - BNU;Água Consumo Humano;0.000000;30.000000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;149
+Portaria GM/MS Nº888 5/21;7275;;Água - BNU;Água Consumo Humano;0.000000;30.000000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;150
+Portaria GM/MS Nº888 5/21;7276;;Água - BNU;Água Consumo Humano;0.000000;1.200000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;151
+Portaria GM/MS Nº888 5/21;7277;;Água - BNU;Água Consumo Humano;0.000000;1.200000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;152
+Portaria GM/MS Nº888 5/21;7278;;Água - BNU;Água Consumo Humano;0.000000;30.000000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;153
+Portaria GM/MS Nº888 5/21;7279;;Água - BNU;Água Consumo Humano;0.000000;120.000000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;154
+Portaria GM/MS Nº888 5/21;7280;;Água - BNU;Água Consumo Humano;0.000000;8.000000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;155
+Portaria GM/MS Nº888 5/21;7281;;Água - BNU;Água Consumo Humano;0.000000;7.000000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;156
+Portaria GM/MS Nº888 5/21;7284;;Água - BNU;Água Consumo Humano;0.000000;30.000000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;161,162
+Portaria GM/MS Nº888 5/21;7285;;Água - BNU;Água Consumo Humano;0.000000;3.000000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;163,164
+Portaria GM/MS Nº888 5/21;7286;;Água - BNU;Água Consumo Humano;0.000000;90.000000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;165,166
+Portaria GM/MS Nº888 5/21;7287;;Água - BNU;Água Consumo Humano;0.000000;6.000000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;167,168
+Portaria GM/MS Nº888 5/21;7288;;Água - BNU;Água Consumo Humano;0.000000;0.700000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;169,170
+Portaria GM/MS Nº888 5/21;7289;;Água - BNU;Água Consumo Humano;0.000000;0.000100;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;171
+Portaria GM/MS Nº888 5/21;7290;;Água - BNU;Água Consumo Humano;0.000000;1.000000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;172,173
+Portaria GM/MS Nº888 5/21;7291;;Água - BNU;Água Consumo Humano;0.000000;25.000000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;174,175
+Portaria GM/MS Nº888 5/21;7324;;Água - BNU;Água Consumo Humano;0.000000;0.300000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;176
+Portaria GM/MS Nº888 5/21;7865;;Água - BNU;Água Consumo Humano;0.000000;1.000000;;1;;;true;Revisar: unidade não informada;GM888_Agua_Consumo_Humano.csv;177
+Portaria GM/MS Nº888 5/21;7898;;Água - BNU;Água Consumo Humano;0.000000;1.500000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;178,179
+Portaria GM/MS Nº888 5/21;7955;;Água - BNU;Água Consumo Humano;0.000000;250.000000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;180
+Portaria GM/MS Nº888 5/21;7956;;Água - BNU;Água Consumo Humano;0.000000;1.500000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;181
+Portaria GM/MS Nº888 5/21;7959;;Água - BNU;Água Consumo Humano;0.000000;250.000000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;182
+Portaria GM/MS Nº888 5/21;8013;;Água - BNU;Água Consumo Humano;0.000000;0.500000;Bq/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;183
+Portaria GM/MS Nº888 5/21;8014;;Água - BNU;Água Consumo Humano;0.000000;1.000000;Bq/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;184
+Portaria GM/MS Nº888 5/21;8020;;Água - BNU;Água Consumo Humano;0.000000;1.200000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;185,186
+Portaria GM/MS Nº888 5/21;8362;;Água - BNU;Água Consumo Humano;0.000000;0.001000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;187
+Portaria GM/MS Nº888 5/21;8702;;Água - BNU;Água Consumo Humano;0.000000;1.000000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;188
+Portaria GM/MS Nº888 5/21;8779;;Água - BNU;Água Consumo Humano;0.000000;300.000000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;189
+Portaria GM/MS Nº888 5/21;10496;;Água - BNU;Água Consumo Humano;0.000000;0.006000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;190
+Portaria GM/MS Nº888 5/21;10498;;Água - BNU;Água Consumo Humano;0.000000;0.200000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;191
+Portaria GM/MS Nº888 5/21;10500;;Água - BNU;Água Consumo Humano;0.000000;0.010000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;192
+Portaria GM/MS Nº888 5/21;10504;;Água - BNU;Água Consumo Humano;0.000000;0.700000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;193
+Portaria GM/MS Nº888 5/21;10508;;Água - BNU;Água Consumo Humano;0.000000;0.003000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;194
+Portaria GM/MS Nº888 5/21;10512;;Água - BNU;Água Consumo Humano;0.000000;0.010000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;195
+Portaria GM/MS Nº888 5/21;10515;;Água - BNU;Água Consumo Humano;0.000000;0.050000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;196
+Portaria GM/MS Nº888 5/21;10516;;Água - BNU;Água Consumo Humano;0.000000;2.000000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;197
+Portaria GM/MS Nº888 5/21;10525;;Água - BNU;Água Consumo Humano;0.000000;0.300000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;198
+Portaria GM/MS Nº888 5/21;10528;;Água - BNU;Água Consumo Humano;0.000000;0.100000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;199,200
+Portaria GM/MS Nº888 5/21;10531;;Água - BNU;Água Consumo Humano;0.000000;0.001000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;201
+Portaria GM/MS Nº888 5/21;10534;;Água - BNU;Água Consumo Humano;0.000000;0.070000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;202
+Portaria GM/MS Nº888 5/21;10544;;Água - BNU;Água Consumo Humano;0.000000;200.000000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;203
+Portaria GM/MS Nº888 5/21;10546;;Água - BNU;Água Consumo Humano;0.000000;0.040000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;204
+Portaria GM/MS Nº888 5/21;10550;;Água - BNU;Água Consumo Humano;0.000000;0.030000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;205
+Portaria GM/MS Nº888 5/21;10554;;Água - BNU;Água Consumo Humano;0.000000;5.000000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;206
+Portaria GM/MS Nº888 5/21;10662;;Água - BNU;Água Consumo Humano;0.000000;0.200000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;207
+Portaria GM/MS Nº888 5/21;10663;;Água - BNU;Água Consumo Humano;0.000000;0.050000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;208
+Portaria GM/MS Nº888 5/21;10666;;Água - BNU;Água Consumo Humano;0.000000;0.010000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;209,210
+Portaria GM/MS Nº888 5/21;10668;;Água - BNU;Água Consumo Humano;0.000000;0.006000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;211
+Portaria GM/MS Nº888 5/21;10671;;Água - BNU;Água Consumo Humano;0.000000;0.010000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;212
+Portaria GM/MS Nº888 5/21;10673;;Água - BNU;Água Consumo Humano;0.000000;0.700000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;213
+Portaria GM/MS Nº888 5/21;10674;;Água - BNU;Água Consumo Humano;0.000000;0.003000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;214,215
+Portaria GM/MS Nº888 5/21;10678;;Água - BNU;Água Consumo Humano;0.000000;2.000000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;216
+Portaria GM/MS Nº888 5/21;10680;;Água - BNU;Água Consumo Humano;0.000000;0.070000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;217
+Portaria GM/MS Nº888 5/21;10684;;Água - BNU;Água Consumo Humano;0.000000;0.030000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;218
+Portaria GM/MS Nº888 5/21;10687;;Água - BNU;Água Consumo Humano;0.000000;0.300000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;219,220
+Portaria GM/MS Nº888 5/21;10691;;Água - BNU;Água Consumo Humano;0.000000;0.100000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;221,222
+Portaria GM/MS Nº888 5/21;10693;;Água - BNU;Água Consumo Humano;0.000000;200.000000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;223
+Portaria GM/MS Nº888 5/21;10695;;Água - BNU;Água Consumo Humano;0.000000;5.000000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;224
+Portaria GM/MS Nº888 5/21;10720;;Água - BNU;Água Consumo Humano;0.000000;0.001000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;225
+Portaria GM/MS Nº888 5/21;10862;;Água - BNU;Água Consumo Humano;0.000000;500.000000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;226
+Portaria GM/MS Nº888 5/21;11643;;Água - BNU;Água Consumo Humano;0.000000;0.080000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;227
+Portaria GM/MS Nº888 5/21;11648;;Água - BNU;Água Consumo Humano;0.000000;30.000000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;228
+Portaria GM/MS Nº888 5/21;11649;;Água - BNU;Água Consumo Humano;0.000000;0.500000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;229,230
+Portaria GM/MS Nº888 5/21;11892;;Água - BNU;Água Consumo Humano;0.000000;0.500000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;231
+Portaria GM/MS Nº888 5/21;11893;;Água - BNU;Água Consumo Humano;0.000000;120.000000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;232
+Portaria GM/MS Nº888 5/21;11894;;Água - BNU;Água Consumo Humano;0.000000;30.000000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;233
+Portaria GM/MS Nº888 5/21;11898;;Água - BNU;Água Consumo Humano;0.000000;10.000000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;234
+Portaria GM/MS Nº888 5/21;11899;;Água - BNU;Água Consumo Humano;0.000000;60.000000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;235
+Portaria GM/MS Nº888 5/21;11900;;Água - BNU;Água Consumo Humano;0.000000;2.000000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;236
+Portaria GM/MS Nº888 5/21;11901;;Água - BNU;Água Consumo Humano;0.000000;30.000000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;237
+Portaria GM/MS Nº888 5/21;11903;;Água - BNU;Água Consumo Humano;0.000000;30.000000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;238
+Portaria GM/MS Nº888 5/21;11904;;Água - BNU;Água Consumo Humano;0.000000;1.200000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;239
+Portaria GM/MS Nº888 5/21;11905;;Água - BNU;Água Consumo Humano;0.000000;60.000000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;240
+Portaria GM/MS Nº888 5/21;11906;;Água - BNU;Água Consumo Humano;0.000000;1.200000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;241
+Portaria GM/MS Nº888 5/21;11907;;Água - BNU;Água Consumo Humano;0.000000;30.000000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;242
+Portaria GM/MS Nº888 5/21;11908;;Água - BNU;Água Consumo Humano;0.000000;120.000000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;243
+Portaria GM/MS Nº888 5/21;11909;;Água - BNU;Água Consumo Humano;0.000000;7.000000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;244
+Portaria GM/MS Nº888 5/21;11910;;Água - BNU;Água Consumo Humano;0.000000;13.000000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;245
+Portaria GM/MS Nº888 5/21;11911;;Água - BNU;Água Consumo Humano;0.000000;60.000000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;246
+Portaria GM/MS Nº888 5/21;11912;;Água - BNU;Água Consumo Humano;0.000000;0.300000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;247
+Portaria GM/MS Nº888 5/21;11913;;Água - BNU;Água Consumo Humano;0.000000;30.000000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;248
+Portaria GM/MS Nº888 5/21;11914;;Água - BNU;Água Consumo Humano;0.000000;3.000000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;249
+Portaria GM/MS Nº888 5/21;11915;;Água - BNU;Água Consumo Humano;0.000000;180.000000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;250
+Portaria GM/MS Nº888 5/21;11916;;Água - BNU;Água Consumo Humano;0.000000;36.000000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;251
+Portaria GM/MS Nº888 5/21;11917;;Água - BNU;Água Consumo Humano;0.000000;90.000000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;252
+Portaria GM/MS Nº888 5/21;11937;ESPECIFICAÇÃO;Água - BNU;Água Consumo Humano;0.000000;7.000000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;253
+Portaria GM/MS Nº888 5/21;11937;;Água - BNU;Água Consumo Humano;0.000000;7.000000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;254
+Portaria GM/MS Nº888 5/21;11976;;Água - BNU;Água Consumo Humano;0.000000;7.000000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;255
+Portaria GM/MS Nº888 5/21;11977;;Água - BNU;Água Consumo Humano;0.000000;10.000000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;256
+Portaria GM/MS Nº888 5/21;11978;;Água - BNU;Água Consumo Humano;0.000000;120.000000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;257
+Portaria GM/MS Nº888 5/21;11979;;Água - BNU;Água Consumo Humano;0.000000;8.000000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;258
+Portaria GM/MS Nº888 5/21;11980;;Água - BNU;Água Consumo Humano;0.000000;30.000000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;259
+Portaria GM/MS Nº888 5/21;11982;;Água - BNU;Água Consumo Humano;0.000000;180.000000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;260
+Portaria GM/MS Nº888 5/21;11990;;Água - BNU;Água Consumo Humano;0.000000;500.000000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;261
+Portaria GM/MS Nº888 5/21;15349;;Água - BNU;Água Consumo Humano;0.000000;1.200000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;262
+Portaria GM/MS Nº888 5/21;15428;;Água - BNU;Água Consumo Humano;0.000000;1.000000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;263
+Portaria GM/MS Nº888 5/21;16700;;Água - BNU;Água Consumo Humano;0.000000;0.000000;NMP/100 mL;1;;;true;Revisar: máximo igual a zero;GM888_Agua_Consumo_Humano.csv;264
+Portaria GM/MS Nº888 5/21;16702;;Água - BNU;Água Consumo Humano;0.000000;0.000000;NMP/100 mL;1;;;true;Revisar: máximo igual a zero;GM888_Agua_Consumo_Humano.csv;265
+Portaria GM/MS Nº888 5/21;17104;;Água - BNU;Água Consumo Humano;0.000000;0.000000;Aus/Pres em 100mL;1;;;true;Revisar: máximo igual a zero;GM888_Agua_Consumo_Humano.csv;266
+Portaria GM/MS Nº888 5/21;17105;;Água - BNU;Água Consumo Humano;0.000000;0.000000;Aus/Pres em 100mL;1;;;true;Revisar: máximo igual a zero;GM888_Agua_Consumo_Humano.csv;267
+Portaria GM/MS Nº888 5/21;17120;;Água - BNU;Água Consumo Humano;0.000000;0.000000;Aus/Pres em 100mL;1;;;true;Revisar: máximo igual a zero;GM888_Agua_Consumo_Humano.csv;268
+Portaria GM/MS Nº888 5/21;17121;;Água - BNU;Água Consumo Humano;0.000000;0.000000;Aus/Pres em 100mL;1;;;true;Revisar: máximo igual a zero;GM888_Agua_Consumo_Humano.csv;269
+Portaria GM/MS Nº888 5/21;4;;Água - BNU;Agua Tratada;0.000000;1.200000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;2
+Portaria GM/MS Nº888 5/21;5;;Água - BNU;Agua Tratada;0.000000;0.010000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;3,4
+Portaria GM/MS Nº888 5/21;10;;Água - BNU;Agua Tratada;0.000000;4.000000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;5
+Portaria GM/MS Nº888 5/21;11;;Água - BNU;Agua Tratada;0.000000;250.000000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;6,7
+Portaria GM/MS Nº888 5/21;12;;Água - BNU;Agua Tratada;0.000000;0.700000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;8
+Portaria GM/MS Nº888 5/21;16;;Água - BNU;Agua Tratada;0.000000;15.000000;Pt/Co;1;;;false;;GM888_Agua_Tratada.csv;9
+Portaria GM/MS Nº888 5/21;23;;Água - BNU;Agua Tratada;0.000000;300.000000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;10
+Portaria GM/MS Nº888 5/21;25;;Água - BNU;Agua Tratada;0.000000;1.500000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;11
+Portaria GM/MS Nº888 5/21;29;;Água - BNU;Agua Tratada;0.000000;6.000000;Intensidade;1;;;false;;GM888_Agua_Tratada.csv;12
+Portaria GM/MS Nº888 5/21;31;;Água - BNU;Agua Tratada;0.000000;10.000000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;13
+Portaria GM/MS Nº888 5/21;32;;Água - BNU;Agua Tratada;0.000000;1.000000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;14
+Portaria GM/MS Nº888 5/21;36;Àgua tratada;Água - BNU;Agua Tratada;0.000000;6.000000;Intensidade;1;;;false;;GM888_Agua_Tratada.csv;15
+Portaria GM/MS Nº888 5/21;36;;Água - BNU;Agua Tratada;0.000000;6.000000;Intensidade;1;;;false;;GM888_Agua_Tratada.csv;16
+Portaria GM/MS Nº888 5/21;43;;Água - BNU;Agua Tratada;0.000000;250.000000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;17
+Portaria GM/MS Nº888 5/21;47;;Água - BNU;Agua Tratada;0.000000;0.050000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;18
+Portaria GM/MS Nº888 5/21;48;;Água - BNU;Agua Tratada;0.000000;5.000000;NTU;1;;;false;;GM888_Agua_Tratada.csv;19
+Portaria GM/MS Nº888 5/21;56;;Água - BNU;Agua Tratada;0.000000;0.000001;Aus/Pres em 100mL;1;;;false;;GM888_Agua_Tratada.csv;20
+Portaria GM/MS Nº888 5/21;57;;Água - BNU;Agua Tratada;0.000000;1.000000;NMP/100 mL;1;;;false;;GM888_Agua_Tratada.csv;21
+Portaria GM/MS Nº888 5/21;58;;Água - BNU;Agua Tratada;0.000000;1.000000;UFC/100mL;1;;;false;;GM888_Agua_Tratada.csv;22
+Portaria GM/MS Nº888 5/21;60;;Água - BNU;Agua Tratada;0.000000;20000.000000;células/mL;1;;;false;;GM888_Agua_Tratada.csv;23
+Portaria GM/MS Nº888 5/21;62;;Água - BNU;Agua Tratada;0.000000;1.000000;UFC/100mL;1;;;false;;GM888_Agua_Tratada.csv;24
+Portaria GM/MS Nº888 5/21;63;;Água - BNU;Agua Tratada;0.000000;1.000000;NMP/100 mL;1;;;false;;GM888_Agua_Tratada.csv;25
+Portaria GM/MS Nº888 5/21;67;;Água - BNU;Agua Tratada;0.000000;1.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;26
+Portaria GM/MS Nº888 5/21;68;;Água - BNU;Agua Tratada;0.000000;3.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;27
+Portaria GM/MS Nº888 5/21;217;;Água - BNU;Agua Tratada;0.000000;0.200000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;28
+Portaria GM/MS Nº888 5/21;218;;Água - BNU;Agua Tratada;0.000000;0.006000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;29
+Portaria GM/MS Nº888 5/21;219;;Água - BNU;Agua Tratada;0.000000;0.010000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;30
+Portaria GM/MS Nº888 5/21;220;;Água - BNU;Agua Tratada;0.000000;0.700000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;31
+Portaria GM/MS Nº888 5/21;224;;Água - BNU;Agua Tratada;0.000000;0.003000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;32
+Portaria GM/MS Nº888 5/21;226;;Água - BNU;Agua Tratada;0.000000;0.010000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;33
+Portaria GM/MS Nº888 5/21;227;;Água - BNU;Agua Tratada;0.000000;2.000000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;34
+Portaria GM/MS Nº888 5/21;229;;Água - BNU;Agua Tratada;0.000000;0.050000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;35
+Portaria GM/MS Nº888 5/21;231;;Água - BNU;Agua Tratada;0.000000;0.300000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;36
+Portaria GM/MS Nº888 5/21;233;;Água - BNU;Agua Tratada;0.000000;0.100000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;37
+Portaria GM/MS Nº888 5/21;235;;Água - BNU;Agua Tratada;0.000000;0.001000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;38
+Portaria GM/MS Nº888 5/21;237;;Água - BNU;Agua Tratada;0.000000;0.070000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;39
+Portaria GM/MS Nº888 5/21;241;;Água - BNU;Agua Tratada;0.000000;0.040000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;40
+Portaria GM/MS Nº888 5/21;243;;Água - BNU;Agua Tratada;0.000000;200.000000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;41
+Portaria GM/MS Nº888 5/21;244;;Água - BNU;Agua Tratada;0.000000;0.030000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;42
+Portaria GM/MS Nº888 5/21;249;;Água - BNU;Agua Tratada;0.000000;5.000000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;43
+Portaria GM/MS Nº888 5/21;348;;Água - BNU;Agua Tratada;0.000000;0.400000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;44
+Portaria GM/MS Nº888 5/21;356;;Água - BNU;Agua Tratada;0.000000;8.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;45
+Portaria GM/MS Nº888 5/21;382;;Água - BNU;Agua Tratada;0.000000;0.200000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;46
+Portaria GM/MS Nº888 5/21;386;;Água - BNU;Agua Tratada;0.000000;0.200000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;47
+Portaria GM/MS Nº888 5/21;392;;Água - BNU;Agua Tratada;0.000000;9.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;48
+Portaria GM/MS Nº888 5/21;396;;Água - BNU;Agua Tratada;0.000000;2.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;49
+Portaria GM/MS Nº888 5/21;417;;Água - BNU;Agua Tratada;0.000000;20.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;50
+Portaria GM/MS Nº888 5/21;419;;Água - BNU;Agua Tratada;0.000000;2.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;51
+Portaria GM/MS Nº888 5/21;421;;Água - BNU;Agua Tratada;0.000000;45.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;52
+Portaria GM/MS Nº888 5/21;422;;Água - BNU;Agua Tratada;0.000000;25.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;53
+Portaria GM/MS Nº888 5/21;423;;Água - BNU;Agua Tratada;0.000000;20.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;54
+Portaria GM/MS Nº888 5/21;424;;Água - BNU;Agua Tratada;0.000000;10.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;55
+Portaria GM/MS Nº888 5/21;429;;Água - BNU;Agua Tratada;0.000000;6.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;56
+Portaria GM/MS Nº888 5/21;430;;Água - BNU;Agua Tratada;0.000000;20.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;57
+Portaria GM/MS Nº888 5/21;436;;Água - BNU;Agua Tratada;0.000000;1.200000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;58
+Portaria GM/MS Nº888 5/21;440;;Água - BNU;Agua Tratada;0.000000;60.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;59
+Portaria GM/MS Nº888 5/21;665;;Água - BNU;Agua Tratada;0.000000;20.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;60
+Portaria GM/MS Nº888 5/21;669;;Água - BNU;Agua Tratada;0.000000;0.000000;mg/L;1;;;true;Revisar: máximo igual a zero;GM888_Agua_Tratada.csv;61
+Portaria GM/MS Nº888 5/21;671;;Água - BNU;Agua Tratada;0.000000;4.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;62
+Portaria GM/MS Nº888 5/21;672;;Água - BNU;Agua Tratada;0.000000;5.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;63
+Portaria GM/MS Nº888 5/21;673;;Água - BNU;Agua Tratada;0.000000;4.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;64
+Portaria GM/MS Nº888 5/21;676;;Água - BNU;Agua Tratada;0.000000;30.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;65
+Portaria GM/MS Nº888 5/21;678;;Água - BNU;Agua Tratada;0.000000;40.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;66
+Portaria GM/MS Nº888 5/21;680;;Água - BNU;Agua Tratada;0.000000;0.020000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;67
+Portaria GM/MS Nº888 5/21;682;;Água - BNU;Agua Tratada;0.000000;300.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;68
+Portaria GM/MS Nº888 5/21;690;;Água - BNU;Agua Tratada;0.000000;5.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;69
+Portaria GM/MS Nº888 5/21;691;;Água - BNU;Agua Tratada;0.000000;0.001000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;70
+Portaria GM/MS Nº888 5/21;776;;Água - BNU;Agua Tratada;0.000000;0.000001;Aus/Pres em 100mL;1;;;false;;GM888_Agua_Tratada.csv;71
+Portaria GM/MS Nº888 5/21;777;;Água - BNU;Agua Tratada;0.200000;5.000000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;72
+Portaria GM/MS Nº888 5/21;793;;Água - BNU;Agua Tratada;6.000000;9.000000;;1;;;true;Revisar: unidade não informada;GM888_Agua_Tratada.csv;73
+Portaria GM/MS Nº888 5/21;833;;Água - BNU;Agua Tratada;0.000000;7.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;74
+Portaria GM/MS Nº888 5/21;863;;Água - BNU;Agua Tratada;0.000000;30.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;75
+Portaria GM/MS Nº888 5/21;877;;Água - BNU;Agua Tratada;0.000000;500.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;76
+Portaria GM/MS Nº888 5/21;905;;Água - BNU;Agua Tratada;0.000000;180.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;77
+Portaria GM/MS Nº888 5/21;912;;Água - BNU;Agua Tratada;0.000000;0.300000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;78
+Portaria GM/MS Nº888 5/21;924;;Água - BNU;Agua Tratada;0.000000;0.500000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;79
+Portaria GM/MS Nº888 5/21;949;;Água - BNU;Agua Tratada;0.000000;500.000000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;80
+Portaria GM/MS Nº888 5/21;989;;Água - BNU;Agua Tratada;0.000000;5.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;81
+Portaria GM/MS Nº888 5/21;1108;;Água - BNU;Agua Tratada;0.000000;1.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;82
+Portaria GM/MS Nº888 5/21;1109;;Água - BNU;Agua Tratada;0.000000;3.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;83
+Portaria GM/MS Nº888 5/21;1181;;Água - BNU;Agua Tratada;0.000000;0.500000;Bq/L;1;;;false;;GM888_Agua_Tratada.csv;84
+Portaria GM/MS Nº888 5/21;1184;;Água - BNU;Agua Tratada;0.000000;1.000000;Bq/L;1;;;false;;GM888_Agua_Tratada.csv;85
+Portaria GM/MS Nº888 5/21;1190;;Água - BNU;Agua Tratada;6.000000;9.000000;;1;;;true;Revisar: unidade não informada;GM888_Agua_Tratada.csv;86
+Portaria GM/MS Nº888 5/21;1207;;Água - BNU;Agua Tratada;0.200000;5.000000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;87
+Portaria GM/MS Nº888 5/21;2392;;Água - BNU;Agua Tratada;0.000000;0.080000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;88
+Portaria GM/MS Nº888 5/21;2393;;Água - BNU;Agua Tratada;0.000000;500.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;89
+Portaria GM/MS Nº888 5/21;2414;;Água - BNU;Agua Tratada;0.000000;5.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;90
+Portaria GM/MS Nº888 5/21;2519;;Água - BNU;Agua Tratada;0.000000;4.000000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;91
+Portaria GM/MS Nº888 5/21;3871;;Água - BNU;Agua Tratada;0.000000;0.010000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;92
+Portaria GM/MS Nº888 5/21;3873;;Água - BNU;Agua Tratada;0.000000;250.000000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;93
+Portaria GM/MS Nº888 5/21;3874;;Água - BNU;Agua Tratada;0.000000;0.700000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;94,95
+Portaria GM/MS Nº888 5/21;3877;;Água - BNU;Agua Tratada;0.000000;10.000000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;96
+Portaria GM/MS Nº888 5/21;3878;;Água - BNU;Agua Tratada;0.000000;1.000000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;97
+Portaria GM/MS Nº888 5/21;3880;;Água - BNU;Agua Tratada;0.000000;250.000000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;98
+Portaria GM/MS Nº888 5/21;3904;;Água - BNU;Agua Tratada;0.000000;5.000000;NTU;1;;;false;;GM888_Agua_Tratada.csv;99
+Portaria GM/MS Nº888 5/21;4100;;Água - BNU;Agua Tratada;0.000000;5.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;100
+Portaria GM/MS Nº888 5/21;4131;;Água - BNU;Agua Tratada;0.000000;8.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;101
+Portaria GM/MS Nº888 5/21;4134;;Água - BNU;Agua Tratada;0.000000;60.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;102
+Portaria GM/MS Nº888 5/21;4275;;Água - BNU;Agua Tratada;0.000000;36.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;103
+Portaria GM/MS Nº888 5/21;5679;;Água - BNU;Agua Tratada;0.000000;0.030000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;104,105
+Portaria GM/MS Nº888 5/21;5680;;Água - BNU;Agua Tratada;0.000000;0.200000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;106
+Portaria GM/MS Nº888 5/21;5682;;Água - BNU;Agua Tratada;0.000000;1.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;107
+Portaria GM/MS Nº888 5/21;5838;;Água - BNU;Agua Tratada;0.000000;0.400000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;108
+Portaria GM/MS Nº888 5/21;6014;;Água - BNU;Agua Tratada;0.000000;0.000000;UFC/100mL;1;;;true;Revisar: máximo igual a zero;GM888_Agua_Tratada.csv;109
+Portaria GM/MS Nº888 5/21;6015;;Água - BNU;Agua Tratada;0.000000;1.000000;UFC/100mL;1;;;false;;GM888_Agua_Tratada.csv;110
+Portaria GM/MS Nº888 5/21;6178;;Água - BNU;Agua Tratada;0.000000;0.100000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;111
+Portaria GM/MS Nº888 5/21;6486;;Água - BNU;Agua Tratada;0.000000;120.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;112
+Portaria GM/MS Nº888 5/21;6998;;Água - BNU;Agua Tratada;0.000000;0.000300;mg/L;1;;;false;;GM888_Agua_Tratada.csv;113,114
+Portaria GM/MS Nº888 5/21;7003;;Água - BNU;Agua Tratada;0.000000;0.500000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;118
+Portaria GM/MS Nº888 5/21;7011;;Água - BNU;Agua Tratada;0.000000;1.200000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;119
+Portaria GM/MS Nº888 5/21;7138;;Água - BNU;Agua Tratada;0.000000;6.000000;;1;;;true;Revisar: unidade não informada;GM888_Agua_Tratada.csv;120
+Portaria GM/MS Nº888 5/21;7166;;Água - BNU;Agua Tratada;0.000000;1.200000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;121
+Portaria GM/MS Nº888 5/21;7171;;Água - BNU;Agua Tratada;0.000000;10.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;122
+Portaria GM/MS Nº888 5/21;7172;;Água - BNU;Agua Tratada;0.000000;30.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;123
+Portaria GM/MS Nº888 5/21;7173;;Água - BNU;Agua Tratada;0.000000;1.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;124
+Portaria GM/MS Nº888 5/21;7205;;Água - BNU;Agua Tratada;0.000000;0.050000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;125
+Portaria GM/MS Nº888 5/21;7271;;Água - BNU;Agua Tratada;0.000000;48.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;126
+Portaria GM/MS Nº888 5/21;7272;;Água - BNU;Agua Tratada;0.000000;60.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;127
+Portaria GM/MS Nº888 5/21;7273;;Água - BNU;Agua Tratada;0.000000;2.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;128
+Portaria GM/MS Nº888 5/21;7274;;Água - BNU;Agua Tratada;0.000000;30.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;129
+Portaria GM/MS Nº888 5/21;7275;;Água - BNU;Agua Tratada;0.000000;30.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;130
+Portaria GM/MS Nº888 5/21;7276;;Água - BNU;Agua Tratada;0.000000;1.200000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;131
+Portaria GM/MS Nº888 5/21;7277;;Água - BNU;Agua Tratada;0.000000;1.200000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;132
+Portaria GM/MS Nº888 5/21;7278;;Água - BNU;Agua Tratada;0.000000;30.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;133
+Portaria GM/MS Nº888 5/21;7279;;Água - BNU;Agua Tratada;0.000000;120.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;134
+Portaria GM/MS Nº888 5/21;7280;;Água - BNU;Agua Tratada;0.000000;8.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;135
+Portaria GM/MS Nº888 5/21;7281;;Água - BNU;Agua Tratada;0.000000;7.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;136
+Portaria GM/MS Nº888 5/21;7282;;Água - BNU;Agua Tratada;0.000000;13.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;137
+Portaria GM/MS Nº888 5/21;7283;;Água - BNU;Agua Tratada;0.000000;60.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;138
+Portaria GM/MS Nº888 5/21;7284;;Água - BNU;Agua Tratada;0.000000;30.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;139
+Portaria GM/MS Nº888 5/21;7285;;Água - BNU;Agua Tratada;0.000000;3.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;140
+Portaria GM/MS Nº888 5/21;7286;;Água - BNU;Agua Tratada;0.000000;90.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;141
+Portaria GM/MS Nº888 5/21;7287;;Água - BNU;Agua Tratada;0.000000;6.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;142
+Portaria GM/MS Nº888 5/21;7288;;Água - BNU;Agua Tratada;0.000000;0.700000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;143
+Portaria GM/MS Nº888 5/21;7289;;Água - BNU;Agua Tratada;0.000000;0.000100;mg/L;1;;;false;;GM888_Agua_Tratada.csv;144
+Portaria GM/MS Nº888 5/21;7290;;Água - BNU;Agua Tratada;0.000000;1.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;145
+Portaria GM/MS Nº888 5/21;7291;;Água - BNU;Agua Tratada;0.000000;25.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;146
+Portaria GM/MS Nº888 5/21;7324;;Água - BNU;Agua Tratada;0.000000;0.300000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;147
+Portaria GM/MS Nº888 5/21;7865;;Água - BNU;Agua Tratada;0.000000;1.000000;;1;;;true;Revisar: unidade não informada;GM888_Agua_Tratada.csv;148
+Portaria GM/MS Nº888 5/21;7959;;Água - BNU;Agua Tratada;0.000000;250.000000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;149
+Portaria GM/MS Nº888 5/21;8013;;Água - BNU;Agua Tratada;0.000000;0.500000;Bq/L;1;;;false;;GM888_Agua_Tratada.csv;150
+Portaria GM/MS Nº888 5/21;8014;;Água - BNU;Agua Tratada;0.000000;1.000000;Bq/L;1;;;false;;GM888_Agua_Tratada.csv;151
+Portaria GM/MS Nº888 5/21;8020;;Água - BNU;Agua Tratada;0.000000;1.500000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;152
+Portaria GM/MS Nº888 5/21;8362;;Água - BNU;Agua Tratada;0.000000;0.001000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;153
+Portaria GM/MS Nº888 5/21;8702;;Água - BNU;Agua Tratada;0.000000;1.000000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;154
+Portaria GM/MS Nº888 5/21;8779;;Água - BNU;Agua Tratada;0.000000;300.000000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;155
+Portaria GM/MS Nº888 5/21;10496;;Água - BNU;Agua Tratada;0.000000;0.006000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;156
+Portaria GM/MS Nº888 5/21;10498;;Água - BNU;Agua Tratada;0.000000;1.000000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;157
+Portaria GM/MS Nº888 5/21;10500;;Água - BNU;Agua Tratada;0.000000;0.010000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;158
+Portaria GM/MS Nº888 5/21;10504;;Água - BNU;Agua Tratada;0.000000;0.700000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;159
+Portaria GM/MS Nº888 5/21;10508;;Água - BNU;Agua Tratada;0.000000;0.003000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;160
+Portaria GM/MS Nº888 5/21;10512;;Água - BNU;Agua Tratada;0.000000;0.010000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;161
+Portaria GM/MS Nº888 5/21;10515;;Água - BNU;Agua Tratada;0.000000;0.050000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;162
+Portaria GM/MS Nº888 5/21;10516;;Água - BNU;Agua Tratada;0.000000;2.000000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;163
+Portaria GM/MS Nº888 5/21;10525;;Água - BNU;Agua Tratada;0.000000;0.300000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;164
+Portaria GM/MS Nº888 5/21;10528;;Água - BNU;Agua Tratada;0.000000;0.100000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;165
+Portaria GM/MS Nº888 5/21;10531;;Água - BNU;Agua Tratada;0.000000;0.001000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;166
+Portaria GM/MS Nº888 5/21;10534;;Água - BNU;Agua Tratada;0.000000;0.070000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;167
+Portaria GM/MS Nº888 5/21;10544;;Água - BNU;Agua Tratada;0.000000;200.000000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;168
+Portaria GM/MS Nº888 5/21;10546;;Água - BNU;Agua Tratada;0.000000;0.040000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;169
+Portaria GM/MS Nº888 5/21;10550;;Água - BNU;Agua Tratada;0.000000;0.030000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;170
+Portaria GM/MS Nº888 5/21;10554;;Água - BNU;Agua Tratada;0.000000;5.000000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;171
+Portaria GM/MS Nº888 5/21;10662;;Água - BNU;Agua Tratada;0.000000;0.200000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;172,173
+Portaria GM/MS Nº888 5/21;10663;;Água - BNU;Agua Tratada;0.000000;0.050000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;174
+Portaria GM/MS Nº888 5/21;10666;;Água - BNU;Agua Tratada;0.000000;0.010000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;175
+Portaria GM/MS Nº888 5/21;10668;;Água - BNU;Agua Tratada;0.000000;0.006000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;176
+Portaria GM/MS Nº888 5/21;10670;;Água - BNU;Agua Tratada;0.000000;0.010000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;177
+Portaria GM/MS Nº888 5/21;10671;;Água - BNU;Agua Tratada;0.000000;0.010000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;178
+Portaria GM/MS Nº888 5/21;10673;;Água - BNU;Agua Tratada;0.000000;0.700000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;179
+Portaria GM/MS Nº888 5/21;10674;;Água - BNU;Agua Tratada;0.000000;0.003000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;180
+Portaria GM/MS Nº888 5/21;10678;;Água - BNU;Agua Tratada;0.000000;2.000000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;181
+Portaria GM/MS Nº888 5/21;10680;;Água - BNU;Agua Tratada;0.000000;0.070000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;182
+Portaria GM/MS Nº888 5/21;10682;;Água - BNU;Agua Tratada;0.000000;0.040000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;183
+Portaria GM/MS Nº888 5/21;10684;;Água - BNU;Agua Tratada;0.000000;0.030000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;184
+Portaria GM/MS Nº888 5/21;10691;;Água - BNU;Agua Tratada;0.000000;0.100000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;188,189
+Portaria GM/MS Nº888 5/21;10693;;Água - BNU;Agua Tratada;0.000000;200.000000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;190,191
+Portaria GM/MS Nº888 5/21;10695;;Água - BNU;Agua Tratada;0.000000;5.000000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;192,193
+Portaria GM/MS Nº888 5/21;10720;;Água - BNU;Agua Tratada;0.000000;0.001000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;194
+Portaria GM/MS Nº888 5/21;10862;;Água - BNU;Agua Tratada;0.000000;500.000000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;195
+Portaria GM/MS Nº888 5/21;11643;;Água - BNU;Agua Tratada;0.000000;0.080000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;196
+Portaria GM/MS Nº888 5/21;11648;;Água - BNU;Agua Tratada;0.000000;30.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;197
+Portaria GM/MS Nº888 5/21;11649;;Água - BNU;Agua Tratada;0.000000;0.500000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;198
+Portaria GM/MS Nº888 5/21;11891;;Água - BNU;Agua Tratada;0.000000;500.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;199
+Portaria GM/MS Nº888 5/21;11892;;Água - BNU;Agua Tratada;0.000000;0.500000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;200
+Portaria GM/MS Nº888 5/21;11893;;Água - BNU;Agua Tratada;0.000000;120.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;201
+Portaria GM/MS Nº888 5/21;11894;;Água - BNU;Agua Tratada;0.000000;30.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;202
+Portaria GM/MS Nº888 5/21;11898;;Água - BNU;Agua Tratada;0.000000;10.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;203
+Portaria GM/MS Nº888 5/21;11899;;Água - BNU;Agua Tratada;0.000000;60.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;204
+Portaria GM/MS Nº888 5/21;11900;;Água - BNU;Agua Tratada;0.000000;2.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;205
+Portaria GM/MS Nº888 5/21;11901;;Água - BNU;Agua Tratada;0.000000;30.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;206
+Portaria GM/MS Nº888 5/21;11902;;Água - BNU;Agua Tratada;0.000000;30.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;207
+Portaria GM/MS Nº888 5/21;11903;;Água - BNU;Agua Tratada;0.000000;30.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;208
+Portaria GM/MS Nº888 5/21;11904;;Água - BNU;Agua Tratada;0.000000;1.200000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;209
+Portaria GM/MS Nº888 5/21;11905;;Água - BNU;Agua Tratada;0.000000;60.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;210
+Portaria GM/MS Nº888 5/21;11906;;Água - BNU;Agua Tratada;0.000000;1.200000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;211
+Portaria GM/MS Nº888 5/21;11907;;Água - BNU;Agua Tratada;0.000000;30.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;212
+Portaria GM/MS Nº888 5/21;11908;;Água - BNU;Agua Tratada;0.000000;120.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;213
+Portaria GM/MS Nº888 5/21;11909;;Água - BNU;Agua Tratada;0.000000;7.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;214
+Portaria GM/MS Nº888 5/21;11910;;Água - BNU;Agua Tratada;0.000000;13.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;215
+Portaria GM/MS Nº888 5/21;11911;;Água - BNU;Agua Tratada;0.000000;60.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;216
+Portaria GM/MS Nº888 5/21;11912;;Água - BNU;Agua Tratada;0.000000;0.300000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;217
+Portaria GM/MS Nº888 5/21;11913;;Água - BNU;Agua Tratada;0.000000;30.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;218
+Portaria GM/MS Nº888 5/21;11914;;Água - BNU;Agua Tratada;0.000000;3.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;219
+Portaria GM/MS Nº888 5/21;11915;;Água - BNU;Agua Tratada;0.000000;180.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;220
+Portaria GM/MS Nº888 5/21;11916;;Água - BNU;Agua Tratada;0.000000;36.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;221
+Portaria GM/MS Nº888 5/21;11917;;Água - BNU;Agua Tratada;0.000000;90.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;222
+Portaria GM/MS Nº888 5/21;11918;;Água - BNU;Agua Tratada;0.000000;6.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;223
+Portaria GM/MS Nº888 5/21;11921;;Água - BNU;Agua Tratada;0.000000;7.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;224
+Portaria GM/MS Nº888 5/21;11976;;Água - BNU;Agua Tratada;0.000000;7.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;225
+Portaria GM/MS Nº888 5/21;11977;;Água - BNU;Agua Tratada;0.000000;10.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;226
+Portaria GM/MS Nº888 5/21;11978;;Água - BNU;Agua Tratada;0.000000;120.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;227
+Portaria GM/MS Nº888 5/21;11979;;Água - BNU;Agua Tratada;0.000000;8.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;228
+Portaria GM/MS Nº888 5/21;11980;;Água - BNU;Agua Tratada;0.000000;30.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;229
+Portaria GM/MS Nº888 5/21;11982;;Água - BNU;Agua Tratada;0.000000;180.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;230
+Portaria GM/MS Nº888 5/21;11990;;Água - BNU;Agua Tratada;0.000000;500.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;231
+Portaria GM/MS Nº888 5/21;15161;;Água - BNU;Agua Tratada;0.000000;1.200000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;232
+Portaria GM/MS Nº888 5/21;15198;;Água - BNU;Agua Tratada;0.000000;0.000000;mg/L;1;;;true;Revisar: máximo igual a zero;GM888_Agua_Tratada.csv;233
+Portaria GM/MS Nº888 5/21;15201;;Água - BNU;Agua Tratada;0.000000;0.030000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;234
+Portaria GM/MS Nº888 5/21;15202;;Água - BNU;Agua Tratada;0.000000;500.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;235
+Portaria GM/MS Nº888 5/21;15203;;Água - BNU;Agua Tratada;0.000000;2.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;236
+Portaria GM/MS Nº888 5/21;15204;;Água - BNU;Agua Tratada;0.000000;60.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;237
+Portaria GM/MS Nº888 5/21;15205;;Água - BNU;Agua Tratada;0.000000;8.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;238
+Portaria GM/MS Nº888 5/21;15206;;Água - BNU;Agua Tratada;0.000000;6.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;239
+Portaria GM/MS Nº888 5/21;15207;;Água - BNU;Agua Tratada;0.000000;2.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;240
+Portaria GM/MS Nº888 5/21;15208;;Água - BNU;Agua Tratada;0.000000;1.200000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;241
+Portaria GM/MS Nº888 5/21;15209;;Água - BNU;Agua Tratada;0.000000;36.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;242
+Portaria GM/MS Nº888 5/21;15210;;Água - BNU;Agua Tratada;0.000000;0.000300;mg/L;1;;;false;;GM888_Agua_Tratada.csv;243
+Portaria GM/MS Nº888 5/21;15211;;Água - BNU;Agua Tratada;0.000000;0.020000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;244
+Portaria GM/MS Nº888 5/21;15349;;Água - BNU;Agua Tratada;0.000000;1.200000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;245
+Portaria GM/MS Nº888 5/21;15428;;Água - BNU;Agua Tratada;0.000000;1.000000;µg/L;1;;;false;;GM888_Agua_Tratada.csv;246
+Portaria GM/MS Nº888 5/21;17079;;Água - BNU;Agua Tratada;0.000000;0.000000;UFC/100mL;1;;;true;Revisar: máximo igual a zero;GM888_Agua_Tratada.csv;247
+Portaria GM/MS Nº888 5/21;17104;;Água - BNU;Agua Tratada;0.000000;0.000000;Aus/Pres em 100mL;1;;;true;Revisar: máximo igual a zero;GM888_Agua_Tratada.csv;248
+Portaria GM/MS Nº888 5/21;17105;;Água - BNU;Agua Tratada;0.000000;0.000000;Aus/Pres em 100mL;1;;;true;Revisar: máximo igual a zero;GM888_Agua_Tratada.csv;249
+Portaria GM/MS Nº888 5/21;17120;;Água - BNU;Agua Tratada;0.000000;0.000000;Aus/Pres em 100mL;1;;;true;Revisar: máximo igual a zero;GM888_Agua_Tratada.csv;250
+Portaria GM/MS Nº888 5/21;17121;;Água - BNU;Agua Tratada;0.000000;0.000000;Aus/Pres em 100mL;1;;;true;Revisar: máximo igual a zero;GM888_Agua_Tratada.csv;251
+Portaria SES nº1468/2022;397;;Água - BNU;Água Consumo Humano;0.000000;0.300000;µg/L;1;;;false;;SES1468_Agua_Consumo_Humano.csv;2
+Portaria SES nº1468/2022;400;;Água - BNU;Água Consumo Humano;0.000000;0.070000;µg/L;1;;;false;;SES1468_Agua_Consumo_Humano.csv;3
+Portaria SES nº1468/2022;412;;Água - BNU;Água Consumo Humano;0.000000;20.000000;µg/L;1;;;false;;SES1468_Agua_Consumo_Humano.csv;4
+Portaria SES nº1468/2022;431;;Água - BNU;Água Consumo Humano;0.000000;700.000000;µg/L;1;;;false;;SES1468_Agua_Consumo_Humano.csv;5
+Portaria SES nº1468/2022;433;;Água - BNU;Água Consumo Humano;0.000000;15.000000;µg/L;1;;;false;;SES1468_Agua_Consumo_Humano.csv;6
+Portaria SES nº1468/2022;436;;Água - BNU;Água Consumo Humano;0.000000;0.160000;µg/L;1;;;false;;SES1468_Agua_Consumo_Humano.csv;7
+Portaria SES nº1468/2022;439;;Água - BNU;Água Consumo Humano;0.000000;0.070000;µg/L;1;;;false;;SES1468_Agua_Consumo_Humano.csv;8
+Portaria SES nº1468/2022;836;;Água - BNU;Água Consumo Humano;0.000000;18.000000;µg/L;1;;;false;;SES1468_Agua_Consumo_Humano.csv;9
+Portaria SES nº1468/2022;842;;Água - BNU;Água Consumo Humano;0.000000;20.000000;µg/L;1;;;false;;SES1468_Agua_Consumo_Humano.csv;10
+Portaria SES nº1468/2022;856;;Água - BNU;Água Consumo Humano;0.000000;500.000000;µg/L;1;;;false;;SES1468_Agua_Consumo_Humano.csv;11
+Portaria SES nº1468/2022;871;;Água - BNU;Água Consumo Humano;0.000000;30.000000;µg/L;1;;;false;;SES1468_Agua_Consumo_Humano.csv;12
+Portaria SES nº1468/2022;877;;Água - BNU;Água Consumo Humano;0.000000;30.000000;µg/L;1;;;false;;SES1468_Agua_Consumo_Humano.csv;13
+Portaria SES nº1468/2022;913;;Água - BNU;Água Consumo Humano;0.000000;10.000000;µg/L;1;;;false;;SES1468_Agua_Consumo_Humano.csv;14
+Portaria SES nº1468/2022;4107;;Água - BNU;Água Consumo Humano;0.000000;3.000000;µg/L;1;;;false;;SES1468_Agua_Consumo_Humano.csv;15
+Portaria SES nº1468/2022;4133;;Água - BNU;Água Consumo Humano;0.000000;10.000000;µg/L;1;;;false;;SES1468_Agua_Consumo_Humano.csv;16
+Portaria SES nº1468/2022;4134;;Água - BNU;Água Consumo Humano;0.000000;6.000000;µg/L;1;;;false;;SES1468_Agua_Consumo_Humano.csv;17
+Portaria SES nº1468/2022;4135;;Água - BNU;Água Consumo Humano;0.000000;100.000000;µg/L;1;;;false;;SES1468_Agua_Consumo_Humano.csv;18
+Portaria SES nº1468/2022;4270;;Água - BNU;Água Consumo Humano;0.000000;17.000000;µg/L;1;;;false;;SES1468_Agua_Consumo_Humano.csv;19
+Portaria SES nº1468/2022;4272;;Água - BNU;Água Consumo Humano;0.000000;120.000000;µg/L;1;;;false;;SES1468_Agua_Consumo_Humano.csv;20
+Portaria SES nº1468/2022;4276;;Água - BNU;Água Consumo Humano;0.000000;100.000000;µg/L;1;;;false;;SES1468_Agua_Consumo_Humano.csv;21
+Portaria SES nº1468/2022;6486;;Água - BNU;Água Consumo Humano;0.000000;19.500000;µg/L;1;;;false;;SES1468_Agua_Consumo_Humano.csv;22
+Portaria SES nº1468/2022;6487;;Água - BNU;Água Consumo Humano;0.000000;15.000000;µg/L;1;;;false;;SES1468_Agua_Consumo_Humano.csv;23
+Portaria SES nº1468/2022;10271;;Água - BNU;Água Consumo Humano;0.000000;15.000000;µg/L;1;;;false;;SES1468_Agua_Consumo_Humano.csv;24
+Portaria SES nº1468/2022;15141;;Água - BNU;Água Consumo Humano;0.000000;0.300000;µg/L;1;;;false;;SES1468_Agua_Consumo_Humano.csv;25
+Portaria SES nº1468/2022;15144;;Água - BNU;Água Consumo Humano;0.000000;30.000000;µg/L;1;;;false;;SES1468_Agua_Consumo_Humano.csv;26
+Portaria SES nº1468/2022;15145;;Água - BNU;Água Consumo Humano;0.000000;300.000000;µg/L;1;;;false;;SES1468_Agua_Consumo_Humano.csv;27
+Portaria SES nº1468/2022;15146;;Água - BNU;Água Consumo Humano;0.000000;100.000000;µg/L;1;;;false;;SES1468_Agua_Consumo_Humano.csv;28
+Portaria SES nº1468/2022;15147;;Água - BNU;Água Consumo Humano;0.000000;12.000000;µg/L;1;;;false;;SES1468_Agua_Consumo_Humano.csv;29
+Portaria SES nº1468/2022;15148;;Água - BNU;Água Consumo Humano;0.000000;3.000000;µg/L;1;;;false;;SES1468_Agua_Consumo_Humano.csv;30
+Portaria SES nº1468/2022;15149;;Água - BNU;Água Consumo Humano;0.000000;60.000000;µg/L;1;;;false;;SES1468_Agua_Consumo_Humano.csv;31
+Portaria SES nº1468/2022;15150;;Água - BNU;Água Consumo Humano;0.000000;120.000000;µg/L;1;;;false;;SES1468_Agua_Consumo_Humano.csv;32
+Portaria SES nº1468/2022;15151;;Água - BNU;Água Consumo Humano;0.000000;2400.000000;µg/L;1;;;false;;SES1468_Agua_Consumo_Humano.csv;33
+Portaria SES nº1468/2022;15152;;Água - BNU;Água Consumo Humano;0.000000;3.000000;µg/L;1;;;false;;SES1468_Agua_Consumo_Humano.csv;34
+Portaria SES nº1468/2022;15153;;Água - BNU;Água Consumo Humano;0.000000;120.000000;µg/L;1;;;false;;SES1468_Agua_Consumo_Humano.csv;35
+Portaria SES nº1468/2022;15154;;Água - BNU;Água Consumo Humano;0.000000;6.000000;µg/L;1;;;false;;SES1468_Agua_Consumo_Humano.csv;36
+Portaria SES nº1468/2022;15155;;Água - BNU;Água Consumo Humano;0.000000;20.000000;µg/L;1;;;false;;SES1468_Agua_Consumo_Humano.csv;37
+Portaria SES nº1468/2022;15156;;Água - BNU;Água Consumo Humano;0.000000;60.000000;µg/L;1;;;false;;SES1468_Agua_Consumo_Humano.csv;38
+Portaria SES nº1468/2022;15157;;Água - BNU;Água Consumo Humano;0.000000;5.400000;µg/L;1;;;false;;SES1468_Agua_Consumo_Humano.csv;39
+Portaria SES nº1468/2022;15158;;Água - BNU;Água Consumo Humano;0.000000;240.000000;µg/L;1;;;false;;SES1468_Agua_Consumo_Humano.csv;40
+Portaria SES nº1468/2022;15159;;Água - BNU;Água Consumo Humano;0.000000;30.000000;µg/L;1;;;false;;SES1468_Agua_Consumo_Humano.csv;41
+Portaria SES nº1468/2022;15160;;Água - BNU;Água Consumo Humano;0.000000;15.000000;µg/L;1;;;false;;SES1468_Agua_Consumo_Humano.csv;42
+Portaria SES nº1468/2022;15161;;Água - BNU;Água Consumo Humano;0.000000;0.060000;µg/L;1;;;false;;SES1468_Agua_Consumo_Humano.csv;43
+Portaria SES nº1468/2022;15162;;Água - BNU;Água Consumo Humano;0.000000;600.000000;µg/L;1;;;false;;SES1468_Agua_Consumo_Humano.csv;44
+Portaria SES nº1468/2022;15163;;Água - BNU;Água Consumo Humano;0.000000;18.000000;µg/L;1;;;false;;SES1468_Agua_Consumo_Humano.csv;45
+Portaria SES nº1468/2022;15164;;Água - BNU;Água Consumo Humano;0.000000;400.000000;µg/L;1;;;false;;SES1468_Agua_Consumo_Humano.csv;46
+Portaria SES nº1468/2022;15165;;Água - BNU;Água Consumo Humano;0.000000;9000.000000;µg/L;1;;;false;;SES1468_Agua_Consumo_Humano.csv;47
+Portaria SES nº1468/2022;15166;;Água - BNU;Água Consumo Humano;0.000000;1500.000000;µg/L;1;;;false;;SES1468_Agua_Consumo_Humano.csv;48
+Portaria SES nº1468/2022;15167;;Água - BNU;Água Consumo Humano;0.000000;60.000000;µg/L;1;;;false;;SES1468_Agua_Consumo_Humano.csv;49
+Portaria SES nº1468/2022;15168;;Água - BNU;Água Consumo Humano;0.000000;180.000000;µg/L;1;;;false;;SES1468_Agua_Consumo_Humano.csv;50
+Portaria SES nº1468/2022;15169;;Água - BNU;Água Consumo Humano;0.000000;30.000000;µg/L;1;;;false;;SES1468_Agua_Consumo_Humano.csv;51
+Portaria SES nº1468/2022;15170;;Água - BNU;Água Consumo Humano;0.000000;0.600000;µg/L;1;;;false;;SES1468_Agua_Consumo_Humano.csv;52
+Portaria SES nº1468/2022;15171;;Água - BNU;Água Consumo Humano;0.000000;100.000000;µg/L;1;;;false;;SES1468_Agua_Consumo_Humano.csv;53
+Portaria SES nº1468/2022;15172;;Água - BNU;Água Consumo Humano;0.000000;0.300000;µg/L;1;;;false;;SES1468_Agua_Consumo_Humano.csv;54
+Portaria SES nº1468/2022;15173;;Água - BNU;Água Consumo Humano;0.000000;40.000000;µg/L;1;;;false;;SES1468_Agua_Consumo_Humano.csv;55
+Portaria SES nº1468/2022;15185;;Água - BNU;Água Consumo Humano;0.000000;0.070000;µg/L;1;;;false;;SES1468_Agua_Consumo_Humano.csv;56
+Portaria SES nº1468/2022;15186;;Água - BNU;Água Consumo Humano;0.000000;15.000000;µg/L;1;;;false;;SES1468_Agua_Consumo_Humano.csv;57
+Portaria SES nº1468/2022;15187;;Água - BNU;Água Consumo Humano;0.000000;258.000000;µg/L;1;;;false;;SES1468_Agua_Consumo_Humano.csv;58
+Portaria SES nº1468/2022;15188;;Água - BNU;Água Consumo Humano;0.000000;10.000000;µg/L;1;;;false;;SES1468_Agua_Consumo_Humano.csv;59
+Portaria SES nº1468/2022;15189;;Água - BNU;Água Consumo Humano;0.000000;100.000000;µg/L;1;;;false;;SES1468_Agua_Consumo_Humano.csv;60
+Portaria SES nº1468/2022;15190;;Água - BNU;Água Consumo Humano;0.000000;30.000000;µg/L;1;;;false;;SES1468_Agua_Consumo_Humano.csv;61
+Portaria SES nº1468/2022;15191;;Água - BNU;Água Consumo Humano;0.000000;700.000000;µg/L;1;;;false;;SES1468_Agua_Consumo_Humano.csv;62
+Portaria SES nº1468/2022;15192;;Água - BNU;Água Consumo Humano;0.000000;100.000000;µg/L;1;;;false;;SES1468_Agua_Consumo_Humano.csv;63
+Portaria SES nº1468/2022;15193;;Água - BNU;Água Consumo Humano;0.000000;2.400000;µg/L;1;;;false;;SES1468_Agua_Consumo_Humano.csv;64
+Portaria SES nº1468/2022;15194;;Água - BNU;Água Consumo Humano;0.000000;8.000000;µg/L;1;;;false;;SES1468_Agua_Consumo_Humano.csv;65
+Portaria SES nº1468/2022;15195;;Água - BNU;Água Consumo Humano;0.000000;30.000000;µg/L;1;;;false;;SES1468_Agua_Consumo_Humano.csv;66
+Portaria SES nº1468/2022;15196;;Água - BNU;Água Consumo Humano;0.000000;180.000000;µg/L;1;;;false;;SES1468_Agua_Consumo_Humano.csv;67
+Portaria SES nº1468/2022;15200;;Água - BNU;Água Consumo Humano;0.000000;12.000000;µg/L;1;;;false;;SES1468_Agua_Consumo_Humano.csv;68
+Portaria SES nº1468/2022;15202;;Água - BNU;Água Consumo Humano;0.000000;30.000000;µg/L;1;;;false;;SES1468_Agua_Consumo_Humano.csv;69
+Portaria SES nº1468/2022;15208;;Água - BNU;Água Consumo Humano;0.000000;0.160000;µg/L;1;;;false;;SES1468_Agua_Consumo_Humano.csv;70
+Portaria SES nº1468/2022;397;;Água - BNU;Água Subterrânea;0.000000;0.300000;µg/L;1;;;false;;SES1468_Agua_Subterranea.csv;2
+Portaria SES nº1468/2022;400;;Água - BNU;Água Subterrânea;0.000000;0.070000;µg/L;1;;;false;;SES1468_Agua_Subterranea.csv;3
+Portaria SES nº1468/2022;412;;Água - BNU;Água Subterrânea;0.000000;20.000000;µg/L;1;;;false;;SES1468_Agua_Subterranea.csv;4
+Portaria SES nº1468/2022;431;;Água - BNU;Água Subterrânea;0.000000;700.000000;µg/L;1;;;false;;SES1468_Agua_Subterranea.csv;5
+Portaria SES nº1468/2022;433;;Água - BNU;Água Subterrânea;0.000000;15.000000;µg/L;1;;;false;;SES1468_Agua_Subterranea.csv;6
+Portaria SES nº1468/2022;436;;Água - BNU;Água Subterrânea;0.000000;0.160000;µg/L;1;;;false;;SES1468_Agua_Subterranea.csv;7
+Portaria SES nº1468/2022;439;;Água - BNU;Água Subterrânea;0.000000;0.070000;µg/L;1;;;false;;SES1468_Agua_Subterranea.csv;8
+Portaria SES nº1468/2022;836;;Água - BNU;Água Subterrânea;0.000000;18.000000;µg/L;1;;;false;;SES1468_Agua_Subterranea.csv;9
+Portaria SES nº1468/2022;842;;Água - BNU;Água Subterrânea;0.000000;20.000000;µg/L;1;;;false;;SES1468_Agua_Subterranea.csv;10
+Portaria SES nº1468/2022;856;;Água - BNU;Água Subterrânea;0.000000;500.000000;µg/L;1;;;false;;SES1468_Agua_Subterranea.csv;11
+Portaria SES nº1468/2022;871;;Água - BNU;Água Subterrânea;0.000000;30.000000;µg/L;1;;;false;;SES1468_Agua_Subterranea.csv;12
+Portaria SES nº1468/2022;877;;Água - BNU;Água Subterrânea;0.000000;30.000000;µg/L;1;;;false;;SES1468_Agua_Subterranea.csv;13
+Portaria SES nº1468/2022;913;;Água - BNU;Água Subterrânea;0.000000;10.000000;µg/L;1;;;false;;SES1468_Agua_Subterranea.csv;14
+Portaria SES nº1468/2022;4133;;Água - BNU;Água Subterrânea;0.000000;10.000000;µg/L;1;;;false;;SES1468_Agua_Subterranea.csv;15
+Portaria SES nº1468/2022;4134;;Água - BNU;Água Subterrânea;0.000000;6.000000;µg/L;1;;;false;;SES1468_Agua_Subterranea.csv;16
+Portaria SES nº1468/2022;4135;;Água - BNU;Água Subterrânea;0.000000;100.000000;µg/L;1;;;false;;SES1468_Agua_Subterranea.csv;17
+Portaria SES nº1468/2022;4270;;Água - BNU;Água Subterrânea;0.000000;17.000000;µg/L;1;;;false;;SES1468_Agua_Subterranea.csv;18
+Portaria SES nº1468/2022;4272;;Água - BNU;Água Subterrânea;0.000000;120.000000;µg/L;1;;;false;;SES1468_Agua_Subterranea.csv;19
+Portaria SES nº1468/2022;4276;;Água - BNU;Água Subterrânea;0.000000;100.000000;µg/L;1;;;false;;SES1468_Agua_Subterranea.csv;20
+Portaria SES nº1468/2022;6486;;Água - BNU;Água Subterrânea;0.000000;19.500000;µg/L;1;;;false;;SES1468_Agua_Subterranea.csv;21
+Portaria SES nº1468/2022;6487;;Água - BNU;Água Subterrânea;0.000000;15.000000;µg/L;1;;;false;;SES1468_Agua_Subterranea.csv;22
+Portaria SES nº1468/2022;7172;;Água - BNU;Água Subterrânea;0.000000;0.000000;µg/L;1;;;true;Revisar: máximo igual a zero;SES1468_Agua_Subterranea.csv;23
+Portaria SES nº1468/2022;10271;;Água - BNU;Água Subterrânea;0.000000;15.000000;µg/L;1;;;false;;SES1468_Agua_Subterranea.csv;24
+Portaria SES nº1468/2022;15141;;Água - BNU;Água Subterrânea;0.000000;0.300000;µg/L;1;;;false;;SES1468_Agua_Subterranea.csv;25
+Portaria SES nº1468/2022;15144;;Água - BNU;Água Subterrânea;0.000000;30.000000;µg/L;1;;;false;;SES1468_Agua_Subterranea.csv;26
+Portaria SES nº1468/2022;15145;;Água - BNU;Água Subterrânea;0.000000;300.000000;µg/L;1;;;false;;SES1468_Agua_Subterranea.csv;27
+Portaria SES nº1468/2022;15146;;Água - BNU;Água Subterrânea;0.000000;100.000000;µg/L;1;;;false;;SES1468_Agua_Subterranea.csv;28
+Portaria SES nº1468/2022;15147;;Água - BNU;Água Subterrânea;0.000000;12.000000;µg/L;1;;;false;;SES1468_Agua_Subterranea.csv;29
+Portaria SES nº1468/2022;15148;;Água - BNU;Água Subterrânea;0.000000;3.000000;µg/L;1;;;false;;SES1468_Agua_Subterranea.csv;30
+Portaria SES nº1468/2022;15149;;Água - BNU;Água Subterrânea;0.000000;60.000000;µg/L;1;;;false;;SES1468_Agua_Subterranea.csv;31
+Portaria SES nº1468/2022;15150;;Água - BNU;Água Subterrânea;0.000000;120.000000;µg/L;1;;;false;;SES1468_Agua_Subterranea.csv;32
+Portaria SES nº1468/2022;15151;;Água - BNU;Água Subterrânea;0.000000;2400.000000;µg/L;1;;;false;;SES1468_Agua_Subterranea.csv;33
+Portaria SES nº1468/2022;15152;;Água - BNU;Água Subterrânea;0.000000;3.000000;µg/L;1;;;false;;SES1468_Agua_Subterranea.csv;34
+Portaria SES nº1468/2022;15153;;Água - BNU;Água Subterrânea;0.000000;120.000000;µg/L;1;;;false;;SES1468_Agua_Subterranea.csv;35
+Portaria SES nº1468/2022;15154;;Água - BNU;Água Subterrânea;0.000000;6.000000;µg/L;1;;;false;;SES1468_Agua_Subterranea.csv;36
+Portaria SES nº1468/2022;15155;;Água - BNU;Água Subterrânea;0.000000;20.000000;µg/L;1;;;false;;SES1468_Agua_Subterranea.csv;37
+Portaria SES nº1468/2022;15156;;Água - BNU;Água Subterrânea;0.000000;60.000000;µg/L;1;;;false;;SES1468_Agua_Subterranea.csv;38
+Portaria SES nº1468/2022;15157;;Água - BNU;Água Subterrânea;0.000000;5.400000;µg/L;1;;;false;;SES1468_Agua_Subterranea.csv;39
+Portaria SES nº1468/2022;15158;;Água - BNU;Água Subterrânea;0.000000;240.000000;µg/L;1;;;false;;SES1468_Agua_Subterranea.csv;40
+Portaria SES nº1468/2022;15159;;Água - BNU;Água Subterrânea;0.000000;30.000000;µg/L;1;;;false;;SES1468_Agua_Subterranea.csv;41
+Portaria SES nº1468/2022;15160;;Água - BNU;Água Subterrânea;0.000000;15.000000;µg/L;1;;;false;;SES1468_Agua_Subterranea.csv;42
+Portaria SES nº1468/2022;15161;;Água - BNU;Água Subterrânea;0.000000;0.060000;µg/L;1;;;false;;SES1468_Agua_Subterranea.csv;43
+Portaria SES nº1468/2022;15162;;Água - BNU;Água Subterrânea;0.000000;600.000000;µg/L;1;;;false;;SES1468_Agua_Subterranea.csv;44
+Portaria SES nº1468/2022;15163;;Água - BNU;Água Subterrânea;0.000000;18.000000;µg/L;1;;;false;;SES1468_Agua_Subterranea.csv;45
+Portaria SES nº1468/2022;15164;;Água - BNU;Água Subterrânea;0.000000;400.000000;µg/L;1;;;false;;SES1468_Agua_Subterranea.csv;46
+Portaria SES nº1468/2022;15165;;Água - BNU;Água Subterrânea;0.000000;9000.000000;µg/L;1;;;false;;SES1468_Agua_Subterranea.csv;47
+Portaria SES nº1468/2022;15166;;Água - BNU;Água Subterrânea;0.000000;1500.000000;µg/L;1;;;false;;SES1468_Agua_Subterranea.csv;48
+Portaria SES nº1468/2022;15167;;Água - BNU;Água Subterrânea;0.000000;60.000000;µg/L;1;;;false;;SES1468_Agua_Subterranea.csv;49
+Portaria SES nº1468/2022;15168;;Água - BNU;Água Subterrânea;0.000000;180.000000;µg/L;1;;;false;;SES1468_Agua_Subterranea.csv;50
+Portaria SES nº1468/2022;15169;;Água - BNU;Água Subterrânea;0.000000;30.000000;µg/L;1;;;false;;SES1468_Agua_Subterranea.csv;51
+Portaria SES nº1468/2022;15170;;Água - BNU;Água Subterrânea;0.000000;0.600000;µg/L;1;;;false;;SES1468_Agua_Subterranea.csv;52
+Portaria SES nº1468/2022;15171;;Água - BNU;Água Subterrânea;0.000000;100.000000;µg/L;1;;;false;;SES1468_Agua_Subterranea.csv;53
+Portaria SES nº1468/2022;15172;;Água - BNU;Água Subterrânea;0.000000;0.300000;µg/L;1;;;false;;SES1468_Agua_Subterranea.csv;54
+Portaria SES nº1468/2022;15173;;Água - BNU;Água Subterrânea;0.000000;40.000000;µg/L;1;;;false;;SES1468_Agua_Subterranea.csv;55
+Portaria SES nº1468/2022;15185;;Água - BNU;Água Subterrânea;0.000000;0.070000;µg/L;1;;;false;;SES1468_Agua_Subterranea.csv;56
+Portaria SES nº1468/2022;15186;;Água - BNU;Água Subterrânea;0.000000;15.000000;µg/L;1;;;false;;SES1468_Agua_Subterranea.csv;57
+Portaria SES nº1468/2022;15187;;Água - BNU;Água Subterrânea;0.000000;258.000000;µg/L;1;;;false;;SES1468_Agua_Subterranea.csv;58
+Portaria SES nº1468/2022;15188;;Água - BNU;Água Subterrânea;0.000000;10.000000;µg/L;1;;;false;;SES1468_Agua_Subterranea.csv;59
+Portaria SES nº1468/2022;15189;;Água - BNU;Água Subterrânea;0.000000;100.000000;µg/L;1;;;false;;SES1468_Agua_Subterranea.csv;60
+Portaria SES nº1468/2022;15190;;Água - BNU;Água Subterrânea;0.000000;30.000000;µg/L;1;;;false;;SES1468_Agua_Subterranea.csv;61
+Portaria SES nº1468/2022;15191;;Água - BNU;Água Subterrânea;0.000000;700.000000;µg/L;1;;;false;;SES1468_Agua_Subterranea.csv;62
+Portaria SES nº1468/2022;15192;;Água - BNU;Água Subterrânea;0.000000;100.000000;µg/L;1;;;false;;SES1468_Agua_Subterranea.csv;63
+Portaria SES nº1468/2022;15193;;Água - BNU;Água Subterrânea;0.000000;2.400000;µg/L;1;;;false;;SES1468_Agua_Subterranea.csv;64
+Portaria SES nº1468/2022;15194;;Água - BNU;Água Subterrânea;0.000000;8.000000;µg/L;1;;;false;;SES1468_Agua_Subterranea.csv;65
+Portaria SES nº1468/2022;15195;;Água - BNU;Água Subterrânea;0.000000;30.000000;µg/L;1;;;false;;SES1468_Agua_Subterranea.csv;66
+Portaria SES nº1468/2022;15196;;Água - BNU;Água Subterrânea;0.000000;180.000000;µg/L;1;;;false;;SES1468_Agua_Subterranea.csv;67
+Portaria SES nº1468/2022;15200;;Água - BNU;Água Subterrânea;0.000000;12.000000;µg/L;1;;;false;;SES1468_Agua_Subterranea.csv;68
+Portaria SES nº1468/2022;15202;;Água - BNU;Água Subterrânea;0.000000;30.000000;µg/L;1;;;false;;SES1468_Agua_Subterranea.csv;69
+Portaria SES nº1468/2022;15208;;Água - BNU;Água Subterrânea;0.000000;0.160000;µg/L;1;;;false;;SES1468_Agua_Subterranea.csv;70
+Portaria SES nº1468/2022;16806;;Água - BNU;Água Subterrânea;0.000000;20.000000;µg/L;1;;;false;;SES1468_Agua_Subterranea.csv;71
+Portaria SES nº1468/2022;397;;Água - BNU;Água Superficial (Água doce);0.000000;0.000000;µg/L;1;;;true;Revisar: máximo igual a zero;SES1468_Agua_Superficial.csv;2
+Portaria SES nº1468/2022;400;;Água - BNU;Água Superficial (Água doce);0.000000;0.070000;µg/L;1;;;false;;SES1468_Agua_Superficial.csv;3
+Portaria SES nº1468/2022;412;;Água - BNU;Água Superficial (Água doce);0.000000;20.000000;µg/L;1;;;false;;SES1468_Agua_Superficial.csv;4
+Portaria SES nº1468/2022;431;;Água - BNU;Água Superficial (Água doce);0.000000;700.000000;µg/L;1;;;false;;SES1468_Agua_Superficial.csv;5
+Portaria SES nº1468/2022;433;;Água - BNU;Água Superficial (Água doce);0.000000;15.000000;µg/L;1;;;false;;SES1468_Agua_Superficial.csv;6
+Portaria SES nº1468/2022;436;;Água - BNU;Água Superficial (Água doce);0.000000;0.160000;µg/L;1;;;false;;SES1468_Agua_Superficial.csv;7
+Portaria SES nº1468/2022;439;;Água - BNU;Água Superficial (Água doce);0.000000;0.070000;µg/L;1;;;false;;SES1468_Agua_Superficial.csv;8
+Portaria SES nº1468/2022;836;;Água - BNU;Água Superficial (Água doce);0.000000;18.000000;µg/L;1;;;false;;SES1468_Agua_Superficial.csv;9
+Portaria SES nº1468/2022;842;;Água - BNU;Água Superficial (Água doce);0.000000;20.000000;µg/L;1;;;false;;SES1468_Agua_Superficial.csv;10
+Portaria SES nº1468/2022;856;;Água - BNU;Água Superficial (Água doce);0.000000;500.000000;µg/L;1;;;false;;SES1468_Agua_Superficial.csv;11
+Portaria SES nº1468/2022;877;;Água - BNU;Água Superficial (Água doce);0.000000;30.000000;µg/L;1;;;false;;SES1468_Agua_Superficial.csv;12
+Portaria SES nº1468/2022;4133;;Água - BNU;Água Superficial (Água doce);0.000000;10.000000;µg/L;1;;;false;;SES1468_Agua_Superficial.csv;13
+Portaria SES nº1468/2022;4134;;Água - BNU;Água Superficial (Água doce);0.000000;6.000000;µg/L;1;;;false;;SES1468_Agua_Superficial.csv;14
+Portaria SES nº1468/2022;4135;;Água - BNU;Água Superficial (Água doce);0.000000;100.000000;µg/L;1;;;false;;SES1468_Agua_Superficial.csv;15
+Portaria SES nº1468/2022;4270;;Água - BNU;Água Superficial (Água doce);0.000000;17.000000;µg/L;1;;;false;;SES1468_Agua_Superficial.csv;16
+Portaria SES nº1468/2022;4272;;Água - BNU;Água Superficial (Água doce);0.000000;120.000000;µg/L;1;;;false;;SES1468_Agua_Superficial.csv;17
+Portaria SES nº1468/2022;4276;;Água - BNU;Água Superficial (Água doce);0.000000;100.000000;µg/L;1;;;false;;SES1468_Agua_Superficial.csv;18
+Portaria SES nº1468/2022;6486;;Água - BNU;Água Superficial (Água doce);0.000000;19.500000;µg/L;1;;;false;;SES1468_Agua_Superficial.csv;19
+Portaria SES nº1468/2022;6487;;Água - BNU;Água Superficial (Água doce);0.000000;15.000000;µg/L;1;;;false;;SES1468_Agua_Superficial.csv;20
+Portaria SES nº1468/2022;10271;;Água - BNU;Água Superficial (Água doce);0.000000;15.000000;µg/L;1;;;false;;SES1468_Agua_Superficial.csv;21
+Portaria SES nº1468/2022;15141;;Água - BNU;Água Superficial (Água doce);0.000000;0.300000;µg/L;1;;;false;;SES1468_Agua_Superficial.csv;22
+Portaria SES nº1468/2022;15144;;Água - BNU;Água Superficial (Água doce);0.000000;30.000000;µg/L;1;;;false;;SES1468_Agua_Superficial.csv;23
+Portaria SES nº1468/2022;15145;;Água - BNU;Água Superficial (Água doce);0.000000;300.000000;µg/L;1;;;false;;SES1468_Agua_Superficial.csv;24
+Portaria SES nº1468/2022;15146;;Água - BNU;Água Superficial (Água doce);0.000000;100.000000;µg/L;1;;;false;;SES1468_Agua_Superficial.csv;25
+Portaria SES nº1468/2022;15147;;Água - BNU;Água Superficial (Água doce);0.000000;12.000000;µg/L;1;;;false;;SES1468_Agua_Superficial.csv;26
+Portaria SES nº1468/2022;15148;;Água - BNU;Água Superficial (Água doce);0.000000;3.000000;µg/L;1;;;false;;SES1468_Agua_Superficial.csv;27
+Portaria SES nº1468/2022;15149;;Água - BNU;Água Superficial (Água doce);0.000000;60.000000;µg/L;1;;;false;;SES1468_Agua_Superficial.csv;28
+Portaria SES nº1468/2022;15150;;Água - BNU;Água Superficial (Água doce);0.000000;120.000000;µg/L;1;;;false;;SES1468_Agua_Superficial.csv;29
+Portaria SES nº1468/2022;15151;;Água - BNU;Água Superficial (Água doce);0.000000;2400.000000;µg/L;1;;;false;;SES1468_Agua_Superficial.csv;30
+Portaria SES nº1468/2022;15152;;Água - BNU;Água Superficial (Água doce);0.000000;3.000000;µg/L;1;;;false;;SES1468_Agua_Superficial.csv;31
+Portaria SES nº1468/2022;15153;;Água - BNU;Água Superficial (Água doce);0.000000;120.000000;µg/L;1;;;false;;SES1468_Agua_Superficial.csv;32
+Portaria SES nº1468/2022;15154;;Água - BNU;Água Superficial (Água doce);0.000000;6.000000;µg/L;1;;;false;;SES1468_Agua_Superficial.csv;33
+Portaria SES nº1468/2022;15155;;Água - BNU;Água Superficial (Água doce);0.000000;20.000000;µg/L;1;;;false;;SES1468_Agua_Superficial.csv;34
+Portaria SES nº1468/2022;15156;;Água - BNU;Água Superficial (Água doce);0.000000;60.000000;µg/L;1;;;false;;SES1468_Agua_Superficial.csv;35
+Portaria SES nº1468/2022;15157;;Água - BNU;Água Superficial (Água doce);0.000000;5.400000;µg/L;1;;;false;;SES1468_Agua_Superficial.csv;36
+Portaria SES nº1468/2022;15158;;Água - BNU;Água Superficial (Água doce);0.000000;240.000000;µg/L;1;;;false;;SES1468_Agua_Superficial.csv;37
+Portaria SES nº1468/2022;15159;;Água - BNU;Água Superficial (Água doce);0.000000;30.000000;µg/L;1;;;false;;SES1468_Agua_Superficial.csv;38
+Portaria SES nº1468/2022;15160;;Água - BNU;Água Superficial (Água doce);0.000000;15.000000;µg/L;1;;;false;;SES1468_Agua_Superficial.csv;39
+Portaria SES nº1468/2022;15161;;Água - BNU;Água Superficial (Água doce);0.000000;0.060000;µg/L;1;;;false;;SES1468_Agua_Superficial.csv;40
+Portaria SES nº1468/2022;15162;;Água - BNU;Água Superficial (Água doce);0.000000;600.000000;µg/L;1;;;false;;SES1468_Agua_Superficial.csv;41
+Portaria SES nº1468/2022;15163;;Água - BNU;Água Superficial (Água doce);0.000000;18.000000;µg/L;1;;;false;;SES1468_Agua_Superficial.csv;42
+Portaria SES nº1468/2022;15164;;Água - BNU;Água Superficial (Água doce);0.000000;400.000000;µg/L;1;;;false;;SES1468_Agua_Superficial.csv;43
+Portaria SES nº1468/2022;15165;;Água - BNU;Água Superficial (Água doce);0.000000;9000.000000;µg/L;1;;;false;;SES1468_Agua_Superficial.csv;44
+Portaria SES nº1468/2022;15166;;Água - BNU;Água Superficial (Água doce);0.000000;1500.000000;µg/L;1;;;false;;SES1468_Agua_Superficial.csv;45
+Portaria SES nº1468/2022;15167;;Água - BNU;Água Superficial (Água doce);0.000000;60.000000;µg/L;1;;;false;;SES1468_Agua_Superficial.csv;46
+Portaria SES nº1468/2022;15168;;Água - BNU;Água Superficial (Água doce);0.000000;180.000000;µg/L;1;;;false;;SES1468_Agua_Superficial.csv;47
+Portaria SES nº1468/2022;15169;;Água - BNU;Água Superficial (Água doce);0.000000;30.000000;µg/L;1;;;false;;SES1468_Agua_Superficial.csv;48
+Portaria SES nº1468/2022;15170;;Água - BNU;Água Superficial (Água doce);0.000000;0.600000;µg/L;1;;;false;;SES1468_Agua_Superficial.csv;49
+Portaria SES nº1468/2022;15171;;Água - BNU;Água Superficial (Água doce);0.000000;100.000000;µg/L;1;;;false;;SES1468_Agua_Superficial.csv;50
+Portaria SES nº1468/2022;15172;;Água - BNU;Água Superficial (Água doce);0.000000;0.300000;µg/L;1;;;false;;SES1468_Agua_Superficial.csv;51
+Portaria SES nº1468/2022;15173;;Água - BNU;Água Superficial (Água doce);0.000000;40.000000;µg/L;1;;;false;;SES1468_Agua_Superficial.csv;52
+Portaria SES nº1468/2022;15185;;Água - BNU;Água Superficial (Água doce);0.000000;0.070000;µg/L;1;;;false;;SES1468_Agua_Superficial.csv;53
+Portaria SES nº1468/2022;15186;;Água - BNU;Água Superficial (Água doce);0.000000;15.000000;µg/L;1;;;false;;SES1468_Agua_Superficial.csv;54
+Portaria SES nº1468/2022;15187;;Água - BNU;Água Superficial (Água doce);0.000000;258.000000;µg/L;1;;;false;;SES1468_Agua_Superficial.csv;55
+Portaria SES nº1468/2022;15188;;Água - BNU;Água Superficial (Água doce);0.000000;10.000000;µg/L;1;;;false;;SES1468_Agua_Superficial.csv;56
+Portaria SES nº1468/2022;15189;;Água - BNU;Água Superficial (Água doce);0.000000;100.000000;µg/L;1;;;false;;SES1468_Agua_Superficial.csv;57
+Portaria SES nº1468/2022;15190;;Água - BNU;Água Superficial (Água doce);0.000000;30.000000;µg/L;1;;;false;;SES1468_Agua_Superficial.csv;58
+Portaria SES nº1468/2022;15191;;Água - BNU;Água Superficial (Água doce);0.000000;700.000000;µg/L;1;;;false;;SES1468_Agua_Superficial.csv;59
+Portaria SES nº1468/2022;15192;;Água - BNU;Água Superficial (Água doce);0.000000;100.000000;µg/L;1;;;false;;SES1468_Agua_Superficial.csv;60
+Portaria SES nº1468/2022;15193;;Água - BNU;Água Superficial (Água doce);0.000000;2.400000;µg/L;1;;;false;;SES1468_Agua_Superficial.csv;61
+Portaria SES nº1468/2022;15194;;Água - BNU;Água Superficial (Água doce);0.000000;8.000000;µg/L;1;;;false;;SES1468_Agua_Superficial.csv;62
+Portaria SES nº1468/2022;15195;;Água - BNU;Água Superficial (Água doce);0.000000;30.000000;µg/L;1;;;false;;SES1468_Agua_Superficial.csv;63
+Portaria SES nº1468/2022;15196;;Água - BNU;Água Superficial (Água doce);0.000000;180.000000;µg/L;1;;;false;;SES1468_Agua_Superficial.csv;64
+Portaria SES nº1468/2022;15200;;Água - BNU;Água Superficial (Água doce);0.000000;12.000000;µg/L;1;;;false;;SES1468_Agua_Superficial.csv;65
+Portaria SES nº1468/2022;15202;;Água - BNU;Água Superficial (Água doce);0.000000;30.000000;µg/L;1;;;false;;SES1468_Agua_Superficial.csv;66
+Portaria SES nº1468/2022;15208;;Água - BNU;Água Superficial (Água doce);0.000000;0.160000;µg/L;1;;;false;;SES1468_Agua_Superficial.csv;67
+Portaria SES nº1468/2022;397;;Água - BNU;Agua Tratada;0.000000;0.300000;µg/L;1;;;false;;SES1468_Agua_Tratada.csv;2
+Portaria SES nº1468/2022;400;;Água - BNU;Agua Tratada;0.000000;0.070000;µg/L;1;;;false;;SES1468_Agua_Tratada.csv;3
+Portaria SES nº1468/2022;412;;Água - BNU;Agua Tratada;0.000000;20.000000;µg/L;1;;;false;;SES1468_Agua_Tratada.csv;4
+Portaria SES nº1468/2022;431;;Água - BNU;Agua Tratada;0.000000;700.000000;µg/L;1;;;false;;SES1468_Agua_Tratada.csv;5
+Portaria SES nº1468/2022;433;;Água - BNU;Agua Tratada;0.000000;15.000000;µg/L;1;;;false;;SES1468_Agua_Tratada.csv;6
+Portaria SES nº1468/2022;436;;Água - BNU;Agua Tratada;0.000000;0.160000;µg/L;1;;;false;;SES1468_Agua_Tratada.csv;7
+Portaria SES nº1468/2022;439;;Água - BNU;Agua Tratada;0.000000;0.070000;µg/L;1;;;false;;SES1468_Agua_Tratada.csv;8
+Portaria SES nº1468/2022;836;;Água - BNU;Agua Tratada;0.000000;18.000000;µg/L;1;;;false;;SES1468_Agua_Tratada.csv;9
+Portaria SES nº1468/2022;842;;Água - BNU;Agua Tratada;0.000000;20.000000;µg/L;1;;;false;;SES1468_Agua_Tratada.csv;10
+Portaria SES nº1468/2022;856;;Água - BNU;Agua Tratada;0.000000;500.000000;µg/L;1;;;false;;SES1468_Agua_Tratada.csv;11
+Portaria SES nº1468/2022;871;;Água - BNU;Agua Tratada;0.000000;30.000000;µg/L;1;;;false;;SES1468_Agua_Tratada.csv;12
+Portaria SES nº1468/2022;877;;Água - BNU;Agua Tratada;0.000000;30.000000;µg/L;1;;;false;;SES1468_Agua_Tratada.csv;13
+Portaria SES nº1468/2022;913;;Água - BNU;Agua Tratada;0.000000;10.000000;µg/L;1;;;false;;SES1468_Agua_Tratada.csv;14
+Portaria SES nº1468/2022;4107;;Água - BNU;Agua Tratada;0.000000;3.000000;µg/L;1;;;false;;SES1468_Agua_Tratada.csv;15
+Portaria SES nº1468/2022;4133;;Água - BNU;Agua Tratada;0.000000;10.000000;µg/L;1;;;false;;SES1468_Agua_Tratada.csv;16
+Portaria SES nº1468/2022;4134;;Água - BNU;Agua Tratada;0.000000;6.000000;µg/L;1;;;false;;SES1468_Agua_Tratada.csv;17
+Portaria SES nº1468/2022;4135;;Água - BNU;Agua Tratada;0.000000;100.000000;µg/L;1;;;false;;SES1468_Agua_Tratada.csv;18
+Portaria SES nº1468/2022;4270;;Água - BNU;Agua Tratada;0.000000;17.000000;µg/L;1;;;false;;SES1468_Agua_Tratada.csv;19
+Portaria SES nº1468/2022;4272;;Água - BNU;Agua Tratada;0.000000;120.000000;µg/L;1;;;false;;SES1468_Agua_Tratada.csv;20
+Portaria SES nº1468/2022;4276;;Água - BNU;Agua Tratada;0.000000;100.000000;µg/L;1;;;false;;SES1468_Agua_Tratada.csv;21
+Portaria SES nº1468/2022;6486;;Água - BNU;Agua Tratada;0.000000;19.500000;µg/L;1;;;false;;SES1468_Agua_Tratada.csv;22
+Portaria SES nº1468/2022;6487;;Água - BNU;Agua Tratada;0.000000;15.000000;µg/L;1;;;false;;SES1468_Agua_Tratada.csv;23
+Portaria SES nº1468/2022;7172;;Água - BNU;Agua Tratada;0.000000;0.000000;µg/L;1;;;true;Revisar: máximo igual a zero;SES1468_Agua_Tratada.csv;24
+Portaria SES nº1468/2022;10271;;Água - BNU;Agua Tratada;0.000000;15.000000;µg/L;1;;;false;;SES1468_Agua_Tratada.csv;25
+Portaria SES nº1468/2022;15141;;Água - BNU;Agua Tratada;0.000000;0.300000;µg/L;1;;;false;;SES1468_Agua_Tratada.csv;26
+Portaria SES nº1468/2022;15144;;Água - BNU;Agua Tratada;0.000000;30.000000;µg/L;1;;;false;;SES1468_Agua_Tratada.csv;27
+Portaria SES nº1468/2022;15145;;Água - BNU;Agua Tratada;0.000000;300.000000;µg/L;1;;;false;;SES1468_Agua_Tratada.csv;28
+Portaria SES nº1468/2022;15146;;Água - BNU;Agua Tratada;0.000000;100.000000;µg/L;1;;;false;;SES1468_Agua_Tratada.csv;29
+Portaria SES nº1468/2022;15147;;Água - BNU;Agua Tratada;0.000000;12.000000;µg/L;1;;;false;;SES1468_Agua_Tratada.csv;30
+Portaria SES nº1468/2022;15148;;Água - BNU;Agua Tratada;0.000000;3.000000;µg/L;1;;;false;;SES1468_Agua_Tratada.csv;31
+Portaria SES nº1468/2022;15149;;Água - BNU;Agua Tratada;0.000000;60.000000;µg/L;1;;;false;;SES1468_Agua_Tratada.csv;32
+Portaria SES nº1468/2022;15150;;Água - BNU;Agua Tratada;0.000000;120.000000;µg/L;1;;;false;;SES1468_Agua_Tratada.csv;33
+Portaria SES nº1468/2022;15151;;Água - BNU;Agua Tratada;0.000000;2400.000000;µg/L;1;;;false;;SES1468_Agua_Tratada.csv;34
+Portaria SES nº1468/2022;15152;;Água - BNU;Agua Tratada;0.000000;3.000000;µg/L;1;;;false;;SES1468_Agua_Tratada.csv;35
+Portaria SES nº1468/2022;15153;;Água - BNU;Agua Tratada;0.000000;120.000000;µg/L;1;;;false;;SES1468_Agua_Tratada.csv;36
+Portaria SES nº1468/2022;15154;;Água - BNU;Agua Tratada;0.000000;6.000000;µg/L;1;;;false;;SES1468_Agua_Tratada.csv;37
+Portaria SES nº1468/2022;15155;;Água - BNU;Agua Tratada;0.000000;20.000000;µg/L;1;;;false;;SES1468_Agua_Tratada.csv;38
+Portaria SES nº1468/2022;15156;;Água - BNU;Agua Tratada;0.000000;60.000000;µg/L;1;;;false;;SES1468_Agua_Tratada.csv;39
+Portaria SES nº1468/2022;15157;;Água - BNU;Agua Tratada;0.000000;5.400000;µg/L;1;;;false;;SES1468_Agua_Tratada.csv;40
+Portaria SES nº1468/2022;15158;;Água - BNU;Agua Tratada;0.000000;240.000000;µg/L;1;;;false;;SES1468_Agua_Tratada.csv;41
+Portaria SES nº1468/2022;15159;;Água - BNU;Agua Tratada;0.000000;30.000000;µg/L;1;;;false;;SES1468_Agua_Tratada.csv;42
+Portaria SES nº1468/2022;15160;;Água - BNU;Agua Tratada;0.000000;15.000000;µg/L;1;;;false;;SES1468_Agua_Tratada.csv;43
+Portaria SES nº1468/2022;15161;;Água - BNU;Agua Tratada;0.000000;0.060000;µg/L;1;;;false;;SES1468_Agua_Tratada.csv;44
+Portaria SES nº1468/2022;15162;;Água - BNU;Agua Tratada;0.000000;600.000000;µg/L;1;;;false;;SES1468_Agua_Tratada.csv;45
+Portaria SES nº1468/2022;15163;;Água - BNU;Agua Tratada;0.000000;18.000000;µg/L;1;;;false;;SES1468_Agua_Tratada.csv;46
+Portaria SES nº1468/2022;15164;;Água - BNU;Agua Tratada;0.000000;400.000000;µg/L;1;;;false;;SES1468_Agua_Tratada.csv;47
+Portaria SES nº1468/2022;15165;;Água - BNU;Agua Tratada;0.000000;9000.000000;µg/L;1;;;false;;SES1468_Agua_Tratada.csv;48
+Portaria SES nº1468/2022;15166;;Água - BNU;Agua Tratada;0.000000;1500.000000;µg/L;1;;;false;;SES1468_Agua_Tratada.csv;49
+Portaria SES nº1468/2022;15167;;Água - BNU;Agua Tratada;0.000000;60.000000;µg/L;1;;;false;;SES1468_Agua_Tratada.csv;50
+Portaria SES nº1468/2022;15168;;Água - BNU;Agua Tratada;0.000000;180.000000;µg/L;1;;;false;;SES1468_Agua_Tratada.csv;51
+Portaria SES nº1468/2022;15169;;Água - BNU;Agua Tratada;0.000000;30.000000;µg/L;1;;;false;;SES1468_Agua_Tratada.csv;52
+Portaria SES nº1468/2022;15170;;Água - BNU;Agua Tratada;0.000000;0.600000;µg/L;1;;;false;;SES1468_Agua_Tratada.csv;53
+Portaria SES nº1468/2022;15171;;Água - BNU;Agua Tratada;0.000000;100.000000;µg/L;1;;;false;;SES1468_Agua_Tratada.csv;54
+Portaria SES nº1468/2022;15172;;Água - BNU;Agua Tratada;0.000000;0.300000;µg/L;1;;;false;;SES1468_Agua_Tratada.csv;55
+Portaria SES nº1468/2022;15173;;Água - BNU;Agua Tratada;0.000000;40.000000;µg/L;1;;;false;;SES1468_Agua_Tratada.csv;56
+Portaria SES nº1468/2022;15185;;Água - BNU;Agua Tratada;0.000000;0.070000;µg/L;1;;;false;;SES1468_Agua_Tratada.csv;57
+Portaria SES nº1468/2022;15186;;Água - BNU;Agua Tratada;0.000000;15.000000;µg/L;1;;;false;;SES1468_Agua_Tratada.csv;58
+Portaria SES nº1468/2022;15187;;Água - BNU;Agua Tratada;0.000000;258.000000;µg/L;1;;;false;;SES1468_Agua_Tratada.csv;59
+Portaria SES nº1468/2022;15188;;Água - BNU;Agua Tratada;0.000000;10.000000;µg/L;1;;;false;;SES1468_Agua_Tratada.csv;60
+Portaria SES nº1468/2022;15189;;Água - BNU;Agua Tratada;0.000000;100.000000;µg/L;1;;;false;;SES1468_Agua_Tratada.csv;61
+Portaria SES nº1468/2022;15190;;Água - BNU;Agua Tratada;0.000000;30.000000;µg/L;1;;;false;;SES1468_Agua_Tratada.csv;62
+Portaria SES nº1468/2022;15191;;Água - BNU;Agua Tratada;0.000000;700.000000;µg/L;1;;;false;;SES1468_Agua_Tratada.csv;63
+Portaria SES nº1468/2022;15192;;Água - BNU;Agua Tratada;0.000000;100.000000;µg/L;1;;;false;;SES1468_Agua_Tratada.csv;64
+Portaria SES nº1468/2022;15193;;Água - BNU;Agua Tratada;0.000000;2.400000;µg/L;1;;;false;;SES1468_Agua_Tratada.csv;65
+Portaria SES nº1468/2022;15194;;Água - BNU;Agua Tratada;0.000000;8.000000;µg/L;1;;;false;;SES1468_Agua_Tratada.csv;66
+Portaria SES nº1468/2022;15195;;Água - BNU;Agua Tratada;0.000000;30.000000;µg/L;1;;;false;;SES1468_Agua_Tratada.csv;67
+Portaria SES nº1468/2022;15196;;Água - BNU;Agua Tratada;0.000000;180.000000;µg/L;1;;;false;;SES1468_Agua_Tratada.csv;68
+Portaria SES nº1468/2022;15200;;Água - BNU;Agua Tratada;0.000000;12.000000;µg/L;1;;;false;;SES1468_Agua_Tratada.csv;69
+Portaria SES nº1468/2022;15202;;Água - BNU;Agua Tratada;0.000000;30.000000;µg/L;1;;;false;;SES1468_Agua_Tratada.csv;70
+Portaria SES nº1468/2022;15208;;Água - BNU;Agua Tratada;0.000000;0.160000;µg/L;1;;;false;;SES1468_Agua_Tratada.csv;71
+Portaria SES nº1468/2022;16806;;Água - BNU;Agua Tratada;0.000000;20.000000;µg/L;1;;;false;;SES1468_Agua_Tratada.csv;72

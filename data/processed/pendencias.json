@@ -1,0 +1,2068 @@
+[
+  {
+    "chave": "NOME_EM_CODIGOS_DIFERENTES|*||4,8020",
+    "tipo": "NOME_EM_CODIGOS_DIFERENTES",
+    "importado": true,
+    "descricao": "\"Amônia\" aparece com os códigos 4, 8020. Mantidos como ensaios distintos; confirmar se são métodos diferentes.",
+    "arquivo_origem": null,
+    "linhas_origem": null,
+    "dados": {
+      "nome": "Amônia",
+      "codigos": [
+        "4",
+        "8020"
+      ]
+    }
+  },
+  {
+    "chave": "NOME_EM_CODIGOS_DIFERENTES|*||5,3871,3882",
+    "tipo": "NOME_EM_CODIGOS_DIFERENTES",
+    "importado": true,
+    "descricao": "\"Bromato\" aparece com os códigos 5, 3871, 3882. Mantidos como ensaios distintos; confirmar se são métodos diferentes.",
+    "arquivo_origem": null,
+    "linhas_origem": null,
+    "dados": {
+      "nome": "Bromato",
+      "codigos": [
+        "5",
+        "3871",
+        "3882"
+      ]
+    }
+  },
+  {
+    "chave": "NOME_EM_CODIGOS_DIFERENTES|*||10,2519",
+    "tipo": "NOME_EM_CODIGOS_DIFERENTES",
+    "importado": true,
+    "descricao": "\"Cloraminas\" aparece com os códigos 10, 2519. Mantidos como ensaios distintos; confirmar se são métodos diferentes.",
+    "arquivo_origem": null,
+    "linhas_origem": null,
+    "dados": {
+      "nome": "Cloraminas",
+      "codigos": [
+        "10",
+        "2519"
+      ]
+    }
+  },
+  {
+    "chave": "NOME_EM_CODIGOS_DIFERENTES|*||11,3873,7955",
+    "tipo": "NOME_EM_CODIGOS_DIFERENTES",
+    "importado": true,
+    "descricao": "\"Cloretos\" aparece com os códigos 11, 3873, 7955. Mantidos como ensaios distintos; confirmar se são métodos diferentes.",
+    "arquivo_origem": null,
+    "linhas_origem": null,
+    "dados": {
+      "nome": "Cloretos",
+      "codigos": [
+        "11",
+        "3873",
+        "7955"
+      ]
+    }
+  },
+  {
+    "chave": "NOME_EM_CODIGOS_DIFERENTES|*||12,3874",
+    "tipo": "NOME_EM_CODIGOS_DIFERENTES",
+    "importado": true,
+    "descricao": "\"Clorito\" aparece com os códigos 12, 3874. Mantidos como ensaios distintos; confirmar se são métodos diferentes.",
+    "arquivo_origem": null,
+    "linhas_origem": null,
+    "dados": {
+      "nome": "Clorito",
+      "codigos": [
+        "12",
+        "3874"
+      ]
+    }
+  },
+  {
+    "chave": "NOME_EM_CODIGOS_DIFERENTES|*||23,8779",
+    "tipo": "NOME_EM_CODIGOS_DIFERENTES",
+    "importado": true,
+    "descricao": "\"Dureza Total\" aparece com os códigos 23, 8779. Mantidos como ensaios distintos; confirmar se são métodos diferentes.",
+    "arquivo_origem": null,
+    "linhas_origem": null,
+    "dados": {
+      "nome": "Dureza Total",
+      "codigos": [
+        "23",
+        "8779"
+      ]
+    }
+  },
+  {
+    "chave": "NOME_EM_CODIGOS_DIFERENTES|*||25,7898,7956",
+    "tipo": "NOME_EM_CODIGOS_DIFERENTES",
+    "importado": true,
+    "descricao": "\"Fluoreto\" aparece com os códigos 25, 7898, 7956. Mantidos como ensaios distintos; confirmar se são métodos diferentes.",
+    "arquivo_origem": null,
+    "linhas_origem": null,
+    "dados": {
+      "nome": "Fluoreto",
+      "codigos": [
+        "25",
+        "7898",
+        "7956"
+      ]
+    }
+  },
+  {
+    "chave": "NOME_EM_CODIGOS_DIFERENTES|*||43,3880,7959",
+    "tipo": "NOME_EM_CODIGOS_DIFERENTES",
+    "importado": true,
+    "descricao": "\"Sulfato\" aparece com os códigos 43, 3880, 7959. Mantidos como ensaios distintos; confirmar se são métodos diferentes.",
+    "arquivo_origem": null,
+    "linhas_origem": null,
+    "dados": {
+      "nome": "Sulfato",
+      "codigos": [
+        "43",
+        "3880",
+        "7959"
+      ]
+    }
+  },
+  {
+    "chave": "NOME_EM_CODIGOS_DIFERENTES|*||48,3904",
+    "tipo": "NOME_EM_CODIGOS_DIFERENTES",
+    "importado": true,
+    "descricao": "\"Turbidez\" aparece com os códigos 48, 3904. Mantidos como ensaios distintos; confirmar se são métodos diferentes.",
+    "arquivo_origem": null,
+    "linhas_origem": null,
+    "dados": {
+      "nome": "Turbidez",
+      "codigos": [
+        "48",
+        "3904"
+      ]
+    }
+  },
+  {
+    "chave": "NOME_EM_CODIGOS_DIFERENTES|*||67,1108",
+    "tipo": "NOME_EM_CODIGOS_DIFERENTES",
+    "importado": true,
+    "descricao": "\"Microcistinas\" aparece com os códigos 67, 1108. Mantidos como ensaios distintos; confirmar se são métodos diferentes.",
+    "arquivo_origem": null,
+    "linhas_origem": null,
+    "dados": {
+      "nome": "Microcistinas",
+      "codigos": [
+        "67",
+        "1108"
+      ]
+    }
+  },
+  {
+    "chave": "NOME_EM_CODIGOS_DIFERENTES|*||68,1109",
+    "tipo": "NOME_EM_CODIGOS_DIFERENTES",
+    "importado": true,
+    "descricao": "\"Saxitoxinas\" aparece com os códigos 68, 1109. Mantidos como ensaios distintos; confirmar se são métodos diferentes.",
+    "arquivo_origem": null,
+    "linhas_origem": null,
+    "dados": {
+      "nome": "Saxitoxinas",
+      "codigos": [
+        "68",
+        "1109"
+      ]
+    }
+  },
+  {
+    "chave": "NOME_EM_CODIGOS_DIFERENTES|*||217,10498,10662",
+    "tipo": "NOME_EM_CODIGOS_DIFERENTES",
+    "importado": true,
+    "descricao": "\"Alumínio\" aparece com os códigos 217, 10498, 10662. Mantidos como ensaios distintos; confirmar se são métodos diferentes.",
+    "arquivo_origem": null,
+    "linhas_origem": null,
+    "dados": {
+      "nome": "Alumínio",
+      "codigos": [
+        "217",
+        "10498",
+        "10662"
+      ]
+    }
+  },
+  {
+    "chave": "NOME_EM_CODIGOS_DIFERENTES|*||218,10496,10668",
+    "tipo": "NOME_EM_CODIGOS_DIFERENTES",
+    "importado": true,
+    "descricao": "\"Antimônio\" aparece com os códigos 218, 10496, 10668. Mantidos como ensaios distintos; confirmar se são métodos diferentes.",
+    "arquivo_origem": null,
+    "linhas_origem": null,
+    "dados": {
+      "nome": "Antimônio",
+      "codigos": [
+        "218",
+        "10496",
+        "10668"
+      ]
+    }
+  },
+  {
+    "chave": "NOME_EM_CODIGOS_DIFERENTES|*||219,10500,10670,10671",
+    "tipo": "NOME_EM_CODIGOS_DIFERENTES",
+    "importado": true,
+    "descricao": "\"Arsênio\" aparece com os códigos 219, 10500, 10670, 10671. Mantidos como ensaios distintos; confirmar se são métodos diferentes.",
+    "arquivo_origem": null,
+    "linhas_origem": null,
+    "dados": {
+      "nome": "Arsênio",
+      "codigos": [
+        "219",
+        "10500",
+        "10670",
+        "10671"
+      ]
+    }
+  },
+  {
+    "chave": "NOME_EM_CODIGOS_DIFERENTES|*||220,10504,10673",
+    "tipo": "NOME_EM_CODIGOS_DIFERENTES",
+    "importado": true,
+    "descricao": "\"Bário\" aparece com os códigos 220, 10504, 10673. Mantidos como ensaios distintos; confirmar se são métodos diferentes.",
+    "arquivo_origem": null,
+    "linhas_origem": null,
+    "dados": {
+      "nome": "Bário",
+      "codigos": [
+        "220",
+        "10504",
+        "10673"
+      ]
+    }
+  },
+  {
+    "chave": "NOME_EM_CODIGOS_DIFERENTES|*||224,10508,10674",
+    "tipo": "NOME_EM_CODIGOS_DIFERENTES",
+    "importado": true,
+    "descricao": "\"Cádmio\" aparece com os códigos 224, 10508, 10674. Mantidos como ensaios distintos; confirmar se são métodos diferentes.",
+    "arquivo_origem": null,
+    "linhas_origem": null,
+    "dados": {
+      "nome": "Cádmio",
+      "codigos": [
+        "224",
+        "10508",
+        "10674"
+      ]
+    }
+  },
+  {
+    "chave": "NOME_EM_CODIGOS_DIFERENTES|*||226,10512,10666",
+    "tipo": "NOME_EM_CODIGOS_DIFERENTES",
+    "importado": true,
+    "descricao": "\"Chumbo\" aparece com os códigos 226, 10512, 10666. Mantidos como ensaios distintos; confirmar se são métodos diferentes.",
+    "arquivo_origem": null,
+    "linhas_origem": null,
+    "dados": {
+      "nome": "Chumbo",
+      "codigos": [
+        "226",
+        "10512",
+        "10666"
+      ]
+    }
+  },
+  {
+    "chave": "NOME_EM_CODIGOS_DIFERENTES|*||227,10516,10678",
+    "tipo": "NOME_EM_CODIGOS_DIFERENTES",
+    "importado": true,
+    "descricao": "\"Cobre\" aparece com os códigos 227, 10516, 10678. Mantidos como ensaios distintos; confirmar se são métodos diferentes.",
+    "arquivo_origem": null,
+    "linhas_origem": null,
+    "dados": {
+      "nome": "Cobre",
+      "codigos": [
+        "227",
+        "10516",
+        "10678"
+      ]
+    }
+  },
+  {
+    "chave": "NOME_EM_CODIGOS_DIFERENTES|*||229,10515",
+    "tipo": "NOME_EM_CODIGOS_DIFERENTES",
+    "importado": true,
+    "descricao": "\"Cromo\" aparece com os códigos 229, 10515. Mantidos como ensaios distintos; confirmar se são métodos diferentes.",
+    "arquivo_origem": null,
+    "linhas_origem": null,
+    "dados": {
+      "nome": "Cromo",
+      "codigos": [
+        "229",
+        "10515"
+      ]
+    }
+  },
+  {
+    "chave": "NOME_EM_CODIGOS_DIFERENTES|*||231,10525,10687",
+    "tipo": "NOME_EM_CODIGOS_DIFERENTES",
+    "importado": true,
+    "descricao": "\"Ferro\" aparece com os códigos 231, 10525, 10687. Mantidos como ensaios distintos; confirmar se são métodos diferentes.",
+    "arquivo_origem": null,
+    "linhas_origem": null,
+    "dados": {
+      "nome": "Ferro",
+      "codigos": [
+        "231",
+        "10525",
+        "10687"
+      ]
+    }
+  },
+  {
+    "chave": "NOME_EM_CODIGOS_DIFERENTES|*||233,10528,10691",
+    "tipo": "NOME_EM_CODIGOS_DIFERENTES",
+    "importado": true,
+    "descricao": "\"Manganês\" aparece com os códigos 233, 10528, 10691. Mantidos como ensaios distintos; confirmar se são métodos diferentes.",
+    "arquivo_origem": null,
+    "linhas_origem": null,
+    "dados": {
+      "nome": "Manganês",
+      "codigos": [
+        "233",
+        "10528",
+        "10691"
+      ]
+    }
+  },
+  {
+    "chave": "NOME_EM_CODIGOS_DIFERENTES|*||235,8362,10531,10720",
+    "tipo": "NOME_EM_CODIGOS_DIFERENTES",
+    "importado": true,
+    "descricao": "\"Mercúrio\" aparece com os códigos 235, 8362, 10531, 10720. Mantidos como ensaios distintos; confirmar se são métodos diferentes.",
+    "arquivo_origem": null,
+    "linhas_origem": null,
+    "dados": {
+      "nome": "Mercúrio",
+      "codigos": [
+        "235",
+        "8362",
+        "10531",
+        "10720"
+      ]
+    }
+  },
+  {
+    "chave": "NOME_EM_CODIGOS_DIFERENTES|*||237,10534,10680",
+    "tipo": "NOME_EM_CODIGOS_DIFERENTES",
+    "importado": true,
+    "descricao": "\"Níquel\" aparece com os códigos 237, 10534, 10680. Mantidos como ensaios distintos; confirmar se são métodos diferentes.",
+    "arquivo_origem": null,
+    "linhas_origem": null,
+    "dados": {
+      "nome": "Níquel",
+      "codigos": [
+        "237",
+        "10534",
+        "10680"
+      ]
+    }
+  },
+  {
+    "chave": "NOME_EM_CODIGOS_DIFERENTES|*||241,10546,10682",
+    "tipo": "NOME_EM_CODIGOS_DIFERENTES",
+    "importado": true,
+    "descricao": "\"Selênio\" aparece com os códigos 241, 10546, 10682. Mantidos como ensaios distintos; confirmar se são métodos diferentes.",
+    "arquivo_origem": null,
+    "linhas_origem": null,
+    "dados": {
+      "nome": "Selênio",
+      "codigos": [
+        "241",
+        "10546",
+        "10682"
+      ]
+    }
+  },
+  {
+    "chave": "NOME_EM_CODIGOS_DIFERENTES|*||243,10544,10693",
+    "tipo": "NOME_EM_CODIGOS_DIFERENTES",
+    "importado": true,
+    "descricao": "\"Sódio\" aparece com os códigos 243, 10544, 10693. Mantidos como ensaios distintos; confirmar se são métodos diferentes.",
+    "arquivo_origem": null,
+    "linhas_origem": null,
+    "dados": {
+      "nome": "Sódio",
+      "codigos": [
+        "243",
+        "10544",
+        "10693"
+      ]
+    }
+  },
+  {
+    "chave": "NOME_EM_CODIGOS_DIFERENTES|*||244,10550,10684",
+    "tipo": "NOME_EM_CODIGOS_DIFERENTES",
+    "importado": true,
+    "descricao": "\"Urânio\" aparece com os códigos 244, 10550, 10684. Mantidos como ensaios distintos; confirmar se são métodos diferentes.",
+    "arquivo_origem": null,
+    "linhas_origem": null,
+    "dados": {
+      "nome": "Urânio",
+      "codigos": [
+        "244",
+        "10550",
+        "10684"
+      ]
+    }
+  },
+  {
+    "chave": "NOME_EM_CODIGOS_DIFERENTES|*||249,10554,10695",
+    "tipo": "NOME_EM_CODIGOS_DIFERENTES",
+    "importado": true,
+    "descricao": "\"Zinco\" aparece com os códigos 249, 10554, 10695. Mantidos como ensaios distintos; confirmar se são métodos diferentes.",
+    "arquivo_origem": null,
+    "linhas_origem": null,
+    "dados": {
+      "nome": "Zinco",
+      "codigos": [
+        "249",
+        "10554",
+        "10695"
+      ]
+    }
+  },
+  {
+    "chave": "NOME_EM_CODIGOS_DIFERENTES|*||396,15203",
+    "tipo": "NOME_EM_CODIGOS_DIFERENTES",
+    "importado": true,
+    "descricao": "\"g-HCH (y-HCH ou gama-Lindano)\" aparece com os códigos 396, 15203. Mantidos como ensaios distintos; confirmar se são métodos diferentes.",
+    "arquivo_origem": null,
+    "linhas_origem": null,
+    "dados": {
+      "nome": "g-HCH (y-HCH ou gama-Lindano)",
+      "codigos": [
+        "396",
+        "15203"
+      ]
+    }
+  },
+  {
+    "chave": "NOME_EM_CODIGOS_DIFERENTES|*||419,15207",
+    "tipo": "NOME_EM_CODIGOS_DIFERENTES",
+    "importado": true,
+    "descricao": "\"Simazina\" aparece com os códigos 419, 15207. Mantidos como ensaios distintos; confirmar se são métodos diferentes.",
+    "arquivo_origem": null,
+    "linhas_origem": null,
+    "dados": {
+      "nome": "Simazina",
+      "codigos": [
+        "419",
+        "15207"
+      ]
+    }
+  },
+  {
+    "chave": "NOME_EM_CODIGOS_DIFERENTES|*||422,7291",
+    "tipo": "NOME_EM_CODIGOS_DIFERENTES",
+    "importado": true,
+    "descricao": "\"Metribuzim\" aparece com os códigos 422, 7291. Mantidos como ensaios distintos; confirmar se são métodos diferentes.",
+    "arquivo_origem": null,
+    "linhas_origem": null,
+    "dados": {
+      "nome": "Metribuzim",
+      "codigos": [
+        "422",
+        "7291"
+      ]
+    }
+  },
+  {
+    "chave": "NOME_EM_CODIGOS_DIFERENTES|*||429,15206",
+    "tipo": "NOME_EM_CODIGOS_DIFERENTES",
+    "importado": true,
+    "descricao": "\"Molinato\" aparece com os códigos 429, 15206. Mantidos como ensaios distintos; confirmar se são métodos diferentes.",
+    "arquivo_origem": null,
+    "linhas_origem": null,
+    "dados": {
+      "nome": "Molinato",
+      "codigos": [
+        "429",
+        "15206"
+      ]
+    }
+  },
+  {
+    "chave": "NOME_EM_CODIGOS_DIFERENTES|*||436,15208",
+    "tipo": "NOME_EM_CODIGOS_DIFERENTES",
+    "importado": true,
+    "descricao": "\"Terbufos\" aparece com os códigos 436, 15208. Mantidos como ensaios distintos; confirmar se são métodos diferentes.",
+    "arquivo_origem": null,
+    "linhas_origem": null,
+    "dados": {
+      "nome": "Terbufos",
+      "codigos": [
+        "436",
+        "15208"
+      ]
+    }
+  },
+  {
+    "chave": "NOME_EM_CODIGOS_DIFERENTES|*||440,15204",
+    "tipo": "NOME_EM_CODIGOS_DIFERENTES",
+    "importado": true,
+    "descricao": "\"Malation\" aparece com os códigos 440, 15204. Mantidos como ensaios distintos; confirmar se são métodos diferentes.",
+    "arquivo_origem": null,
+    "linhas_origem": null,
+    "dados": {
+      "nome": "Malation",
+      "codigos": [
+        "440",
+        "15204"
+      ]
+    }
+  },
+  {
+    "chave": "NOME_EM_CODIGOS_DIFERENTES|*||661,7003",
+    "tipo": "NOME_EM_CODIGOS_DIFERENTES",
+    "importado": true,
+    "descricao": "\"Cloreto de Vinila\" aparece com os códigos 661, 7003. Mantidos como ensaios distintos; confirmar se são métodos diferentes.",
+    "arquivo_origem": null,
+    "linhas_origem": null,
+    "dados": {
+      "nome": "Cloreto de Vinila",
+      "codigos": [
+        "661",
+        "7003"
+      ]
+    }
+  },
+  {
+    "chave": "NOME_EM_CODIGOS_DIFERENTES|*||680,15211",
+    "tipo": "NOME_EM_CODIGOS_DIFERENTES",
+    "importado": true,
+    "descricao": "\"Monoclorobenzeno\" aparece com os códigos 680, 15211. Mantidos como ensaios distintos; confirmar se são métodos diferentes.",
+    "arquivo_origem": null,
+    "linhas_origem": null,
+    "dados": {
+      "nome": "Monoclorobenzeno",
+      "codigos": [
+        "680",
+        "15211"
+      ]
+    }
+  },
+  {
+    "chave": "NOME_EM_CODIGOS_DIFERENTES|*||690,6998,15210",
+    "tipo": "NOME_EM_CODIGOS_DIFERENTES",
+    "importado": true,
+    "descricao": "\"1,4-Diclorobenzeno\" aparece com os códigos 690, 6998, 15210. Mantidos como ensaios distintos; confirmar se são métodos diferentes.",
+    "arquivo_origem": null,
+    "linhas_origem": null,
+    "dados": {
+      "nome": "1,4-Diclorobenzeno",
+      "codigos": [
+        "690",
+        "6998",
+        "15210"
+      ]
+    }
+  },
+  {
+    "chave": "NOME_EM_CODIGOS_DIFERENTES|*||691,7001",
+    "tipo": "NOME_EM_CODIGOS_DIFERENTES",
+    "importado": true,
+    "descricao": "\"1,2-Diclorobenzeno\" aparece com os códigos 691, 7001. Mantidos como ensaios distintos; confirmar se são métodos diferentes.",
+    "arquivo_origem": null,
+    "linhas_origem": null,
+    "dados": {
+      "nome": "1,2-Diclorobenzeno",
+      "codigos": [
+        "691",
+        "7001"
+      ]
+    }
+  },
+  {
+    "chave": "NOME_EM_CODIGOS_DIFERENTES|*||777,1207",
+    "tipo": "NOME_EM_CODIGOS_DIFERENTES",
+    "importado": true,
+    "descricao": "\"Cloro Residual Livre\" aparece com os códigos 777, 1207. Mantidos como ensaios distintos; confirmar se são métodos diferentes.",
+    "arquivo_origem": null,
+    "linhas_origem": null,
+    "dados": {
+      "nome": "Cloro Residual Livre",
+      "codigos": [
+        "777",
+        "1207"
+      ]
+    }
+  },
+  {
+    "chave": "NOME_EM_CODIGOS_DIFERENTES|*||793,1190",
+    "tipo": "NOME_EM_CODIGOS_DIFERENTES",
+    "importado": true,
+    "descricao": "\"pH\" aparece com os códigos 793, 1190. Mantidos como ensaios distintos; confirmar se são métodos diferentes.",
+    "arquivo_origem": null,
+    "linhas_origem": null,
+    "dados": {
+      "nome": "pH",
+      "codigos": [
+        "793",
+        "1190"
+      ]
+    }
+  },
+  {
+    "chave": "NOME_EM_CODIGOS_DIFERENTES|*||833,11921,11937",
+    "tipo": "NOME_EM_CODIGOS_DIFERENTES",
+    "importado": true,
+    "descricao": "\"Carbofurano\" aparece com os códigos 833, 11921, 11937. Mantidos como ensaios distintos; confirmar se são métodos diferentes.",
+    "arquivo_origem": null,
+    "linhas_origem": null,
+    "dados": {
+      "nome": "Carbofurano",
+      "codigos": [
+        "833",
+        "11921",
+        "11937"
+      ]
+    }
+  },
+  {
+    "chave": "NOME_EM_CODIGOS_DIFERENTES|*||863,11648,11894",
+    "tipo": "NOME_EM_CODIGOS_DIFERENTES",
+    "importado": true,
+    "descricao": "\"2,4-D\" aparece com os códigos 863, 11648, 11894. Mantidos como ensaios distintos; confirmar se são métodos diferentes.",
+    "arquivo_origem": null,
+    "linhas_origem": null,
+    "dados": {
+      "nome": "2,4-D",
+      "codigos": [
+        "863",
+        "11648",
+        "11894"
+      ]
+    }
+  },
+  {
+    "chave": "NOME_EM_CODIGOS_DIFERENTES|*||877,11990,15202",
+    "tipo": "NOME_EM_CODIGOS_DIFERENTES",
+    "importado": true,
+    "descricao": "\"Glifosato+AMPA\" aparece com os códigos 877, 11990, 15202. Mantidos como ensaios distintos; confirmar se são métodos diferentes.",
+    "arquivo_origem": null,
+    "linhas_origem": null,
+    "dados": {
+      "nome": "Glifosato+AMPA",
+      "codigos": [
+        "877",
+        "11990",
+        "15202"
+      ]
+    }
+  },
+  {
+    "chave": "NOME_EM_CODIGOS_DIFERENTES|*||905,11915,11982",
+    "tipo": "NOME_EM_CODIGOS_DIFERENTES",
+    "importado": true,
+    "descricao": "\"Tebuconazol\" aparece com os códigos 905, 11915, 11982. Mantidos como ensaios distintos; confirmar se são métodos diferentes.",
+    "arquivo_origem": null,
+    "linhas_origem": null,
+    "dados": {
+      "nome": "Tebuconazol",
+      "codigos": [
+        "905",
+        "11915",
+        "11982"
+      ]
+    }
+  },
+  {
+    "chave": "NOME_EM_CODIGOS_DIFERENTES|*||924,11649,11892",
+    "tipo": "NOME_EM_CODIGOS_DIFERENTES",
+    "importado": true,
+    "descricao": "\"Acrilamida\" aparece com os códigos 924, 11649, 11892. Mantidos como ensaios distintos; confirmar se são métodos diferentes.",
+    "arquivo_origem": null,
+    "linhas_origem": null,
+    "dados": {
+      "nome": "Acrilamida",
+      "codigos": [
+        "924",
+        "11649",
+        "11892"
+      ]
+    }
+  },
+  {
+    "chave": "NOME_EM_CODIGOS_DIFERENTES|*||949,10862",
+    "tipo": "NOME_EM_CODIGOS_DIFERENTES",
+    "importado": true,
+    "descricao": "\"Sólidos Dissolvidos Totais\" aparece com os códigos 949, 10862. Mantidos como ensaios distintos; confirmar se são métodos diferentes.",
+    "arquivo_origem": null,
+    "linhas_origem": null,
+    "dados": {
+      "nome": "Sólidos Dissolvidos Totais",
+      "codigos": [
+        "949",
+        "10862"
+      ]
+    }
+  },
+  {
+    "chave": "NOME_EM_CODIGOS_DIFERENTES|*||2392,11643",
+    "tipo": "NOME_EM_CODIGOS_DIFERENTES",
+    "importado": true,
+    "descricao": "\"Ácidos Haloacéticos Totais\" aparece com os códigos 2392, 11643. Mantidos como ensaios distintos; confirmar se são métodos diferentes.",
+    "arquivo_origem": null,
+    "linhas_origem": null,
+    "dados": {
+      "nome": "Ácidos Haloacéticos Totais",
+      "codigos": [
+        "2392",
+        "11643"
+      ]
+    }
+  },
+  {
+    "chave": "NOME_EM_CODIGOS_DIFERENTES|*||672,2414,4100",
+    "tipo": "NOME_EM_CODIGOS_DIFERENTES",
+    "importado": true,
+    "descricao": "\"Benzeno\" aparece com os códigos 672, 2414, 4100. Mantidos como ensaios distintos; confirmar se são métodos diferentes.",
+    "arquivo_origem": null,
+    "linhas_origem": null,
+    "dados": {
+      "nome": "Benzeno",
+      "codigos": [
+        "672",
+        "2414",
+        "4100"
+      ]
+    }
+  },
+  {
+    "chave": "NOME_EM_CODIGOS_DIFERENTES|*||4134,11905",
+    "tipo": "NOME_EM_CODIGOS_DIFERENTES",
+    "importado": true,
+    "descricao": "\"Epoxiconazol\" aparece com os códigos 4134, 11905. Mantidos como ensaios distintos; confirmar se são métodos diferentes.",
+    "arquivo_origem": null,
+    "linhas_origem": null,
+    "dados": {
+      "nome": "Epoxiconazol",
+      "codigos": [
+        "4134",
+        "11905"
+      ]
+    }
+  },
+  {
+    "chave": "NOME_EM_CODIGOS_DIFERENTES|*||4275,11916",
+    "tipo": "NOME_EM_CODIGOS_DIFERENTES",
+    "importado": true,
+    "descricao": "\"Tiametoxan\" aparece com os códigos 4275, 11916. Mantidos como ensaios distintos; confirmar se são métodos diferentes.",
+    "arquivo_origem": null,
+    "linhas_origem": null,
+    "dados": {
+      "nome": "Tiametoxan",
+      "codigos": [
+        "4275",
+        "11916"
+      ]
+    }
+  },
+  {
+    "chave": "NOME_EM_CODIGOS_DIFERENTES|*||5679,15201",
+    "tipo": "NOME_EM_CODIGOS_DIFERENTES",
+    "importado": true,
+    "descricao": "\"Aldrin + dieldrin\" aparece com os códigos 5679, 15201. Mantidos como ensaios distintos; confirmar se são métodos diferentes.",
+    "arquivo_origem": null,
+    "linhas_origem": null,
+    "dados": {
+      "nome": "Aldrin + dieldrin",
+      "codigos": [
+        "5679",
+        "15201"
+      ]
+    }
+  },
+  {
+    "chave": "NOME_EM_CODIGOS_DIFERENTES|*||6486,11893",
+    "tipo": "NOME_EM_CODIGOS_DIFERENTES",
+    "importado": true,
+    "descricao": "\"Carbendazim\" aparece com os códigos 6486, 11893. Mantidos como ensaios distintos; confirmar se são métodos diferentes.",
+    "arquivo_origem": null,
+    "linhas_origem": null,
+    "dados": {
+      "nome": "Carbendazim",
+      "codigos": [
+        "6486",
+        "11893"
+      ]
+    }
+  },
+  {
+    "chave": "NOME_EM_CODIGOS_DIFERENTES|*||6628,7011,7166",
+    "tipo": "NOME_EM_CODIGOS_DIFERENTES",
+    "importado": true,
+    "descricao": "\"Amônia (NH3-N)\" aparece com os códigos 6628, 7011, 7166. Mantidos como ensaios distintos; confirmar se são métodos diferentes.",
+    "arquivo_origem": null,
+    "linhas_origem": null,
+    "dados": {
+      "nome": "Amônia (NH3-N)",
+      "codigos": [
+        "6628",
+        "7011",
+        "7166"
+      ]
+    }
+  },
+  {
+    "chave": "NOME_EM_CODIGOS_DIFERENTES|*||7171,11898,11977",
+    "tipo": "NOME_EM_CODIGOS_DIFERENTES",
+    "importado": true,
+    "descricao": "\"Aldicarbe + Aldicarbe Sulfona + Aldicarbe Sulfóxido\" aparece com os códigos 7171, 11898, 11977. Mantidos como ensaios distintos; confirmar se são métodos diferentes.",
+    "arquivo_origem": null,
+    "linhas_origem": null,
+    "dados": {
+      "nome": "Aldicarbe + Aldicarbe Sulfona + Aldicarbe Sulfóxido",
+      "codigos": [
+        "7171",
+        "11898",
+        "11977"
+      ]
+    }
+  },
+  {
+    "chave": "NOME_EM_CODIGOS_DIFERENTES|*||7172,11902,11980",
+    "tipo": "NOME_EM_CODIGOS_DIFERENTES",
+    "importado": true,
+    "descricao": "\"Clorpirifós + Clorpirifós-Oxon\" aparece com os códigos 7172, 11902, 11980. Mantidos como ensaios distintos; confirmar se são métodos diferentes.",
+    "arquivo_origem": null,
+    "linhas_origem": null,
+    "dados": {
+      "nome": "Clorpirifós + Clorpirifós-Oxon",
+      "codigos": [
+        "7172",
+        "11902",
+        "11980"
+      ]
+    }
+  },
+  {
+    "chave": "NOME_EM_CODIGOS_DIFERENTES|*||7272,11899",
+    "tipo": "NOME_EM_CODIGOS_DIFERENTES",
+    "importado": true,
+    "descricao": "\"Ametrina\" aparece com os códigos 7272, 11899. Mantidos como ensaios distintos; confirmar se são métodos diferentes.",
+    "arquivo_origem": null,
+    "linhas_origem": null,
+    "dados": {
+      "nome": "Ametrina",
+      "codigos": [
+        "7272",
+        "11899"
+      ]
+    }
+  },
+  {
+    "chave": "NOME_EM_CODIGOS_DIFERENTES|*||7273,11900",
+    "tipo": "NOME_EM_CODIGOS_DIFERENTES",
+    "importado": true,
+    "descricao": "\"Atrazina + S-Clorotriazinas (DeetilAtrazina - Dea, Deisopropil-Atrazina - Dia e Diaminoclorotriazina-Dact)\" aparece com os códigos 7273, 11900. Mantidos como ensaios distintos; confirmar se são métodos diferentes.",
+    "arquivo_origem": null,
+    "linhas_origem": null,
+    "dados": {
+      "nome": "Atrazina + S-Clorotriazinas (DeetilAtrazina - Dea, Deisopropil-Atrazina - Dia e Diaminoclorotriazina-Dact)",
+      "codigos": [
+        "7273",
+        "11900"
+      ]
+    }
+  },
+  {
+    "chave": "NOME_EM_CODIGOS_DIFERENTES|*||7274,11901",
+    "tipo": "NOME_EM_CODIGOS_DIFERENTES",
+    "importado": true,
+    "descricao": "\"Ciproconazol\" aparece com os códigos 7274, 11901. Mantidos como ensaios distintos; confirmar se são métodos diferentes.",
+    "arquivo_origem": null,
+    "linhas_origem": null,
+    "dados": {
+      "nome": "Ciproconazol",
+      "codigos": [
+        "7274",
+        "11901"
+      ]
+    }
+  },
+  {
+    "chave": "NOME_EM_CODIGOS_DIFERENTES|*||7275,11903",
+    "tipo": "NOME_EM_CODIGOS_DIFERENTES",
+    "importado": true,
+    "descricao": "\"Difenoconazol\" aparece com os códigos 7275, 11903. Mantidos como ensaios distintos; confirmar se são métodos diferentes.",
+    "arquivo_origem": null,
+    "linhas_origem": null,
+    "dados": {
+      "nome": "Difenoconazol",
+      "codigos": [
+        "7275",
+        "11903"
+      ]
+    }
+  },
+  {
+    "chave": "NOME_EM_CODIGOS_DIFERENTES|*||7276,11904",
+    "tipo": "NOME_EM_CODIGOS_DIFERENTES",
+    "importado": true,
+    "descricao": "\"Dimetoato + Ometoato\" aparece com os códigos 7276, 11904. Mantidos como ensaios distintos; confirmar se são métodos diferentes.",
+    "arquivo_origem": null,
+    "linhas_origem": null,
+    "dados": {
+      "nome": "Dimetoato + Ometoato",
+      "codigos": [
+        "7276",
+        "11904"
+      ]
+    }
+  },
+  {
+    "chave": "NOME_EM_CODIGOS_DIFERENTES|*||7277,11906,15161",
+    "tipo": "NOME_EM_CODIGOS_DIFERENTES",
+    "importado": true,
+    "descricao": "\"Fipronil\" aparece com os códigos 7277, 11906, 15161. Mantidos como ensaios distintos; confirmar se são métodos diferentes.",
+    "arquivo_origem": null,
+    "linhas_origem": null,
+    "dados": {
+      "nome": "Fipronil",
+      "codigos": [
+        "7277",
+        "11906",
+        "15161"
+      ]
+    }
+  },
+  {
+    "chave": "NOME_EM_CODIGOS_DIFERENTES|*||7278,11907",
+    "tipo": "NOME_EM_CODIGOS_DIFERENTES",
+    "importado": true,
+    "descricao": "\"Flutriafol\" aparece com os códigos 7278, 11907. Mantidos como ensaios distintos; confirmar se são métodos diferentes.",
+    "arquivo_origem": null,
+    "linhas_origem": null,
+    "dados": {
+      "nome": "Flutriafol",
+      "codigos": [
+        "7278",
+        "11907"
+      ]
+    }
+  },
+  {
+    "chave": "NOME_EM_CODIGOS_DIFERENTES|*||7279,11908",
+    "tipo": "NOME_EM_CODIGOS_DIFERENTES",
+    "importado": true,
+    "descricao": "\"Hidroxi-Atrazina\" aparece com os códigos 7279, 11908. Mantidos como ensaios distintos; confirmar se são métodos diferentes.",
+    "arquivo_origem": null,
+    "linhas_origem": null,
+    "dados": {
+      "nome": "Hidroxi-Atrazina",
+      "codigos": [
+        "7279",
+        "11908"
+      ]
+    }
+  },
+  {
+    "chave": "NOME_EM_CODIGOS_DIFERENTES|*||7281,11909",
+    "tipo": "NOME_EM_CODIGOS_DIFERENTES",
+    "importado": true,
+    "descricao": "\"Metamidofós + Acefato\" aparece com os códigos 7281, 11909. Mantidos como ensaios distintos; confirmar se são métodos diferentes.",
+    "arquivo_origem": null,
+    "linhas_origem": null,
+    "dados": {
+      "nome": "Metamidofós + Acefato",
+      "codigos": [
+        "7281",
+        "11909"
+      ]
+    }
+  },
+  {
+    "chave": "NOME_EM_CODIGOS_DIFERENTES|*||7282,11910",
+    "tipo": "NOME_EM_CODIGOS_DIFERENTES",
+    "importado": true,
+    "descricao": "\"Paraquate\" aparece com os códigos 7282, 11910. Mantidos como ensaios distintos; confirmar se são métodos diferentes.",
+    "arquivo_origem": null,
+    "linhas_origem": null,
+    "dados": {
+      "nome": "Paraquate",
+      "codigos": [
+        "7282",
+        "11910"
+      ]
+    }
+  },
+  {
+    "chave": "NOME_EM_CODIGOS_DIFERENTES|*||7283,11911",
+    "tipo": "NOME_EM_CODIGOS_DIFERENTES",
+    "importado": true,
+    "descricao": "\"Picloram\" aparece com os códigos 7283, 11911. Mantidos como ensaios distintos; confirmar se são métodos diferentes.",
+    "arquivo_origem": null,
+    "linhas_origem": null,
+    "dados": {
+      "nome": "Picloram",
+      "codigos": [
+        "7283",
+        "11911"
+      ]
+    }
+  },
+  {
+    "chave": "NOME_EM_CODIGOS_DIFERENTES|*||7284,11913",
+    "tipo": "NOME_EM_CODIGOS_DIFERENTES",
+    "importado": true,
+    "descricao": "\"Propargito\" aparece com os códigos 7284, 11913. Mantidos como ensaios distintos; confirmar se são métodos diferentes.",
+    "arquivo_origem": null,
+    "linhas_origem": null,
+    "dados": {
+      "nome": "Propargito",
+      "codigos": [
+        "7284",
+        "11913"
+      ]
+    }
+  },
+  {
+    "chave": "NOME_EM_CODIGOS_DIFERENTES|*||7285,11914",
+    "tipo": "NOME_EM_CODIGOS_DIFERENTES",
+    "importado": true,
+    "descricao": "\"Protioconazol + ProticonazolDestio\" aparece com os códigos 7285, 11914. Mantidos como ensaios distintos; confirmar se são métodos diferentes.",
+    "arquivo_origem": null,
+    "linhas_origem": null,
+    "dados": {
+      "nome": "Protioconazol + ProticonazolDestio",
+      "codigos": [
+        "7285",
+        "11914"
+      ]
+    }
+  },
+  {
+    "chave": "NOME_EM_CODIGOS_DIFERENTES|*||7286,11917",
+    "tipo": "NOME_EM_CODIGOS_DIFERENTES",
+    "importado": true,
+    "descricao": "\"Tiodicarbe\" aparece com os códigos 7286, 11917. Mantidos como ensaios distintos; confirmar se são métodos diferentes.",
+    "arquivo_origem": null,
+    "linhas_origem": null,
+    "dados": {
+      "nome": "Tiodicarbe",
+      "codigos": [
+        "7286",
+        "11917"
+      ]
+    }
+  },
+  {
+    "chave": "NOME_EM_CODIGOS_DIFERENTES|*||7287,11918",
+    "tipo": "NOME_EM_CODIGOS_DIFERENTES",
+    "importado": true,
+    "descricao": "\"Tiram\" aparece com os códigos 7287, 11918. Mantidos como ensaios distintos; confirmar se são métodos diferentes.",
+    "arquivo_origem": null,
+    "linhas_origem": null,
+    "dados": {
+      "nome": "Tiram",
+      "codigos": [
+        "7287",
+        "11918"
+      ]
+    }
+  },
+  {
+    "chave": "NOME_EM_CODIGOS_DIFERENTES|*||7290,15428",
+    "tipo": "NOME_EM_CODIGOS_DIFERENTES",
+    "importado": true,
+    "descricao": "\"Cilindrospermopsinas\" aparece com os códigos 7290, 15428. Mantidos como ensaios distintos; confirmar se são métodos diferentes.",
+    "arquivo_origem": null,
+    "linhas_origem": null,
+    "dados": {
+      "nome": "Cilindrospermopsinas",
+      "codigos": [
+        "7290",
+        "15428"
+      ]
+    }
+  },
+  {
+    "chave": "NOME_EM_CODIGOS_DIFERENTES|*||7324,11912",
+    "tipo": "NOME_EM_CODIGOS_DIFERENTES",
+    "importado": true,
+    "descricao": "\"Profenofós\" aparece com os códigos 7324, 11912. Mantidos como ensaios distintos; confirmar se são métodos diferentes.",
+    "arquivo_origem": null,
+    "linhas_origem": null,
+    "dados": {
+      "nome": "Profenofós",
+      "codigos": [
+        "7324",
+        "11912"
+      ]
+    }
+  },
+  {
+    "chave": "NOME_EM_CODIGOS_DIFERENTES|*||11979,15205",
+    "tipo": "NOME_EM_CODIGOS_DIFERENTES",
+    "importado": true,
+    "descricao": "\"Mancozebe + ETU\" aparece com os códigos 11979, 15205. Mantidos como ensaios distintos; confirmar se são métodos diferentes.",
+    "arquivo_origem": null,
+    "linhas_origem": null,
+    "dados": {
+      "nome": "Mancozebe + ETU",
+      "codigos": [
+        "11979",
+        "15205"
+      ]
+    }
+  },
+  {
+    "chave": "NOME_EM_CODIGOS_DIFERENTES|*||412,16806",
+    "tipo": "NOME_EM_CODIGOS_DIFERENTES",
+    "importado": true,
+    "descricao": "\"Metoxicloro\" aparece com os códigos 412, 16806. Mantidos como ensaios distintos; confirmar se são métodos diferentes.",
+    "arquivo_origem": null,
+    "linhas_origem": null,
+    "dados": {
+      "nome": "Metoxicloro",
+      "codigos": [
+        "412",
+        "16806"
+      ]
+    }
+  },
+  {
+    "chave": "NOME_EM_CODIGOS_DIFERENTES|*||431,15191",
+    "tipo": "NOME_EM_CODIGOS_DIFERENTES",
+    "importado": true,
+    "descricao": "\"Propanil\" aparece com os códigos 431, 15191. Mantidos como ensaios distintos; confirmar se são métodos diferentes.",
+    "arquivo_origem": null,
+    "linhas_origem": null,
+    "dados": {
+      "nome": "Propanil",
+      "codigos": [
+        "431",
+        "15191"
+      ]
+    }
+  },
+  {
+    "chave": "NOME_EM_CODIGOS_DIFERENTES|*||4107,15152",
+    "tipo": "NOME_EM_CODIGOS_DIFERENTES",
+    "importado": true,
+    "descricao": "\"Deltametrina\" aparece com os códigos 4107, 15152. Mantidos como ensaios distintos; confirmar se são métodos diferentes.",
+    "arquivo_origem": null,
+    "linhas_origem": null,
+    "dados": {
+      "nome": "Deltametrina",
+      "codigos": [
+        "4107",
+        "15152"
+      ]
+    }
+  },
+  {
+    "chave": "NOME_EM_CODIGOS_DIFERENTES|*||4133,15188",
+    "tipo": "NOME_EM_CODIGOS_DIFERENTES",
+    "importado": true,
+    "descricao": "\"Piraclostrobina\" aparece com os códigos 4133, 15188. Mantidos como ensaios distintos; confirmar se são métodos diferentes.",
+    "arquivo_origem": null,
+    "linhas_origem": null,
+    "dados": {
+      "nome": "Piraclostrobina",
+      "codigos": [
+        "4133",
+        "15188"
+      ]
+    }
+  },
+  {
+    "chave": "NOME_EM_CODIGOS_DIFERENTES|*||4135,15192",
+    "tipo": "NOME_EM_CODIGOS_DIFERENTES",
+    "importado": true,
+    "descricao": "\"Propiconazol\" aparece com os códigos 4135, 15192. Mantidos como ensaios distintos; confirmar se são métodos diferentes.",
+    "arquivo_origem": null,
+    "linhas_origem": null,
+    "dados": {
+      "nome": "Propiconazol",
+      "codigos": [
+        "4135",
+        "15192"
+      ]
+    }
+  },
+  {
+    "chave": "DUPLICATA_EXATA|GM888_Agua_Consumo_Humano.csv|2,3|",
+    "tipo": "DUPLICATA_EXATA",
+    "importado": true,
+    "descricao": "Amônia (código 4) repetido 2 vezes com os mesmos valores",
+    "arquivo_origem": "GM888_Agua_Consumo_Humano.csv",
+    "linhas_origem": "2,3",
+    "dados": null
+  },
+  {
+    "chave": "DUPLICATA_EXATA|GM888_Agua_Consumo_Humano.csv|15,16|",
+    "tipo": "DUPLICATA_EXATA",
+    "importado": true,
+    "descricao": "Odor (código 36) repetido 2 vezes com os mesmos valores",
+    "arquivo_origem": "GM888_Agua_Consumo_Humano.csv",
+    "linhas_origem": "15,16",
+    "dados": null
+  },
+  {
+    "chave": "DUPLICATA_EXATA|GM888_Agua_Consumo_Humano.csv|17,18|",
+    "tipo": "DUPLICATA_EXATA",
+    "importado": true,
+    "descricao": "Sulfato (código 43) repetido 2 vezes com os mesmos valores",
+    "arquivo_origem": "GM888_Agua_Consumo_Humano.csv",
+    "linhas_origem": "17,18",
+    "dados": null
+  },
+  {
+    "chave": "CLASSE_GRAFIA|GM888_Agua_Consumo_Humano.csv|72|",
+    "tipo": "CLASSE_GRAFIA",
+    "importado": true,
+    "descricao": "Classe \"Àgua tratada\" (1,2-Diclorobenzeno, código 691): possível grafia de \"Água tratada\"",
+    "arquivo_origem": "GM888_Agua_Consumo_Humano.csv",
+    "linhas_origem": "72",
+    "dados": null
+  },
+  {
+    "chave": "FAIXA_INCONSISTENTE|GM888_Agua_Consumo_Humano.csv|74|",
+    "tipo": "FAIXA_INCONSISTENTE",
+    "importado": false,
+    "descricao": "Cloro Residual Livre (código 777) em Água Consumo Humano: mínimo 0.200000 maior que máximo 0.000000",
+    "arquivo_origem": "GM888_Agua_Consumo_Humano.csv",
+    "linhas_origem": "74",
+    "dados": {
+      "arquivo": "GM888_Agua_Consumo_Humano.csv",
+      "linha": 74,
+      "legislacao": "Portaria GM/MS Nº888 5/21",
+      "matriz": "Água - BNU",
+      "origem_amostra": "Água Consumo Humano",
+      "codigo_ensaio": "777",
+      "nome_ensaio": "Cloro Residual Livre",
+      "classe": null,
+      "valor_minimo": "0.200000",
+      "valor_maximo": "0.000000",
+      "unidade_medida": "mg/L",
+      "unidade_original": "mg/L"
+    }
+  },
+  {
+    "chave": "UNIDADE_AUSENTE|GM888_Agua_Consumo_Humano.csv|75|",
+    "tipo": "UNIDADE_AUSENTE",
+    "importado": true,
+    "descricao": "pH (código 793) em Água Consumo Humano",
+    "arquivo_origem": "GM888_Agua_Consumo_Humano.csv",
+    "linhas_origem": "75",
+    "dados": null
+  },
+  {
+    "chave": "LIMITE_CONFLITANTE|GM888_Agua_Consumo_Humano.csv|84,85|",
+    "tipo": "LIMITE_CONFLITANTE",
+    "importado": false,
+    "descricao": "Microcistinas (código 1108) em Água Consumo Humano: mín 0.000000 / máx 1.000000 ppb (linhas 84) × mín 0.000000 / máx 1.000000 µg/L (linhas 85). Nenhuma versão foi escolhida.",
+    "arquivo_origem": "GM888_Agua_Consumo_Humano.csv",
+    "linhas_origem": "84,85",
+    "dados": {
+      "codigo": "1108",
+      "variantes": [
+        {
+          "arquivo": "GM888_Agua_Consumo_Humano.csv",
+          "linha": 84,
+          "legislacao": "Portaria GM/MS Nº888 5/21",
+          "matriz": "Água - BNU",
+          "origem_amostra": "Água Consumo Humano",
+          "codigo_ensaio": "1108",
+          "nome_ensaio": "Microcistinas",
+          "classe": null,
+          "valor_minimo": "0.000000",
+          "valor_maximo": "1.000000",
+          "unidade_medida": "ppb",
+          "unidade_original": "ppb"
+        },
+        {
+          "arquivo": "GM888_Agua_Consumo_Humano.csv",
+          "linha": 85,
+          "legislacao": "Portaria GM/MS Nº888 5/21",
+          "matriz": "Água - BNU",
+          "origem_amostra": "Água Consumo Humano",
+          "codigo_ensaio": "1108",
+          "nome_ensaio": "Microcistinas",
+          "classe": null,
+          "valor_minimo": "0.000000",
+          "valor_maximo": "1.000000",
+          "unidade_medida": "µg/L",
+          "unidade_original": "µg/L"
+        }
+      ]
+    }
+  },
+  {
+    "chave": "UNIDADE_AUSENTE|GM888_Agua_Consumo_Humano.csv|89|",
+    "tipo": "UNIDADE_AUSENTE",
+    "importado": true,
+    "descricao": "pH (código 1190) em Água Consumo Humano",
+    "arquivo_origem": "GM888_Agua_Consumo_Humano.csv",
+    "linhas_origem": "89",
+    "dados": null
+  },
+  {
+    "chave": "FAIXA_INCONSISTENTE|GM888_Agua_Consumo_Humano.csv|90|",
+    "tipo": "FAIXA_INCONSISTENTE",
+    "importado": false,
+    "descricao": "Cloro Residual Livre (código 1207) em Água Consumo Humano: mínimo 0.200000 maior que máximo 0.000000",
+    "arquivo_origem": "GM888_Agua_Consumo_Humano.csv",
+    "linhas_origem": "90",
+    "dados": {
+      "arquivo": "GM888_Agua_Consumo_Humano.csv",
+      "linha": 90,
+      "legislacao": "Portaria GM/MS Nº888 5/21",
+      "matriz": "Água - BNU",
+      "origem_amostra": "Água Consumo Humano",
+      "codigo_ensaio": "1207",
+      "nome_ensaio": "Cloro Residual Livre",
+      "classe": null,
+      "valor_minimo": "0.200000",
+      "valor_maximo": "0.000000",
+      "unidade_medida": "mg/L",
+      "unidade_original": "mg/L"
+    }
+  },
+  {
+    "chave": "DUPLICATA_EXATA|GM888_Agua_Consumo_Humano.csv|93,94|",
+    "tipo": "DUPLICATA_EXATA",
+    "importado": true,
+    "descricao": "Benzeno (código 2414) repetido 2 vezes com os mesmos valores",
+    "arquivo_origem": "GM888_Agua_Consumo_Humano.csv",
+    "linhas_origem": "93,94",
+    "dados": null
+  },
+  {
+    "chave": "DUPLICATA_EXATA|GM888_Agua_Consumo_Humano.csv|97,98,99|",
+    "tipo": "DUPLICATA_EXATA",
+    "importado": true,
+    "descricao": "Bromato (código 3871) repetido 3 vezes com os mesmos valores",
+    "arquivo_origem": "GM888_Agua_Consumo_Humano.csv",
+    "linhas_origem": "97,98,99",
+    "dados": null
+  },
+  {
+    "chave": "DUPLICATA_EXATA|GM888_Agua_Consumo_Humano.csv|100,101,102|",
+    "tipo": "DUPLICATA_EXATA",
+    "importado": true,
+    "descricao": "Cloretos (código 3873) repetido 3 vezes com os mesmos valores",
+    "arquivo_origem": "GM888_Agua_Consumo_Humano.csv",
+    "linhas_origem": "100,101,102",
+    "dados": null
+  },
+  {
+    "chave": "DUPLICATA_EXATA|GM888_Agua_Consumo_Humano.csv|103,104|",
+    "tipo": "DUPLICATA_EXATA",
+    "importado": true,
+    "descricao": "Clorito (código 3874) repetido 2 vezes com os mesmos valores",
+    "arquivo_origem": "GM888_Agua_Consumo_Humano.csv",
+    "linhas_origem": "103,104",
+    "dados": null
+  },
+  {
+    "chave": "DUPLICATA_EXATA|GM888_Agua_Consumo_Humano.csv|105,106|",
+    "tipo": "DUPLICATA_EXATA",
+    "importado": true,
+    "descricao": "SUB - Fluoreto (código 3875) repetido 2 vezes com os mesmos valores",
+    "arquivo_origem": "GM888_Agua_Consumo_Humano.csv",
+    "linhas_origem": "105,106",
+    "dados": null
+  },
+  {
+    "chave": "DUPLICATA_EXATA|GM888_Agua_Consumo_Humano.csv|107,108,109|",
+    "tipo": "DUPLICATA_EXATA",
+    "importado": true,
+    "descricao": "SUB - Nitrato (como N) (código 3877) repetido 3 vezes com os mesmos valores",
+    "arquivo_origem": "GM888_Agua_Consumo_Humano.csv",
+    "linhas_origem": "107,108,109",
+    "dados": null
+  },
+  {
+    "chave": "DUPLICATA_EXATA|GM888_Agua_Consumo_Humano.csv|110,111,112|",
+    "tipo": "DUPLICATA_EXATA",
+    "importado": true,
+    "descricao": "SUB - Nitrito (como N) (código 3878) repetido 3 vezes com os mesmos valores",
+    "arquivo_origem": "GM888_Agua_Consumo_Humano.csv",
+    "linhas_origem": "110,111,112",
+    "dados": null
+  },
+  {
+    "chave": "DUPLICATA_EXATA|GM888_Agua_Consumo_Humano.csv|113,114,115,116|",
+    "tipo": "DUPLICATA_EXATA",
+    "importado": true,
+    "descricao": "Sulfato (código 3880) repetido 4 vezes com os mesmos valores",
+    "arquivo_origem": "GM888_Agua_Consumo_Humano.csv",
+    "linhas_origem": "113,114,115,116",
+    "dados": null
+  },
+  {
+    "chave": "DUPLICATA_EXATA|GM888_Agua_Consumo_Humano.csv|117,118|",
+    "tipo": "DUPLICATA_EXATA",
+    "importado": true,
+    "descricao": "Bromato (código 3882) repetido 2 vezes com os mesmos valores",
+    "arquivo_origem": "GM888_Agua_Consumo_Humano.csv",
+    "linhas_origem": "117,118",
+    "dados": null
+  },
+  {
+    "chave": "DUPLICATA_EXATA|GM888_Agua_Consumo_Humano.csv|129,130|",
+    "tipo": "DUPLICATA_EXATA",
+    "importado": true,
+    "descricao": "Amônia (NH3-N) (código 6628) repetido 2 vezes com os mesmos valores",
+    "arquivo_origem": "GM888_Agua_Consumo_Humano.csv",
+    "linhas_origem": "129,130",
+    "dados": null
+  },
+  {
+    "chave": "DUPLICATA_EXATA|GM888_Agua_Consumo_Humano.csv|131,132|",
+    "tipo": "DUPLICATA_EXATA",
+    "importado": true,
+    "descricao": "1,4-Diclorobenzeno (código 6998) repetido 2 vezes com os mesmos valores",
+    "arquivo_origem": "GM888_Agua_Consumo_Humano.csv",
+    "linhas_origem": "131,132",
+    "dados": null
+  },
+  {
+    "chave": "DUPLICATA_EXATA|GM888_Agua_Consumo_Humano.csv|134,135|",
+    "tipo": "DUPLICATA_EXATA",
+    "importado": true,
+    "descricao": "Cloreto de Vinila (código 7003) repetido 2 vezes com os mesmos valores",
+    "arquivo_origem": "GM888_Agua_Consumo_Humano.csv",
+    "linhas_origem": "134,135",
+    "dados": null
+  },
+  {
+    "chave": "DUPLICATA_EXATA|GM888_Agua_Consumo_Humano.csv|136,137,138|",
+    "tipo": "DUPLICATA_EXATA",
+    "importado": true,
+    "descricao": "Amônia (NH3-N) (código 7011) repetido 3 vezes com os mesmos valores",
+    "arquivo_origem": "GM888_Agua_Consumo_Humano.csv",
+    "linhas_origem": "136,137,138",
+    "dados": null
+  },
+  {
+    "chave": "UNIDADE_AUSENTE|GM888_Agua_Consumo_Humano.csv|139|",
+    "tipo": "UNIDADE_AUSENTE",
+    "importado": true,
+    "descricao": "SUB - Gosto e Odor (código 7138) em Água Consumo Humano",
+    "arquivo_origem": "GM888_Agua_Consumo_Humano.csv",
+    "linhas_origem": "139",
+    "dados": null
+  },
+  {
+    "chave": "DUPLICATA_EXATA|GM888_Agua_Consumo_Humano.csv|140,141|",
+    "tipo": "DUPLICATA_EXATA",
+    "importado": true,
+    "descricao": "Amônia (NH3-N) (código 7166) repetido 2 vezes com os mesmos valores",
+    "arquivo_origem": "GM888_Agua_Consumo_Humano.csv",
+    "linhas_origem": "140,141",
+    "dados": null
+  },
+  {
+    "chave": "LIMITE_CONFLITANTE|GM888_Agua_Consumo_Humano.csv|157,158|",
+    "tipo": "LIMITE_CONFLITANTE",
+    "importado": false,
+    "descricao": "Paraquate (código 7282) em Água Consumo Humano: mín 0.000000 / máx 13.000000 µg/L (linhas 157) × mín 0.000000 / máx 0.000000 µg/L (linhas 158). Nenhuma versão foi escolhida.",
+    "arquivo_origem": "GM888_Agua_Consumo_Humano.csv",
+    "linhas_origem": "157,158",
+    "dados": {
+      "codigo": "7282",
+      "variantes": [
+        {
+          "arquivo": "GM888_Agua_Consumo_Humano.csv",
+          "linha": 157,
+          "legislacao": "Portaria GM/MS Nº888 5/21",
+          "matriz": "Água - BNU",
+          "origem_amostra": "Água Consumo Humano",
+          "codigo_ensaio": "7282",
+          "nome_ensaio": "Paraquate",
+          "classe": null,
+          "valor_minimo": "0.000000",
+          "valor_maximo": "13.000000",
+          "unidade_medida": "µg/L",
+          "unidade_original": "µg/L"
+        },
+        {
+          "arquivo": "GM888_Agua_Consumo_Humano.csv",
+          "linha": 158,
+          "legislacao": "Portaria GM/MS Nº888 5/21",
+          "matriz": "Água - BNU",
+          "origem_amostra": "Água Consumo Humano",
+          "codigo_ensaio": "7282",
+          "nome_ensaio": "Paraquate",
+          "classe": null,
+          "valor_minimo": "0.000000",
+          "valor_maximo": "0.000000",
+          "unidade_medida": "µg/L",
+          "unidade_original": "µg/L"
+        }
+      ]
+    }
+  },
+  {
+    "chave": "LIMITE_CONFLITANTE|GM888_Agua_Consumo_Humano.csv|159,160|",
+    "tipo": "LIMITE_CONFLITANTE",
+    "importado": false,
+    "descricao": "Picloram (código 7283) em Água Consumo Humano: mín 0.000000 / máx 60.000000 µg/L (linhas 159) × mín 0.000000 / máx 0.000000 µg/L (linhas 160). Nenhuma versão foi escolhida.",
+    "arquivo_origem": "GM888_Agua_Consumo_Humano.csv",
+    "linhas_origem": "159,160",
+    "dados": {
+      "codigo": "7283",
+      "variantes": [
+        {
+          "arquivo": "GM888_Agua_Consumo_Humano.csv",
+          "linha": 159,
+          "legislacao": "Portaria GM/MS Nº888 5/21",
+          "matriz": "Água - BNU",
+          "origem_amostra": "Água Consumo Humano",
+          "codigo_ensaio": "7283",
+          "nome_ensaio": "Picloram",
+          "classe": null,
+          "valor_minimo": "0.000000",
+          "valor_maximo": "60.000000",
+          "unidade_medida": "µg/L",
+          "unidade_original": "µg/L"
+        },
+        {
+          "arquivo": "GM888_Agua_Consumo_Humano.csv",
+          "linha": 160,
+          "legislacao": "Portaria GM/MS Nº888 5/21",
+          "matriz": "Água - BNU",
+          "origem_amostra": "Água Consumo Humano",
+          "codigo_ensaio": "7283",
+          "nome_ensaio": "Picloram",
+          "classe": null,
+          "valor_minimo": "0.000000",
+          "valor_maximo": "0.000000",
+          "unidade_medida": "µg/L",
+          "unidade_original": "µg/L"
+        }
+      ]
+    }
+  },
+  {
+    "chave": "DUPLICATA_EXATA|GM888_Agua_Consumo_Humano.csv|161,162|",
+    "tipo": "DUPLICATA_EXATA",
+    "importado": true,
+    "descricao": "Propargito (código 7284) repetido 2 vezes com os mesmos valores",
+    "arquivo_origem": "GM888_Agua_Consumo_Humano.csv",
+    "linhas_origem": "161,162",
+    "dados": null
+  },
+  {
+    "chave": "DUPLICATA_EXATA|GM888_Agua_Consumo_Humano.csv|163,164|",
+    "tipo": "DUPLICATA_EXATA",
+    "importado": true,
+    "descricao": "Protioconazol + ProticonazolDestio (código 7285) repetido 2 vezes com os mesmos valores",
+    "arquivo_origem": "GM888_Agua_Consumo_Humano.csv",
+    "linhas_origem": "163,164",
+    "dados": null
+  },
+  {
+    "chave": "DUPLICATA_EXATA|GM888_Agua_Consumo_Humano.csv|165,166|",
+    "tipo": "DUPLICATA_EXATA",
+    "importado": true,
+    "descricao": "Tiodicarbe (código 7286) repetido 2 vezes com os mesmos valores",
+    "arquivo_origem": "GM888_Agua_Consumo_Humano.csv",
+    "linhas_origem": "165,166",
+    "dados": null
+  },
+  {
+    "chave": "DUPLICATA_EXATA|GM888_Agua_Consumo_Humano.csv|167,168|",
+    "tipo": "DUPLICATA_EXATA",
+    "importado": true,
+    "descricao": "Tiram (código 7287) repetido 2 vezes com os mesmos valores",
+    "arquivo_origem": "GM888_Agua_Consumo_Humano.csv",
+    "linhas_origem": "167,168",
+    "dados": null
+  },
+  {
+    "chave": "DUPLICATA_EXATA|GM888_Agua_Consumo_Humano.csv|169,170|",
+    "tipo": "DUPLICATA_EXATA",
+    "importado": true,
+    "descricao": "Clorato (código 7288) repetido 2 vezes com os mesmos valores",
+    "arquivo_origem": "GM888_Agua_Consumo_Humano.csv",
+    "linhas_origem": "169,170",
+    "dados": null
+  },
+  {
+    "chave": "DUPLICATA_EXATA|GM888_Agua_Consumo_Humano.csv|172,173|",
+    "tipo": "DUPLICATA_EXATA",
+    "importado": true,
+    "descricao": "Cilindrospermopsinas (código 7290) repetido 2 vezes com os mesmos valores",
+    "arquivo_origem": "GM888_Agua_Consumo_Humano.csv",
+    "linhas_origem": "172,173",
+    "dados": null
+  },
+  {
+    "chave": "DUPLICATA_EXATA|GM888_Agua_Consumo_Humano.csv|174,175|",
+    "tipo": "DUPLICATA_EXATA",
+    "importado": true,
+    "descricao": "Metribuzim (código 7291) repetido 2 vezes com os mesmos valores",
+    "arquivo_origem": "GM888_Agua_Consumo_Humano.csv",
+    "linhas_origem": "174,175",
+    "dados": null
+  },
+  {
+    "chave": "UNIDADE_AUSENTE|GM888_Agua_Consumo_Humano.csv|177|",
+    "tipo": "UNIDADE_AUSENTE",
+    "importado": true,
+    "descricao": "Razão de Nitrito e Nitrato (código 7865) em Água Consumo Humano",
+    "arquivo_origem": "GM888_Agua_Consumo_Humano.csv",
+    "linhas_origem": "177",
+    "dados": null
+  },
+  {
+    "chave": "DUPLICATA_EXATA|GM888_Agua_Consumo_Humano.csv|178,179|",
+    "tipo": "DUPLICATA_EXATA",
+    "importado": true,
+    "descricao": "Fluoreto (código 7898) repetido 2 vezes com os mesmos valores",
+    "arquivo_origem": "GM888_Agua_Consumo_Humano.csv",
+    "linhas_origem": "178,179",
+    "dados": null
+  },
+  {
+    "chave": "DUPLICATA_EXATA|GM888_Agua_Consumo_Humano.csv|185,186|",
+    "tipo": "DUPLICATA_EXATA",
+    "importado": true,
+    "descricao": "Amônia (código 8020) repetido 2 vezes com os mesmos valores",
+    "arquivo_origem": "GM888_Agua_Consumo_Humano.csv",
+    "linhas_origem": "185,186",
+    "dados": null
+  },
+  {
+    "chave": "DUPLICATA_EXATA|GM888_Agua_Consumo_Humano.csv|199,200|",
+    "tipo": "DUPLICATA_EXATA",
+    "importado": true,
+    "descricao": "Manganês (código 10528) repetido 2 vezes com os mesmos valores",
+    "arquivo_origem": "GM888_Agua_Consumo_Humano.csv",
+    "linhas_origem": "199,200",
+    "dados": null
+  },
+  {
+    "chave": "DUPLICATA_EXATA|GM888_Agua_Consumo_Humano.csv|209,210|",
+    "tipo": "DUPLICATA_EXATA",
+    "importado": true,
+    "descricao": "Chumbo (código 10666) repetido 2 vezes com os mesmos valores",
+    "arquivo_origem": "GM888_Agua_Consumo_Humano.csv",
+    "linhas_origem": "209,210",
+    "dados": null
+  },
+  {
+    "chave": "DUPLICATA_EXATA|GM888_Agua_Consumo_Humano.csv|214,215|",
+    "tipo": "DUPLICATA_EXATA",
+    "importado": true,
+    "descricao": "Cádmio (código 10674) repetido 2 vezes com os mesmos valores",
+    "arquivo_origem": "GM888_Agua_Consumo_Humano.csv",
+    "linhas_origem": "214,215",
+    "dados": null
+  },
+  {
+    "chave": "DUPLICATA_EXATA|GM888_Agua_Consumo_Humano.csv|219,220|",
+    "tipo": "DUPLICATA_EXATA",
+    "importado": true,
+    "descricao": "Ferro (código 10687) repetido 2 vezes com os mesmos valores",
+    "arquivo_origem": "GM888_Agua_Consumo_Humano.csv",
+    "linhas_origem": "219,220",
+    "dados": null
+  },
+  {
+    "chave": "DUPLICATA_EXATA|GM888_Agua_Consumo_Humano.csv|221,222|",
+    "tipo": "DUPLICATA_EXATA",
+    "importado": true,
+    "descricao": "Manganês (código 10691) repetido 2 vezes com os mesmos valores",
+    "arquivo_origem": "GM888_Agua_Consumo_Humano.csv",
+    "linhas_origem": "221,222",
+    "dados": null
+  },
+  {
+    "chave": "DUPLICATA_EXATA|GM888_Agua_Consumo_Humano.csv|229,230|",
+    "tipo": "DUPLICATA_EXATA",
+    "importado": true,
+    "descricao": "Acrilamida (código 11649) repetido 2 vezes com os mesmos valores",
+    "arquivo_origem": "GM888_Agua_Consumo_Humano.csv",
+    "linhas_origem": "229,230",
+    "dados": null
+  },
+  {
+    "chave": "MAXIMO_ZERO|GM888_Agua_Consumo_Humano.csv|264|",
+    "tipo": "MAXIMO_ZERO",
+    "importado": true,
+    "descricao": "SUB - Coliformes Totais (NMP) (código 16700) em Água Consumo Humano: máximo 0 NMP/100 mL",
+    "arquivo_origem": "GM888_Agua_Consumo_Humano.csv",
+    "linhas_origem": "264",
+    "dados": null
+  },
+  {
+    "chave": "MAXIMO_ZERO|GM888_Agua_Consumo_Humano.csv|265|",
+    "tipo": "MAXIMO_ZERO",
+    "importado": true,
+    "descricao": "SUB - Escherichia coli - Determinação quantitativa pela técnica de tubos múltiplos (NMP) (código 16702) em Água Consumo Humano: máximo 0 NMP/100 mL",
+    "arquivo_origem": "GM888_Agua_Consumo_Humano.csv",
+    "linhas_origem": "265",
+    "dados": null
+  },
+  {
+    "chave": "MAXIMO_ZERO|GM888_Agua_Consumo_Humano.csv|266|",
+    "tipo": "MAXIMO_ZERO",
+    "importado": true,
+    "descricao": "SUB - Escherichia coli (P/A) (código 17104) em Água Consumo Humano: máximo 0 Aus/Pres em 100mL",
+    "arquivo_origem": "GM888_Agua_Consumo_Humano.csv",
+    "linhas_origem": "266",
+    "dados": null
+  },
+  {
+    "chave": "MAXIMO_ZERO|GM888_Agua_Consumo_Humano.csv|267|",
+    "tipo": "MAXIMO_ZERO",
+    "importado": true,
+    "descricao": "SUB - Coliformes Totais (P/A) (código 17105) em Água Consumo Humano: máximo 0 Aus/Pres em 100mL",
+    "arquivo_origem": "GM888_Agua_Consumo_Humano.csv",
+    "linhas_origem": "267",
+    "dados": null
+  },
+  {
+    "chave": "MAXIMO_ZERO|GM888_Agua_Consumo_Humano.csv|268|",
+    "tipo": "MAXIMO_ZERO",
+    "importado": true,
+    "descricao": "SUB - Coliformes Totais - Determinação qualitativa pela técnica de tubos múltiplos modificados (código 17120) em Água Consumo Humano: máximo 0 Aus/Pres em 100mL",
+    "arquivo_origem": "GM888_Agua_Consumo_Humano.csv",
+    "linhas_origem": "268",
+    "dados": null
+  },
+  {
+    "chave": "MAXIMO_ZERO|GM888_Agua_Consumo_Humano.csv|269|",
+    "tipo": "MAXIMO_ZERO",
+    "importado": true,
+    "descricao": "SUB - Escherichia coli - Determinação qualitativa pela técnica de tubos múltiplos modificados (código 17121) em Água Consumo Humano: máximo 0 Aus/Pres em 100mL",
+    "arquivo_origem": "GM888_Agua_Consumo_Humano.csv",
+    "linhas_origem": "269",
+    "dados": null
+  },
+  {
+    "chave": "DUPLICATA_EXATA|GM888_Agua_Tratada.csv|3,4|",
+    "tipo": "DUPLICATA_EXATA",
+    "importado": true,
+    "descricao": "Bromato (código 5) repetido 2 vezes com os mesmos valores",
+    "arquivo_origem": "GM888_Agua_Tratada.csv",
+    "linhas_origem": "3,4",
+    "dados": null
+  },
+  {
+    "chave": "DUPLICATA_EXATA|GM888_Agua_Tratada.csv|6,7|",
+    "tipo": "DUPLICATA_EXATA",
+    "importado": true,
+    "descricao": "Cloretos (código 11) repetido 2 vezes com os mesmos valores",
+    "arquivo_origem": "GM888_Agua_Tratada.csv",
+    "linhas_origem": "6,7",
+    "dados": null
+  },
+  {
+    "chave": "CLASSE_GRAFIA|GM888_Agua_Tratada.csv|15|",
+    "tipo": "CLASSE_GRAFIA",
+    "importado": true,
+    "descricao": "Classe \"Àgua tratada\" (Odor, código 36): possível grafia de \"Água tratada\"",
+    "arquivo_origem": "GM888_Agua_Tratada.csv",
+    "linhas_origem": "15",
+    "dados": null
+  },
+  {
+    "chave": "MAXIMO_ZERO|GM888_Agua_Tratada.csv|61|",
+    "tipo": "MAXIMO_ZERO",
+    "importado": true,
+    "descricao": "Clorofórmio (código 669) em Agua Tratada: máximo 0 mg/L",
+    "arquivo_origem": "GM888_Agua_Tratada.csv",
+    "linhas_origem": "61",
+    "dados": null
+  },
+  {
+    "chave": "UNIDADE_AUSENTE|GM888_Agua_Tratada.csv|73|",
+    "tipo": "UNIDADE_AUSENTE",
+    "importado": true,
+    "descricao": "pH (código 793) em Agua Tratada",
+    "arquivo_origem": "GM888_Agua_Tratada.csv",
+    "linhas_origem": "73",
+    "dados": null
+  },
+  {
+    "chave": "UNIDADE_AUSENTE|GM888_Agua_Tratada.csv|86|",
+    "tipo": "UNIDADE_AUSENTE",
+    "importado": true,
+    "descricao": "pH (código 1190) em Agua Tratada",
+    "arquivo_origem": "GM888_Agua_Tratada.csv",
+    "linhas_origem": "86",
+    "dados": null
+  },
+  {
+    "chave": "DUPLICATA_EXATA|GM888_Agua_Tratada.csv|94,95|",
+    "tipo": "DUPLICATA_EXATA",
+    "importado": true,
+    "descricao": "Clorito (código 3874) repetido 2 vezes com os mesmos valores",
+    "arquivo_origem": "GM888_Agua_Tratada.csv",
+    "linhas_origem": "94,95",
+    "dados": null
+  },
+  {
+    "chave": "DUPLICATA_EXATA|GM888_Agua_Tratada.csv|104,105|",
+    "tipo": "DUPLICATA_EXATA",
+    "importado": true,
+    "descricao": "Aldrin + dieldrin (código 5679) repetido 2 vezes com os mesmos valores",
+    "arquivo_origem": "GM888_Agua_Tratada.csv",
+    "linhas_origem": "104,105",
+    "dados": null
+  },
+  {
+    "chave": "MAXIMO_ZERO|GM888_Agua_Tratada.csv|109|",
+    "tipo": "MAXIMO_ZERO",
+    "importado": true,
+    "descricao": "SUB - Bactérias Heterotróficas (código 6014) em Agua Tratada: máximo 0 UFC/100mL",
+    "arquivo_origem": "GM888_Agua_Tratada.csv",
+    "linhas_origem": "109",
+    "dados": null
+  },
+  {
+    "chave": "DUPLICATA_EXATA|GM888_Agua_Tratada.csv|113,114|",
+    "tipo": "DUPLICATA_EXATA",
+    "importado": true,
+    "descricao": "1,4-Diclorobenzeno (código 6998) repetido 2 vezes com os mesmos valores",
+    "arquivo_origem": "GM888_Agua_Tratada.csv",
+    "linhas_origem": "113,114",
+    "dados": null
+  },
+  {
+    "chave": "LIMITE_CONFLITANTE|GM888_Agua_Tratada.csv|115,116,117|",
+    "tipo": "LIMITE_CONFLITANTE",
+    "importado": false,
+    "descricao": "1,2-Diclorobenzeno (código 7001) em Agua Tratada: mín 0.000000 / máx 0.001000 mg/L (linhas 115,116) × mín 0.000000 / máx 0.000000 mg/L (linhas 117). Nenhuma versão foi escolhida.",
+    "arquivo_origem": "GM888_Agua_Tratada.csv",
+    "linhas_origem": "115,116,117",
+    "dados": {
+      "codigo": "7001",
+      "variantes": [
+        {
+          "arquivo": "GM888_Agua_Tratada.csv",
+          "linha": 115,
+          "legislacao": "Portaria GM/MS Nº888 5/21",
+          "matriz": "Água - BNU",
+          "origem_amostra": "Agua Tratada",
+          "codigo_ensaio": "7001",
+          "nome_ensaio": "1,2-Diclorobenzeno",
+          "classe": null,
+          "valor_minimo": "0.000000",
+          "valor_maximo": "0.001000",
+          "unidade_medida": "mg/L",
+          "unidade_original": "mg/L"
+        },
+        {
+          "arquivo": "GM888_Agua_Tratada.csv",
+          "linha": 117,
+          "legislacao": "Portaria GM/MS Nº888 5/21",
+          "matriz": "Água - BNU",
+          "origem_amostra": "Agua Tratada",
+          "codigo_ensaio": "7001",
+          "nome_ensaio": "1,2-Diclorobenzeno",
+          "classe": null,
+          "valor_minimo": "0.000000",
+          "valor_maximo": "0.000000",
+          "unidade_medida": "mg/L",
+          "unidade_original": "mg/L"
+        }
+      ]
+    }
+  },
+  {
+    "chave": "UNIDADE_AUSENTE|GM888_Agua_Tratada.csv|120|",
+    "tipo": "UNIDADE_AUSENTE",
+    "importado": true,
+    "descricao": "SUB - Gosto e Odor (código 7138) em Agua Tratada",
+    "arquivo_origem": "GM888_Agua_Tratada.csv",
+    "linhas_origem": "120",
+    "dados": null
+  },
+  {
+    "chave": "UNIDADE_AUSENTE|GM888_Agua_Tratada.csv|148|",
+    "tipo": "UNIDADE_AUSENTE",
+    "importado": true,
+    "descricao": "Razão de Nitrito e Nitrato (código 7865) em Agua Tratada",
+    "arquivo_origem": "GM888_Agua_Tratada.csv",
+    "linhas_origem": "148",
+    "dados": null
+  },
+  {
+    "chave": "DUPLICATA_EXATA|GM888_Agua_Tratada.csv|172,173|",
+    "tipo": "DUPLICATA_EXATA",
+    "importado": true,
+    "descricao": "Alumínio (código 10662) repetido 2 vezes com os mesmos valores",
+    "arquivo_origem": "GM888_Agua_Tratada.csv",
+    "linhas_origem": "172,173",
+    "dados": null
+  },
+  {
+    "chave": "LIMITE_CONFLITANTE|GM888_Agua_Tratada.csv|185,186,187|",
+    "tipo": "LIMITE_CONFLITANTE",
+    "importado": false,
+    "descricao": "Ferro (código 10687) em Agua Tratada: mín 0.000000 / máx 0.300000 mg/L (linhas 185,186) × mín 0.000000 / máx 0.000000 mg/L (linhas 187). Nenhuma versão foi escolhida.",
+    "arquivo_origem": "GM888_Agua_Tratada.csv",
+    "linhas_origem": "185,186,187",
+    "dados": {
+      "codigo": "10687",
+      "variantes": [
+        {
+          "arquivo": "GM888_Agua_Tratada.csv",
+          "linha": 185,
+          "legislacao": "Portaria GM/MS Nº888 5/21",
+          "matriz": "Água - BNU",
+          "origem_amostra": "Agua Tratada",
+          "codigo_ensaio": "10687",
+          "nome_ensaio": "Ferro",
+          "classe": null,
+          "valor_minimo": "0.000000",
+          "valor_maximo": "0.300000",
+          "unidade_medida": "mg/L",
+          "unidade_original": "mg/L"
+        },
+        {
+          "arquivo": "GM888_Agua_Tratada.csv",
+          "linha": 187,
+          "legislacao": "Portaria GM/MS Nº888 5/21",
+          "matriz": "Água - BNU",
+          "origem_amostra": "Agua Tratada",
+          "codigo_ensaio": "10687",
+          "nome_ensaio": "Ferro",
+          "classe": null,
+          "valor_minimo": "0.000000",
+          "valor_maximo": "0.000000",
+          "unidade_medida": "mg/L",
+          "unidade_original": "mg/L"
+        }
+      ]
+    }
+  },
+  {
+    "chave": "DUPLICATA_EXATA|GM888_Agua_Tratada.csv|188,189|",
+    "tipo": "DUPLICATA_EXATA",
+    "importado": true,
+    "descricao": "Manganês (código 10691) repetido 2 vezes com os mesmos valores",
+    "arquivo_origem": "GM888_Agua_Tratada.csv",
+    "linhas_origem": "188,189",
+    "dados": null
+  },
+  {
+    "chave": "DUPLICATA_EXATA|GM888_Agua_Tratada.csv|190,191|",
+    "tipo": "DUPLICATA_EXATA",
+    "importado": true,
+    "descricao": "Sódio (código 10693) repetido 2 vezes com os mesmos valores",
+    "arquivo_origem": "GM888_Agua_Tratada.csv",
+    "linhas_origem": "190,191",
+    "dados": null
+  },
+  {
+    "chave": "DUPLICATA_EXATA|GM888_Agua_Tratada.csv|192,193|",
+    "tipo": "DUPLICATA_EXATA",
+    "importado": true,
+    "descricao": "Zinco (código 10695) repetido 2 vezes com os mesmos valores",
+    "arquivo_origem": "GM888_Agua_Tratada.csv",
+    "linhas_origem": "192,193",
+    "dados": null
+  },
+  {
+    "chave": "MAXIMO_ZERO|GM888_Agua_Tratada.csv|233|",
+    "tipo": "MAXIMO_ZERO",
+    "importado": true,
+    "descricao": "Ácido Dicloroacético (DCAA) (código 15198) em Agua Tratada: máximo 0 mg/L",
+    "arquivo_origem": "GM888_Agua_Tratada.csv",
+    "linhas_origem": "233",
+    "dados": null
+  },
+  {
+    "chave": "MAXIMO_ZERO|GM888_Agua_Tratada.csv|247|",
+    "tipo": "MAXIMO_ZERO",
+    "importado": true,
+    "descricao": "SUB - Coliformes Totais (UFC) (código 17079) em Agua Tratada: máximo 0 UFC/100mL",
+    "arquivo_origem": "GM888_Agua_Tratada.csv",
+    "linhas_origem": "247",
+    "dados": null
+  },
+  {
+    "chave": "MAXIMO_ZERO|GM888_Agua_Tratada.csv|248|",
+    "tipo": "MAXIMO_ZERO",
+    "importado": true,
+    "descricao": "SUB - Escherichia coli (P/A) (código 17104) em Agua Tratada: máximo 0 Aus/Pres em 100mL",
+    "arquivo_origem": "GM888_Agua_Tratada.csv",
+    "linhas_origem": "248",
+    "dados": null
+  },
+  {
+    "chave": "MAXIMO_ZERO|GM888_Agua_Tratada.csv|249|",
+    "tipo": "MAXIMO_ZERO",
+    "importado": true,
+    "descricao": "SUB - Coliformes Totais (P/A) (código 17105) em Agua Tratada: máximo 0 Aus/Pres em 100mL",
+    "arquivo_origem": "GM888_Agua_Tratada.csv",
+    "linhas_origem": "249",
+    "dados": null
+  },
+  {
+    "chave": "MAXIMO_ZERO|GM888_Agua_Tratada.csv|250|",
+    "tipo": "MAXIMO_ZERO",
+    "importado": true,
+    "descricao": "SUB - Coliformes Totais - Determinação qualitativa pela técnica de tubos múltiplos modificados (código 17120) em Agua Tratada: máximo 0 Aus/Pres em 100mL",
+    "arquivo_origem": "GM888_Agua_Tratada.csv",
+    "linhas_origem": "250",
+    "dados": null
+  },
+  {
+    "chave": "MAXIMO_ZERO|GM888_Agua_Tratada.csv|251|",
+    "tipo": "MAXIMO_ZERO",
+    "importado": true,
+    "descricao": "SUB - Escherichia coli - Determinação qualitativa pela técnica de tubos múltiplos modificados (código 17121) em Agua Tratada: máximo 0 Aus/Pres em 100mL",
+    "arquivo_origem": "GM888_Agua_Tratada.csv",
+    "linhas_origem": "251",
+    "dados": null
+  },
+  {
+    "chave": "MAXIMO_ZERO|SES1468_Agua_Subterranea.csv|23|",
+    "tipo": "MAXIMO_ZERO",
+    "importado": true,
+    "descricao": "Clorpirifós + Clorpirifós-Oxon (código 7172) em Água Subterrânea: máximo 0 µg/L",
+    "arquivo_origem": "SES1468_Agua_Subterranea.csv",
+    "linhas_origem": "23",
+    "dados": null
+  },
+  {
+    "chave": "MAXIMO_ZERO|SES1468_Agua_Superficial.csv|2|",
+    "tipo": "MAXIMO_ZERO",
+    "importado": true,
+    "descricao": "Heptacloro (código 397) em Água Superficial (Água doce): máximo 0 µg/L",
+    "arquivo_origem": "SES1468_Agua_Superficial.csv",
+    "linhas_origem": "2",
+    "dados": null
+  },
+  {
+    "chave": "MAXIMO_ZERO|SES1468_Agua_Tratada.csv|24|",
+    "tipo": "MAXIMO_ZERO",
+    "importado": true,
+    "descricao": "Clorpirifós + Clorpirifós-Oxon (código 7172) em Agua Tratada: máximo 0 µg/L",
+    "arquivo_origem": "SES1468_Agua_Tratada.csv",
+    "linhas_origem": "24",
+    "dados": null
+  },
+  {
+    "chave": "VIGENCIA_NAO_INFORMADA|*||Portaria GM/MS Nº888 5/21",
+    "tipo": "VIGENCIA_NAO_INFORMADA",
+    "importado": true,
+    "descricao": "Portaria GM/MS Nº888 5/21: arquivos não trazem versão nem datas de vigência. Limites importados com versão 1 e vigência vazia; confirmar no texto oficial.",
+    "arquivo_origem": null,
+    "linhas_origem": null,
+    "dados": null
+  },
+  {
+    "chave": "VIGENCIA_NAO_INFORMADA|*||Portaria SES nº1468/2022",
+    "tipo": "VIGENCIA_NAO_INFORMADA",
+    "importado": true,
+    "descricao": "Portaria SES nº1468/2022: arquivos não trazem versão nem datas de vigência. Limites importados com versão 1 e vigência vazia; confirmar no texto oficial.",
+    "arquivo_origem": null,
+    "linhas_origem": null,
+    "dados": null
+  }
+]

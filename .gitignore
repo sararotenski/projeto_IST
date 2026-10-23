@@ -1,0 +1,12 @@
+# Credenciais e configuração local — nunca versionar
+.env
+.env.*
+!.env.example
+
+# Dependências e build
+node_modules/
+web/dist/
+
+# Sistema / editor
+.DS_Store
+*.log

@@ -1,0 +1,51 @@
+{
+  "arquivos": [
+    {
+      "arquivo": "GM888_Agua_Consumo_Humano.csv",
+      "totalLinhas": 268,
+      "colunasFaltando": []
+    },
+    {
+      "arquivo": "GM888_Agua_Tratada.csv",
+      "totalLinhas": 250,
+      "colunasFaltando": []
+    },
+    {
+      "arquivo": "SES1468_Agua_Consumo_Humano.csv",
+      "totalLinhas": 69,
+      "colunasFaltando": []
+    },
+    {
+      "arquivo": "SES1468_Agua_Subterranea.csv",
+      "totalLinhas": 70,
+      "colunasFaltando": []
+    },
+    {
+      "arquivo": "SES1468_Agua_Superficial.csv",
+      "totalLinhas": 66,
+      "colunasFaltando": []
+    },
+    {
+      "arquivo": "SES1468_Agua_Tratada.csv",
+      "totalLinhas": 71,
+      "colunasFaltando": []
+    }
+  ],
+  "totalLinhas": 794,
+  "linhasValidas": 794,
+  "limitesConsolidados": 732,
+  "limitesRequerValidacao": 25,
+  "pendenciasPorTipo": {
+    "LINHA_INVALIDA": 0,
+    "DUPLICATA_EXATA": 41,
+    "LIMITE_CONFLITANTE": 5,
+    "FAIXA_INCONSISTENTE": 2,
+    "MAXIMO_ZERO": 17,
+    "UNIDADE_AUSENTE": 8,
+    "CLASSE_GRAFIA": 2,
+    "ENSAIO_NOME_DIVERGENTE": 0,
+    "NOME_EM_CODIGOS_DIFERENTES": 77,
+    "VIGENCIA_NAO_INFORMADA": 2,
+    "COMPRIMENTO_EXCEDIDO": 0
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "name": "projeto-ist-ensaios-ambientais",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Banco de dados, importação e dashboard para análise de ensaios ambientais (IST)",
+  "type": "module",
+  "engines": {
+    "node": ">=22.9"
+  },
+  "scripts": {
+    "extrair": "node scripts/extrair.js",
+    "inspecionar": "node --env-file-if-exists=.env scripts/inspecionar-banco.js",
+    "migrar": "node --env-file-if-exists=.env scripts/migrar.js",
+    "migrar:reverter": "node --env-file-if-exists=.env scripts/migrar.js --reverter",
+    "importar": "node --env-file-if-exists=.env scripts/importar.js",
+    "alertas": "node --env-file-if-exists=.env scripts/gerar-alertas.js",
+    "api": "node --env-file-if-exists=.env server/index.js",
+    "web": "vite",
+    "build": "vite build",
+    "start": "npm run build && node --env-file-if-exists=.env server/index.js",
+    "test": "node --test \"tests/*.test.js\"",
+    "test:db": "node --env-file-if-exists=.env --test --test-concurrency=1 \"tests/db/*.test.js\""
+  },
+  "dependencies": {
+    "express": "5.3.0",
+    "pg": "8.23.1",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "recharts": "3.10.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "6.1.2",
+    "vite": "8.3.5"
+  }
+}
