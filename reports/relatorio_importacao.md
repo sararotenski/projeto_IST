@@ -1,14 +1,14 @@
 # Relatório de importação
 
-Gerado por `npm run importar` em 2026-10-23T15:57:29.015Z.
+Gerado por `npm run importar` em 2026-10-24T01:48:17.310Z.
 
-| Tabela | Inseridos | Já existentes (iguais) | Divergentes (não sobrescritos) |
-|---|---:|---:|---:|
-| legislacao | 0 | 2 | 0 |
-| ensaio | 0 | 310 | 0 |
-| classe | 0 | 2 | 0 |
-| limite | 0 | 732 | 0 |
-| etl.pendencia | 0 | 154 | — |
+| Tabela | Inseridos | Já existentes (iguais) | Corrigidos pela curadoria | Divergentes (não sobrescritos) |
+|---|---:|---:|---:|---:|
+| legislacao | 0 | 2 | 0 | 0 |
+| ensaio | 0 | 310 | 0 | 0 |
+| classe | 0 | 2 | 0 | 0 |
+| limite | 0 | 719 | 13 | 0 |
+| etl.pendencia | 0 | 154 | — | — |
 
 ## Registros por tabela após a importação
 
@@ -17,7 +17,7 @@ Gerado por `npm run importar` em 2026-10-23T15:57:29.015Z.
 | legislacao | 2 |
 | classe | 2 |
 | ensaio | 310 |
-| limite | 732 |
+| limite | 739 |
 | cliente | 0 |
 | proposta_comercial | 0 |
 | amostra | 0 |

@@ -66,7 +66,7 @@ Portaria GM/MS Nº888 5/21;678;;Água - BNU;Água Consumo Humano;0.000000;40.000
 Portaria GM/MS Nº888 5/21;680;;Água - BNU;Água Consumo Humano;0.000000;0.020000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;69
 Portaria GM/MS Nº888 5/21;682;;Água - BNU;Água Consumo Humano;0.000000;300.000000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;70
 Portaria GM/MS Nº888 5/21;690;;Água - BNU;Água Consumo Humano;0.000000;0.000300;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;71
-Portaria GM/MS Nº888 5/21;691;Àgua tratada;Água - BNU;Água Consumo Humano;0.000000;0.001000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;72
+Portaria GM/MS Nº888 5/21;691;Água tratada;Água - BNU;Água Consumo Humano;0.000000;0.001000;mg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;72
 Portaria GM/MS Nº888 5/21;776;;Água - BNU;Água Consumo Humano;0.000000;0.000001;Aus/Pres em 100mL;1;;;false;;GM888_Agua_Consumo_Humano.csv;73
 Portaria GM/MS Nº888 5/21;793;;Água - BNU;Água Consumo Humano;6.000000;9.000000;;1;;;true;Revisar: unidade não informada;GM888_Agua_Consumo_Humano.csv;75
 Portaria GM/MS Nº888 5/21;833;;Água - BNU;Água Consumo Humano;0.000000;7.000000;µg/L;1;;;false;;GM888_Agua_Consumo_Humano.csv;76
@@ -231,7 +231,7 @@ Portaria GM/MS Nº888 5/21;25;;Água - BNU;Agua Tratada;0.000000;1.500000;mg/L;1
 Portaria GM/MS Nº888 5/21;29;;Água - BNU;Agua Tratada;0.000000;6.000000;Intensidade;1;;;false;;GM888_Agua_Tratada.csv;12
 Portaria GM/MS Nº888 5/21;31;;Água - BNU;Agua Tratada;0.000000;10.000000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;13
 Portaria GM/MS Nº888 5/21;32;;Água - BNU;Agua Tratada;0.000000;1.000000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;14
-Portaria GM/MS Nº888 5/21;36;Àgua tratada;Água - BNU;Agua Tratada;0.000000;6.000000;Intensidade;1;;;false;;GM888_Agua_Tratada.csv;15
+Portaria GM/MS Nº888 5/21;36;Água tratada;Água - BNU;Agua Tratada;0.000000;6.000000;Intensidade;1;;;false;;GM888_Agua_Tratada.csv;15
 Portaria GM/MS Nº888 5/21;36;;Água - BNU;Agua Tratada;0.000000;6.000000;Intensidade;1;;;false;;GM888_Agua_Tratada.csv;16
 Portaria GM/MS Nº888 5/21;43;;Água - BNU;Agua Tratada;0.000000;250.000000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;17
 Portaria GM/MS Nº888 5/21;47;;Água - BNU;Agua Tratada;0.000000;0.050000;mg/L;1;;;false;;GM888_Agua_Tratada.csv;18

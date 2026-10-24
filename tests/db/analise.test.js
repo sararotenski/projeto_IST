@@ -33,9 +33,7 @@ before(async () => {
   await db.query(`INSERT INTO cliente (id_cliente, nome) VALUES ($1, 'Cliente sintético')`, [ids.cli]);
   await db.query(`INSERT INTO proposta_comercial (id_proposta, fk_id_cliente) VALUES ($1, $2)`, [ids.prop, ids.cli]);
   await db.query(`INSERT INTO e__assoc__1_possui VALUES ($1, $2)`, [ids.prop, ids.leg]);
-  // origem com acento: deve casar com "Agua Tratada" do limite
-  await db.query(`INSERT INTO amostra (id_amostra, data_coleta, origem, matriz, fk_id_cliente, fk_id_proposta)
-                  VALUES ($1, '2024-01-01', 'Água Tratada', 'Água - BNU', $2, $3)`, [ids.am, ids.cli, ids.prop]);
+
   for (const [id, nome] of [[ids.faixa, 'SINT pH'], [ids.semLimite, 'SINT sem limite'], [ids.unilateral, 'SINT chumbo']]) {
     await db.query(`INSERT INTO ensaio (id_ensaio, nome, codigo_origem) VALUES ($1, $2, $3)`, [id, nome, `SINT${id}`]);
   }
@@ -46,10 +44,17 @@ before(async () => {
   [l0, ids.faixa, ids.leg, l0 + 1, ids.unilateral]);
 
   let r = await proximo('resultado', 'id_resultado');
+  let am = ids.am;
+  // uma amostra por resultado, todas no mesmo ponto de coleta (forma uma série)
   const res = async (valor, data, unidade, ensaio) => {
     const id = r++;
+    const idAmostra = am++;
+    // origem com acento: deve casar com "Agua Tratada" do limite
+    await db.query(`INSERT INTO amostra (id_amostra, data_coleta, origem, matriz, fk_id_cliente, fk_id_proposta, codigo_amostra, ponto_coleta)
+                    VALUES ($1, $2, 'Água Tratada', 'Água - BNU', $3, $4, $5, 'SINT-PONTO')`,
+    [idAmostra, data, ids.cli, ids.prop, `SINT-${idAmostra}`]);
     await db.query(`INSERT INTO resultado (id_resultado, valor, data_resultado, fk_id_amostra, fk_id_ensaio, unidade_medida)
-                    VALUES ($1, $2, $3, $4, $5, $6)`, [id, valor, data, ids.am, ensaio, unidade]);
+                    VALUES ($1, $2, $3, $4, $5, $6)`, [id, valor, data, idAmostra, ensaio, unidade]);
     return id;
   };
   ids.dentro = await res(7, '2024-01-10', 'mg/L', ids.faixa);
@@ -103,15 +108,15 @@ test('ausência de limite não é tratada como conformidade', { skip: !temBanco 
   assert.equal((await categoria(ids.antesVigencia)).categoria, 'Sem limite aplicável identificado');
 });
 
-test('limite real sem vigência informada fica pendente, com classificação indicativa', { skip: !temBanco }, async () => {
+test('limite real (curado, com vigência) classifica automaticamente', { skip: !temBanco }, async () => {
   const real = (await db.query(`SELECT l.fk_id_ensaio, l.fk_id_legislacao, l.origem_amostra, l.matriz, l.valor_maximo, l.unidade_medida
-                                FROM limite l WHERE NOT l.requer_validacao AND l.valor_maximo > 0 AND l.unidade_medida = 'mg/L'
-                                AND l.data_inicio_vigencia IS NULL
+                                FROM limite l WHERE l.ativo AND NOT l.requer_validacao AND l.valor_maximo > 0 AND l.unidade_medida = 'mg/L'
+                                AND l.data_inicio_vigencia IS NOT NULL AND l.data_inicio_vigencia <= '2025-01-01'
                                 AND NOT EXISTS (SELECT 1 FROM limite o WHERE o.id_limite <> l.id_limite AND o.fk_id_ensaio = l.fk_id_ensaio
                                                 AND o.fk_id_legislacao = l.fk_id_legislacao AND o.origem_amostra = l.origem_amostra)
                                 ORDER BY l.id_limite LIMIT 1`)).rows[0];
   const prop = ids.prop + 1;
-  const am = ids.am + 1;
+  const am = Number((await db.query('SELECT MAX(id_amostra) + 1 AS id FROM amostra')).rows[0].id);
   await db.query(`INSERT INTO proposta_comercial (id_proposta, fk_id_cliente) VALUES ($1, $2)`, [prop, ids.cli]);
   await db.query(`INSERT INTO e__assoc__1_possui VALUES ($1, $2)`, [prop, real.fk_id_legislacao]);
   await db.query(`INSERT INTO amostra (id_amostra, origem, matriz, fk_id_cliente, fk_id_proposta) VALUES ($1, $2, $3, $4, $5)`,
@@ -120,9 +125,19 @@ test('limite real sem vigência informada fica pendente, com classificação ind
   await db.query(`INSERT INTO resultado (id_resultado, valor, data_resultado, fk_id_amostra, fk_id_ensaio, unidade_medida)
                   VALUES ($1, $2::numeric * 2, '2025-01-01', $3, $4, 'mg/L')`, [idRes, real.valor_maximo, am, real.fk_id_ensaio]);
   const c = await categoria(idRes);
-  assert.equal(c.categoria, 'Pendente de validação');
-  assert.equal(c.motivo_pendencia, 'Vigência do limite não informada');
-  assert.equal(c.classificacao_indicativa, 'Acima do limite máximo');
+  assert.equal(c.motivo_pendencia, null);
+  assert.equal(c.categoria, 'Acima do limite máximo');
+});
+
+test('limite inativo não é aplicado', { skip: !temBanco }, async () => {
+  await db.query('UPDATE limite SET ativo = FALSE WHERE fk_id_ensaio = $1', [ids.unilateral]);
+  assert.equal((await categoria(ids.uniAcima)).categoria, 'Sem limite aplicável identificado');
+  await db.query('UPDATE limite SET ativo = TRUE WHERE fk_id_ensaio = $1', [ids.unilateral]);
+});
+
+test('ppb é comparado como µg/L', { skip: !temBanco }, async () => {
+  await db.query(`UPDATE resultado SET unidade_medida = 'ppb' WHERE id_resultado = $1`, [ids.uniAcima]);
+  assert.equal((await categoria(ids.uniAcima)).categoria, 'Acima do limite máximo');
 });
 
 test('histórico calcula variação e recorrência', { skip: !temBanco }, async () => {
@@ -132,7 +147,7 @@ test('histórico calcula variação e recorrência', { skip: !temBanco }, async 
   assert.equal(Number(h.variacao_percentual), 10);
   assert.equal(h.direcao, 'Aumento');
   assert.equal(h.recorrencia_fora_limite, true);
-  assert.equal(h.serie_suficiente, true);
+  assert.equal(h.serie_validada, true); // série definida pelo ponto de coleta
   const primeiro = (await db.query('SELECT recorrencia_fora_limite FROM vw_historico WHERE id_resultado = $1', [ids.acima1])).rows[0];
   assert.equal(primeiro.recorrencia_fora_limite, false);
 });
@@ -157,7 +172,8 @@ test('reimportação não duplica registros', { skip: !temBanco }, async () => {
   const depois = (await db.query('SELECT (SELECT count(*) FROM limite)::int AS l, (SELECT count(*) FROM ensaio)::int AS e')).rows[0];
   assert.equal(segunda.limite.inseridos, 0);
   assert.equal(segunda.ensaio.inseridos, 0);
-  assert.equal(segunda.limite.existentes, dados.limites.length);
+  assert.equal(segunda.limite.existentes + segunda.limite.curados, dados.limites.length);
+  assert.equal(segunda.limite.divergentes, 0);
   // os dados reais já estavam importados: nenhuma das duas execuções acrescenta linhas
   assert.equal(depois.l, antes.l);
   assert.equal(depois.e, antes.e);

@@ -1141,7 +1141,7 @@
   {
     "legislacao": "Portaria GM/MS Nº888 5/21",
     "codigo_ensaio": "691",
-    "classe": "Àgua tratada",
+    "classe": "Água tratada",
     "matriz": "Água - BNU",
     "origem_amostra": "Água Consumo Humano",
     "valor_minimo": "0.000000",
@@ -3946,7 +3946,7 @@
   {
     "legislacao": "Portaria GM/MS Nº888 5/21",
     "codigo_ensaio": "36",
-    "classe": "Àgua tratada",
+    "classe": "Água tratada",
     "matriz": "Água - BNU",
     "origem_amostra": "Agua Tratada",
     "valor_minimo": "0.000000",

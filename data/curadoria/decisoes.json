@@ -1,0 +1,653 @@
+{
+  "descricao": "Decisões de curadoria dos limites legais. Cada decisão cita a fonte oficial e é aplicada por 'npm run curadoria', com registro dos valores anteriores em etl.decisao_curadoria. Revisadas pelo agente em 23/10/2026 a partir do texto oficial; recomenda-se conferência por um responsável técnico.",
+  "fontes": {
+    "GM888": "Portaria GM/MS nº 888, de 4 de maio de 2021 — DOU de 07/05/2021, Edição 85, Seção 1 (https://www.in.gov.br/en/web/dou/-/portaria-gm/ms-n-888-de-4-de-maio-de-2021-318461562)",
+    "SES1468": "Portaria SES/SC nº 1468, de 21 de dezembro de 2022, Anexo I (https://www.legisweb.com.br/legislacao/?id=440215)"
+  },
+  "decisoes": [
+    {
+      "chave": "VIG-GM888",
+      "acao": "definir_vigencia",
+      "alvo": {
+        "legislacao": "Portaria GM/MS Nº888 5/21"
+      },
+      "valores": {
+        "data_inicio_vigencia": "2021-05-07"
+      },
+      "descricao": "Início de vigência na data de publicação no DOU (art. 3º: entra em vigor na data de sua publicação). Sem data de fim.",
+      "fonte": "GM888, art. 3º",
+      "resolve": [
+        {
+          "tipo": "VIGENCIA_NAO_INFORMADA",
+          "extra": "Portaria GM/MS Nº888 5/21"
+        }
+      ]
+    },
+    {
+      "chave": "VIG-SES1468",
+      "acao": "definir_vigencia",
+      "alvo": {
+        "legislacao": "Portaria SES nº1468/2022"
+      },
+      "valores": {
+        "data_inicio_vigencia": "2022-12-21"
+      },
+      "descricao": "Data do ato (21/12/2022); a portaria entra em vigor na publicação (art. 7º). Confirmar a data exata de publicação no DOE/SC.",
+      "fonte": "SES1468, art. 7º",
+      "resolve": [
+        {
+          "tipo": "VIGENCIA_NAO_INFORMADA",
+          "extra": "Portaria SES nº1468/2022"
+        }
+      ]
+    },
+    {
+      "chave": "CONF-1108-ACH",
+      "acao": "definir_limite",
+      "alvo": {
+        "legislacao": "Portaria GM/MS Nº888 5/21",
+        "origem_amostra": "Água Consumo Humano",
+        "matriz": "Água - BNU",
+        "codigo_ensaio": "1108",
+        "nome_ensaio": "Microcistinas"
+      },
+      "valores": {
+        "valor_minimo": "0",
+        "valor_maximo": "1.0",
+        "unidade_medida": "µg/L"
+      },
+      "origem_registro": {
+        "arquivo": "GM888_Agua_Consumo_Humano.csv",
+        "linhas": "84,85"
+      },
+      "descricao": "Microcistinas: VMP 1,0 µg/L (equivalente MCYST-LR). As duas linhas (ppb e µg/L) têm o mesmo valor; adotada a unidade oficial.",
+      "fonte": "GM888, Anexo 10",
+      "resolve": [
+        {
+          "tipo": "LIMITE_CONFLITANTE",
+          "arquivo": "GM888_Agua_Consumo_Humano.csv",
+          "linhas": "84,85"
+        }
+      ]
+    },
+    {
+      "chave": "CONF-7282-ACH",
+      "acao": "definir_limite",
+      "alvo": {
+        "legislacao": "Portaria GM/MS Nº888 5/21",
+        "origem_amostra": "Água Consumo Humano",
+        "matriz": "Água - BNU",
+        "codigo_ensaio": "7282",
+        "nome_ensaio": "Paraquate"
+      },
+      "valores": {
+        "valor_minimo": "0",
+        "valor_maximo": "13",
+        "unidade_medida": "µg/L"
+      },
+      "origem_registro": {
+        "arquivo": "GM888_Agua_Consumo_Humano.csv",
+        "linhas": "157,158"
+      },
+      "descricao": "Paraquate: VMP 13 µg/L. A linha com máximo 0 foi descartada.",
+      "fonte": "GM888, Anexo 9",
+      "resolve": [
+        {
+          "tipo": "LIMITE_CONFLITANTE",
+          "arquivo": "GM888_Agua_Consumo_Humano.csv",
+          "linhas": "157,158"
+        }
+      ]
+    },
+    {
+      "chave": "CONF-7283-ACH",
+      "acao": "definir_limite",
+      "alvo": {
+        "legislacao": "Portaria GM/MS Nº888 5/21",
+        "origem_amostra": "Água Consumo Humano",
+        "matriz": "Água - BNU",
+        "codigo_ensaio": "7283",
+        "nome_ensaio": "Picloram"
+      },
+      "valores": {
+        "valor_minimo": "0",
+        "valor_maximo": "60",
+        "unidade_medida": "µg/L"
+      },
+      "origem_registro": {
+        "arquivo": "GM888_Agua_Consumo_Humano.csv",
+        "linhas": "159,160"
+      },
+      "descricao": "Picloram: VMP 60 µg/L. A linha com máximo 0 foi descartada.",
+      "fonte": "GM888, Anexo 9",
+      "resolve": [
+        {
+          "tipo": "LIMITE_CONFLITANTE",
+          "arquivo": "GM888_Agua_Consumo_Humano.csv",
+          "linhas": "159,160"
+        }
+      ]
+    },
+    {
+      "chave": "CONF-7001-AT",
+      "acao": "definir_limite",
+      "alvo": {
+        "legislacao": "Portaria GM/MS Nº888 5/21",
+        "origem_amostra": "Agua Tratada",
+        "matriz": "Água - BNU",
+        "codigo_ensaio": "7001",
+        "nome_ensaio": "1,2-Diclorobenzeno"
+      },
+      "valores": {
+        "valor_minimo": "0",
+        "valor_maximo": "0.001",
+        "unidade_medida": "mg/L"
+      },
+      "origem_registro": {
+        "arquivo": "GM888_Agua_Tratada.csv",
+        "linhas": "115,116,117"
+      },
+      "descricao": "1,2-Diclorobenzeno: VMP 0,001 mg/L (padrão organoléptico). A linha com máximo 0 foi descartada.",
+      "fonte": "GM888, Anexo 11",
+      "resolve": [
+        {
+          "tipo": "LIMITE_CONFLITANTE",
+          "arquivo": "GM888_Agua_Tratada.csv",
+          "linhas": "115,116,117"
+        }
+      ]
+    },
+    {
+      "chave": "CONF-10687-AT",
+      "acao": "definir_limite",
+      "alvo": {
+        "legislacao": "Portaria GM/MS Nº888 5/21",
+        "origem_amostra": "Agua Tratada",
+        "matriz": "Água - BNU",
+        "codigo_ensaio": "10687",
+        "nome_ensaio": "Ferro"
+      },
+      "valores": {
+        "valor_minimo": "0",
+        "valor_maximo": "0.3",
+        "unidade_medida": "mg/L"
+      },
+      "origem_registro": {
+        "arquivo": "GM888_Agua_Tratada.csv",
+        "linhas": "185,186,187"
+      },
+      "descricao": "Ferro: VMP 0,3 mg/L (padrão organoléptico). A linha com máximo 0 foi descartada.",
+      "fonte": "GM888, Anexo 11",
+      "resolve": [
+        {
+          "tipo": "LIMITE_CONFLITANTE",
+          "arquivo": "GM888_Agua_Tratada.csv",
+          "linhas": "185,186,187"
+        }
+      ]
+    },
+    {
+      "chave": "FAIXA-777-ACH",
+      "acao": "definir_limite",
+      "alvo": {
+        "legislacao": "Portaria GM/MS Nº888 5/21",
+        "origem_amostra": "Água Consumo Humano",
+        "matriz": "Água - BNU",
+        "codigo_ensaio": "777",
+        "nome_ensaio": "Cloro Residual Livre"
+      },
+      "valores": {
+        "valor_minimo": "0.2",
+        "valor_maximo": "5",
+        "unidade_medida": "mg/L"
+      },
+      "origem_registro": {
+        "arquivo": "GM888_Agua_Consumo_Humano.csv",
+        "linhas": "74"
+      },
+      "descricao": "Cloro residual livre: mínimo 0,2 mg/L no sistema de distribuição (art. 32) e máximo 5 mg/L (Anexo 9). O máximo 0 da fonte era ausência de valor.",
+      "fonte": "GM888, art. 32 e Anexo 9",
+      "resolve": [
+        {
+          "tipo": "FAIXA_INCONSISTENTE",
+          "arquivo": "GM888_Agua_Consumo_Humano.csv",
+          "linhas": "74"
+        }
+      ]
+    },
+    {
+      "chave": "FAIXA-1207-ACH",
+      "acao": "definir_limite",
+      "alvo": {
+        "legislacao": "Portaria GM/MS Nº888 5/21",
+        "origem_amostra": "Água Consumo Humano",
+        "matriz": "Água - BNU",
+        "codigo_ensaio": "1207",
+        "nome_ensaio": "Cloro Residual Livre"
+      },
+      "valores": {
+        "valor_minimo": "0.2",
+        "valor_maximo": "5",
+        "unidade_medida": "mg/L"
+      },
+      "origem_registro": {
+        "arquivo": "GM888_Agua_Consumo_Humano.csv",
+        "linhas": "90"
+      },
+      "descricao": "Cloro residual livre: mínimo 0,2 mg/L (art. 32) e máximo 5 mg/L (Anexo 9).",
+      "fonte": "GM888, art. 32 e Anexo 9",
+      "resolve": [
+        {
+          "tipo": "FAIXA_INCONSISTENTE",
+          "arquivo": "GM888_Agua_Consumo_Humano.csv",
+          "linhas": "90"
+        }
+      ]
+    },
+    {
+      "chave": "DIV-8020-AT",
+      "acao": "definir_limite",
+      "alvo": {
+        "legislacao": "Portaria GM/MS Nº888 5/21",
+        "origem_amostra": "Agua Tratada",
+        "matriz": "Água - BNU",
+        "codigo_ensaio": "8020"
+      },
+      "valores": {
+        "valor_minimo": "0",
+        "valor_maximo": "1.2",
+        "unidade_medida": "mg/L"
+      },
+      "descricao": "Amônia: a lista trazia 1,5 mg/L para este código, mas o VMP vigente é 1,2 mg/L (como N), igual aos demais códigos de Amônia.",
+      "fonte": "GM888, Anexo 11",
+      "resolve": []
+    },
+    {
+      "chave": "DIV-10498-AT",
+      "acao": "definir_limite",
+      "alvo": {
+        "legislacao": "Portaria GM/MS Nº888 5/21",
+        "origem_amostra": "Agua Tratada",
+        "matriz": "Água - BNU",
+        "codigo_ensaio": "10498"
+      },
+      "valores": {
+        "valor_minimo": "0",
+        "valor_maximo": "0.2",
+        "unidade_medida": "mg/L"
+      },
+      "descricao": "Alumínio: a lista trazia 1,0 mg/L para este código, mas o VMP vigente é 0,2 mg/L, igual aos demais códigos de Alumínio.",
+      "fonte": "GM888, Anexo 11",
+      "resolve": []
+    },
+    {
+      "chave": "DIV-690-AT",
+      "acao": "definir_limite",
+      "alvo": {
+        "legislacao": "Portaria GM/MS Nº888 5/21",
+        "origem_amostra": "Agua Tratada",
+        "matriz": "Água - BNU",
+        "codigo_ensaio": "690"
+      },
+      "valores": {
+        "valor_minimo": "0",
+        "valor_maximo": "0.0003",
+        "unidade_medida": "mg/L"
+      },
+      "descricao": "1,4-Diclorobenzeno: a lista trazia 5 µg/L para este código, mas o VMP vigente é 0,0003 mg/L (0,3 µg/L), igual aos demais códigos.",
+      "fonte": "GM888, Anexo 11",
+      "resolve": []
+    },
+    {
+      "chave": "DIV-691-AT",
+      "acao": "definir_limite",
+      "alvo": { "legislacao": "Portaria GM/MS Nº888 5/21", "origem_amostra": "Agua Tratada", "matriz": "Água - BNU", "codigo_ensaio": "691" },
+      "valores": { "valor_minimo": "0", "valor_maximo": "0.001", "unidade_medida": "mg/L" },
+      "descricao": "1,2-Diclorobenzeno: a lista trazia 0,001 µg/L para este código. O VMP é 0,001 mg/L, mesmo valor dos demais códigos; a unidade foi corrigida.",
+      "fonte": "GM888, Anexo 11",
+      "resolve": []
+    },
+    {
+      "chave": "HEPT-397-SUP",
+      "acao": "definir_limite",
+      "alvo": {
+        "legislacao": "Portaria SES nº1468/2022",
+        "origem_amostra": "Água Superficial (Água doce)",
+        "matriz": "Água - BNU",
+        "codigo_ensaio": "397"
+      },
+      "valores": {
+        "valor_minimo": "0",
+        "valor_maximo": "0.3",
+        "unidade_medida": "µg/L"
+      },
+      "descricao": "Heptacloro: VMP 0,3 µg/L, igual às demais origens da mesma portaria. O máximo 0 era ausência de valor.",
+      "fonte": "SES1468, Anexo I",
+      "resolve": [
+        {
+          "tipo": "MAXIMO_ZERO",
+          "arquivo": "SES1468_Agua_Superficial.csv",
+          "linhas": "2"
+        }
+      ]
+    },
+    {
+      "chave": "MICRO-ACH",
+      "acao": "confirmar_limite",
+      "alvo": {
+        "legislacao": "Portaria GM/MS Nº888 5/21",
+        "origem_amostra": "Água Consumo Humano",
+        "matriz": "Água - BNU",
+        "codigos_ensaio": [
+          "16700",
+          "16702",
+          "17104",
+          "17105",
+          "17120",
+          "17121"
+        ]
+      },
+      "valores": {
+        "observacao_validacao": "VMP = ausência em 100 mL (máximo 0). Lançar ausência como 0 e presença como 1 em ensaios P/A."
+      },
+      "descricao": "Coliformes totais e Escherichia coli: o padrão é ausência em 100 mL, então o máximo 0 está correto.",
+      "fonte": "GM888, Anexo 1",
+      "resolve": [
+        {
+          "tipo": "MAXIMO_ZERO",
+          "arquivo": "GM888_Agua_Consumo_Humano.csv",
+          "linhas": [
+            "264",
+            "265",
+            "266",
+            "267",
+            "268",
+            "269"
+          ]
+        }
+      ]
+    },
+    {
+      "chave": "MICRO-AT",
+      "acao": "confirmar_limite",
+      "alvo": {
+        "legislacao": "Portaria GM/MS Nº888 5/21",
+        "origem_amostra": "Agua Tratada",
+        "matriz": "Água - BNU",
+        "codigos_ensaio": [
+          "17079",
+          "17104",
+          "17105",
+          "17120",
+          "17121"
+        ]
+      },
+      "valores": {
+        "observacao_validacao": "VMP = ausência em 100 mL (máximo 0). Lançar ausência como 0 e presença como 1 em ensaios P/A."
+      },
+      "descricao": "Coliformes totais e Escherichia coli: o padrão é ausência em 100 mL, então o máximo 0 está correto.",
+      "fonte": "GM888, Anexo 1",
+      "resolve": [
+        {
+          "tipo": "MAXIMO_ZERO",
+          "arquivo": "GM888_Agua_Tratada.csv",
+          "linhas": [
+            "247",
+            "248",
+            "249",
+            "250",
+            "251"
+          ]
+        }
+      ]
+    },
+    {
+      "chave": "INAT-6014-AT",
+      "acao": "inativar_limite",
+      "alvo": {
+        "legislacao": "Portaria GM/MS Nº888 5/21",
+        "origem_amostra": "Agua Tratada",
+        "matriz": "Água - BNU",
+        "codigos_ensaio": [
+          "6014"
+        ]
+      },
+      "valores": {
+        "motivo_inativacao": "A Portaria GM/MS 888/2021 não estabelece VMP para bactérias heterotróficas."
+      },
+      "descricao": "Bactérias heterotróficas: sem VMP na portaria; o máximo 0 da lista não é um limite legal.",
+      "fonte": "GM888 (parâmetro ausente dos Anexos 1 e 9 a 11)",
+      "resolve": [
+        {
+          "tipo": "MAXIMO_ZERO",
+          "arquivo": "GM888_Agua_Tratada.csv",
+          "linhas": "109"
+        }
+      ]
+    },
+    {
+      "chave": "INAT-669-AT",
+      "acao": "inativar_limite",
+      "alvo": {
+        "legislacao": "Portaria GM/MS Nº888 5/21",
+        "origem_amostra": "Agua Tratada",
+        "matriz": "Água - BNU",
+        "codigos_ensaio": [
+          "669"
+        ]
+      },
+      "valores": {
+        "motivo_inativacao": "Clorofórmio não tem VMP individual; integra Trihalometanos Total (VMP 0,1 mg/L)."
+      },
+      "descricao": "Clorofórmio: só existe VMP para a soma dos trihalometanos.",
+      "fonte": "GM888, Anexo 9, nota 7",
+      "resolve": [
+        {
+          "tipo": "MAXIMO_ZERO",
+          "arquivo": "GM888_Agua_Tratada.csv",
+          "linhas": "61"
+        }
+      ]
+    },
+    {
+      "chave": "INAT-15198-AT",
+      "acao": "inativar_limite",
+      "alvo": {
+        "legislacao": "Portaria GM/MS Nº888 5/21",
+        "origem_amostra": "Agua Tratada",
+        "matriz": "Água - BNU",
+        "codigos_ensaio": [
+          "15198"
+        ]
+      },
+      "valores": {
+        "motivo_inativacao": "Ácido dicloroacético não tem VMP individual; integra Ácidos haloacéticos total (VMP 0,08 mg/L)."
+      },
+      "descricao": "Ácido dicloroacético: só existe VMP para a soma dos ácidos haloacéticos.",
+      "fonte": "GM888, Anexo 9, nota 5",
+      "resolve": [
+        {
+          "tipo": "MAXIMO_ZERO",
+          "arquivo": "GM888_Agua_Tratada.csv",
+          "linhas": "233"
+        }
+      ]
+    },
+    {
+      "chave": "INAT-7172-SES",
+      "acao": "inativar_limite",
+      "alvo": {
+        "legislacao": "Portaria SES nº1468/2022",
+        "origens_amostra": [
+          "Água Subterrânea",
+          "Agua Tratada"
+        ],
+        "matriz": "Água - BNU",
+        "codigos_ensaio": [
+          "7172"
+        ]
+      },
+      "valores": {
+        "motivo_inativacao": "A SES 1468/2022 fixa VMP só para Clorpirifós isolado (10 µg/L, código 913). A soma com o oxon é regulada pela GM/MS 888 (30 µg/L)."
+      },
+      "descricao": "Clorpirifós + Clorpirifós-oxon: sem VMP na portaria estadual.",
+      "fonte": "SES1468, Anexo I; GM888, Anexo 9",
+      "resolve": [
+        {
+          "tipo": "MAXIMO_ZERO",
+          "arquivo": "SES1468_Agua_Subterranea.csv",
+          "linhas": "23"
+        },
+        {
+          "tipo": "MAXIMO_ZERO",
+          "arquivo": "SES1468_Agua_Tratada.csv",
+          "linhas": "24"
+        }
+      ]
+    },
+    {
+      "chave": "UN-PH",
+      "acao": "definir_unidade",
+      "alvo": {
+        "legislacao": "Portaria GM/MS Nº888 5/21",
+        "origens_amostra": [
+          "Água Consumo Humano",
+          "Agua Tratada"
+        ],
+        "matriz": "Água - BNU",
+        "codigos_ensaio": [
+          "793",
+          "1190"
+        ]
+      },
+      "valores": {
+        "unidade_medida": "adimensional",
+        "observacao_validacao": "Faixa 6,0–9,0 mantida da lista do laboratório; a GM/MS 888 cita essa faixa nas tabelas de desinfecção, sem VMP próprio para pH."
+      },
+      "descricao": "pH é adimensional.",
+      "fonte": "GM888, Anexos 3 a 8",
+      "resolve": [
+        {
+          "tipo": "UNIDADE_AUSENTE",
+          "arquivo": "GM888_Agua_Consumo_Humano.csv",
+          "linhas": [
+            "75",
+            "89"
+          ]
+        },
+        {
+          "tipo": "UNIDADE_AUSENTE",
+          "arquivo": "GM888_Agua_Tratada.csv",
+          "linhas": [
+            "73",
+            "86"
+          ]
+        }
+      ]
+    },
+    {
+      "chave": "UN-7138",
+      "acao": "definir_unidade",
+      "alvo": {
+        "legislacao": "Portaria GM/MS Nº888 5/21",
+        "origens_amostra": [
+          "Água Consumo Humano",
+          "Agua Tratada"
+        ],
+        "matriz": "Água - BNU",
+        "codigos_ensaio": [
+          "7138"
+        ]
+      },
+      "valores": {
+        "unidade_medida": "Intensidade"
+      },
+      "descricao": "Gosto e odor: VMP 6, expresso em intensidade.",
+      "fonte": "GM888, Anexo 11",
+      "resolve": [
+        {
+          "tipo": "UNIDADE_AUSENTE",
+          "arquivo": "GM888_Agua_Consumo_Humano.csv",
+          "linhas": "139"
+        },
+        {
+          "tipo": "UNIDADE_AUSENTE",
+          "arquivo": "GM888_Agua_Tratada.csv",
+          "linhas": "120"
+        }
+      ]
+    },
+    {
+      "chave": "UN-7865",
+      "acao": "definir_unidade",
+      "alvo": {
+        "legislacao": "Portaria GM/MS Nº888 5/21",
+        "origens_amostra": [
+          "Água Consumo Humano",
+          "Agua Tratada"
+        ],
+        "matriz": "Água - BNU",
+        "codigos_ensaio": [
+          "7865"
+        ]
+      },
+      "valores": {
+        "unidade_medida": "adimensional"
+      },
+      "descricao": "Soma das razões nitrito/nitrato: adimensional e não pode passar de 1.",
+      "fonte": "GM888, art. 39",
+      "resolve": [
+        {
+          "tipo": "UNIDADE_AUSENTE",
+          "arquivo": "GM888_Agua_Consumo_Humano.csv",
+          "linhas": "177"
+        },
+        {
+          "tipo": "UNIDADE_AUSENTE",
+          "arquivo": "GM888_Agua_Tratada.csv",
+          "linhas": "148"
+        }
+      ]
+    },
+    {
+      "chave": "CLASSE-AGUA-TRATADA",
+      "acao": "renomear_classe",
+      "alvo": {
+        "legislacao": "Portaria GM/MS Nº888 5/21",
+        "classe": "Àgua tratada"
+      },
+      "valores": {
+        "nome": "Água tratada"
+      },
+      "descricao": "Correção de grafia (À → Á). Não muda o significado.",
+      "fonte": "Padronização ortográfica",
+      "resolve": [
+        {
+          "tipo": "CLASSE_GRAFIA"
+        }
+      ]
+    },
+    {
+      "chave": "INFO-DUPLICATAS",
+      "acao": "resolver_informativo",
+      "descricao": "Linhas idênticas já foram consolidadas em um único limite na importação. Nada a corrigir.",
+      "fonte": "Extração (data/processed/pendencias.json)",
+      "resolve": [
+        {
+          "tipo": "DUPLICATA_EXATA"
+        }
+      ]
+    },
+    {
+      "chave": "INFO-MESMO-NOME",
+      "acao": "resolver_informativo",
+      "descricao": "Ensaios com o mesmo nome e códigos diferentes são métodos distintos do laboratório. Mantidos separados no banco e agrupados por parâmetro na visualização.",
+      "fonte": "Lista de ensaios do laboratório",
+      "resolve": [
+        {
+          "tipo": "NOME_EM_CODIGOS_DIFERENTES"
+        }
+      ]
+    }
+  ]
+}

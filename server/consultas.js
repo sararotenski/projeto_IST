@@ -1,10 +1,13 @@
-// Consultas SQL usadas pela API. Todas são parametrizadas ($1, $2...)
-// e somente leitura. Filtros opcionais: parâmetro NULL = sem filtro.
+// Consultas de leitura usadas pela API. Todas parametrizadas ($1, $2...).
+// Filtro com valor NULL = sem filtro.
+
+import { carregarSeries } from './analise/series.js';
+import { PARAMETROS } from './analise/tendencia.js';
 
 export const CATEGORIAS = [
   'Dentro dos limites',
-  'Abaixo do limite mínimo',
   'Acima do limite máximo',
+  'Abaixo do limite mínimo',
   'Sem limite aplicável identificado',
   'Pendente de validação',
 ];
@@ -17,141 +20,186 @@ export async function saude(db) {
   const { rows } = await db.query(`
     SELECT current_database() AS banco,
            to_regclass('public.vw_resultado_conformidade') IS NOT NULL AS views_ok,
-           to_regclass('etl.pendencia') IS NOT NULL AS migracao_ok`);
+           to_regclass('etl.lote_resultados') IS NOT NULL AS migracao_ok`);
   return rows[0];
 }
 
-export async function resumo(db) {
-  const contagens = (await db.query(`
-    SELECT (SELECT count(*) FROM legislacao)::int  AS legislacoes,
-           (SELECT count(*) FROM classe)::int      AS classes,
-           (SELECT count(*) FROM ensaio)::int      AS ensaios,
-           (SELECT count(*) FROM limite)::int      AS limites,
-           (SELECT count(*) FROM limite WHERE requer_validacao)::int AS limites_requer_validacao,
-           (SELECT count(*) FROM amostra)::int     AS amostras,
-           (SELECT count(*) FROM resultado)::int   AS resultados,
-           (SELECT count(*) FROM alerta)::int      AS alertas,
-           (SELECT count(*) FROM etl.pendencia WHERE NOT resolvida)::int AS pendencias`)).rows[0];
-  const limitesPorOrigem = (await db.query(`
-    SELECT legislacao, origem_amostra, count(*)::int AS limites,
-           count(*) FILTER (WHERE requer_validacao)::int AS requer_validacao
-    FROM vw_limite_detalhado GROUP BY 1, 2 ORDER BY 1, 2`)).rows;
-  const classificacao = (await db.query(`
-    SELECT categoria, count(*)::int AS quantidade FROM vw_resultado_conformidade GROUP BY 1`)).rows;
-  const alertasPorTipo = (await db.query(`
-    SELECT tipo, count(*)::int AS quantidade FROM alerta GROUP BY 1 ORDER BY 2 DESC`)).rows;
-  const pendenciasPorTipo = (await db.query(`
-    SELECT tipo, importado, count(*)::int AS quantidade FROM etl.pendencia WHERE NOT resolvida
-    GROUP BY 1, 2 ORDER BY 3 DESC`)).rows;
-  const ultimaImportacao = (await db.query(`
-    SELECT id_execucao, iniciado_em, finalizado_em, status FROM etl.execucao_importacao
-    WHERE status = 'concluida' ORDER BY id_execucao DESC LIMIT 1`)).rows[0] ?? null;
-  return { contagens, limitesPorOrigem, classificacao, alertasPorTipo, pendenciasPorTipo, ultimaImportacao };
-}
+const resumoSerie = (s) => ({
+  serie: s.serie,
+  serieValidada: s.serieValidada,
+  pontoColeta: s.pontoColeta,
+  idEnsaio: s.idEnsaio,
+  codigoEnsaio: s.codigoEnsaio,
+  ensaio: s.ensaio,
+  legislacao: s.legislacao,
+  unidade: s.unidade,
+  limite: s.limite,
+  ultimo: s.ultimo,
+  foraDoLimite: s.foraDoLimite,
+  n: s.estatisticas.n,
+  media: s.estatisticas.media,
+  desvioPadrao: s.estatisticas.desvioPadrao,
+  coeficienteVariacao: s.estatisticas.coeficienteVariacao,
+  tendencia: s.tendencia,
+  atipicos: s.atipicos.length,
+});
 
-export async function filtros(db) {
-  const q = async (sql) => (await db.query(sql)).rows.map((r) => r.v);
+export async function painel(db) {
+  const k = (await db.query(`
+    SELECT (SELECT count(*) FROM amostra)::int AS amostras,
+           (SELECT count(*) FROM resultado)::int AS resultados,
+           (SELECT count(DISTINCT ponto_coleta) FROM amostra WHERE ponto_coleta IS NOT NULL)::int AS pontos,
+           count(*) FILTER (WHERE categoria = 'Dentro dos limites')::int AS dentro,
+           count(*) FILTER (WHERE categoria = 'Acima do limite máximo')::int AS acima,
+           count(*) FILTER (WHERE categoria = 'Abaixo do limite mínimo')::int AS abaixo,
+           count(*) FILTER (WHERE categoria = 'Sem limite aplicável identificado')::int AS sem_limite,
+           count(*) FILTER (WHERE categoria = 'Pendente de validação')::int AS pendentes,
+           (SELECT count(*) FROM limite WHERE ativo)::int AS limites,
+           (SELECT count(*) FROM legislacao)::int AS legislacoes
+    FROM vw_resultado_conformidade`)).rows[0];
+
+  const series = await carregarSeries(db);
+  const aumento = series.filter((s) => s.tendencia.situacao === 'Aumentando');
+  const reducao = series.filter((s) => s.tendencia.situacao === 'Diminuindo');
+  const comAtipicos = series.filter((s) => s.atipicos.length);
+
+  const fora = (await db.query(`
+    SELECT id_resultado, codigo_amostra, ponto_coleta, ensaio, codigo_ensaio, data_resultado, valor, unidade_resultado,
+           valor_minimo, valor_maximo, unidade_limite, legislacao, categoria, percentual_do_maximo
+    FROM vw_resultado_conformidade
+    WHERE categoria IN ('Acima do limite máximo', 'Abaixo do limite mínimo')
+    ORDER BY data_resultado DESC, id_resultado DESC LIMIT 50`)).rows;
+
+  const atencao = [
+    ...fora.map((f) => ({
+      tipo: f.categoria === 'Acima do limite máximo' ? 'acima' : 'abaixo',
+      titulo: f.categoria,
+      ensaio: f.ensaio,
+      ponto: f.ponto_coleta,
+      data: f.data_resultado,
+      detalhe: { valor: f.valor, unidade: f.unidade_resultado, minimo: f.valor_minimo, maximo: f.valor_maximo, legislacao: f.legislacao, amostra: f.codigo_amostra },
+    })),
+    ...[...aumento, ...reducao].map((s) => ({
+      tipo: s.tendencia.situacao === 'Aumentando' ? 'aumento' : 'reducao',
+      titulo: s.tendencia.situacao === 'Aumentando' ? 'Tendência de aumento' : 'Tendência de redução',
+      ensaio: s.ensaio,
+      ponto: s.pontoColeta,
+      data: s.ultimo.data,
+      serie: s.serie,
+      detalhe: { descricao: s.tendencia.descricao, n: s.estatisticas.n },
+    })),
+    ...comAtipicos.flatMap((s) =>
+      s.atipicos.map((a) => ({
+        tipo: 'atipico',
+        titulo: 'Valor atípico',
+        ensaio: s.ensaio,
+        ponto: s.pontoColeta,
+        data: a.data,
+        serie: s.serie,
+        detalhe: { valor: a.valor, unidade: s.unidade, media: a.media, z: a.z },
+      })),
+    ),
+  ].sort((a, b) => String(b.data).localeCompare(String(a.data)));
+
+  const lotes = (await db.query(`
+    SELECT id_lote, origem, arquivo, criado_em, qtd_amostras, qtd_resultados FROM etl.lote_resultados
+    WHERE desfeito_em IS NULL ORDER BY id_lote DESC LIMIT 5`)).rows;
+
   return {
-    legislacoes: await q('SELECT nome AS v FROM legislacao ORDER BY 1'),
-    origens: await q('SELECT DISTINCT origem_amostra AS v FROM limite WHERE origem_amostra IS NOT NULL ORDER BY 1'),
-    classes: await q('SELECT DISTINCT nome AS v FROM classe ORDER BY 1'),
-    unidades: await q('SELECT DISTINCT unidade_medida AS v FROM limite WHERE unidade_medida IS NOT NULL ORDER BY 1'),
-    categorias: CATEGORIAS,
-    tiposAlerta: ['ACIMA_MAXIMO', 'ABAIXO_MINIMO', 'RECORRENCIA', 'PENDENTE_VALIDACAO'],
-    ensaios: (await db.query(`SELECT id_ensaio AS id, codigo_origem AS codigo, nome FROM ensaio ORDER BY nome, codigo_origem::int`)).rows,
+    kpis: { ...k, fora: k.acima + k.abaixo, tendenciaAumento: aumento.length, tendenciaReducao: reducao.length, atipicos: comAtipicos.reduce((s, x) => s + x.atipicos.length, 0), series: series.length },
+    atencao,
+    lotes,
   };
 }
 
-export async function limites(db, p) {
-  const { rows } = await db.query(
-    `SELECT id_limite, codigo_ensaio, ensaio, legislacao, classe, matriz, origem_amostra,
-            valor_minimo, valor_maximo, unidade_medida, tipo_limite, versao,
-            data_inicio_vigencia, data_fim_vigencia, requer_validacao, observacao_validacao,
-            arquivo_origem, linhas_origem
-     FROM vw_limite_detalhado
-     WHERE ($1::text IS NULL OR legislacao = $1)
-       AND ($2::text IS NULL OR origem_amostra = $2)
-       AND ($3::text IS NULL OR classe = $3 OR ($3 = '(sem classe)' AND classe IS NULL))
-       AND ($4::text IS NULL OR ensaio ILIKE '%' || $4 || '%' OR codigo_ensaio = $4)
-       AND ($5::int IS NULL OR id_ensaio = $5)
-       AND ($6::boolean IS NULL OR requer_validacao = $6)
-     ORDER BY ensaio, codigo_ensaio::int, legislacao, origem_amostra`,
-    [texto(p.legislacao), texto(p.origem), texto(p.classe), texto(p.busca), inteiro(p.ensaio),
-      p.validacao === 'sim' ? true : p.validacao === 'nao' ? false : null],
-  );
-  return rows;
+export async function opcoes(db) {
+  const legislacoes = (await db.query('SELECT id_legislacao AS id, nome, descricao FROM legislacao ORDER BY nome')).rows;
+  const origens = (await db.query(`SELECT DISTINCT origem_amostra AS v FROM limite WHERE ativo ORDER BY 1`)).rows.map((r) => r.v);
+  const pontos = (await db.query(`SELECT DISTINCT ponto_coleta AS v FROM amostra WHERE ponto_coleta IS NOT NULL ORDER BY 1`)).rows.map((r) => r.v);
+  const clientes = (await db.query(`SELECT nome AS v FROM cliente ORDER BY 1`)).rows.map((r) => r.v);
+  // Ensaios com limite ativo, por legislação e origem (para o formulário)
+  const ensaios = (await db.query(`
+    SELECT legislacao, origem_amostra, id_ensaio AS id, codigo_ensaio AS codigo, ensaio AS nome,
+           valor_minimo, valor_maximo, unidade_medida AS unidade, classe
+    FROM vw_limite_detalhado WHERE ativo
+    ORDER BY ensaio, codigo_ensaio::int`)).rows;
+  const todosEnsaios = (await db.query(`SELECT id_ensaio AS id, codigo_origem AS codigo, nome FROM ensaio ORDER BY nome, codigo_origem::int`)).rows;
+  return { legislacoes, origens, pontos, clientes, ensaios, todosEnsaios, categorias: CATEGORIAS, parametros: PARAMETROS };
 }
 
-export async function conformidade(db, p) {
+export async function resultados(db, p) {
   const { rows } = await db.query(
-    `SELECT id_resultado, id_amostra, codigo_ensaio, ensaio, data_resultado, valor, unidade_resultado,
-            legislacao, classe, valor_minimo, valor_maximo, unidade_limite, versao,
-            categoria, classificacao_indicativa, motivo_pendencia, qtd_limites_candidatos
+    `SELECT id_resultado, id_amostra, codigo_amostra, ponto_coleta, codigo_ensaio, ensaio, data_resultado, valor, unidade_resultado,
+            legislacao, classe, valor_minimo, valor_maximo, unidade_limite, percentual_do_maximo,
+            categoria, classificacao_indicativa, motivo_pendencia
      FROM vw_resultado_conformidade
      WHERE ($1::date IS NULL OR data_resultado >= $1)
        AND ($2::date IS NULL OR data_resultado <= $2)
        AND ($3::text IS NULL OR legislacao = $3)
        AND ($4::int  IS NULL OR id_ensaio = $4)
-       AND ($5::text IS NULL OR classe = $5)
-       AND ($6::text IS NULL OR categoria = $6)
+       AND ($5::text IS NULL OR categoria = $5)
+       AND ($6::text IS NULL OR ponto_coleta = $6)
+       AND ($7::text IS NULL OR codigo_amostra ILIKE '%' || $7 || '%' OR ensaio ILIKE '%' || $7 || '%')
      ORDER BY data_resultado DESC NULLS LAST, id_resultado DESC
      LIMIT 5000`,
-    [data(p.inicio), data(p.fim), texto(p.legislacao), inteiro(p.ensaio), texto(p.classe), texto(p.categoria)],
+    [data(p.inicio), data(p.fim), texto(p.legislacao), inteiro(p.ensaio), texto(p.categoria), texto(p.ponto), texto(p.busca)],
   );
   return rows;
 }
 
-export async function historico(db, p) {
-  const series = (await db.query(
-    `SELECT serie, ensaio, codigo_ensaio, max(qtd_pontos_serie)::int AS pontos,
-            min(data_resultado) AS primeira, max(data_resultado) AS ultima,
-            count(*) FILTER (WHERE fora_limite)::int AS fora_limite
-     FROM vw_historico
-     WHERE ($1::int IS NULL OR id_ensaio = $1)
-     GROUP BY 1, 2, 3 ORDER BY 2, 1`,
-    [inteiro(p.ensaio)],
-  )).rows;
-  const serie = texto(p.serie);
-  const pontos = serie
-    ? (await db.query(
-      `SELECT id_resultado, id_amostra, data_resultado, valor, unidade_resultado, valor_minimo, valor_maximo,
-              categoria, valor_anterior, variacao_absoluta, variacao_percentual, direcao,
-              recorrencia_fora_limite, serie_suficiente, qtd_pontos_serie
-       FROM vw_historico WHERE serie = $1 ORDER BY posicao`,
-      [serie],
-    )).rows
-    : [];
-  return { series, pontos };
+export async function tendencias(db, p) {
+  const series = await carregarSeries(db, { ensaio: inteiro(p.ensaio) });
+  const situacao = texto(p.situacao);
+  return series.map(resumoSerie).filter((s) => !situacao || s.tendencia.situacao === situacao || (situacao === 'Valor atípico' && s.atipicos > 0));
 }
 
-export async function alertas(db, p) {
-  const params = [texto(p.tipo), inteiro(p.ensaio), texto(p.legislacao), data(p.inicio), data(p.fim)];
-  const filtro = `($1::text IS NULL OR tipo = $1) AND ($2::int IS NULL OR id_ensaio = $2)
-                  AND ($3::text IS NULL OR legislacao = $3)
-                  AND ($4::date IS NULL OR data_referencia >= $4) AND ($5::date IS NULL OR data_referencia <= $5)`;
-  const registrados = (await db.query(
-    `SELECT a.id_alerta, a.tipo, a.descricao, a.data_geracao, a.fk_id_resultado AS id_resultado,
-            c.ensaio, c.legislacao, c.data_resultado AS data_referencia, c.id_ensaio
-     FROM alerta a LEFT JOIN vw_resultado_conformidade c ON c.id_resultado = a.fk_id_resultado`,
-  )).rows;
-  const calculados = (await db.query(
-    `SELECT c.*, EXISTS (SELECT 1 FROM alerta a WHERE a.fk_id_resultado = c.id_resultado AND a.tipo = c.tipo) AS registrado
-     FROM vw_alerta_calculado c WHERE ${filtro} ORDER BY data_referencia DESC NULLS LAST LIMIT 5000`,
-    params,
-  )).rows;
-  const f = (r) =>
-    (!params[0] || r.tipo === params[0]) && (!params[1] || r.id_ensaio === params[1]) && (!params[2] || r.legislacao === params[2]) &&
-    (!params[3] || (r.data_referencia && r.data_referencia >= params[3])) && (!params[4] || (r.data_referencia && r.data_referencia <= params[4]));
-  return { registrados: registrados.filter(f), calculados };
+export async function serie(db, p) {
+  const nome = texto(p.serie);
+  if (!nome) return null;
+  const [s] = await carregarSeries(db, { serie: nome });
+  if (!s) return null;
+  return { ...resumoSerie(s), pontos: s.linhas, atipicosDetalhe: s.atipicos, linhaTendencia: s.linhaTendencia, parametros: s.parametros };
 }
 
-export async function pendencias(db, p) {
+/** Limites agrupados por parâmetro: códigos com o mesmo nome e os mesmos valores viram uma linha. */
+export async function limites(db, p) {
   const { rows } = await db.query(
-    `SELECT id_pendencia, tipo, importado, descricao, arquivo_origem, linhas_origem, resolvida, criado_em
-     FROM etl.pendencia
-     WHERE ($1::text IS NULL OR tipo = $1) AND NOT resolvida
-     ORDER BY CASE WHEN importado THEN 1 ELSE 0 END, tipo, arquivo_origem NULLS FIRST, id_pendencia`,
-    [texto(p.tipo)],
+    `SELECT legislacao, origem_amostra, COALESCE(classe, 'Sem classe') AS classe, ensaio AS parametro,
+            valor_minimo, valor_maximo, unidade_medida, tipo_limite, data_inicio_vigencia,
+            bool_or(requer_validacao) AS requer_validacao,
+            string_agg(DISTINCT observacao_validacao, ' · ') AS observacao,
+            array_agg(codigo_ensaio ORDER BY codigo_ensaio::int) AS codigos,
+            count(*)::int AS qtd_codigos
+     FROM vw_limite_detalhado
+     WHERE ativo
+       AND ($1::text IS NULL OR legislacao = $1)
+       AND ($2::text IS NULL OR origem_amostra = $2)
+       AND ($3::text IS NULL OR ensaio ILIKE '%' || $3 || '%' OR codigo_ensaio = $3)
+     GROUP BY legislacao, origem_amostra, classe, ensaio, valor_minimo, valor_maximo, unidade_medida, tipo_limite, data_inicio_vigencia
+     ORDER BY lower(ensaio), legislacao, origem_amostra`,
+    [texto(p.legislacao), texto(p.origem), texto(p.busca)],
   );
   return rows;
+}
+
+export async function qualidade(db) {
+  const contagens = (await db.query(`
+    SELECT (SELECT count(*) FROM limite)::int AS limites,
+           (SELECT count(*) FROM limite WHERE ativo)::int AS ativos,
+           (SELECT count(*) FROM limite WHERE NOT ativo)::int AS inativos,
+           (SELECT count(*) FROM limite WHERE requer_validacao)::int AS requer_validacao,
+           (SELECT count(*) FROM etl.pendencia)::int AS pendencias,
+           (SELECT count(*) FROM etl.pendencia WHERE NOT resolvida)::int AS abertas,
+           (SELECT count(*) FROM etl.decisao_curadoria)::int AS decisoes,
+           (SELECT count(*) FROM (SELECT 1 FROM vw_limite_detalhado WHERE ativo
+              GROUP BY legislacao, origem_amostra, classe, lower(ensaio), valor_minimo, valor_maximo, unidade_medida) g)::int AS parametros`)).rows[0];
+  const decisoes = (await db.query(`SELECT chave, tipo, descricao, fonte, aplicada_em FROM etl.decisao_curadoria ORDER BY id_decisao`)).rows;
+  const abertas = (await db.query(`SELECT tipo, descricao, arquivo_origem, linhas_origem FROM etl.pendencia WHERE NOT resolvida ORDER BY tipo, id_pendencia`)).rows;
+  const inativos = (await db.query(`SELECT codigo_ensaio, ensaio, legislacao, origem_amostra, motivo_inativacao FROM vw_limite_detalhado WHERE NOT ativo ORDER BY ensaio`)).rows;
+  const porTipo = (await db.query(`SELECT tipo, count(*)::int AS total, count(*) FILTER (WHERE resolvida)::int AS resolvidas FROM etl.pendencia GROUP BY tipo ORDER BY total DESC`)).rows;
+  return { contagens, decisoes, abertas, inativos, porTipo };
+}
+
+export async function lotes(db) {
+  return (await db.query(`SELECT id_lote, origem, arquivo, criado_em, qtd_amostras, qtd_resultados, desfeito_em FROM etl.lote_resultados ORDER BY id_lote DESC LIMIT 50`)).rows;
 }

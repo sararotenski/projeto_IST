@@ -1,6 +1,6 @@
 # Relatório de qualidade dos dados extraídos
 
-Gerado por `npm run extrair` em 2026-10-23T18:03:24.574Z.
+Gerado por `npm run extrair` em 2026-10-24T01:48:17.174Z.
 
 ## Arquivos processados
 
@@ -40,7 +40,7 @@ Gerado por `npm run extrair` em 2026-10-23T18:03:24.574Z.
 
 | Tipo | Arquivo | Linhas | Descrição |
 |---|---|---|---|
-| CLASSE_GRAFIA | GM888_Agua_Consumo_Humano.csv | 72 | Classe "Àgua tratada" (1,2-Diclorobenzeno, código 691): possível grafia de "Água tratada" |
+| CLASSE_GRAFIA | GM888_Agua_Consumo_Humano.csv | 72 | Classe "Àgua tratada" (1,2-Diclorobenzeno, código 691): grafia corrigida para "Água tratada" |
 | FAIXA_INCONSISTENTE | GM888_Agua_Consumo_Humano.csv | 74 | Cloro Residual Livre (código 777) em Água Consumo Humano: mínimo 0.200000 maior que máximo 0.000000 |
 | UNIDADE_AUSENTE | GM888_Agua_Consumo_Humano.csv | 75 | pH (código 793) em Água Consumo Humano |
 | LIMITE_CONFLITANTE | GM888_Agua_Consumo_Humano.csv | 84,85 | Microcistinas (código 1108) em Água Consumo Humano: mín 0.000000 / máx 1.000000 ppb (linhas 84) × mín 0.000000 / máx 1.000000 µg/L (linhas 85). Nenhuma versão foi escolhida. |
@@ -56,7 +56,7 @@ Gerado por `npm run extrair` em 2026-10-23T18:03:24.574Z.
 | MAXIMO_ZERO | GM888_Agua_Consumo_Humano.csv | 267 | SUB - Coliformes Totais (P/A) (código 17105) em Água Consumo Humano: máximo 0 Aus/Pres em 100mL |
 | MAXIMO_ZERO | GM888_Agua_Consumo_Humano.csv | 268 | SUB - Coliformes Totais - Determinação qualitativa pela técnica de tubos múltiplos modificados (código 17120) em Água Consumo Humano: máximo 0 Aus/Pres em 100mL |
 | MAXIMO_ZERO | GM888_Agua_Consumo_Humano.csv | 269 | SUB - Escherichia coli - Determinação qualitativa pela técnica de tubos múltiplos modificados (código 17121) em Água Consumo Humano: máximo 0 Aus/Pres em 100mL |
-| CLASSE_GRAFIA | GM888_Agua_Tratada.csv | 15 | Classe "Àgua tratada" (Odor, código 36): possível grafia de "Água tratada" |
+| CLASSE_GRAFIA | GM888_Agua_Tratada.csv | 15 | Classe "Àgua tratada" (Odor, código 36): grafia corrigida para "Água tratada" |
 | MAXIMO_ZERO | GM888_Agua_Tratada.csv | 61 | Clorofórmio (código 669) em Agua Tratada: máximo 0 mg/L |
 | UNIDADE_AUSENTE | GM888_Agua_Tratada.csv | 73 | pH (código 793) em Agua Tratada |
 | UNIDADE_AUSENTE | GM888_Agua_Tratada.csv | 86 | pH (código 1190) em Agua Tratada |

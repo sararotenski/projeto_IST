@@ -39,14 +39,17 @@ FROM vw_resultado_conformidade GROUP BY 1, 2, 3 ORDER BY 1, 2, 3;
 
 -- 7. Comparação entre datas: variações por série
 SELECT serie, data_anterior, valor_anterior, data_resultado, valor, variacao_absoluta, variacao_percentual,
-       direcao, serie_suficiente
+       direcao, serie_validada
 FROM vw_historico WHERE valor_anterior IS NOT NULL ORDER BY serie, posicao;
 
 -- 8. Recorrências (resultados consecutivos fora do limite)
 SELECT serie, data_resultado, valor, categoria FROM vw_historico WHERE recorrencia_fora_limite ORDER BY serie, data_resultado;
 
--- 9. Séries insuficientes para descrever evolução
-SELECT serie, max(qtd_pontos_serie) AS pontos FROM vw_historico WHERE NOT serie_suficiente GROUP BY serie;
+-- 9. Séries com menos de 5 resultados (insuficientes para o teste de tendência)
+SELECT serie, max(qtd_pontos_serie) AS pontos FROM vw_historico GROUP BY serie HAVING max(qtd_pontos_serie) < 5;
+
+-- 9b. Limites desativados por curadoria
+SELECT codigo_ensaio, ensaio, legislacao, origem_amostra, motivo_inativacao FROM vw_limite_detalhado WHERE NOT ativo;
 
 -- 10. Alertas calculados ainda não gravados em ALERTA
 SELECT c.* FROM vw_alerta_calculado c

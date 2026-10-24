@@ -13,6 +13,7 @@
     "migrar": "node --env-file-if-exists=.env scripts/migrar.js",
     "migrar:reverter": "node --env-file-if-exists=.env scripts/migrar.js --reverter",
     "importar": "node --env-file-if-exists=.env scripts/importar.js",
+    "curadoria": "node --env-file-if-exists=.env scripts/aplicar-curadoria.js",
     "alertas": "node --env-file-if-exists=.env scripts/gerar-alertas.js",
     "api": "node --env-file-if-exists=.env server/index.js",
     "web": "vite",
@@ -22,6 +23,7 @@
     "test:db": "node --env-file-if-exists=.env --test --test-concurrency=1 \"tests/db/*.test.js\""
   },
   "dependencies": {
+    "@fontsource/source-serif-4": "5.3.1",
     "express": "5.3.0",
     "pg": "8.23.1",
     "react": "19.3.1",

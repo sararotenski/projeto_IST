@@ -47,7 +47,9 @@ export function normalizarUnidade(valor) {
 export function normalizarClasse(valor) {
   const texto = normalizarTexto(valor);
   if (texto === null) return null;
-  return texto.toLowerCase() === 'sem classe' ? null : texto;
+  if (texto.toLowerCase() === 'sem classe') return null;
+  // Correção de grafia "Àgua" → "Água" (registrada como pendência CLASSE_GRAFIA)
+  return texto.replace(/^\u00c0gua\b/, '\u00c1gua');
 }
 
 /** Chave estável para comparar textos sem diferenciar maiúsculas/espaços. */

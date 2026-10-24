@@ -8,7 +8,7 @@
 // - Registros existentes são localizados pela chave natural e nunca sobrescritos.
 //   Se divergirem dos dados novos, a diferença vira pendência.
 
-const contador = () => ({ inseridos: 0, existentes: 0, divergentes: 0 });
+const contador = () => ({ inseridos: 0, existentes: 0, divergentes: 0, curados: 0 });
 
 async function proximoId(client, tabela, coluna) {
   const { rows } = await client.query(`SELECT COALESCE(MAX(${coluna}), 0) + 1 AS id FROM ${tabela}`);
@@ -112,7 +112,10 @@ export async function importarDados(client, dados) {
       `SELECT id_limite,
               (valor_minimo IS NOT DISTINCT FROM $7::numeric
                AND valor_maximo IS NOT DISTINCT FROM $8::numeric
-               AND unidade_medida IS NOT DISTINCT FROM $9::varchar) AS igual
+               AND unidade_medida IS NOT DISTINCT FROM $9::varchar) AS igual,
+              (to_regclass('etl.decisao_curadoria') IS NOT NULL AND EXISTS (
+                 SELECT 1 FROM etl.decisao_curadoria d, jsonb_array_elements(d.antes) x
+                  WHERE (x->>'id_limite')::int = limite.id_limite)) AS curado
        FROM limite
        WHERE fk_id_ensaio = $1 AND fk_id_legislacao = $2
          AND COALESCE(fk_id_classe, -1) = COALESCE($3::int, -1)
@@ -124,6 +127,9 @@ export async function importarDados(client, dados) {
     if (r.rowCount) {
       if (r.rows[0].igual) {
         resumo.limite.existentes++;
+      } else if (r.rows[0].curado) {
+        // Valor corrigido por decisão de curadoria documentada: a fonte bruta não sobrescreve.
+        resumo.limite.curados++;
       } else {
         resumo.limite.divergentes++;
         divergencia('LIMITE_DIVERGENTE_BANCO', `${l.codigo_ensaio}|${l.legislacao}|${l.origem_amostra}|${l.classe ?? ''}`,

@@ -36,13 +36,28 @@ test('saude indica banco com migração e views', { skip: !temBanco }, async () 
   assert.equal(corpo.migracao_ok, true);
 });
 
-test('resumo bate com as contagens das tabelas', { skip: !temBanco }, async () => {
-  const { corpo } = await get('resumo');
-  const real = (await pool.query('SELECT (SELECT count(*) FROM limite)::int AS l, (SELECT count(*) FROM ensaio)::int AS e')).rows[0];
-  assert.equal(corpo.contagens.limites, real.l);
-  assert.equal(corpo.contagens.ensaios, real.e);
-  const soma = corpo.limitesPorOrigem.reduce((s, x) => s + x.limites, 0);
-  assert.equal(soma, real.l);
+test('painel bate com as contagens das tabelas', { skip: !temBanco }, async () => {
+  const { corpo } = await get('painel');
+  const real = (await pool.query('SELECT (SELECT count(*) FROM limite WHERE ativo)::int AS l, (SELECT count(*) FROM resultado)::int AS r')).rows[0];
+  assert.equal(corpo.kpis.limites, real.l);
+  assert.equal(corpo.kpis.resultados, real.r);
+});
+
+test('limites agrupados por parâmetro não repetem linhas e somam todos os limites ativos', { skip: !temBanco }, async () => {
+  const { corpo } = await get('limites');
+  const chaves = corpo.map((l) => [l.legislacao, l.origem_amostra, l.classe, l.parametro, l.valor_minimo, l.valor_maximo, l.unidade_medida].join('|'));
+  assert.equal(new Set(chaves).size, corpo.length);
+  const ativos = (await pool.query('SELECT count(*)::int AS n FROM limite WHERE ativo')).rows[0].n;
+  assert.equal(corpo.reduce((s, l) => s + l.qtd_codigos, 0), ativos);
+  assert.ok(corpo.length < ativos);
+});
+
+test('curadoria: nenhuma pendência aberta e nenhum limite ativo sem vigência', { skip: !temBanco }, async () => {
+  const { corpo } = await get('qualidade');
+  assert.equal(corpo.contagens.abertas, 0);
+  assert.equal(corpo.contagens.requer_validacao, 0);
+  const semVig = (await pool.query('SELECT count(*)::int AS n FROM limite WHERE ativo AND data_inicio_vigencia IS NULL')).rows[0].n;
+  assert.equal(semVig, 0);
 });
 
 test('filtros de limites funcionam e são parametrizados', { skip: !temBanco }, async () => {
@@ -54,12 +69,10 @@ test('filtros de limites funcionam e são parametrizados', { skip: !temBanco }, 
   const injecao = (await get(`limites?busca=${encodeURIComponent("'; DROP TABLE limite; --")}`));
   assert.equal(injecao.status, 200);
   assert.equal(injecao.corpo.length, 0);
-  const validacao = (await get('limites?validacao=sim')).corpo;
-  assert.ok(validacao.every((l) => l.requer_validacao));
 });
 
 test('rotas de análise respondem mesmo sem resultados', { skip: !temBanco }, async () => {
-  for (const rota of ['conformidade', 'historico', 'alertas', 'pendencias', 'filtros']) {
+  for (const rota of ['resultados', 'tendencias', 'opcoes', 'qualidade', 'lotes']) {
     const { status } = await get(rota);
     assert.equal(status, 200, rota);
   }

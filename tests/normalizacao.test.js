@@ -29,11 +29,11 @@ test('unidade: ug/L e mu grego viram µg/L; ppb é preservado; vazio é null', (
   assert.equal(normalizarUnidade('Aus/Pres em 100mL'), 'Aus/Pres em 100mL');
 });
 
-test('"Sem classe" em qualquer grafia significa sem classe; outras são preservadas', () => {
+test('"Sem classe" em qualquer grafia significa sem classe; outras classes são mantidas', () => {
   assert.equal(normalizarClasse('Sem classe'), null);
   assert.equal(normalizarClasse('Sem Classe'), null);
   assert.equal(normalizarClasse('ESPECIFICAÇÃO'), 'ESPECIFICAÇÃO');
-  assert.equal(normalizarClasse('Àgua tratada'), 'Àgua tratada');
+  assert.equal(normalizarClasse('Àgua tratada'), 'Água tratada'); // correção de grafia registrada
 });
 
 test('texto: espaços colapsados, acentos preservados', () => {

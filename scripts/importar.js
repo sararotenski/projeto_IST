@@ -17,11 +17,11 @@ function relatorio(resumo, contagens, simulacao) {
   const l = ['# Relatório de importação', ''];
   l.push(`Gerado por \`npm run importar${simulacao ? ' -- --simular' : ''}\` em ${new Date().toISOString()}.`);
   if (simulacao) l.push('', '**Simulação: nenhuma alteração foi gravada (ROLLBACK).**');
-  l.push('', '| Tabela | Inseridos | Já existentes (iguais) | Divergentes (não sobrescritos) |', '|---|---:|---:|---:|');
+  l.push('', '| Tabela | Inseridos | Já existentes (iguais) | Corrigidos pela curadoria | Divergentes (não sobrescritos) |', '|---|---:|---:|---:|---:|');
   for (const t of ['legislacao', 'ensaio', 'classe', 'limite']) {
-    l.push(`| ${t} | ${resumo[t].inseridos} | ${resumo[t].existentes} | ${resumo[t].divergentes} |`);
+    l.push(`| ${t} | ${resumo[t].inseridos} | ${resumo[t].existentes} | ${resumo[t].curados} | ${resumo[t].divergentes} |`);
   }
-  l.push(`| etl.pendencia | ${resumo.pendencia.inseridas} | ${resumo.pendencia.existentes} | — |`);
+  l.push(`| etl.pendencia | ${resumo.pendencia.inseridas} | ${resumo.pendencia.existentes} | — | — |`);
   l.push('', '## Registros por tabela após a importação', '', '| Tabela | Registros |', '|---|---:|');
   for (const [t, n] of Object.entries(contagens)) l.push(`| ${t} | ${n} |`);
   l.push('', 'Tabelas sem dados reais nos arquivos fornecidos (não foram preenchidas): cliente, proposta_comercial,');
@@ -70,7 +70,7 @@ try {
 
   console.log(simular ? 'SIMULAÇÃO (nada gravado):' : 'Importação concluída:');
   for (const t of ['legislacao', 'ensaio', 'classe', 'limite']) {
-    console.log(`  ${t}: ${resumo[t].inseridos} inseridos, ${resumo[t].existentes} já existentes, ${resumo[t].divergentes} divergentes`);
+    console.log(`  ${t}: ${resumo[t].inseridos} inseridos, ${resumo[t].existentes} já existentes, ${resumo[t].curados} corrigidos pela curadoria, ${resumo[t].divergentes} divergentes`);
   }
   console.log(`  pendências: ${resumo.pendencia.inseridas} novas, ${resumo.pendencia.existentes} já registradas`);
   console.log('Relatório: reports/relatorio_importacao.md');

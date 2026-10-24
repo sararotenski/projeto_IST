@@ -1,200 +1,177 @@
-# Documentação do projeto: Banco de Dados para Análise de Ensaios Ambientais (IST)
+# Documentação: Ensaios Ambientais · IST
 
-## 1. Visão geral
+## 1. O que o sistema faz
 
-O sistema organiza limites legais de ensaios ambientais em um banco PostgreSQL, compara resultados laboratoriais com esses limites, acompanha o histórico e gera alertas. Tudo é exibido em um dashboard React, nos tons bege e marrom.
+O laboratório lança os resultados das amostras, pelo formulário ou por um arquivo CSV. A partir daí, o site:
 
-É uma ferramenta de apoio. Ela não substitui a interpretação de um profissional e não emite conclusões regulatórias.
+1. Compara cada resultado com o limite da legislação correspondente. Ele classifica o resultado como dentro do limite, acima do máximo ou abaixo do mínimo.
+2. Destaca no Painel tudo o que estiver fora do limite.
+3. Monta séries por ponto de coleta e ensaio. Em cada série, aponta tendência de aumento ou de redução e valores que se desviam da média.
+4. Registra alertas para tudo isso, sem duplicar.
+
+É uma ferramenta de apoio. Ela não substitui a avaliação de um profissional.
 
 ```
-data/raw/*.csv ──► scripts/extrair.js ──► data/processed/ + reports/relatorio_qualidade.md
-                         │
-                         ▼
-               scripts/importar.js ──► PostgreSQL (tabelas do modelo + esquema etl)
+data/raw/*.csv ─► extrair ─► importar ─► curadoria (data/curadoria/decisoes.json)
                                               │
-                         sql/010_views_analise.sql (conformidade, histórico, alertas)
+            lançamento (CSV/formulário) ─► PostgreSQL ─► views SQL (conformidade, histórico)
+                                              │                 │
+                                   análise de tendência (server/analise) ─► alertas
                                               │
-                         server/ (API Express, somente leitura) ──► web/ (React + Recharts)
+                                   API Express ─► site React (web/)
 ```
 
 | Pasta | Conteúdo |
 |---|---|
-| `data/raw/` | CSVs originais (não alterados) |
-| `data/processed/` | Dados tratados: `legislacoes.json`, `ensaios.json`, `classes.json`, `limites.json`/`.csv`, `pendencias.json` |
-| `sql/` | Script original, migração 001 e sua reversão, views de análise, consultas de exemplo |
-| `scripts/` | Extração, inspeção do banco, migração, importação e geração de alertas |
-| `server/` | API HTTP do dashboard |
-| `web/` | Dashboard React |
-| `tests/` | Testes unitários (`tests/*.test.js`) e de banco (`tests/db/`) |
-| `reports/` | Inventário, diagnóstico do banco, qualidade e importação |
+| `data/raw/` | CSVs originais do laboratório. Não são alterados. |
+| `data/processed/` | Dados extraídos e padronizados |
+| `data/curadoria/decisoes.json` | Decisões de tratamento dos limites, com fonte oficial |
+| `data/exemplos/` | Arquivo de demonstração com dados fictícios |
+| `sql/` | Script original, migrações 001 e 002 (com reversão) e views de análise |
+| `scripts/` | Extração, importação, curadoria, migração, inspeção e alertas |
+| `server/` | API, lançamento de resultados e análise estatística |
+| `web/` | Site em React |
+| `tests/` | Testes unitários e de banco |
+| `reports/` | Relatórios gerados (qualidade, importação, diagnóstico do banco) |
 
 ## 2. Como executar
 
-Pré-requisitos: Node.js 22.9 ou superior (testado com a 24.22.1) e PostgreSQL com a estrutura de `sql/000_script_original.sql`.
+Pré-requisitos: Node.js 22.9 ou superior (testado com a 24.22.1) e PostgreSQL (testado com a 18).
 
 ```bash
 npm install
-cp .env.example .env              # preencha PGDATABASE, PGUSER, PGPASSWORD
-npm run inspecionar               # diagnóstico somente leitura → reports/diagnostico_banco.md
-npm run migrar                    # simulação: mostra o que seria aplicado
-npm run migrar -- --confirmar     # aplica 001 (uma vez) e 010
-npm run importar -- --simular     # importa e desfaz, só para conferir
-npm run importar                  # importação real (pode repetir sem duplicar)
-npm run alertas                   # grava em ALERTA os alertas calculados
+cp .env.example .env                 # credenciais do banco (o arquivo não vai para o Git)
+npm run migrar -- --confirmar        # estrutura, migrações 001 e 002 e views
+npm run importar                     # limites dos CSVs (pode repetir sem duplicar)
+npm run curadoria                    # aplica as decisões de tratamento (idempotente)
+npm start                            # compila e abre em http://127.0.0.1:3001
 ```
 
-Para abrir o dashboard em modo de desenvolvimento, use dois terminais:
+Para mexer no visual, use dois terminais: `npm run api` e `npm run web`. O site abre em http://127.0.0.1:5173.
 
-```bash
-npm run api    # API em http://127.0.0.1:3001/api
-npm run web    # dashboard em http://127.0.0.1:5173
-```
+Testes: `npm test` roda os unitários, sem banco. `npm run test:db` testa as regras SQL e a API e faz o fluxo completo de lançamento, desfazendo tudo no final.
 
-Outra opção é `npm start`, que compila o dashboard e serve tudo em `http://127.0.0.1:3001`.
+Segurança: o servidor escuta só em `127.0.0.1` e não tem login. As rotas de escrita exigem o cabeçalho `X-IST-Dashboard`, que protege contra requisições forjadas de outros sites. Para usar em rede, é preciso adicionar autenticação e HTTPS.
 
-Testes:
+## 3. Lançamento de resultados
 
-```bash
-npm test          # unitários, sem banco
-npm run test:db   # regras SQL e API contra o banco. Dados sintéticos com ROLLBACK, nada fica gravado.
-```
+Colunas do CSV (separador `;`, vírgula decimal e datas no formato DD/MM/AAAA):
 
-Segurança: a API escuta só em `127.0.0.1`, não tem autenticação e só faz leituras com consultas parametrizadas. Para usar em rede seria preciso adicionar autenticação e HTTPS. As credenciais ficam só no `.env`, que está no `.gitignore`.
+| Coluna | Obrigatória | Observação |
+|---|---|---|
+| `codigo_amostra` | sim | Identificador do laboratório. Uma amostra pode ter vários ensaios. |
+| `ponto_coleta` | sim | Define as séries históricas |
+| `cliente` | sim | Até 30 caracteres. É criado se ainda não existir. |
+| `legislacao` | sim | Nome completo ou atalho ("888", "1468") |
+| `origem_amostra` | sim | Agua Tratada, Água Consumo Humano, Água Subterrânea ou Água Superficial (Água doce) |
+| `matriz` | não | Padrão: "Água - BNU" |
+| `data_coleta` | sim | |
+| `codigo_ensaio` | sim | Código do ensaio no laboratório |
+| `valor` | sim | Em ensaios de presença/ausência, 0 = ausente e 1 = presente |
+| `unidade` | não | Se ficar vazia, usa a unidade do limite, quando há apenas um limite aplicável |
+| `data_resultado` | não | Padrão: a data da coleta |
 
-## 3. Tratamento dos dados (Fase 2)
+O lançamento é tudo ou nada: se uma linha tiver erro, nenhuma é gravada, e o site lista os erros com o número da linha. Um mesmo ensaio não pode ser lançado duas vezes para a mesma amostra.
 
-Regras aplicadas pelos scripts `scripts/lib/normalizar.js` e `scripts/lib/extracao.js`:
+Cada lançamento forma um lote, e um lote pode ser desfeito na aba "Lançar resultados". Desfazer remove as amostras, os resultados e os alertas do lote, além dos clientes e propostas que ele criou, se ficarem sem uso.
 
-- Espaços: removidos nas pontas e colapsados no meio. Acentos e caracteres especiais são preservados (Unicode NFC).
-- Decimais: "0,001000" vira `0.001000`. Os valores são guardados como texto até o banco (DECIMAL) para não perder precisão.
-- Vazio ≠ zero: um campo vazio vira `NULL`. "0,000000" vira `0`.
-- Unidades: "ug/L" e "μg/L" (mu grego) viram "µg/L", porque são a mesma unidade escrita de outro jeito. "ppb" fica como está. Não há conversão automática.
-- Classe: "Sem classe" ou "Sem Classe" vira `fk_id_classe = NULL`. As demais classes ficam exatamente como na fonte, inclusive "Àgua tratada".
-- Duplicatas exatas (após a padronização) viram um único limite, que guarda todas as linhas de origem.
-- Conflitos: quando o mesmo ensaio, legislação, origem e classe aparecem com valores ou unidades diferentes, o limite não é importado e vira pendência. Nenhuma versão é escolhida.
-- Mínimo maior que o máximo: o limite não é importado (exemplo: Cloro Residual Livre com 0,2 e 0).
-- Máximo igual a 0 e unidade ausente: o limite é importado com `requer_validacao = true`. O zero pode significar "ausência exigida" (microbiológicos) ou "limite não informado".
-- Mesmo nome com códigos diferentes (exemplo: Ferro 231, 10525 e 10687) continuam como ensaios distintos, porque podem ser métodos diferentes.
-- Vigência: os arquivos não informam. O limite fica com `versao = 1` e datas `NULL`. Nenhuma data é inventada.
-- Rastreabilidade: cada limite guarda `arquivo_origem` e `linhas_origem`.
+A proposta comercial que liga a amostra à legislação é escolhida assim: o sistema procura uma proposta do cliente associada exatamente àquela legislação e, se não houver, cria uma.
 
-Resultado com os arquivos atuais: 794 linhas lidas e 732 limites importados, dos quais 25 estão marcados para validação. As 794 linhas se dividem em 780 que formam os limites (incluindo as duplicatas consolidadas) e 14 rejeitadas: 12 em 5 conflitos e 2 com faixa inconsistente. Ao todo são 154 pendências registradas. O detalhe está em `reports/relatorio_qualidade.md` e na aba "Qualidade dos dados".
+O arquivo `data/exemplos/resultados_DEMONSTRACAO_ficticios.csv` tem dados fictícios do cliente "DEMONSTRACAO - FICTICIO", com casos de tendência de aumento, tendência de redução, resultados fora do limite e um valor atípico. Ele serve para conhecer o site e deve ser desfeito depois.
 
-## 4. Inconsistências do modelo e migração 001 (Fase 3)
+## 4. Comparação com o limite (`vw_resultado_conformidade`)
 
-O script `sql/001_ajustes_modelo.sql` foi aplicado com autorização em 23/10/2026. Ele só adiciona: não remove dados nem colunas. Para desfazer existe `sql/001_ajustes_modelo_reverter.sql`.
+O limite aplicado a um resultado precisa ser:
 
-| # | Problema no modelo original | Impacto | Ajuste |
-|---|---|---|---|
-| 1 | `ensaio.nome VARCHAR(30)` | Nomes reais têm até 106 caracteres | `VARCHAR(150)` |
-| 2 | ENSAIO não guarda o código do laboratório | Sem rastreabilidade e sem importação idempotente | `codigo_origem` com índice único |
-| 3 | `limite.unidade_medida VARCHAR(10)` | "Aus/Pres em 100mL" tem 17 caracteres | `VARCHAR(30)` |
-| 4 | LIMITE não tem origem da amostra nem matriz | O mesmo ensaio tem limites diferentes para água tratada, subterrânea etc. | `origem_amostra`, `matriz` |
-| 5 | Sem rastreabilidade nem marcação de revisão | Não dá para auditar nem sinalizar valores duvidosos | `arquivo_origem`, `linhas_origem`, `requer_validacao`, `observacao_validacao` |
-| 6 | LIMITE sem chave natural | Reimportar duplicaria registros | Índice único (ensaio, legislação, classe, matriz, origem, versão) |
-| 7 | Sem verificação de faixa e de vigência | Permite mínimo > máximo e fim antes do início | `CHECK ... NOT VALID` |
-| 8 | LEGISLACAO e CLASSE sem chave natural | Duplicidade na reimportação | Índices únicos `nome` e `(legislação, nome)` |
-| 9 | RESULTADO sem unidade | Não dá para verificar se a unidade do resultado bate com a do limite | `resultado.unidade_medida` |
-| 10 | `E__Assoc__1_possui` sem PK | Permite associações duplicadas | PK (proposta, legislação) |
-| 11 | ALERTA sem chave natural | Cada execução duplicaria alertas | Índice único (resultado, tipo) |
-| 12 | IDs `INT` sem sequência | Quem insere precisa gerar o ID | O importador usa MAX+1 com `LOCK TABLE` dentro da transação. Não foi alterado no modelo. |
-
-Pontos que foram só documentados, sem mudança, e precisam de decisão:
-
-- `RESULTADO → ENSAIO` com `ON DELETE CASCADE`: apagar um ensaio apaga os resultados dele. O recomendado é `RESTRICT`.
-- `ENSAIO.atende_nao_atende`: conformidade é uma característica do resultado comparado a um limite, não do ensaio. A coluna ficou `NULL`, e a classificação é calculada na view.
-- `PARECER_TECNICO → ENSAIO`: um parecer costuma tratar de uma amostra ou proposta, não de um ensaio isolado. Vale rever no modelo conceitual.
-- O modelo não tem um ponto de coleta, o que limita a análise de histórico (ver seção 5.2).
-
-Também existe o esquema `etl`, com `execucao_importacao` (log de cada execução), `pendencia` (itens para revisão humana) e `migracao` (controle das migrações).
-
-## 5. Regras de análise (Fase 5)
-
-As regras ficam em `sql/010_views_analise.sql`. Exemplos de uso estão em `sql/020_consultas_analise.sql`.
-
-### 5.1 Conformidade: `vw_resultado_conformidade`
-
-Um limite é candidato para um resultado quando todas estas condições valem:
-
-1. É do mesmo ensaio do resultado.
-2. A legislação está associada à proposta da amostra (`e__assoc__1_possui`).
-3. A origem e a matriz são iguais às da amostra. A comparação ignora maiúsculas e acentos, então "Agua Tratada" é igual a "Água Tratada". Se a amostra não informar origem ou matriz, aceita qualquer uma, o que pode gerar mais de um candidato.
-4. A data do resultado está dentro da vigência. Uma data `NULL` no limite significa que aquele lado não tem restrição.
+- do mesmo ensaio;
+- da legislação associada à amostra;
+- da mesma origem e matriz (a comparação ignora acentos e maiúsculas);
+- vigente na data do resultado;
+- ativo.
 
 A classificação segue a primeira regra que se aplicar:
 
-| Situação | Categoria |
+| Situação | Classificação |
 |---|---|
-| Valor ausente, ensaio ausente ou legislação da amostra não identificada | Pendente de validação |
-| Nenhum limite candidato | Sem limite aplicável identificado |
-| Mais de um candidato (ambiguidade de classe, origem ou legislação) | Pendente de validação |
-| Data ausente, unidade ausente ou unidades diferentes (sem conversão) | Pendente de validação |
-| Limite marcado `requer_validacao` ou sem vigência informada | Pendente de validação, mostrando a classificação indicativa |
+| Valor, ensaio ou legislação ausente; mais de um limite possível; unidade ausente ou incompatível | Pendente de validação |
+| Nenhum limite aplicável | Sem limite aplicável identificado |
 | Valor < mínimo | Abaixo do limite mínimo |
 | Valor > máximo | Acima do limite máximo |
 | Caso contrário | Dentro dos limites |
 
-Limites que só têm mínimo ou só têm máximo comparam apenas o lado definido. A ausência de limite nunca é tratada como conformidade.
+Unidades: "ug/L" e "μg/L" são lidos como "µg/L", e "ppb" como "µg/L", o que vale para amostras aquosas. pH e razões são adimensionais. Não há outras conversões. Limites que só têm máximo ou só têm mínimo comparam apenas o lado definido.
 
-Os limites importados hoje não têm vigência. Por isso, qualquer resultado comparado a eles fica "Pendente de validação" até que as datas sejam confirmadas no texto oficial e preenchidas em `limite.data_inicio_vigencia`. A coluna `classificacao_indicativa` mostra o que a comparação daria.
+## 5. Tendências e desvios (`server/analise/tendencia.js`)
 
-### 5.2 Histórico: `vw_historico`
+Uma série reúne os resultados de um mesmo ponto de coleta, do mesmo ensaio e com a mesma unidade, em ordem de data.
 
-- Uma série reúne resultados do mesmo cliente, origem, matriz, ensaio e unidade. Essa regra é provisória: sem um ponto de coleta no modelo, duas amostras do mesmo cliente podem vir de locais diferentes. Precisa de validação técnica.
-- Para cada ponto, a view calcula o valor anterior, a variação absoluta e percentual (quando o valor anterior é diferente de 0) e a direção (aumento, redução ou sem variação).
-- Uma série com menos de 3 pontos é marcada `serie_suficiente = false`. Esse critério é descritivo e provisório.
-- A view mostra variação observada. Ela não testa tendência estatística, o que exigiria mais pontos e um método definido.
+| Análise | Método | Critério |
+|---|---|---|
+| Tendência | Teste de Mann-Kendall, não paramétrico e usual em monitoramento de água, com correção para valores empatados | p < 0,05 com pelo menos 5 resultados → "Aumentando" ou "Diminuindo". Caso contrário, "Sem tendência significativa". Abaixo de 5 resultados, "Dados insuficientes", porque nesse caso o teste não consegue chegar a p < 0,05. |
+| Taxa de variação | Inclinação de Sen (mediana das inclinações entre pares de pontos) | Expressa em unidade por ano. Aparece no gráfico como uma linha tracejada. |
+| Desvio | Escore z = (valor − média) / desvio-padrão da série | \|z\| > 2 com pelo menos 6 resultados → "Valor atípico". Com 5 resultados ou menos, \|z\| nunca passa de 2. |
+| Recorrência | Dois resultados consecutivos fora do limite na mesma série | Gera alerta |
 
-### 5.3 Alertas: `vw_alerta_calculado` e `npm run alertas`
+Os parâmetros ficam em `PARAMETROS`, no início do arquivo. Uma tendência estatisticamente significativa é um sinal para investigar, não uma conclusão técnica.
 
-| Tipo | Critério |
+Tipos de alerta (tabela ALERTA, no máximo um por resultado e tipo):
+
+| Tipo | Origem |
 |---|---|
-| `ACIMA_MAXIMO` | Categoria "Acima do limite máximo" |
-| `ABAIXO_MINIMO` | Categoria "Abaixo do limite mínimo" |
-| `RECORRENCIA` | Resultado fora do limite logo depois de outro fora do limite na mesma série |
-| `PENDENTE_VALIDACAO` | A comparação não pôde ser feita (o motivo aparece na descrição) |
+| `ACIMA_MAXIMO`, `ABAIXO_MINIMO`, `PENDENTE_VALIDACAO` | Comparação com o limite |
+| `RECORRENCIA` | Série histórica |
+| `TENDENCIA_AUMENTO`, `TENDENCIA_REDUCAO` | Mann-Kendall. Ligado ao último resultado da série. |
+| `VALOR_ATIPICO` | Escore z |
 
-Todos os alertas exigem avaliação profissional. Variações dentro dos limites não geram alerta, porque não há limiar validado para isso. A gravação em ALERTA é idempotente: um alerta por resultado e tipo, e alertas existentes não são alterados.
+## 6. Tratamento dos limites
 
-## 6. Dashboard (Fase 6)
+### 6.1 Extração (`scripts/lib/extracao.js`)
 
-| Aba | Conteúdo |
+Foram lidas 794 linhas de 6 arquivos. O tratamento:
+
+- padroniza espaços, decimais (vírgula vira ponto) e grafias de unidade;
+- trata "Sem classe" como ausência de classe;
+- consolida linhas idênticas;
+- separa conflitos e faixas inconsistentes para revisão.
+
+O resultado foram 732 limites importados. Cada um guarda o arquivo e as linhas de origem.
+
+### 6.2 Curadoria (`data/curadoria/decisoes.json`, aplicada por `npm run curadoria`)
+
+As 154 ressalvas da importação foram resolvidas com base no texto oficial da Portaria GM/MS nº 888/2021 (DOU de 07/05/2021) e da Portaria SES/SC nº 1468/2022:
+
+| Ressalva | Tratamento |
 |---|---|
-| Visão geral | Contagens de legislações, ensaios, limites, amostras, resultados, alertas e pendências; limites por origem e legislação; distribuição das classificações; alertas por tipo |
-| Limites legais | Filtros por legislação, origem, classe, situação e busca; gráfico por unidade; comparação de um ensaio entre origens; tabela com a fonte (arquivo e linha) |
-| Conformidade | Filtros por período, legislação, ensaio, classe e classificação; distribuição; classificação por ensaio; tabela com valor, unidade, data, limite usado e classificação |
-| Histórico | Escolha de ensaio e série; gráfico de linha com os limites; variações; aviso de série insuficiente |
-| Alertas | Filtros por categoria, ensaio, legislação e período; tabela de alertas calculados e se já estão gravados |
-| Qualidade dos dados | Pendências da importação, por tipo, com arquivo e linhas |
+| Repetições (41 grupos de linhas idênticas) | Já consolidadas na importação |
+| Mesmo parâmetro com códigos diferentes (77 casos) | Os códigos continuam separados no banco, porque são métodos do laboratório. No site, aparecem agrupados por parâmetro: 734 registros viram 531 linhas. |
+| Conflitos (Microcistinas, Paraquate, Picloram, 1,2-Diclorobenzeno, Ferro) | Adotado o valor oficial: 1 µg/L, 13 µg/L, 60 µg/L, 0,001 mg/L e 0,3 mg/L |
+| Cloro residual livre com mínimo > máximo | Faixa de 0,2 a 5 mg/L (art. 32 e Anexo 9) |
+| Máximo 0 em coliformes e E. coli | Confirmado: o padrão é ausência em 100 mL |
+| Máximo 0 sem valor legal (bactérias heterotróficas, clorofórmio e ácido dicloroacético isolados, Clorpirifós + oxon na SES) | Limite desativado, porque não há VMP para o parâmetro isolado |
+| Heptacloro em água superficial com máximo 0 | 0,3 µg/L, conforme a SES 1468 |
+| Unidade ausente (pH, gosto e odor, razão nitrito/nitrato) | Adimensional, intensidade e adimensional |
+| Códigos com valor diferente do oficial (Amônia 8020, Alumínio 10498, 1,4-Diclorobenzeno 690, 1,2-Diclorobenzeno 691) | Corrigidos para o VMP vigente |
+| Classe "Àgua tratada" | Grafia corrigida para "Água tratada" |
+| Vigência não informada | GM/MS 888: desde 07/05/2021. SES 1468: desde 21/12/2022, data do ato. A data exata de publicação no DOE/SC ainda precisa ser confirmada. |
 
-Todas as abas consultam o banco pela API. Não há números fixos no código. Quando falta dado, a aba mostra uma mensagem explicando o motivo. A interface não exibe nome, CPF/CNPJ, e-mail ou telefone de clientes.
+Cada decisão guarda os valores anteriores em `etl.decisao_curadoria` e pode ser conferida na aba "Dados e curadoria". Reimportar os CSVs não desfaz as correções. Recomenda-se que um responsável técnico confira as decisões.
 
-Acessibilidade: a interface tem link "pular para o conteúdo", navegação com `aria-current`, rótulos em todos os filtros, tabelas com `caption` e ordenação anunciada (`aria-sort`), e foco visível. Os gráficos têm descrição textual e tabela equivalente. O contraste do texto principal é de aproximadamente 14:1. Uma validação completa de WCAG exige teste manual com tecnologias assistivas.
+## 7. Banco de dados
 
-## 7. Situação em 23/10/2026
+O modelo original (`sql/000_script_original.sql`) foi preservado. As migrações só acrescentam estruturas e cada uma tem script de reversão.
 
-| Tabela | Registros | Origem |
-|---|---:|---|
-| legislacao | 2 | CSVs |
-| ensaio | 310 | CSVs |
-| classe | 2 | CSVs ("ESPECIFICAÇÃO" e "Àgua tratada", da GM/MS 888) |
-| limite | 732 | CSVs (25 requerem validação) |
-| etl.pendencia | 154 | Extração |
-| cliente, proposta_comercial, e__assoc__1_possui, amostra, resultado, alerta, parecer_tecnico | 0 | Os arquivos fornecidos não têm esses dados. Nada foi inventado. |
+- 001: amplia `ensaio.nome` e `limite.unidade_medida`. Adiciona o código do laboratório, a origem e a matriz no limite, a rastreabilidade, as chaves naturais, a PK da tabela associativa, a unidade no resultado e o esquema `etl`.
+- 002: limite ativo/inativo; código da amostra e ponto de coleta; um resultado por amostra e ensaio; lotes de lançamento; trilha de curadoria.
 
-Testes: 18 unitários e 15 de banco/API, todos passando. A reimportação foi testada e não cria duplicatas.
+Pontos que continuam em aberto no modelo:
 
-Limitações:
+- `RESULTADO → ENSAIO` usa `ON DELETE CASCADE`. O recomendado é `RESTRICT`.
+- `ENSAIO.atende_nao_atende` não é usado, porque a conformidade é calculada para cada resultado.
+- `PARECER_TECNICO` está ligado a ENSAIO, quando um parecer normalmente trata de uma amostra.
 
-- Sem resultados reais, as abas de conformidade, histórico e alertas foram validadas apenas com dados sintéticos, isolados e desfeitos no final. Não há validação com dados reais do IST.
-- A vigência dos limites não foi informada, e por isso toda comparação fica pendente.
-- A regra de série do histórico é provisória.
-- Os PDFs das listas de ensaios não foram processados.
+## 8. Situação em 23/10/2026
 
-Próximos passos recomendados:
-
-1. Resolver as pendências da aba "Qualidade dos dados" com o texto oficial das portarias: conflitos, máximos iguais a 0, Cloro Residual Livre e unidades ausentes.
-2. Preencher a vigência e a versão dos limites.
-3. Cadastrar clientes, propostas, associações proposta–legislação, amostras e resultados reais, informando a unidade do resultado.
-4. Definir um identificador de ponto de coleta para validar as séries históricas.
-5. Decidir sobre `ON DELETE CASCADE` em RESULTADO e sobre a semântica de `atende_nao_atende`.
+- Limites: 739 registros, sendo 734 ativos e 5 desativados. Nenhum tem ressalva em aberto e todos têm vigência.
+- Resultados reais: nenhum lançado ainda. O fluxo completo foi testado com o arquivo de demonstração, e o lote foi desfeito em seguida.
+- Testes: 30 unitários e 24 de banco/API, todos passando.
+- Limitação: a análise de tendência depende de um ponto de coleta informado de forma consistente em todos os lançamentos.

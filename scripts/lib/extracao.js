@@ -100,6 +100,7 @@ export function extrairLimites(fontes) {
           codigo_ensaio: normalizarTexto(r.Ensaio),
           nome_ensaio: normalizarTexto(r.Descricao),
           classe: normalizarClasse(r.Classe_Legislacao),
+          classe_original: normalizarTexto(r.Classe_Legislacao),
           valor_minimo: converterDecimalBR(r.Valor_Min_Permitido),
           valor_maximo: converterDecimalBR(r.Valor_Max_Permitido),
           unidade_medida: normalizarUnidade(r.Un_Medida),
@@ -264,10 +265,10 @@ export function extrairLimites(fontes) {
         null,
       );
     }
-    if (base.classe && /^\u00c0/.test(base.classe)) {
+    if (base.classe_original && base.classe_original !== base.classe && base.classe !== null) {
       registrarPendencia(
         'CLASSE_GRAFIA',
-        `Classe "${base.classe}" (${base.nome_ensaio}, código ${base.codigo_ensaio}): possível grafia de "Água tratada"`,
+        `Classe "${base.classe_original}" (${base.nome_ensaio}, código ${base.codigo_ensaio}): grafia corrigida para "${base.classe}"`,
         base.arquivo,
         linhasTodas,
         null,

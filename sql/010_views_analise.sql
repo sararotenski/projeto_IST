@@ -1,12 +1,19 @@
 -- =====================================================================
 -- 010 — Funções e views de análise (conformidade, histórico, alertas)
 -- =====================================================================
--- Requer a migração 001. Somente cria/substitui funções e views:
+-- Requer as migrações 001 e 002. Somente (re)cria funções e views:
 -- não altera tabelas nem dados. Uso: npm run migrar -- --confirmar
 -- Regras documentadas em documentacao/documentacao.md ("Regras de análise").
+-- A análise de tendência (Mann-Kendall) e de desvios fica em
+-- server/analise/tendencia.js, sobre os dados de vw_historico.
 -- =====================================================================
 
 BEGIN;
+
+DROP VIEW IF EXISTS vw_alerta_calculado;
+DROP VIEW IF EXISTS vw_historico;
+DROP VIEW IF EXISTS vw_resultado_conformidade;
+DROP VIEW IF EXISTS vw_limite_detalhado;
 
 -- Texto para comparação: minúsculas, sem acentos, espaços colapsados.
 -- Usado para casar a origem/matriz da amostra com a do limite
@@ -22,19 +29,26 @@ LANGUAGE sql IMMUTABLE AS $$
         )), '')
 $$;
 
--- Unidade para comparação: "ug/L" e "μg/L" (mu grego) = "µg/L".
--- Não converte unidades diferentes (ex.: ppb ≠ µg/L para fins de comparação).
+-- Unidade para comparação.
+-- - "ug/L" e "μg/L" (mu grego) = "µg/L" (mesma unidade, grafias diferentes).
+-- - "ppb" = "µg/L": equivalência válida para amostras aquosas (1 L ≈ 1 kg),
+--   adotada porque todas as matrizes cadastradas são água.
+-- - vazio, "-" e "adimensional" = "adimensional" (pH, razões).
+-- Nenhuma outra conversão é feita (ex.: mg/L × µg/L não são comparadas).
 CREATE OR REPLACE FUNCTION fn_normalizar_unidade(u TEXT) RETURNS TEXT
 LANGUAGE sql IMMUTABLE AS $$
-    SELECT NULLIF(
-        lower(regexp_replace(replace(btrim(u), 'μ', 'µ'), '^ug/', 'µg/', 'i')),
-        '')
+    SELECT CASE
+        WHEN u IS NULL THEN NULL
+        WHEN lower(btrim(u)) IN ('', '-', 'adimensional') THEN 'adimensional'
+        WHEN lower(btrim(u)) = 'ppb' THEN 'µg/l'
+        ELSE lower(regexp_replace(replace(btrim(u), 'μ', 'µ'), '^ug/', 'µg/', 'i'))
+    END
 $$;
 
 -- ---------------------------------------------------------------------
 -- Limites com nomes de ensaio, legislação e classe
 -- ---------------------------------------------------------------------
-CREATE OR REPLACE VIEW vw_limite_detalhado AS
+CREATE VIEW vw_limite_detalhado AS
 SELECT
     l.id_limite,
     l.fk_id_ensaio        AS id_ensaio,
@@ -54,6 +68,8 @@ SELECT
     l.data_fim_vigencia,
     l.requer_validacao,
     l.observacao_validacao,
+    l.ativo,
+    l.motivo_inativacao,
     l.arquivo_origem,
     l.linhas_origem,
     CASE
@@ -63,17 +79,17 @@ SELECT
         ELSE 'Faixa (mínimo e máximo)'
     END AS tipo_limite
 FROM limite l
-JOIN ensaio e     ON e.id_ensaio = l.fk_id_ensaio
+JOIN ensaio e      ON e.id_ensaio = l.fk_id_ensaio
 JOIN legislacao lg ON lg.id_legislacao = l.fk_id_legislacao
 LEFT JOIN classe c ON c.id_classe = l.fk_id_classe;
 
 -- ---------------------------------------------------------------------
--- Conformidade: cada resultado × limite aplicável
+-- Conformidade: cada resultado × limite aplicável (somente limites ativos)
 -- Categorias: Dentro dos limites · Abaixo do limite mínimo ·
 -- Acima do limite máximo · Sem limite aplicável identificado ·
 -- Pendente de validação
 -- ---------------------------------------------------------------------
-CREATE OR REPLACE VIEW vw_resultado_conformidade AS
+CREATE VIEW vw_resultado_conformidade AS
 WITH res AS (
     SELECT
         r.id_resultado,
@@ -84,6 +100,9 @@ WITH res AS (
         e.codigo_origem  AS codigo_ensaio,
         e.nome           AS ensaio,
         r.fk_id_amostra  AS id_amostra,
+        a.codigo_amostra,
+        a.ponto_coleta,
+        a.id_lote,
         a.data_coleta,
         a.origem,
         a.matriz,
@@ -97,7 +116,7 @@ WITH res AS (
 candidatos AS (
     SELECT res.id_resultado, l.id_limite
     FROM res
-    JOIN limite l ON l.fk_id_ensaio = res.id_ensaio
+    JOIN limite l ON l.fk_id_ensaio = res.id_ensaio AND l.ativo
     WHERE l.fk_id_legislacao IN (
             SELECT p.fk_id_legislacao FROM e__assoc__1_possui p WHERE p.fk_id_proposta = res.id_proposta)
       AND (res.origem IS NULL OR l.origem_amostra IS NULL
@@ -125,7 +144,10 @@ base AS (
         ld.data_inicio_vigencia,
         ld.data_fim_vigencia,
         ld.requer_validacao,
-        ld.observacao_validacao
+        ld.observacao_validacao,
+        (SELECT string_agg(DISTINCT lg.nome, ', ') FROM e__assoc__1_possui p
+           JOIN legislacao lg ON lg.id_legislacao = p.fk_id_legislacao
+          WHERE p.fk_id_proposta = res.id_proposta) AS legislacoes_amostra
     FROM res
     LEFT JOIN agregado ag ON ag.id_resultado = res.id_resultado
     LEFT JOIN vw_limite_detalhado ld ON ld.id_limite = ag.id_limite AND ag.qtd_limites = 1
@@ -156,7 +178,10 @@ avaliado AS (
             WHEN b.valor_minimo IS NOT NULL AND b.valor < b.valor_minimo THEN 'Abaixo do limite mínimo'
             WHEN b.valor_maximo IS NOT NULL AND b.valor > b.valor_maximo THEN 'Acima do limite máximo'
             ELSE 'Dentro dos limites'
-        END AS classificacao_indicativa
+        END AS classificacao_indicativa,
+        -- Quanto do máximo o resultado representa (apoio visual; não é critério)
+        CASE WHEN b.valor IS NOT NULL AND b.valor_maximo > 0
+             THEN round(b.valor / b.valor_maximo * 100, 1) END AS percentual_do_maximo
     FROM base b
 )
 SELECT
@@ -169,19 +194,19 @@ SELECT
 FROM avaliado a;
 
 -- ---------------------------------------------------------------------
--- Histórico: séries por cliente + origem + matriz + ensaio + unidade.
--- A chave de série é PROVISÓRIA e precisa de validação técnica
--- (não há no modelo um identificador de ponto de coleta).
+-- Histórico: séries por PONTO DE COLETA + ensaio + unidade.
+-- Sem ponto de coleta, a série usa cliente + origem + matriz e é marcada
+-- como não validada (serie_validada = false).
 -- ---------------------------------------------------------------------
-CREATE OR REPLACE VIEW vw_historico AS
+CREATE VIEW vw_historico AS
 WITH pontos AS (
     SELECT
         c.*,
+        (c.ponto_coleta IS NOT NULL) AS serie_validada,
         concat_ws(' | ',
-            'cliente ' || COALESCE(c.id_cliente::text, '?'),
-            COALESCE(c.origem, 'origem ?'),
-            COALESCE(c.matriz, 'matriz ?'),
-            COALESCE(c.codigo_ensaio, c.id_ensaio::text),
+            COALESCE('Ponto ' || c.ponto_coleta,
+                     concat_ws(' · ', 'Cliente ' || COALESCE(c.id_cliente::text, '?'), COALESCE(c.origem, 'origem ?'), COALESCE(c.matriz, 'matriz ?'))),
+            COALESCE(c.ensaio, c.id_ensaio::text) || ' (cód. ' || COALESCE(c.codigo_ensaio, '?') || ')',
             COALESCE(fn_normalizar_unidade(c.unidade_resultado), 'unidade ?')
         ) AS serie,
         c.categoria IN ('Acima do limite máximo', 'Abaixo do limite mínimo') AS fora_limite
@@ -211,14 +236,15 @@ SELECT
         WHEN j.valor < j.valor_anterior     THEN 'Redução'
         ELSE 'Sem variação'
     END AS direcao,
-    (j.fora_limite AND COALESCE(j.fora_limite_anterior, FALSE)) AS recorrencia_fora_limite,
-    (j.qtd_pontos_serie >= 3) AS serie_suficiente
+    (j.fora_limite AND COALESCE(j.fora_limite_anterior, FALSE)) AS recorrencia_fora_limite
 FROM janela j;
 
 -- ---------------------------------------------------------------------
--- Alertas calculados (critérios explícitos; todos exigem avaliação profissional)
+-- Alertas de conformidade (critérios explícitos; todos exigem avaliação
+-- profissional). Alertas de tendência e desvio são calculados em
+-- server/analise/tendencia.js e gravados pelo mesmo gerador.
 -- ---------------------------------------------------------------------
-CREATE OR REPLACE VIEW vw_alerta_calculado AS
+CREATE VIEW vw_alerta_calculado AS
 SELECT c.id_resultado, 'ACIMA_MAXIMO'::varchar(20) AS tipo,
        left(format('%s: %s %s acima do máximo %s %s (%s)', c.ensaio, c.valor, c.unidade_resultado,
                    c.valor_maximo, c.unidade_limite, c.legislacao), 250) AS descricao,
@@ -232,8 +258,7 @@ SELECT c.id_resultado, 'ABAIXO_MINIMO',
 FROM vw_resultado_conformidade c WHERE c.categoria = 'Abaixo do limite mínimo'
 UNION ALL
 SELECT h.id_resultado, 'RECORRENCIA',
-       left(format('%s: segundo resultado consecutivo fora do limite na série "%s" (anterior em %s)',
-                   h.ensaio, h.serie, h.data_anterior), 250),
+       left(format('%s: segundo resultado consecutivo fora do limite (anterior em %s)', h.ensaio, h.data_anterior), 250),
        h.data_resultado, h.id_ensaio, h.legislacao, TRUE
 FROM vw_historico h WHERE h.recorrencia_fora_limite
 UNION ALL
