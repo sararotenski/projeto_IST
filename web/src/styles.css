@@ -15,9 +15,9 @@
   --tendencia: #b388ff;
   --neutro: #8392b0;
   --raio: 12px;
-  --fonte: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+  --fonte: 'Poppins', system-ui, -apple-system, 'Segoe UI', sans-serif;
   font-family: var(--fonte);
-  font-size: 16px;
+  font-size: 15px;
   color: var(--texto);
   background: var(--fundo);
   line-height: 1.55;
@@ -140,7 +140,7 @@ main:focus { outline: none; }
   min-width: 0;
 }
 .campo select:focus, .campo input:focus { border-color: var(--neon); outline: none; box-shadow: 0 0 0 3px rgb(0 229 255 / 0.15); }
-.campo-pequeno { flex-basis: 140px; min-width: 120px; }
+.campo-pequeno { flex-basis: 165px; min-width: 155px; }
 button { font: inherit; cursor: pointer; }
 .botao {
   background: var(--neon);

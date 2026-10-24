@@ -23,7 +23,7 @@
     "test:db": "node --env-file-if-exists=.env --test --test-concurrency=1 \"tests/db/*.test.js\""
   },
   "dependencies": {
-    "@fontsource/source-serif-4": "5.3.1",
+    "@fontsource/poppins": "5.3.0",
     "express": "5.3.0",
     "pg": "8.23.1",
     "react": "19.3.1",
