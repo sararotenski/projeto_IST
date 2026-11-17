@@ -3,6 +3,9 @@
 .env.*
 !.env.example
 
+# Dados reais e privados do laboratório — nunca versionar
+docs/
+
 # Dependências e build
 node_modules/
 web/dist/
