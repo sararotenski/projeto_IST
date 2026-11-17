@@ -43,10 +43,11 @@ try {
 
   if (reverter) {
     if (!confirmar) {
-      console.log('Simulação: seriam executados sql/002_resultados_curadoria_reverter.sql e sql/001_ajustes_modelo_reverter.sql');
+      console.log('Simulação: seriam executados os scripts de reversão 003, 002 e 001');
       console.log('(removem colunas adicionadas, views e o esquema etl).');
       console.log('Para executar: npm run migrar:reverter -- --confirmar');
     } else {
+      await client.query(await sqlDe('003_resultados_laboratorio_reverter.sql'));
       await client.query(await sqlDe('002_resultados_curadoria_reverter.sql'));
       await client.query(await sqlDe('001_ajustes_modelo_reverter.sql'));
       console.log('Reversão concluída.');
@@ -55,6 +56,7 @@ try {
     const passos = [];
     if (!aplicada001) passos.push('001_ajustes_modelo.sql');
     passos.push('002_resultados_curadoria.sql'); // idempotente (IF NOT EXISTS)
+    passos.push('003_resultados_laboratorio.sql'); // idempotente
     passos.push('010_views_analise.sql');
     if (!confirmar) {
       console.log(`Migração 001 ${aplicada001 ? 'já aplicada' : 'pendente'}.`);

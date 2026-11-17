@@ -8,6 +8,7 @@ export const CATEGORIAS = [
   'Dentro dos limites',
   'Acima do limite máximo',
   'Abaixo do limite mínimo',
+  'Inconclusivo',
   'Sem limite aplicável identificado',
   'Pendente de validação',
 ];
@@ -54,6 +55,7 @@ export async function painel(db) {
            count(*) FILTER (WHERE categoria = 'Abaixo do limite mínimo')::int AS abaixo,
            count(*) FILTER (WHERE categoria = 'Sem limite aplicável identificado')::int AS sem_limite,
            count(*) FILTER (WHERE categoria = 'Pendente de validação')::int AS pendentes,
+           count(*) FILTER (WHERE categoria = 'Inconclusivo')::int AS inconclusivos,
            (SELECT count(*) FROM limite WHERE ativo)::int AS limites,
            (SELECT count(*) FROM legislacao)::int AS legislacoes
     FROM vw_resultado_conformidade`)).rows[0];
@@ -64,20 +66,25 @@ export async function painel(db) {
   const comAtipicos = series.filter((s) => s.atipicos.length);
 
   const fora = (await db.query(`
-    SELECT id_resultado, codigo_amostra, ponto_coleta, ensaio, codigo_ensaio, data_resultado, valor, unidade_resultado,
-           valor_minimo, valor_maximo, unidade_limite, legislacao, categoria, percentual_do_maximo
+    SELECT id_resultado, codigo_amostra, ponto_coleta, ensaio, codigo_ensaio, data_resultado, valor, qualificador, valor_original,
+           unidade_resultado, valor_minimo, valor_maximo, unidade_limite, legislacao, categoria, percentual_do_maximo, motivo_inconclusivo
     FROM vw_resultado_conformidade
-    WHERE categoria IN ('Acima do limite máximo', 'Abaixo do limite mínimo')
-    ORDER BY data_resultado DESC, id_resultado DESC LIMIT 50`)).rows;
+    WHERE categoria IN ('Acima do limite máximo', 'Abaixo do limite mínimo', 'Inconclusivo')
+    ORDER BY data_resultado DESC NULLS LAST, id_resultado DESC LIMIT 300`)).rows;
 
+  const TIPO = { 'Acima do limite máximo': 'acima', 'Abaixo do limite mínimo': 'abaixo', Inconclusivo: 'inconclusivo' };
   const atencao = [
     ...fora.map((f) => ({
-      tipo: f.categoria === 'Acima do limite máximo' ? 'acima' : 'abaixo',
+      tipo: TIPO[f.categoria],
       titulo: f.categoria,
       ensaio: f.ensaio,
       ponto: f.ponto_coleta,
       data: f.data_resultado,
-      detalhe: { valor: f.valor, unidade: f.unidade_resultado, minimo: f.valor_minimo, maximo: f.valor_maximo, legislacao: f.legislacao, amostra: f.codigo_amostra },
+      detalhe: {
+        valor: f.valor, qualificador: f.qualificador, original: f.valor_original, unidade: f.unidade_resultado,
+        minimo: f.valor_minimo, maximo: f.valor_maximo, unidadeLimite: f.unidade_limite, legislacao: f.legislacao, amostra: f.codigo_amostra,
+        motivo: f.motivo_inconclusivo,
+      },
     })),
     ...[...aumento, ...reducao].map((s) => ({
       tipo: s.tendencia.situacao === 'Aumentando' ? 'aumento' : 'reducao',
@@ -105,9 +112,31 @@ export async function painel(db) {
     SELECT id_lote, origem, arquivo, criado_em, qtd_amostras, qtd_resultados FROM etl.lote_resultados
     WHERE desfeito_em IS NULL ORDER BY id_lote DESC LIMIT 5`)).rows;
 
+  // Classificação em cada portaria
+  const porPortaria = (await db.query(`
+    SELECT legislacao,
+           count(*) FILTER (WHERE categoria = 'Dentro dos limites')::int AS dentro,
+           count(*) FILTER (WHERE categoria = 'Acima do limite máximo')::int AS acima,
+           count(*) FILTER (WHERE categoria = 'Abaixo do limite mínimo')::int AS abaixo,
+           count(*) FILTER (WHERE categoria = 'Inconclusivo')::int AS inconclusivos,
+           count(*) FILTER (WHERE categoria = 'Pendente de validação')::int AS pendentes,
+           count(*) FILTER (WHERE categoria = 'Sem limite aplicável identificado')::int AS nao_se_aplica
+    FROM vw_resultado_portaria GROUP BY legislacao ORDER BY legislacao`)).rows;
+
+  // Ensaios com mais resultados fora do limite
+  const ensaiosFora = (await db.query(`
+    SELECT ensaio, codigo_ensaio, count(*)::int AS total,
+           count(*) FILTER (WHERE categoria IN ('Acima do limite máximo', 'Abaixo do limite mínimo'))::int AS fora
+    FROM vw_resultado_conformidade GROUP BY ensaio, codigo_ensaio
+    HAVING count(*) FILTER (WHERE categoria IN ('Acima do limite máximo', 'Abaixo do limite mínimo')) > 0
+    ORDER BY fora DESC, ensaio LIMIT 10`)).rows;
+
   return {
     kpis: { ...k, fora: k.acima + k.abaixo, tendenciaAumento: aumento.length, tendenciaReducao: reducao.length, atipicos: comAtipicos.reduce((s, x) => s + x.atipicos.length, 0), series: series.length },
     atencao,
+    totalAtencao: atencao.length,
+    porPortaria,
+    ensaiosFora,
     lotes,
   };
 }
@@ -129,13 +158,15 @@ export async function opcoes(db) {
 
 export async function resultados(db, p) {
   const { rows } = await db.query(
-    `SELECT id_resultado, id_amostra, codigo_amostra, ponto_coleta, codigo_ensaio, ensaio, data_resultado, valor, unidade_resultado,
+    `SELECT id_resultado, id_amostra, codigo_amostra, ponto_coleta, codigo_ensaio, ensaio, data_coleta, data_resultado,
+            valor, qualificador, valor_original, unidade_resultado,
             legislacao, classe, valor_minimo, valor_maximo, unidade_limite, percentual_do_maximo,
-            categoria, classificacao_indicativa, motivo_pendencia
+            categoria, classificacao_indicativa, motivo_pendencia, motivo_inconclusivo, portarias, legislacao_informada
      FROM vw_resultado_conformidade
      WHERE ($1::date IS NULL OR data_resultado >= $1)
        AND ($2::date IS NULL OR data_resultado <= $2)
-       AND ($3::text IS NULL OR legislacao = $3)
+       -- legislação: resultados que têm limite nessa portaria
+       AND ($3::text IS NULL OR (portarias -> $3 ->> 'categoria') NOT IN ('Sem limite aplicável identificado'))
        AND ($4::int  IS NULL OR id_ensaio = $4)
        AND ($5::text IS NULL OR categoria = $5)
        AND ($6::text IS NULL OR ponto_coleta = $6)

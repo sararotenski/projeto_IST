@@ -11,6 +11,7 @@ import { fileURLToPath } from 'node:url';
 import { criarPool, descreverErroBanco } from '../scripts/lib/db.js';
 import * as consultas from './consultas.js';
 import { COLUNAS_CSV, desfazerLote, lerCsvResultados, registrarResultados } from './registro.js';
+import { detectarTipo, importarExportacoes, lerArquivo } from './laboratorio.js';
 
 const raiz = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const porta = Number(process.env.API_PORT || 3001);
@@ -18,7 +19,7 @@ const porta = Number(process.env.API_PORT || 3001);
 export function criarApp(db) {
   const app = express();
   app.disable('x-powered-by');
-  app.use(express.json({ limit: '5mb' }));
+  app.use(express.json({ limit: '25mb' }));
 
   const responder = (res, erro, rota) => {
     if (erro.status) return res.status(erro.status).json({ erro: erro.message });
@@ -76,6 +77,23 @@ export function criarApp(db) {
     const lido = lerCsvResultados(conteudo);
     if (lido.erros.length) return { erros: lido.erros };
     return registrarResultados(db, lido.linhas, { origem: 'csv', arquivo });
+  }));
+
+  // Um ou mais arquivos: { arquivos: [{ nome, conteudo }] }. Detecta o formato:
+  // modelo do site (um arquivo) ou exportações do laboratório (Gerência/Expedição).
+  app.post('/api/resultados/arquivos', escrita(async (req) => {
+    const arquivos = (Array.isArray(req.body?.arquivos) ? req.body.arquivos : [])
+      .filter((a) => typeof a?.conteudo === 'string')
+      .map((a) => ({ nome: String(a.nome ?? 'arquivo.csv').slice(0, 120), conteudo: a.conteudo }));
+    if (!arquivos.length) return { erros: [{ linha: null, mensagem: 'Nenhum arquivo enviado.' }] };
+    const tipos = arquivos.map((a) => detectarTipo(lerArquivo(a.conteudo).colunas));
+    if (tipos.includes('modelo')) {
+      if (arquivos.length > 1) return { erros: [{ linha: null, mensagem: 'O modelo do site deve ser enviado sozinho.' }] };
+      const lido = lerCsvResultados(arquivos[0].conteudo);
+      if (lido.erros.length) return { erros: lido.erros };
+      return registrarResultados(db, lido.linhas, { origem: 'csv', arquivo: arquivos[0].nome });
+    }
+    return importarExportacoes(db, arquivos);
   }));
 
   app.post('/api/lotes/:id/desfazer', escrita(async (req) => {

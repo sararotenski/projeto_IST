@@ -65,6 +65,27 @@ export function numero(v) {
   return Number.isFinite(n) ? formatador.format(n) : String(v);
 }
 
+/** Resultado como medido: "<0,10" mantém o sinal de "abaixo do limite de quantificação". */
+export function valorResultado(l, unidade = l.unidade_resultado) {
+  if (l.valor === null || l.valor === undefined) return '—';
+  if (ePresencaAusencia(unidade) && !l.qualificador) return Number(l.valor) > 0 ? 'Presente' : 'Ausente';
+  return `${l.qualificador ?? ''}${numero(l.valor)} ${unidade ?? ''}`.trim();
+}
+
+/** "Portaria GM/MS Nº888 5/21" → "GM/MS Nº888 5/21" */
+export const nomeCurto = (legislacao) => String(legislacao ?? '').replace(/^Portaria\s+/i, '');
+
+/** Faixa do limite: "até 0,3 mg/L" ou "0,2 a 5 mg/L". */
+/** Ensaios de presença/ausência (o limite é "ausência"). */
+export const ePresencaAusencia = (unidade) => /aus|pres/i.test(String(unidade ?? ''));
+
+export function faixaLimite(minimo, maximo, unidade) {
+  if ((minimo === null || minimo === undefined) && (maximo === null || maximo === undefined)) return '—';
+  if (ePresencaAusencia(unidade)) return 'ausência';
+  const min = minimo !== null && minimo !== undefined && Number(minimo) > 0 ? `${numero(minimo)} a ` : 'até ';
+  return `${min}${numero(maximo)} ${unidade ?? ''}`.trim();
+}
+
 export function dataBR(v) {
   if (!v) return '—';
   // data e hora (timestamp): mostra no fuso local; data pura (AAAA-MM-DD): sem conversão

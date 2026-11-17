@@ -1,6 +1,6 @@
 // Fluxo completo pelo site: lançar o CSV de DEMONSTRAÇÃO (dados fictícios),
 // conferir a comparação automática, tendências e alertas, e desfazer o lote.
-// Ao final o banco volta ao estado anterior (o lote fica registrado como desfeito).
+// Ao final o banco volta ao estado anterior e o registro do lote é apagado.
 
 import { test, before, after } from 'node:test';
 import assert from 'node:assert/strict';
@@ -14,6 +14,7 @@ let servidor;
 let base;
 let lote;
 let antes;
+let maxLoteAntes = 0;
 
 const contar = async () => (await pool.query(`SELECT (SELECT count(*) FROM resultado)::int AS r, (SELECT count(*) FROM amostra)::int AS a,
   (SELECT count(*) FROM alerta)::int AS al, (SELECT count(*) FROM cliente)::int AS c, (SELECT count(*) FROM proposta_comercial)::int AS p`)).rows[0];
@@ -28,10 +29,13 @@ before(async () => {
   await new Promise((r) => servidor.once('listening', r));
   base = `http://127.0.0.1:${servidor.address().port}/api`;
   antes = await contar();
+  maxLoteAntes = (await pool.query('SELECT COALESCE(MAX(id_lote), 0)::int AS n FROM etl.lote_resultados')).rows[0].n;
 });
 
 after(async () => {
   if (lote) await post(`lotes/${lote}/desfazer`, {}).catch(() => {});
+  // Não deixa rastro no histórico de lotes do site
+  await pool?.query('DELETE FROM etl.lote_resultados WHERE id_lote > $1 AND desfeito_em IS NOT NULL', [maxLoteAntes]).catch(() => {});
   servidor?.close();
   await pool?.end();
 });

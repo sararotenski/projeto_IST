@@ -108,6 +108,7 @@ export function validarLinhas(linhas, cat) {
     l.id_ensaio = ensaio?.id_ensaio;
     l.nome_ensaio = ensaio?.nome;
 
+    l.valor_bruto = bruta.valor === undefined || bruta.valor === null ? null : String(bruta.valor).slice(0, 40);
     try {
       l.valor = converterDecimalBR(bruta.valor);
     } catch {
@@ -232,8 +233,9 @@ export async function registrarResultados(pool, linhasBrutas, { origem, arquivo 
       }
       const idResultado = await proximo(client, 'resultado', 'id_resultado');
       await client.query(
-        `INSERT INTO resultado (id_resultado, valor, data_resultado, fk_id_amostra, fk_id_ensaio, unidade_medida) VALUES ($1, $2, $3, $4, $5, $6)`,
-        [idResultado, l.valor, l.data_resultado, idAmostra, l.id_ensaio, l.unidade],
+        `INSERT INTO resultado (id_resultado, valor, data_resultado, fk_id_amostra, fk_id_ensaio, unidade_medida, id_lote, valor_original)
+         VALUES ($1, $2, $3, $4, $5, $6, $7, $8)`,
+        [idResultado, l.valor, l.data_resultado, idAmostra, l.id_ensaio, l.unidade, lote, normalizarTexto(l.valor_bruto)],
       );
       inseridos.push(idResultado);
     }
@@ -272,12 +274,19 @@ export async function desfazerLote(pool, idLote) {
     const lote = (await client.query('SELECT * FROM etl.lote_resultados WHERE id_lote = $1 FOR UPDATE', [idLote])).rows[0];
     if (!lote) throw Object.assign(new Error('Lote não encontrado'), { status: 404 });
     if (lote.desfeito_em) throw Object.assign(new Error('Este lote já foi desfeito'), { status: 409 });
-    const amostras = (await client.query('SELECT id_amostra FROM amostra WHERE id_lote = $1', [idLote])).rows.map((r) => r.id_amostra);
-    const alertas = await client.query(
-      'DELETE FROM alerta WHERE fk_id_resultado IN (SELECT id_resultado FROM resultado WHERE fk_id_amostra = ANY($1))', [amostras],
-    );
-    const resultados = await client.query('DELETE FROM resultado WHERE fk_id_amostra = ANY($1)', [amostras]);
-    await client.query('DELETE FROM amostra WHERE id_amostra = ANY($1)', [amostras]);
+    // Resultados do lote: os marcados com id_lote e, para lançamentos antigos
+    // (sem id_lote no resultado), os das amostras criadas pelo lote.
+    const ids = (await client.query(
+      `SELECT r.id_resultado FROM resultado r LEFT JOIN amostra a ON a.id_amostra = r.fk_id_amostra
+        WHERE r.id_lote = $1 OR (r.id_lote IS NULL AND a.id_lote = $1)`, [idLote],
+    )).rows.map((r) => r.id_resultado);
+    const alertas = await client.query('DELETE FROM alerta WHERE fk_id_resultado = ANY($1)', [ids]);
+    const resultados = await client.query('DELETE FROM resultado WHERE id_resultado = ANY($1)', [ids]);
+    // Amostras criadas pelo lote que ficaram sem resultados
+    const amostras = (await client.query(
+      `DELETE FROM amostra a WHERE a.id_lote = $1 AND NOT EXISTS (SELECT 1 FROM resultado r WHERE r.fk_id_amostra = a.id_amostra)
+       RETURNING id_amostra`, [idLote],
+    )).rows.map((r) => r.id_amostra);
     const criados = lote.criados ?? { clientes: [], propostas: [] };
     // propostas e clientes criados pelo lote, somente se ficaram sem uso
     await client.query(

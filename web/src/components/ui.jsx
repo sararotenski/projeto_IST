@@ -15,6 +15,7 @@ export const COR_CATEGORIA = {
   'Dentro dos limites': COR.ok,
   'Acima do limite máximo': COR.acima,
   'Abaixo do limite mínimo': COR.abaixo,
+  Inconclusivo: COR.tendencia,
   'Sem limite aplicável identificado': COR.neutro,
   'Pendente de validação': COR.texto2,
 };

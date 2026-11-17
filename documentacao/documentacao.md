@@ -79,7 +79,42 @@ A proposta comercial que liga a amostra à legislação é escolhida assim: o si
 
 O arquivo `data/exemplos/resultados_DEMONSTRACAO_ficticios.csv` tem dados fictícios do cliente "DEMONSTRACAO - FICTICIO", com casos de tendência de aumento, tendência de redução, resultados fora do limite e um valor atípico. Ele serve para conhecer o site e deve ser desfeito depois.
 
-## 4. Comparação com o limite (`vw_resultado_conformidade`)
+### 3.1 Exportações do sistema do laboratório (`server/laboratorio.js`)
+
+Na aba "Lançar resultados", selecione as exportações **Gerência de Amostra** e, se tiver, **Expedição** (os dois de uma vez). O site detecta o formato pelo cabeçalho e junta os arquivos pelo "Código Amostra Externo".
+
+| Informação | De onde vem |
+|---|---|
+| Data de coleta e de conclusão | Gerência de Amostra |
+| Ponto de coleta, unidade do resultado | Expedição (a unidade de um código de ensaio vale para todas as amostras desse código) |
+| Unidade, quando a Expedição não traz | Unidade do limite, se todos os limites do ensaio usam a mesma |
+| Legislação, cliente, origem | Não vêm nos arquivos: o resultado é comparado com **todas** as portarias |
+
+Regras de leitura dos valores:
+
+- `<0,10` é gravado como 0,10 com qualificador `<` (abaixo do limite de quantificação). O texto original fica em `resultado.valor_original`.
+- `Ausente` = 0 e `Presente` = 1.
+- `1.380,00` é formato brasileiro; `6.93` usa ponto decimal (padrão do arquivo); `27.000.000` tem separador de milhar. Em unidades de contagem (células/mL), `4.884` é 4884.
+- Entram só ensaios com limite ativo em alguma portaria. Os demais (DBO, DQO, solventes, coordenadas…) aparecem no relatório como "sem limite".
+- Amostras cujo ponto indica que não são água (peixe, carne, alimento, solo, lodo, efluente…) ficam de fora. Só é possível identificar isso quando a Expedição traz a descrição do ponto.
+- Reenviar arquivos não duplica: resultados da mesma amostra e ensaio são mantidos.
+
+Resultado com `<` ou `>`: o site só classifica quando a conclusão é certa.
+
+| Caso | Classificação |
+|---|---|
+| `<LQ` e LQ ≤ máximo | Dentro dos limites |
+| `<LQ` e LQ > máximo | **Inconclusivo**: o valor real pode estar acima ou abaixo do máximo |
+| `<LQ` e LQ ≤ mínimo | Abaixo do limite mínimo (ex.: cloro `<0,10` com mínimo 0,2) |
+| `>X` e X ≥ máximo | Acima do limite máximo |
+
+Conversões de unidade: ng/L, µg/L e mg/L entre si (ex.: THM 164,4 µg/L = 0,1644 mg/L).
+
+Os arquivos reais ficam na pasta `docs/`, que está no `.gitignore` e nunca vai para o GitHub. Os testes usam arquivos fictícios em `tests/fixtures/`.
+
+## 4. Comparação com o limite (`vw_resultado_portaria` e `vw_resultado_conformidade`)
+
+Cada resultado é avaliado em cada portaria (`vw_resultado_portaria`): se a amostra tem legislação, só nela; se não tem, em todas. A classificação geral (`vw_resultado_conformidade`) é a mais grave entre as portarias: Acima > Abaixo > Inconclusivo > Pendente > Dentro > Sem limite. O site mostra uma coluna por portaria e a coluna "Geral".
 
 O limite aplicado a um resultado precisa ser:
 
