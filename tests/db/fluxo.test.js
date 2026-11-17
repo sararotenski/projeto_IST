@@ -55,6 +55,7 @@ test('linha inválida: nada é gravado e o erro aponta a linha', { skip: !temBan
 
 test('CSV de demonstração: comparação automática, tendências, desvios e alertas', { skip: !temBanco }, async () => {
   const conteudo = await readFile(new URL('../../data/exemplos/resultados_DEMONSTRACAO_ficticios.csv', import.meta.url), 'utf8');
+  const foraAntes = (await get('painel')).kpis.fora; // pode haver dados reais no banco
   const r = await post('resultados/csv', { arquivo: 'teste-demonstracao.csv', conteudo });
   const corpo = await r.json();
   assert.equal(r.status, 200, JSON.stringify(corpo.erros));
@@ -84,7 +85,7 @@ test('CSV de demonstração: comparação automática, tendências, desvios e al
   assert.ok(n.TENDENCIA_AUMENTO >= 1 && n.TENDENCIA_REDUCAO >= 1 && n.VALOR_ATIPICO === 1);
 
   const painel = await get('painel');
-  assert.equal(painel.kpis.fora, 3);
+  assert.equal(painel.kpis.fora - foraAntes, 3);
   assert.ok(painel.atencao.some((a) => a.tipo === 'aumento'));
 });
 

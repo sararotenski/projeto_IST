@@ -112,6 +112,10 @@ Conversões de unidade: ng/L, µg/L e mg/L entre si (ex.: THM 164,4 µg/L = 0,16
 
 Os arquivos reais ficam na pasta `docs/`, que está no `.gitignore` e nunca vai para o GitHub. Os testes usam arquivos fictícios em `tests/fixtures/`.
 
+### 3.2 Aba Evolução (`GET /api/evolucao`)
+
+Conta os resultados de cada classificação por semana (segunda a domingo) ou por mês da **data de coleta** (ou do resultado, quando a coleta não foi informada). Com uma portaria escolhida, usa a classificação naquela portaria; sem, a classificação geral. Resultados sem limite aplicável não entram no total comparado. O "% fora" é (acima + abaixo) ÷ comparados. Semanas sem resultados aparecem com zero. Clicar numa barra abre a aba Resultados filtrada pelo mesmo período. O gráfico é descritivo: não é teste de tendência.
+
 ## 4. Comparação com o limite (`vw_resultado_portaria` e `vw_resultado_conformidade`)
 
 Cada resultado é avaliado em cada portaria (`vw_resultado_portaria`): se a amostra tem legislação, só nela; se não tem, em todas. A classificação geral (`vw_resultado_conformidade`) é a mais grave entre as portarias: Acima > Abaixo > Inconclusivo > Pendente > Dentro > Sem limite. O site mostra uma coluna por portaria e a coluna "Geral".

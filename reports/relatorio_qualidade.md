@@ -1,6 +1,6 @@
 # Relatório de qualidade dos dados extraídos
 
-Gerado por `npm run extrair` em 2026-11-17T21:39:11.665Z.
+Gerado por `npm run extrair` em 2026-11-17T22:22:35.476Z.
 
 ## Arquivos processados
 

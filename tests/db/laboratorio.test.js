@@ -86,6 +86,30 @@ test('resultados da API trazem a classificação de cada portaria', { skip: !tem
   assert.equal(so1468.length, 0);
 });
 
+test('evolução por semana e por mês conta as classificações pela data de coleta', { skip: !temBanco }, async () => {
+  // as amostras fictícias foram coletadas em 01/07 e 02/07/2026 (mesma semana, que começa na segunda 29/06)
+  const filtro = 'inicio=2026-07-01&fim=2026-07-02';
+  const semana = await (await fetch(`${base}/evolucao?agrupamento=semana&${filtro}`)).json();
+  assert.equal(semana.periodos.length, 1);
+  const p = semana.periodos[0];
+  assert.equal(p.inicio, '2026-06-29');
+  assert.equal(p.fim, '2026-07-05');
+  assert.deepEqual([p.comparados, p.dentro, p.acima, p.abaixo, p.inconclusivos], [11, 6, 3, 1, 1]);
+  assert.equal(p.percentualFora, 36.4);
+
+  const mes = await (await fetch(`${base}/evolucao?agrupamento=mes&${filtro}`)).json();
+  assert.equal(mes.periodos[0].inicio, '2026-07-01');
+  assert.equal(mes.periodos[0].fim, '2026-07-31');
+
+  const ses = await (await fetch(`${base}/evolucao?${filtro}&legislacao=${encodeURIComponent('Portaria SES nº1468/2022')}`)).json();
+  assert.equal(ses.total.comparados, 0);
+  assert.equal(ses.total.semLimite, 11);
+
+  // o clique leva à aba Resultados com o mesmo período: as contagens batem
+  const lista = await (await fetch(`${base}/resultados?inicio=${p.inicio}&fim=${p.fim}&busca=TESTE-0`)).json();
+  assert.equal(lista.length, 11);
+});
+
 test('desfazer remove tudo o que o lote lançou', { skip: !temBanco }, async () => {
   const r = await post(`lotes/${lote}/desfazer`, {});
   assert.equal(r.status, 200);

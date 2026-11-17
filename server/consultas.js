@@ -163,19 +163,78 @@ export async function resultados(db, p) {
             legislacao, classe, valor_minimo, valor_maximo, unidade_limite, percentual_do_maximo,
             categoria, classificacao_indicativa, motivo_pendencia, motivo_inconclusivo, portarias, legislacao_informada
      FROM vw_resultado_conformidade
-     WHERE ($1::date IS NULL OR data_resultado >= $1)
-       AND ($2::date IS NULL OR data_resultado <= $2)
+     -- período pela data de coleta (ou do resultado, se a coleta não foi informada)
+     WHERE ($1::date IS NULL OR COALESCE(data_coleta, data_resultado) >= $1)
+       AND ($2::date IS NULL OR COALESCE(data_coleta, data_resultado) <= $2)
        -- legislação: resultados que têm limite nessa portaria
        AND ($3::text IS NULL OR (portarias -> $3 ->> 'categoria') NOT IN ('Sem limite aplicável identificado'))
        AND ($4::int  IS NULL OR id_ensaio = $4)
        AND ($5::text IS NULL OR categoria = $5)
        AND ($6::text IS NULL OR ponto_coleta = $6)
        AND ($7::text IS NULL OR codigo_amostra ILIKE '%' || $7 || '%' OR ensaio ILIKE '%' || $7 || '%')
-     ORDER BY data_resultado DESC NULLS LAST, id_resultado DESC
+     ORDER BY COALESCE(data_coleta, data_resultado) DESC NULLS LAST, id_resultado DESC
      LIMIT 5000`,
     [data(p.inicio), data(p.fim), texto(p.legislacao), inteiro(p.ensaio), texto(p.categoria), texto(p.ponto), texto(p.busca)],
   );
   return rows;
+}
+
+/**
+ * Evolução ao longo do tempo: quantos resultados ficaram em cada classificação
+ * por semana (segunda a domingo) ou mês de COLETA (ou do resultado, se não houver coleta).
+ * Com portaria escolhida, usa a classificação naquela portaria; sem, a classificação geral.
+ * Resultados sem limite aplicável não entram no total comparado.
+ * Períodos sem resultados aparecem com zero, para o eixo do tempo ser contínuo.
+ */
+export async function evolucao(db, p) {
+  const unidade = p.agrupamento === 'mes' ? 'month' : 'week';
+  const { rows } = await db.query(
+    `WITH base AS (
+       SELECT COALESCE(c.data_coleta, c.data_resultado) AS data,
+              CASE WHEN $2::text IS NULL THEN c.categoria ELSE c.portarias -> $2 ->> 'categoria' END AS categoria
+       FROM vw_resultado_conformidade c
+       WHERE ($3::int IS NULL OR c.id_ensaio = $3)
+         AND COALESCE(c.data_coleta, c.data_resultado) IS NOT NULL
+         AND ($4::date IS NULL OR COALESCE(c.data_coleta, c.data_resultado) >= $4)
+         AND ($5::date IS NULL OR COALESCE(c.data_coleta, c.data_resultado) <= $5)
+     ),
+     agrupado AS (
+       SELECT date_trunc($1, data)::date AS inicio,
+              count(*) FILTER (WHERE categoria = 'Dentro dos limites')::int AS dentro,
+              count(*) FILTER (WHERE categoria = 'Acima do limite máximo')::int AS acima,
+              count(*) FILTER (WHERE categoria = 'Abaixo do limite mínimo')::int AS abaixo,
+              count(*) FILTER (WHERE categoria = 'Inconclusivo')::int AS inconclusivos,
+              count(*) FILTER (WHERE categoria = 'Pendente de validação')::int AS pendentes,
+              count(*) FILTER (WHERE categoria IS NULL OR categoria = 'Sem limite aplicável identificado')::int AS sem_limite
+       FROM base GROUP BY 1
+     ),
+     periodos AS (
+       SELECT generate_series(min(inicio), max(inicio), ('1 ' || $1)::interval)::date AS inicio FROM agrupado
+     )
+     SELECT p.inicio,
+            (p.inicio + ('1 ' || $1)::interval - interval '1 day')::date AS fim,
+            COALESCE(a.dentro, 0) AS dentro, COALESCE(a.acima, 0) AS acima, COALESCE(a.abaixo, 0) AS abaixo,
+            COALESCE(a.inconclusivos, 0) AS inconclusivos, COALESCE(a.pendentes, 0) AS pendentes,
+            COALESCE(a.sem_limite, 0) AS sem_limite
+     FROM periodos p LEFT JOIN agrupado a ON a.inicio = p.inicio
+     ORDER BY p.inicio`,
+    [unidade, texto(p.legislacao), inteiro(p.ensaio), data(p.inicio), data(p.fim)],
+  );
+  const periodos = rows.map((r) => {
+    const comparados = r.dentro + r.acima + r.abaixo + r.inconclusivos + r.pendentes;
+    return { ...r, comparados, fora: r.acima + r.abaixo, percentualFora: comparados ? Math.round(((r.acima + r.abaixo) / comparados) * 1000) / 10 : null };
+  });
+  const soma = (k) => periodos.reduce((s, x) => s + x[k], 0);
+  const comparados = soma('comparados');
+  return {
+    agrupamento: p.agrupamento === 'mes' ? 'mes' : 'semana',
+    periodos,
+    total: {
+      comparados, dentro: soma('dentro'), acima: soma('acima'), abaixo: soma('abaixo'),
+      inconclusivos: soma('inconclusivos'), pendentes: soma('pendentes'), semLimite: soma('sem_limite'),
+      percentualFora: comparados ? Math.round(((soma('acima') + soma('abaixo')) / comparados) * 1000) / 10 : null,
+    },
+  };
 }
 
 export async function tendencias(db, p) {

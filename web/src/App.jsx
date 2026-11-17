@@ -4,6 +4,7 @@ import { Aviso } from './components/ui.jsx';
 import Painel from './pages/Painel.jsx';
 import Resultados from './pages/Resultados.jsx';
 import Tendencias from './pages/Tendencias.jsx';
+import Evolucao from './pages/Evolucao.jsx';
 import Lancar from './pages/Lancar.jsx';
 import Limites from './pages/Limites.jsx';
 import Dados from './pages/Dados.jsx';
@@ -11,6 +12,7 @@ import Dados from './pages/Dados.jsx';
 const PAGINAS = [
   { id: 'painel', titulo: 'Painel', Componente: Painel },
   { id: 'resultados', titulo: 'Resultados', Componente: Resultados },
+  { id: 'evolucao', titulo: 'Evolução', Componente: Evolucao },
   { id: 'tendencias', titulo: 'Tendências', Componente: Tendencias },
   { id: 'lancar', titulo: 'Lançar resultados', Componente: Lancar },
   { id: 'limites', titulo: 'Limites legais', Componente: Limites },

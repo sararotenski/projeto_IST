@@ -23,8 +23,15 @@ function CelulaPortaria({ p }) {
   );
 }
 
-export default function Resultados() {
-  const [f, setF] = useState(vazio);
+/** Filtros vindos do endereço (ex.: #resultados/inicio=2026-06-01&fim=2026-06-07, aberto pela aba Evolução). */
+const filtrosIniciais = (parametro) => {
+  if (!parametro) return vazio;
+  const q = new URLSearchParams(parametro);
+  return Object.fromEntries(Object.keys(vazio).map((k) => [k, q.get(k) ?? '']));
+};
+
+export default function Resultados({ parametro }) {
+  const [f, setF] = useState(() => filtrosIniciais(parametro));
   const set = (k) => (v) => setF((x) => ({ ...x, [k]: v }));
   const op = useApi('opcoes');
   const lista = useApi('resultados', f);
@@ -37,7 +44,7 @@ export default function Resultados() {
       render: (r) => <CelulaPortaria p={r.portarias?.[l.nome]} />,
     }));
     return [
-      { chave: 'data_resultado', titulo: 'Data', render: (l) => dataBR(l.data_resultado) },
+      { chave: 'data_coleta', titulo: 'Coleta', valorOrdem: (l) => l.data_coleta ?? l.data_resultado, render: (l) => dataBR(l.data_coleta ?? l.data_resultado) },
       { chave: 'codigo_amostra', titulo: 'Amostra', render: (l) => l.codigo_amostra ?? l.id_amostra },
       { chave: 'ensaio', titulo: 'Ensaio', render: (l) => <>{l.ensaio} <span className="codigo">{l.codigo_ensaio}</span></> },
       { chave: 'valor', titulo: 'Resultado', numerica: true, render: (l) => valorResultado(l) },
@@ -75,7 +82,7 @@ export default function Resultados() {
             {op.dados.pontos.length > 0 && (
               <Seletor rotulo="Ponto de coleta" valor={f.ponto} aoMudar={set('ponto')} todas="Todos" opcoes={op.dados.pontos} />
             )}
-            <CampoTexto rotulo="De" tipo="date" valor={f.inicio} aoMudar={set('inicio')} pequeno />
+            <CampoTexto rotulo="Coleta de" tipo="date" valor={f.inicio} aoMudar={set('inicio')} pequeno />
             <CampoTexto rotulo="Até" tipo="date" valor={f.fim} aoMudar={set('fim')} pequeno />
           </Filtros>
         )}

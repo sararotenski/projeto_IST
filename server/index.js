@@ -50,6 +50,7 @@ export function criarApp(db) {
   app.get('/api/opcoes', leitura(consultas.opcoes));
   app.get('/api/resultados', leitura(consultas.resultados));
   app.get('/api/tendencias', leitura(consultas.tendencias));
+  app.get('/api/evolucao', leitura(consultas.evolucao));
   app.get('/api/serie', leitura(consultas.serie));
   app.get('/api/limites', leitura(consultas.limites));
   app.get('/api/qualidade', leitura(consultas.qualidade));
