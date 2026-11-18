@@ -1,5 +1,5 @@
 // Uso: npm run extrair
-// Lê data/raw/*.csv, valida e padroniza os limites legais e grava:
+// Lê data/raw/legislacoes/*.csv, valida e padroniza os limites legais e grava:
 //   data/processed/*.json, data/processed/limites.csv e reports/relatorio_qualidade.md
 // Não acessa o banco de dados.
 
@@ -9,7 +9,9 @@ import { fileURLToPath } from 'node:url';
 import { extrairLimites, TIPOS_PENDENCIA } from './lib/extracao.js';
 
 const raiz = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const dirRaw = path.join(raiz, 'data', 'raw');
+// Listas de limites exportadas do UltraLIMS (CSV). Os PDFs da mesma pasta
+// (textos oficiais e as mesmas listas em PDF) são documentação de apoio.
+const dirRaw = path.join(raiz, 'data', 'raw', 'legislacoes');
 const dirProcessed = path.join(raiz, 'data', 'processed');
 const dirReports = path.join(raiz, 'reports');
 

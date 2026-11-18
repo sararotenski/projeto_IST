@@ -12,7 +12,7 @@ O laboratório lança os resultados das amostras, pelo formulário ou por um arq
 É uma ferramenta de apoio. Ela não substitui a avaliação de um profissional.
 
 ```
-data/raw/*.csv ─► extrair ─► importar ─► curadoria (data/curadoria/decisoes.json)
+data/raw/legislacoes/*.csv ─► extrair ─► importar ─► curadoria (data/curadoria/decisoes.json)
                                               │
             lançamento (CSV/formulário) ─► PostgreSQL ─► views SQL (conformidade, histórico)
                                               │                 │
@@ -23,7 +23,7 @@ data/raw/*.csv ─► extrair ─► importar ─► curadoria (data/curadoria/d
 
 | Pasta | Conteúdo |
 |---|---|
-| `data/raw/` | CSVs originais do laboratório. Não são alterados. |
+| `data/raw/legislacoes/` | Listas de limites do UltraLIMS (CSV, usadas na importação), as mesmas listas em PDF e os textos oficiais das legislações. Não são alterados. |
 | `data/processed/` | Dados extraídos e padronizados |
 | `data/curadoria/decisoes.json` | Decisões de tratamento dos limites, com fonte oficial |
 | `data/exemplos/` | Arquivo de demonstração com dados fictícios |

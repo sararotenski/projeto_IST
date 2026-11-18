@@ -1,6 +1,8 @@
 # Relatório de importação
 
-Gerado por `npm run importar` em 2026-10-24T01:48:17.310Z.
+Gerado por `npm run importar -- --simular` em 2026-11-18T00:12:22.797Z.
+
+**Simulação: nenhuma alteração foi gravada (ROLLBACK).**
 
 | Tabela | Inseridos | Já existentes (iguais) | Corrigidos pela curadoria | Divergentes (não sobrescritos) |
 |---|---:|---:|---:|---:|
@@ -20,9 +22,9 @@ Gerado por `npm run importar` em 2026-10-24T01:48:17.310Z.
 | limite | 739 |
 | cliente | 0 |
 | proposta_comercial | 0 |
-| amostra | 0 |
-| resultado | 0 |
-| alerta | 0 |
+| amostra | 182 |
+| resultado | 479 |
+| alerta | 69 |
 | parecer_tecnico | 0 |
 | etl.pendencia | 154 |
 
