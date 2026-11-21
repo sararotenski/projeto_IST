@@ -15,6 +15,7 @@ test('valores do laboratório: qualificador, decimais e presença/ausência', ()
   assert.deepEqual(converterValorLab('Presente'), { valor: '1', qualificador: null });
   assert.ok(converterValorLab('Sim').erro);
   assert.ok(converterValorLab('').vazio);
+  assert.ok(converterValorLab('________').vazio); // campo em branco do laboratório
 });
 
 test('"4.884" é milhar só em unidades de contagem; nas demais, ponto decimal', () => {
@@ -42,7 +43,7 @@ test('junta Gerência e Expedição pelo código externo', async () => {
     { nome: 'g.csv', conteudo: await fixture('gerencia_FICTICIO.csv') },
   ]);
   assert.equal(r.erros.length, 0);
-  assert.equal(r.amostras.size, 3);
+  assert.equal(r.amostras.size, 5);
   const a1 = r.amostras.get('TESTE-01.FIC');
   assert.equal(a1.data_coleta, '2026-07-01'); // da Gerência
   assert.equal(a1.ponto, 'Poço Teste (tratada)'); // da Expedição

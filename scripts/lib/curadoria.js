@@ -133,7 +133,7 @@ export async function aplicarCuradoria(client, arquivo) {
         [idLeg, d.valores.data_inicio_vigencia],
       );
       await client.query(`UPDATE legislacao SET descricao = COALESCE(descricao, $2) WHERE id_legislacao = $1`,
-        [idLeg, `Vigência a partir de ${d.valores.data_inicio_vigencia.split('-').reverse().join('/')}. ${d.fonte}`.slice(0, 250)]);
+        [idLeg, `Vigência a partir de ${d.valores.data_inicio_vigencia.split('-').reverse().join('/')}. ${d.descricao}`.slice(0, 250)]);
       registros.push({ id_limite: null, antes: { limites_atualizados: r.rowCount, data_inicio_vigencia: null } });
       resumo.limitesAlterados += r.rowCount;
     } else if (d.acao !== 'resolver_informativo') {

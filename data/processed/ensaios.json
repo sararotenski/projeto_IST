@@ -24,12 +24,20 @@
     "nome": "Cor Aparente"
   },
   {
+    "codigo_origem": "19",
+    "nome": "DBO 5 dias (por trak)"
+  },
+  {
     "codigo_origem": "23",
     "nome": "Dureza Total"
   },
   {
     "codigo_origem": "25",
     "nome": "Fluoreto"
+  },
+  {
+    "codigo_origem": "28",
+    "nome": "Fósforo total (efluente)"
   },
   {
     "codigo_origem": "29",
@@ -44,12 +52,24 @@
     "nome": "Nitrito (NO2-N)"
   },
   {
+    "codigo_origem": "33",
+    "nome": "Nitrogênio amoniacal total (NA)"
+  },
+  {
     "codigo_origem": "36",
     "nome": "Odor"
   },
   {
+    "codigo_origem": "38",
+    "nome": "Óleos e graxas totais (OGT)"
+  },
+  {
     "codigo_origem": "43",
     "nome": "Sulfato"
+  },
+  {
+    "codigo_origem": "46",
+    "nome": "Sólidos sedimentáveis"
   },
   {
     "codigo_origem": "47",
@@ -94,6 +114,42 @@
   {
     "codigo_origem": "68",
     "nome": "Saxitoxinas"
+  },
+  {
+    "codigo_origem": "92",
+    "nome": "DBO 5 dias (por trak)"
+  },
+  {
+    "codigo_origem": "101",
+    "nome": "Fósforo total (efluente)"
+  },
+  {
+    "codigo_origem": "106",
+    "nome": "Nitrogênio amoniacal total (NA)"
+  },
+  {
+    "codigo_origem": "111",
+    "nome": "Óleos e graxas totais (OGT)"
+  },
+  {
+    "codigo_origem": "112",
+    "nome": "Óleos vegetais e gorduras animais (OGV)"
+  },
+  {
+    "codigo_origem": "117",
+    "nome": "Sulfeto (efluente)"
+  },
+  {
+    "codigo_origem": "119",
+    "nome": "Sólidos sedimentáveis"
+  },
+  {
+    "codigo_origem": "196",
+    "nome": "Cromo hexavalente (efluente)"
+  },
+  {
+    "codigo_origem": "198",
+    "nome": "Ferro dissolvido (efluente)"
   },
   {
     "codigo_origem": "217",
@@ -158,6 +214,22 @@
   {
     "codigo_origem": "249",
     "nome": "Zinco"
+  },
+  {
+    "codigo_origem": "257",
+    "nome": "Cádmio (efluente)"
+  },
+  {
+    "codigo_origem": "263",
+    "nome": "Estanho (efluente)"
+  },
+  {
+    "codigo_origem": "270",
+    "nome": "Níquel (efluente)"
+  },
+  {
+    "codigo_origem": "282",
+    "nome": "Zinco (efluente)"
   },
   {
     "codigo_origem": "348",
@@ -304,8 +376,24 @@
     "nome": "Cloro Residual Livre"
   },
   {
+    "codigo_origem": "784",
+    "nome": "Materiais flutuantes"
+  },
+  {
     "codigo_origem": "793",
     "nome": "pH"
+  },
+  {
+    "codigo_origem": "794",
+    "nome": "pH (efluente)"
+  },
+  {
+    "codigo_origem": "799",
+    "nome": "Temperatura da água (efluente)"
+  },
+  {
+    "codigo_origem": "800",
+    "nome": "Temperatura da água (efluente)"
   },
   {
     "codigo_origem": "833",
@@ -352,6 +440,10 @@
     "nome": "Acrilamida"
   },
   {
+    "codigo_origem": "936",
+    "nome": "Fósforo total (efluente)"
+  },
+  {
     "codigo_origem": "949",
     "nome": "Sólidos Dissolvidos Totais"
   },
@@ -374,6 +466,10 @@
   {
     "codigo_origem": "1184",
     "nome": "SUB - Radioatividade Beta"
+  },
+  {
+    "codigo_origem": "1189",
+    "nome": "pH (efluente)"
   },
   {
     "codigo_origem": "1190",
@@ -1206,6 +1302,10 @@
   {
     "codigo_origem": "15428",
     "nome": "Cilindrospermopsinas"
+  },
+  {
+    "codigo_origem": "15915",
+    "nome": "DBO 5 dias (por OD)"
   },
   {
     "codigo_origem": "16700",

@@ -69,15 +69,29 @@ test('vigência nunca é inventada', () => {
 
 test('arquivos reais: todas as linhas são contabilizadas', async () => {
   const r = extrairLimites(await carregarFontes());
-  assert.equal(r.arquivos.length, 6);
-  assert.equal(r.estatisticas.totalLinhas, 794);
+  assert.equal(r.arquivos.length, 7); // 6 listas do UltraLIMS + limites dos textos oficiais
+  assert.equal(r.estatisticas.totalLinhas, 859);
   const linhasEmLimites = r.limites.reduce((s, l) => s + l.linhas_origem.split(',').length, 0);
   const linhasRejeitadas = r.pendencias
     .filter((p) => ['LIMITE_CONFLITANTE', 'FAIXA_INCONSISTENTE', 'LINHA_INVALIDA', 'COMPRIMENTO_EXCEDIDO'].includes(p.tipo))
     .reduce((s, p) => s + p.linhas_origem.split(',').length, 0);
-  assert.equal(linhasEmLimites + linhasRejeitadas, 794);
-  assert.equal(r.limites.length, 732);
+  assert.equal(linhasEmLimites + linhasRejeitadas, 859);
+  assert.equal(r.limites.length, 797);
   // chave natural única
   const chaves = new Set(r.limites.map((l) => [l.legislacao, l.origem_amostra, l.matriz, l.codigo_ensaio, l.classe].join('|')));
   assert.equal(chaves.size, r.limites.length);
+});
+
+test('arquivo curado: validação e observação vêm das colunas, sem ressalvas automáticas', () => {
+  const cab = 'Legislacao;Matriz;Origem_Amostra;Ensaio;Descricao;Classe_Legislacao;Valor_Min_Permitido;Valor_Max_Permitido;Un_Medida;Requer_Validacao;Observacao;Fonte';
+  const r = extrairLimites([{ arquivo: 'c.csv', curado: true, texto: [cab,
+    'Lei Y;Efluente;Lançamento;784;Flutuantes;Art. 1;;0;Aus/Pres;não;Exige ausência;Lei Y, art. 1',
+    'Lei Y;Efluente;Lançamento;92;DBO;Art. 1;;60;mg/L;sim;Condicional: 60 ou 80%;Lei Y, art. 2'].join('\n') }]);
+  assert.equal(r.limites.length, 2);
+  const flut = r.limites.find((l) => l.codigo_ensaio === '784');
+  assert.equal(flut.requer_validacao, false);
+  assert.equal(flut.valor_minimo, null);
+  assert.match(flut.observacao_validacao, /sem validação do IST/);
+  assert.equal(r.limites.find((l) => l.codigo_ensaio === '92').requer_validacao, true);
+  assert.ok(!r.pendencias.some((p) => p.tipo === 'MAXIMO_ZERO'));
 });

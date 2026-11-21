@@ -1,6 +1,6 @@
 # Relatório de qualidade dos dados extraídos
 
-Gerado por `npm run extrair` em 2026-11-18T00:16:52.003Z.
+Gerado por `npm run extrair` em 2026-11-21T02:33:10.230Z.
 
 ## Arquivos processados
 
@@ -12,13 +12,14 @@ Gerado por `npm run extrair` em 2026-11-18T00:16:52.003Z.
 | SES1468_Agua_Subterranea.csv | 70 | — |
 | SES1468_Agua_Superficial.csv | 66 | — |
 | SES1468_Agua_Tratada.csv | 71 | — |
+| limites_textos_oficiais.csv | 65 | — |
 
 ## Resumo
 
-- Linhas lidas: 794
-- Linhas válidas: 794
-- Limites consolidados para importação: 732 (25 marcados para validação)
-- Legislações: 2 · Classes: 2 · Ensaios: 310
+- Linhas lidas: 859
+- Linhas válidas: 859
+- Limites consolidados para importação: 797 (40 marcados para validação)
+- Legislações: 4 · Classes: 6 · Ensaios: 335
 
 ## Pendências por tipo
 
@@ -33,7 +34,7 @@ Gerado por `npm run extrair` em 2026-11-18T00:16:52.003Z.
 | CLASSE_GRAFIA | 2 | sim | Nome de classe com possível erro de grafia (preservado como na fonte) |
 | ENSAIO_NOME_DIVERGENTE | 0 | não | Mesmo código de ensaio com nomes diferentes |
 | NOME_EM_CODIGOS_DIFERENTES | 77 | sim | Mesmo nome de ensaio com códigos diferentes (mantidos como ensaios distintos) |
-| VIGENCIA_NAO_INFORMADA | 2 | sim | Fonte não informa versão nem período de vigência dos limites |
+| VIGENCIA_NAO_INFORMADA | 4 | sim | Fonte não informa versão nem período de vigência dos limites |
 | COMPRIMENTO_EXCEDIDO | 0 | não | Texto maior que o tamanho da coluna de destino |
 
 ## Itens que precisam de revisão humana
@@ -76,5 +77,7 @@ Gerado por `npm run extrair` em 2026-11-18T00:16:52.003Z.
 | MAXIMO_ZERO | SES1468_Agua_Tratada.csv | 24 | Clorpirifós + Clorpirifós-Oxon (código 7172) em Agua Tratada: máximo 0 µg/L |
 | VIGENCIA_NAO_INFORMADA | — | — | Portaria GM/MS Nº888 5/21: arquivos não trazem versão nem datas de vigência. Limites importados com versão 1 e vigência vazia; confirmar no texto oficial. |
 | VIGENCIA_NAO_INFORMADA | — | — | Portaria SES nº1468/2022: arquivos não trazem versão nem datas de vigência. Limites importados com versão 1 e vigência vazia; confirmar no texto oficial. |
+| VIGENCIA_NAO_INFORMADA | — | — | Resolução CONAMA nº 430/2011: arquivos não trazem versão nem datas de vigência. Limites importados com versão 1 e vigência vazia; confirmar no texto oficial. |
+| VIGENCIA_NAO_INFORMADA | — | — | Resolução CONSEMA nº 299/2025: arquivos não trazem versão nem datas de vigência. Limites importados com versão 1 e vigência vazia; confirmar no texto oficial. |
 
 Duplicatas exatas e nomes repetidos em códigos diferentes estão em `data/processed/pendencias.json`.

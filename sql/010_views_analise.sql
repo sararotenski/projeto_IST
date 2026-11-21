@@ -126,7 +126,11 @@ candidatos AS (
     FROM alvos a
     JOIN limite l ON l.fk_id_ensaio = a.id_ensaio AND l.fk_id_legislacao = a.id_legislacao AND l.ativo
     WHERE (a.origem IS NULL OR l.origem_amostra IS NULL OR fn_normalizar_texto(l.origem_amostra) = fn_normalizar_texto(a.origem))
-      AND (a.matriz IS NULL OR l.matriz IS NULL OR fn_normalizar_texto(l.matriz) = fn_normalizar_texto(a.matriz))
+      -- Matriz: igual à da amostra; amostra sem matriz aceita qualquer limite,
+      -- EXCETO limites de efluente, que só valem para amostras marcadas como efluente.
+      AND (l.matriz IS NULL
+           OR fn_normalizar_texto(l.matriz) = fn_normalizar_texto(a.matriz)
+           OR (a.matriz IS NULL AND fn_normalizar_texto(l.matriz) <> 'efluente'))
       AND (l.data_inicio_vigencia IS NULL OR a.data_resultado IS NULL OR a.data_resultado >= l.data_inicio_vigencia)
       AND (l.data_fim_vigencia    IS NULL OR a.data_resultado IS NULL OR a.data_resultado <= l.data_fim_vigencia)
 ),

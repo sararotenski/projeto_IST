@@ -267,6 +267,10 @@ function RetornoLaboratorio({ r }) {
             {rel.arquivos.map((a) => <li key={a.nome}>{a.nome}: {TIPO_ARQUIVO[a.tipo] ?? a.tipo}, {a.linhas} linha(s)</li>)}
             <li>{numero(rel.amostrasNoArquivo)} amostras e {numero(rel.resultadosNoArquivo)} resultados nos arquivos</li>
             <li><strong>{numero(rel.importados)}</strong> resultados importados e comparados ({numero(rel.amostrasNovas)} amostras novas)</li>
+            {rel.amostrasEfluente > 0 && (
+              <li>{numero(rel.amostrasEfluente)} amostra(s) identificadas como efluente (têm DBO ou DQO): comparadas com CONAMA 430 e CONSEMA 299, e não com os limites de água potável</li>
+            )}
+            {rel.amostrasAtualizadas > 0 && <li>{numero(rel.amostrasAtualizadas)} amostra(s) já existentes foram completadas</li>}
             {rel.jaImportados > 0 && <li>{numero(rel.jaImportados)} já tinham sido importados antes (mantidos)</li>}
           </ul>
         </Cartao>

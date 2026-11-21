@@ -195,6 +195,38 @@ As 154 ressalvas da importação foram resolvidas com base no texto oficial da P
 
 Cada decisão guarda os valores anteriores em `etl.decisao_curadoria` e pode ser conferida na aba "Dados e curadoria". Reimportar os CSVs não desfaz as correções. Recomenda-se que um responsável técnico confira as decisões.
 
+### 6.3 Legislações de efluente: CONAMA 430/2011 e CONSEMA 299/2025
+
+Os limites vêm dos textos oficiais (`data/raw/legislacoes/textos_oficiais/`) e estão em `data/curadoria/limites_textos_oficiais.csv`: 65 linhas, cada uma com a fonte (artigo ou anexo). A extração lê esse arquivo junto com as listas do UltraLIMS.
+
+**Associação aos códigos do laboratório.** As leis citam parâmetros ("Ferro dissolvido"), e o laboratório usa códigos ("198 - Fe Dis"). A associação foi feita pela equipe, **sem validação do IST**, com base nos pacotes de ensaios das exportações: os códigos escolhidos aparecem quase só em amostras que têm DBO ou DQO. Cada limite traz essa observação, visível na aba Limites legais.
+
+| Parâmetro | Códigos | CONAMA 430 | CONSEMA 299 |
+|---|---|---|---|
+| pH | 794, 1189 | 5 a 9 | 6 a 9 |
+| Temperatura (°C) | 800, 799 | < 40 | < 40 |
+| Sólidos sedimentáveis (mL/L) | 119, 46 | ≤ 1 | ≤ 1 |
+| Materiais flutuantes | 784 | ausência | ausência (art. 9º) |
+| Óleos vegetais e gorduras animais | 112 | 50 mg/L (art. 16) | 50 mg/L |
+| Óleos e graxas totais | 111, 38 | 100 mg/L (art. 21, esgoto sanitário) | — |
+| DBO 5 dias | 92, 19, 15915 | 120 mg/L ou 60% de remoção (art. 21) | 60 mg/L ou 80% de remoção |
+| Fósforo total | 101, 28, 936 | — | 4 mg/L ou 75% de remoção |
+| Nitrogênio amoniacal total | 106, 33 | 20 mg/L | 20 mg/L (Anexo I) |
+| Sulfeto | 117 | 1 mg/L | 1 mg/L |
+| Ferro dissolvido | 198 | 15 mg/L | 15 mg/L |
+| Zinco, níquel, cádmio, estanho (assumidos como totais) | 282, 270, 257, 263 | 5 · 2 · 0,2 · 4 mg/L | 1 · 1 · 0,1 · 4 mg/L |
+| Cromo hexavalente | 196 | 0,1 mg/L | 0,1 mg/L |
+
+Ficaram de fora: mercúrio (268) e chumbo (259), porque os valores do arquivo não deixam claro se a unidade é mg/L ou µg/L; ferro total (264), porque as leis só limitam o dissolvido; DQO, nitrato, nitrito, E. coli e alumínio dissolvido, que na CONSEMA 299 são só parâmetros de acompanhamento (sem limite); toxicidade, que depende de critério do órgão ambiental.
+
+**Classes.** Cada lei tem dois conjuntos de regras, gravados como classes: CONAMA 430 "Art. 16 - Efluentes em geral" e "Art. 21 - Esgoto sanitário"; CONSEMA 299 "Anexo I - Efluente industrial" e "Art. 9 - Efluente sanitário". O tipo de efluente não vem nos arquivos. Quando as duas classes têm o mesmo limite, o resultado é classificado; quando têm limites diferentes, fica "Pendente de validação"; quando só uma define o parâmetro, vale essa.
+
+**Limites condicionais.** DBO e fósforo podem ser atendidos pela concentração **ou** pela eficiência de remoção do tratamento, que exige o resultado da entrada da ETE. Esses limites ficam marcados para avaliação técnica e os resultados aparecem como "Pendente de validação", com o motivo.
+
+**Quais amostras são efluente.** Os limites de lançamento só valem para amostras marcadas como efluente (`amostra.matriz = 'Efluente'`), e uma amostra de efluente não é comparada com limites de água. Na importação, uma amostra é marcada como efluente quando tem DBO ou DQO e nenhum ensaio com limite de água, ou quando a descrição do ponto fala em efluente ou esgoto. Isso é uma heurística: amostras de rio ou de água bruta com DBO e sem nenhum ensaio de água potável seriam tratadas como efluente.
+
+Vigência: CONAMA 430 desde 16/05/2011 (DOU nº 92); CONSEMA 299 desde 16/12/2025 (DOE/SC nº 22.662-A), com a faixa de pH corrigida pela errata do DOE nº 22.770. A CONSEMA 181/2021, revogada pela 299, não foi cadastrada.
+
 ## 7. Banco de dados
 
 O modelo original (`sql/000_script_original.sql`) foi preservado. As migrações só acrescentam estruturas e cada uma tem script de reversão.
@@ -208,9 +240,9 @@ Pontos que continuam em aberto no modelo:
 - `ENSAIO.atende_nao_atende` não é usado, porque a conformidade é calculada para cada resultado.
 - `PARECER_TECNICO` está ligado a ENSAIO, quando um parecer normalmente trata de uma amostra.
 
-## 8. Situação em 23/10/2026
+## 8. Situação em 18/11/2026
 
-- Limites: 739 registros, sendo 734 ativos e 5 desativados. Nenhum tem ressalva em aberto e todos têm vigência.
-- Resultados reais: nenhum lançado ainda. O fluxo completo foi testado com o arquivo de demonstração, e o lote foi desfeito em seguida.
-- Testes: 30 unitários e 24 de banco/API, todos passando.
-- Limitação: a análise de tendência depende de um ponto de coleta informado de forma consistente em todos os lançamentos.
+- Legislações: 4 (GM/MS 888, SES 1468, CONAMA 430, CONSEMA 299). Limites: 804 registros, 799 ativos. Nenhuma ressalva da importação em aberto; os 15 limites condicionais (DBO e fósforo) ficam para avaliação técnica.
+- Resultados reais: 978, de duas importações das exportações do laboratório (Gerência de Amostra e Expedição). 92 amostras foram identificadas como efluente.
+- Testes: 37 unitários e 29 de banco/API, todos passando.
+- Limitações: a associação dos códigos às leis de efluente não foi validada pelo IST; o tipo de efluente (industrial ou sanitário) não é conhecido; as tendências dependem de um ponto de coleta fixo, que as exportações atuais não trazem.

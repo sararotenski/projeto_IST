@@ -46,7 +46,8 @@ test('importa Gerência + Expedição e classifica por portaria', { skip: !temBa
   assert.equal(r.status, 200, JSON.stringify(corpo.erros));
   lote = corpo.lote;
   const rel = corpo.relatorio;
-  assert.equal(rel.importados, 11);
+  assert.equal(rel.importados, 19); // 11 de água + pH (TESTE-02) + 5 do efluente (TESTE-04) + 2 da TESTE-05
+  assert.equal(rel.amostrasEfluente, 1); // só TESTE-04: TESTE-05 tem DBO, mas também ensaio de água
   assert.equal(rel.naoAgua.length, 1); // peixe congelado
   assert.equal(rel.invalidos.length, 1); // "abc"
   assert.ok(rel.semLimite >= 2); // DQO e coordenadas
@@ -66,22 +67,39 @@ test('importa Gerência + Expedição e classifica por portaria', { skip: !temBa
   assert.equal(fe['Portaria GM/MS Nº888 5/21'].categoria, 'Acima do limite máximo');
   assert.equal(fe['Portaria SES nº1468/2022'].categoria, 'Sem limite aplicável identificado');
   assert.ok(!corpo.resultados.some((x) => x.codigo_amostra === 'TESTE-03.FIC'));
+
+  // Efluente (TESTE-04): só CONAMA 430 e CONSEMA 299 se aplicam
+  const lei = (amostra, codigo, legislacao) => cat(amostra, codigo).portarias[legislacao].categoria;
+  const C430 = 'Resolução CONAMA nº 430/2011';
+  const C299 = 'Resolução CONSEMA nº 299/2025';
+  assert.equal(lei('TESTE-04.FIC', '794', C430), 'Acima do limite máximo'); // pH 9,5 > 9
+  assert.equal(lei('TESTE-04.FIC', '794', C299), 'Acima do limite máximo');
+  assert.equal(lei('TESTE-04.FIC', '112', C430), 'Acima do limite máximo'); // OGV 60 > 50
+  assert.equal(lei('TESTE-04.FIC', '106', C299), 'Acima do limite máximo'); // NA 25 > 20
+  assert.equal(lei('TESTE-04.FIC', '119', C430), 'Dentro dos limites'); // S. Sed. <0,3 ≤ 1
+  assert.equal(lei('TESTE-04.FIC', '92', C299), 'Pendente de validação'); // DBO: condicional
+  assert.match(cat('TESTE-04.FIC', '92').portarias[C299].motivo, /Condicional/);
+  // limite de efluente não vale para água; amostra com DBO + ensaio de água é água
+  assert.equal(cat('TESTE-02.FIC', '794').categoria, 'Sem limite aplicável identificado');
+  assert.equal(cat('TESTE-05.FIC', '92').categoria, 'Sem limite aplicável identificado');
+  assert.equal(cat('TESTE-05.FIC', '231').categoria, 'Acima do limite máximo'); // Fe 0,9 > 0,3 (GM/MS 888)
 });
 
 test('reenviar os mesmos arquivos não duplica', { skip: !temBanco }, async () => {
   const r = await post('resultados/arquivos', { arquivos: await arquivos() });
   const corpo = await r.json();
   assert.equal(corpo.lote, null);
-  assert.equal(corpo.relatorio.jaImportados, 11);
+  assert.equal(corpo.relatorio.jaImportados, 19);
   assert.match(corpo.aviso, /já tinham sido importados/);
 });
 
 test('resultados da API trazem a classificação de cada portaria', { skip: !temBanco }, async () => {
   const lista = await (await fetch(`${base}/resultados?busca=TESTE-01.FIC`)).json();
   assert.equal(lista.length, 6);
-  assert.ok(lista.every((x) => x.portarias && Object.keys(x.portarias).length === 2));
+  const legislacoes = (await pool.query('SELECT count(*)::int AS n FROM legislacao')).rows[0].n;
+  assert.ok(lista.every((x) => x.portarias && Object.keys(x.portarias).length === legislacoes));
   const so888 = await (await fetch(`${base}/resultados?busca=TESTE-0&legislacao=${encodeURIComponent('Portaria GM/MS Nº888 5/21')}`)).json();
-  assert.equal(so888.length, 11);
+  assert.equal(so888.length, 12); // 11 + Fe da TESTE-05
   const so1468 = await (await fetch(`${base}/resultados?busca=TESTE-0&legislacao=${encodeURIComponent('Portaria SES nº1468/2022')}`)).json();
   assert.equal(so1468.length, 0);
 });
@@ -103,11 +121,11 @@ test('evolução por semana e por mês conta as classificações pela data de co
 
   const ses = await (await fetch(`${base}/evolucao?${filtro}&legislacao=${encodeURIComponent('Portaria SES nº1468/2022')}`)).json();
   assert.equal(ses.total.comparados, 0);
-  assert.equal(ses.total.semLimite, 11);
+  assert.equal(ses.total.semLimite, 12); // 11 + o pH de efluente lançado numa amostra de água
 
   // o clique leva à aba Resultados com o mesmo período: as contagens batem
   const lista = await (await fetch(`${base}/resultados?inicio=${p.inicio}&fim=${p.fim}&busca=TESTE-0`)).json();
-  assert.equal(lista.length, 11);
+  assert.equal(lista.length, 12); // 11 comparados + 1 sem limite
 });
 
 test('desfazer remove tudo o que o lote lançou', { skip: !temBanco }, async () => {

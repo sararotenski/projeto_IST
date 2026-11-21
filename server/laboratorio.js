@@ -9,7 +9,8 @@
 // pelo "Código Amostra Externo". Só entram resultados de ensaios que têm limite
 // ativo em alguma legislação; o resto é contado no relatório como ignorado.
 // Legislação, cliente e origem não vêm nos arquivos: o resultado é comparado
-// com todas as legislações cadastradas (uma classificação por portaria).
+// com todas as legislações cadastradas (uma classificação por portaria);
+// os limites de efluente só valem para amostras identificadas como efluente.
 
 import { lerCsvComCabecalho } from '../scripts/lib/csv.js';
 import { normalizarTexto } from '../scripts/lib/normalizar.js';
@@ -18,8 +19,16 @@ import { gerarAlertas } from '../scripts/lib/alertas.js';
 // Descrições de ponto que indicam amostras que não são água (ficam de fora).
 export const TERMOS_NAO_AGUA = [
   'peixe', 'pescado', 'carne', 'frango', 'alimento', 'racao', 'leite', 'queijo',
-  'solo', 'lodo', 'sedimento', 'efluente', 'esgoto', 'oleo',
+  'solo', 'lodo', 'sedimento', 'oleo',
 ];
+// Uma amostra é tratada como EFLUENTE quando tem resultado de DBO ou DQO e
+// nenhum ensaio com limite de água (heurística a partir dos pacotes de ensaios
+// do laboratório), ou quando a descrição do ponto fala em efluente/esgoto.
+// Só amostras de efluente são comparadas com os limites de lançamento
+// (CONAMA 430, CONSEMA 299).
+export const CODIGOS_DBO_DQO = ['92', '93', '19', '20', '15915'];
+const TERMOS_EFLUENTE = ['efluente', 'esgoto'];
+export const MATRIZ_EFLUENTE = 'Efluente';
 // Unidades de contagem (números inteiros): "4.884" é separador de milhar.
 const UNIDADES_CONTAGEM = ['celulas/ml'];
 
@@ -61,7 +70,8 @@ export function dataLab(v) {
  */
 export function converterValorLab(texto, unidade) {
   const t = normalizarTexto(texto);
-  if (t === null) return { vazio: true };
+  // "________" é o campo em branco do formulário do laboratório: sem resultado
+  if (t === null || /^_+$/.test(t)) return { vazio: true };
   if (/^ausente$/i.test(t)) return { valor: '0', qualificador: null };
   if (/^presente$/i.test(t)) return { valor: '1', qualificador: null };
   const m = t.match(/^([<>])=?\s*(.+)$/);
@@ -182,14 +192,26 @@ export async function importarExportacoes(pool, arquivos, { simular = false } = 
     };
 
     const excluidas = new Set();
+    // Códigos com limite de ÁGUA (potável/tratada/subterrânea/superficial). Uma amostra
+    // com DBO/DQO que também tem algum desses ensaios é água (ex.: água bruta de
+    // captação, com DBO e clorofila), e não efluente.
+    const codigosAgua = new Set((await client.query(`
+      SELECT DISTINCT e.codigo_origem FROM limite l JOIN ensaio e ON e.id_ensaio = l.fk_id_ensaio
+      WHERE l.ativo AND COALESCE(fn_normalizar_texto(l.matriz), '') <> 'efluente'`)).rows.map((x) => x.codigo_origem));
+    const comAgua = new Set(lido.resultados.filter((r) => codigosAgua.has(r.codigo)).map((r) => r.externo));
+    const comDboDqo = new Set(lido.resultados.filter((r) => CODIGOS_DBO_DQO.includes(r.codigo) && !comAgua.has(r.externo)).map((r) => r.externo));
     for (const am of lido.amostras.values()) {
       const p = semAcento(am.ponto ?? '');
       const termo = TERMOS_NAO_AGUA.find((t) => p.includes(t));
       if (termo) {
         excluidas.add(am.externo);
         rel.naoAgua.push({ amostra: am.externo, ponto: am.ponto });
+        continue;
       }
+      if (comDboDqo.has(am.externo) || TERMOS_EFLUENTE.some((t) => p.includes(t))) am.matriz = MATRIZ_EFLUENTE;
     }
+    rel.amostrasEfluente = [...lido.amostras.values()].filter((a) => a.matriz === MATRIZ_EFLUENTE).length;
+    let amostrasAtualizadas = 0;
 
     const lote = (await client.query(
       `INSERT INTO etl.lote_resultados (origem, arquivo) VALUES ('laboratorio', $1) RETURNING id_lote`,
@@ -215,6 +237,7 @@ export async function importarExportacoes(pool, arquivos, { simular = false } = 
       const unidade = r.unidade ?? lido.unidadesPorCodigo.get(r.codigo) ?? (ensaio.unidades_norm.length === 1 ? ensaio.unidade : null);
       if (!unidade) rel.semUnidade++;
       const conv = converterValorLab(r.bruto, unidade);
+      if (conv.vazio) continue;
       if (conv.erro) {
         rel.invalidos.push({ amostra: r.externo, ensaio: `${r.codigo} - ${ensaio.nome}`, valor: r.bruto, motivo: conv.erro });
         continue;
@@ -224,15 +247,20 @@ export async function importarExportacoes(pool, arquivos, { simular = false } = 
         const ex = await client.query('SELECT id_amostra FROM amostra WHERE codigo_amostra = $1', [r.externo]);
         if (ex.rowCount) {
           idsAmostra.set(r.externo, ex.rows[0].id_amostra);
-          await client.query(
-            `UPDATE amostra SET data_coleta = COALESCE(data_coleta, $2), ponto_coleta = COALESCE(ponto_coleta, $3) WHERE id_amostra = $1`,
-            [ex.rows[0].id_amostra, am.data_coleta, am.ponto?.slice(0, 80) ?? null],
+          // Completa só o que estava vazio (nunca sobrescreve)
+          const up = await client.query(
+            `UPDATE amostra SET data_coleta = COALESCE(data_coleta, $2), ponto_coleta = COALESCE(ponto_coleta, $3), matriz = COALESCE(matriz, $4)
+              WHERE id_amostra = $1
+                AND ((data_coleta IS NULL AND $2::date IS NOT NULL) OR (ponto_coleta IS NULL AND $3::varchar IS NOT NULL)
+                     OR (matriz IS NULL AND $4::varchar IS NOT NULL))`,
+            [ex.rows[0].id_amostra, am.data_coleta, am.ponto?.slice(0, 80) ?? null, am.matriz ?? null],
           );
+          amostrasAtualizadas += up.rowCount;
         } else {
           const id = idAmostra++;
           await client.query(
-            `INSERT INTO amostra (id_amostra, data_coleta, codigo_amostra, ponto_coleta, id_lote) VALUES ($1, $2, $3, $4, $5)`,
-            [id, am.data_coleta, r.externo, am.ponto?.slice(0, 80) ?? null, lote],
+            `INSERT INTO amostra (id_amostra, data_coleta, codigo_amostra, ponto_coleta, matriz, id_lote) VALUES ($1, $2, $3, $4, $5, $6)`,
+            [id, am.data_coleta, r.externo, am.ponto?.slice(0, 80) ?? null, am.matriz ?? null, lote],
           );
           idsAmostra.set(r.externo, id);
           novasAmostras.add(r.externo);
@@ -257,9 +285,20 @@ export async function importarExportacoes(pool, arquivos, { simular = false } = 
     rel.amostrasComResultado = new Set(lido.resultados.filter((r) => !excluidas.has(r.externo) && ensaios.has(r.codigo)).map((r) => r.externo)).size;
     rel.ensaiosSemLimite = [...rel.ensaiosSemLimite.entries()].sort((a, b) => b[1] - a[1]).map(([ensaio, n]) => ({ ensaio, resultados: n }));
 
+    rel.amostrasAtualizadas = amostrasAtualizadas;
+
     if (!inseridos.length) {
-      await client.query('ROLLBACK');
-      return { lote: null, relatorio: rel, resultados: [], porPortaria: [], aviso: rel.jaImportados ? 'Todos os resultados destes arquivos já tinham sido importados.' : 'Nenhum resultado com limite legal foi encontrado nos arquivos.' };
+      const base = rel.jaImportados ? 'Todos os resultados destes arquivos já tinham sido importados.' : 'Nenhum resultado com limite legal foi encontrado nos arquivos.';
+      if (!amostrasAtualizadas || simular) {
+        await client.query('ROLLBACK');
+        return { lote: null, relatorio: rel, resultados: [], porPortaria: [], aviso: base };
+      }
+      // Nada novo para lançar, mas amostras existentes foram completadas
+      // (ex.: marcadas como efluente). Grava sem deixar lote vazio no histórico.
+      await client.query('DELETE FROM etl.lote_resultados WHERE id_lote = $1', [lote]);
+      await gerarAlertas(client);
+      await client.query('COMMIT');
+      return { lote: null, relatorio: rel, resultados: [], porPortaria: [], aviso: `${base} ${amostrasAtualizadas} amostra(s) existente(s) foram completadas (data, ponto ou tipo efluente).` };
     }
 
     const alertas = await gerarAlertas(client);

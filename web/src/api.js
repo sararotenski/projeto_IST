@@ -69,13 +69,16 @@ export function numero(v) {
 export function valorResultado(l, unidade = l.unidade_resultado) {
   if (l.valor === null || l.valor === undefined) return '—';
   if (ePresencaAusencia(unidade) && !l.qualificador) return Number(l.valor) > 0 ? 'Presente' : 'Ausente';
-  return `${l.qualificador ?? ''}${numero(l.valor)} ${unidade ?? ''}`.trim();
+  return `${l.qualificador ?? ''}${numero(l.valor)} ${unidadeTela(unidade)}`.trim();
 }
 
 /** "Portaria GM/MS Nº888 5/21" → "GM/MS Nº888 5/21" */
-export const nomeCurto = (legislacao) => String(legislacao ?? '').replace(/^Portaria\s+/i, '');
+export const nomeCurto = (legislacao) => String(legislacao ?? '').replace(/^(Portaria|Resolução)\s+/i, '');
 
 /** Faixa do limite: "até 0,3 mg/L" ou "0,2 a 5 mg/L". */
+/** Unidade para exibir: "adimensional" (pH, razões) não é mostrada. */
+const unidadeTela = (u) => (u && String(u).toLowerCase() !== 'adimensional' ? u : '');
+
 /** Ensaios de presença/ausência (o limite é "ausência"). */
 export const ePresencaAusencia = (unidade) => /aus|pres/i.test(String(unidade ?? ''));
 
@@ -83,7 +86,7 @@ export function faixaLimite(minimo, maximo, unidade) {
   if ((minimo === null || minimo === undefined) && (maximo === null || maximo === undefined)) return '—';
   if (ePresencaAusencia(unidade)) return 'ausência';
   const min = minimo !== null && minimo !== undefined && Number(minimo) > 0 ? `${numero(minimo)} a ` : 'até ';
-  return `${min}${numero(maximo)} ${unidade ?? ''}`.trim();
+  return `${min}${numero(maximo)} ${unidadeTela(unidade)}`.trim();
 }
 
 export function dataBR(v) {

@@ -15,9 +15,14 @@ const dirRaw = path.join(raiz, 'data', 'raw', 'legislacoes');
 const dirProcessed = path.join(raiz, 'data', 'processed');
 const dirReports = path.join(raiz, 'reports');
 
+// Limites montados pela equipe a partir dos textos oficiais (CONAMA 430, CONSEMA 299).
+const arquivoCurado = path.join(raiz, 'data', 'curadoria', 'limites_textos_oficiais.csv');
+
 export async function carregarFontes() {
   const nomes = (await readdir(dirRaw)).filter((n) => n.toLowerCase().endsWith('.csv')).sort();
-  return Promise.all(nomes.map(async (arquivo) => ({ arquivo, texto: await readFile(path.join(dirRaw, arquivo), 'utf8') })));
+  const listas = await Promise.all(nomes.map(async (arquivo) => ({ arquivo, texto: await readFile(path.join(dirRaw, arquivo), 'utf8') })));
+  const curado = { arquivo: path.basename(arquivoCurado), texto: await readFile(arquivoCurado, 'utf8'), curado: true };
+  return [...listas, curado];
 }
 
 const csvCampo = (v) => {

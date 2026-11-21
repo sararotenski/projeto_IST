@@ -76,7 +76,10 @@ export function extrairLimites(fontes) {
   };
 
   // 1) Leitura e validação linha a linha
-  for (const { arquivo, texto } of fontes) {
+  // curado = true: arquivo montado pela equipe a partir do texto oficial
+  // (data/curadoria). Traz Requer_Validacao/Observacao/Fonte por linha e não
+  // gera as ressalvas automáticas de máximo zero ou unidade ausente.
+  for (const { arquivo, texto, curado = false } of fontes) {
     const { colunas, registros } = lerCsvComCabecalho(texto, ';');
     const faltando = COLUNAS_ESPERADAS.filter((c) => !colunas.includes(c));
     arquivos.push({ arquivo, colunas, totalLinhas: registros.length, colunasFaltando: faltando });
@@ -105,6 +108,12 @@ export function extrairLimites(fontes) {
           valor_maximo: converterDecimalBR(r.Valor_Max_Permitido),
           unidade_medida: normalizarUnidade(r.Un_Medida),
           unidade_original: normalizarTexto(r.Un_Medida),
+          curado,
+          requer_validacao_fonte: curado ? /^sim$/i.test(normalizarTexto(r.Requer_Validacao) ?? '') : false,
+          observacao_fonte: curado
+            ? [normalizarTexto(r.Observacao), normalizarTexto(r.Fonte), 'Código do laboratório associado pela equipe, sem validação do IST']
+              .filter(Boolean).join('. ').slice(0, 250)
+            : null,
         };
         if (!rec.legislacao || !rec.codigo_ensaio || !rec.nome_ensaio) {
           throw new Error('Legislação, código ou descrição do ensaio ausente');
@@ -166,8 +175,10 @@ export function extrairLimites(fontes) {
       codigosPorNome.get(k).codigos.add(codigo);
     }
   }
+  // Códigos que só aparecem no arquivo curado foram agrupados de propósito pela equipe.
+  const codigosNaoCurados = new Set(candidatos.filter((c) => !c.curado).map((c) => c.codigo_ensaio));
   for (const { nome, codigos } of codigosPorNome.values()) {
-    if (codigos.size > 1) {
+    if (codigos.size > 1 && [...codigos].some((c) => codigosNaoCurados.has(c))) {
       const lista = [...codigos].sort((a, b) => Number(a) - Number(b));
       registrarPendencia(
         'NOME_EM_CODIGOS_DIFERENTES',
@@ -241,6 +252,27 @@ export function extrairLimites(fontes) {
         linhasTodas,
         base,
       );
+      continue;
+    }
+
+    if (base.curado) {
+      limites.push({
+        legislacao: base.legislacao,
+        codigo_ensaio: base.codigo_ensaio,
+        classe: base.classe,
+        matriz: base.matriz,
+        origem_amostra: base.origem_amostra,
+        valor_minimo: base.valor_minimo,
+        valor_maximo: base.valor_maximo,
+        unidade_medida: base.unidade_medida,
+        versao: 1,
+        data_inicio_vigencia: null,
+        data_fim_vigencia: null,
+        requer_validacao: base.requer_validacao_fonte,
+        observacao_validacao: base.observacao_fonte,
+        arquivo_origem: base.arquivo,
+        linhas_origem: juntarLinhas(linhasTodas),
+      });
       continue;
     }
 

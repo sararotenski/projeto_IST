@@ -1,0 +1,66 @@
+Legislacao;Matriz;Origem_Amostra;Ensaio;Descricao;Classe_Legislacao;Valor_Min_Permitido;Valor_Max_Permitido;Un_Medida;Requer_Validacao;Observacao;Fonte
+Resolução CONAMA nº 430/2011;Efluente;Lançamento de efluentes;794;pH (efluente);Art. 16 - Efluentes em geral;5;9;adimensional;não;;CONAMA 430, art. 16, I, a
+Resolução CONAMA nº 430/2011;Efluente;Lançamento de efluentes;794;pH (efluente);Art. 21 - Esgoto sanitário;5;9;adimensional;não;;CONAMA 430, art. 21, I, a
+Resolução CONAMA nº 430/2011;Efluente;Lançamento de efluentes;1189;pH (efluente);Art. 16 - Efluentes em geral;5;9;adimensional;não;;CONAMA 430, art. 16, I, a
+Resolução CONAMA nº 430/2011;Efluente;Lançamento de efluentes;1189;pH (efluente);Art. 21 - Esgoto sanitário;5;9;adimensional;não;;CONAMA 430, art. 21, I, a
+Resolução CONAMA nº 430/2011;Efluente;Lançamento de efluentes;800;Temperatura da água (efluente);Art. 16 - Efluentes em geral;;40;°C;não;A lei diz "inferior a 40 °C";CONAMA 430, art. 16, I, b
+Resolução CONAMA nº 430/2011;Efluente;Lançamento de efluentes;800;Temperatura da água (efluente);Art. 21 - Esgoto sanitário;;40;°C;não;A lei diz "inferior a 40 °C";CONAMA 430, art. 21, I, b
+Resolução CONAMA nº 430/2011;Efluente;Lançamento de efluentes;799;Temperatura da água (efluente);Art. 16 - Efluentes em geral;;40;°C;não;A lei diz "inferior a 40 °C";CONAMA 430, art. 16, I, b
+Resolução CONAMA nº 430/2011;Efluente;Lançamento de efluentes;799;Temperatura da água (efluente);Art. 21 - Esgoto sanitário;;40;°C;não;A lei diz "inferior a 40 °C";CONAMA 430, art. 21, I, b
+Resolução CONAMA nº 430/2011;Efluente;Lançamento de efluentes;119;Sólidos sedimentáveis;Art. 16 - Efluentes em geral;;1;mL/L;não;;CONAMA 430, art. 16, I, c
+Resolução CONAMA nº 430/2011;Efluente;Lançamento de efluentes;119;Sólidos sedimentáveis;Art. 21 - Esgoto sanitário;;1;mL/L;não;;CONAMA 430, art. 21, I, c
+Resolução CONAMA nº 430/2011;Efluente;Lançamento de efluentes;46;Sólidos sedimentáveis;Art. 16 - Efluentes em geral;;1;mL/L;não;;CONAMA 430, art. 16, I, c
+Resolução CONAMA nº 430/2011;Efluente;Lançamento de efluentes;46;Sólidos sedimentáveis;Art. 21 - Esgoto sanitário;;1;mL/L;não;;CONAMA 430, art. 21, I, c
+Resolução CONAMA nº 430/2011;Efluente;Lançamento de efluentes;784;Materiais flutuantes;Art. 16 - Efluentes em geral;;0;Aus/Pres;não;Exige ausência;CONAMA 430, art. 16, I, f
+Resolução CONAMA nº 430/2011;Efluente;Lançamento de efluentes;784;Materiais flutuantes;Art. 21 - Esgoto sanitário;;0;Aus/Pres;não;Exige ausência;CONAMA 430, art. 21, I, f
+Resolução CONAMA nº 430/2011;Efluente;Lançamento de efluentes;112;Óleos vegetais e gorduras animais (OGV);Art. 16 - Efluentes em geral;;50;mg/L;não;;CONAMA 430, art. 16, I, e, 2
+Resolução CONAMA nº 430/2011;Efluente;Lançamento de efluentes;111;Óleos e graxas totais (OGT);Art. 21 - Esgoto sanitário;;100;mg/L;não;Substâncias solúveis em hexano;CONAMA 430, art. 21, I, e
+Resolução CONAMA nº 430/2011;Efluente;Lançamento de efluentes;38;Óleos e graxas totais (OGT);Art. 21 - Esgoto sanitário;;100;mg/L;não;Substâncias solúveis em hexano;CONAMA 430, art. 21, I, e
+Resolução CONAMA nº 430/2011;Efluente;Lançamento de efluentes;92;DBO 5 dias (por trak);Art. 21 - Esgoto sanitário;;120;mg/L;sim;Condicional: máximo 120 mg/L, que pode ser ultrapassado se o tratamento remover pelo menos 60% da DBO. Exige o resultado de entrada para avaliar;CONAMA 430, art. 21, I, d
+Resolução CONAMA nº 430/2011;Efluente;Lançamento de efluentes;19;DBO 5 dias (por trak);Art. 21 - Esgoto sanitário;;120;mg/L;sim;Condicional: máximo 120 mg/L, que pode ser ultrapassado se o tratamento remover pelo menos 60% da DBO. Exige o resultado de entrada para avaliar;CONAMA 430, art. 21, I, d
+Resolução CONAMA nº 430/2011;Efluente;Lançamento de efluentes;15915;DBO 5 dias (por OD);Art. 21 - Esgoto sanitário;;120;mg/L;sim;Condicional: máximo 120 mg/L, que pode ser ultrapassado se o tratamento remover pelo menos 60% da DBO. Exige o resultado de entrada para avaliar;CONAMA 430, art. 21, I, d
+Resolução CONAMA nº 430/2011;Efluente;Lançamento de efluentes;106;Nitrogênio amoniacal total (NA);Art. 16 - Efluentes em geral;;20;mg/L;não;Como N. Não exigível para esgoto sanitário (art. 21, § 1º);CONAMA 430, art. 16, II, Tabela I
+Resolução CONAMA nº 430/2011;Efluente;Lançamento de efluentes;33;Nitrogênio amoniacal total (NA);Art. 16 - Efluentes em geral;;20;mg/L;não;Como N. Não exigível para esgoto sanitário (art. 21, § 1º);CONAMA 430, art. 16, II, Tabela I
+Resolução CONAMA nº 430/2011;Efluente;Lançamento de efluentes;117;Sulfeto (efluente);Art. 16 - Efluentes em geral;;1;mg/L;não;;CONAMA 430, art. 16, II, Tabela I
+Resolução CONAMA nº 430/2011;Efluente;Lançamento de efluentes;198;Ferro dissolvido (efluente);Art. 16 - Efluentes em geral;;15;mg/L;não;;CONAMA 430, art. 16, II, Tabela I
+Resolução CONAMA nº 430/2011;Efluente;Lançamento de efluentes;282;Zinco (efluente);Art. 16 - Efluentes em geral;;5;mg/L;não;Limite de zinco total (o código foi assumido como total);CONAMA 430, art. 16, II, Tabela I
+Resolução CONAMA nº 430/2011;Efluente;Lançamento de efluentes;270;Níquel (efluente);Art. 16 - Efluentes em geral;;2;mg/L;não;Limite de níquel total (o código foi assumido como total);CONAMA 430, art. 16, II, Tabela I
+Resolução CONAMA nº 430/2011;Efluente;Lançamento de efluentes;257;Cádmio (efluente);Art. 16 - Efluentes em geral;;0,2;mg/L;não;Limite de cádmio total (o código foi assumido como total);CONAMA 430, art. 16, II, Tabela I
+Resolução CONAMA nº 430/2011;Efluente;Lançamento de efluentes;263;Estanho (efluente);Art. 16 - Efluentes em geral;;4;mg/L;não;Limite de estanho total (o código foi assumido como total);CONAMA 430, art. 16, II, Tabela I
+Resolução CONAMA nº 430/2011;Efluente;Lançamento de efluentes;196;Cromo hexavalente (efluente);Art. 16 - Efluentes em geral;;0,1;mg/L;não;;CONAMA 430, art. 16, II, Tabela I
+Resolução CONSEMA nº 299/2025;Efluente;Lançamento de efluentes;794;pH (efluente);Anexo I - Efluente industrial;6;9;adimensional;não;Faixa corrigida pela errata do DOE nº 22.770;CONSEMA 299, Anexo I
+Resolução CONSEMA nº 299/2025;Efluente;Lançamento de efluentes;794;pH (efluente);Art. 9 - Efluente sanitário;6;9;adimensional;não;;CONSEMA 299, art. 9º, a
+Resolução CONSEMA nº 299/2025;Efluente;Lançamento de efluentes;1189;pH (efluente);Anexo I - Efluente industrial;6;9;adimensional;não;Faixa corrigida pela errata do DOE nº 22.770;CONSEMA 299, Anexo I
+Resolução CONSEMA nº 299/2025;Efluente;Lançamento de efluentes;1189;pH (efluente);Art. 9 - Efluente sanitário;6;9;adimensional;não;;CONSEMA 299, art. 9º, a
+Resolução CONSEMA nº 299/2025;Efluente;Lançamento de efluentes;800;Temperatura da água (efluente);Anexo I - Efluente industrial;;40;°C;não;A lei diz "inferior a 40 °C";CONSEMA 299, Anexo I
+Resolução CONSEMA nº 299/2025;Efluente;Lançamento de efluentes;800;Temperatura da água (efluente);Art. 9 - Efluente sanitário;;40;°C;não;A lei diz "inferior a 40 °C";CONSEMA 299, art. 9º, b
+Resolução CONSEMA nº 299/2025;Efluente;Lançamento de efluentes;799;Temperatura da água (efluente);Anexo I - Efluente industrial;;40;°C;não;A lei diz "inferior a 40 °C";CONSEMA 299, Anexo I
+Resolução CONSEMA nº 299/2025;Efluente;Lançamento de efluentes;799;Temperatura da água (efluente);Art. 9 - Efluente sanitário;;40;°C;não;A lei diz "inferior a 40 °C";CONSEMA 299, art. 9º, b
+Resolução CONSEMA nº 299/2025;Efluente;Lançamento de efluentes;119;Sólidos sedimentáveis;Anexo I - Efluente industrial;;1;mL/L;não;;CONSEMA 299, Anexo I
+Resolução CONSEMA nº 299/2025;Efluente;Lançamento de efluentes;119;Sólidos sedimentáveis;Art. 9 - Efluente sanitário;;1;mL/L;não;;CONSEMA 299, art. 9º, c
+Resolução CONSEMA nº 299/2025;Efluente;Lançamento de efluentes;46;Sólidos sedimentáveis;Anexo I - Efluente industrial;;1;mL/L;não;;CONSEMA 299, Anexo I
+Resolução CONSEMA nº 299/2025;Efluente;Lançamento de efluentes;46;Sólidos sedimentáveis;Art. 9 - Efluente sanitário;;1;mL/L;não;;CONSEMA 299, art. 9º, c
+Resolução CONSEMA nº 299/2025;Efluente;Lançamento de efluentes;784;Materiais flutuantes;Art. 9 - Efluente sanitário;;0;Aus/Pres;não;Exige ausência;CONSEMA 299, art. 9º, f
+Resolução CONSEMA nº 299/2025;Efluente;Lançamento de efluentes;112;Óleos vegetais e gorduras animais (OGV);Anexo I - Efluente industrial;;50;mg/L;não;;CONSEMA 299, Anexo I
+Resolução CONSEMA nº 299/2025;Efluente;Lançamento de efluentes;112;Óleos vegetais e gorduras animais (OGV);Art. 9 - Efluente sanitário;;50;mg/L;não;;CONSEMA 299, art. 9º, e, 2
+Resolução CONSEMA nº 299/2025;Efluente;Lançamento de efluentes;92;DBO 5 dias (por trak);Anexo I - Efluente industrial;;60;mg/L;sim;Condicional: 60 mg/L ou redução de pelo menos 80% da DBO. Exige o resultado de entrada para avaliar;CONSEMA 299, Anexo I
+Resolução CONSEMA nº 299/2025;Efluente;Lançamento de efluentes;92;DBO 5 dias (por trak);Art. 9 - Efluente sanitário;;60;mg/L;sim;Condicional: 60 mg/L ou redução de pelo menos 80% da DBO. Exige o resultado de entrada para avaliar;CONSEMA 299, art. 9º, d
+Resolução CONSEMA nº 299/2025;Efluente;Lançamento de efluentes;19;DBO 5 dias (por trak);Anexo I - Efluente industrial;;60;mg/L;sim;Condicional: 60 mg/L ou redução de pelo menos 80% da DBO. Exige o resultado de entrada para avaliar;CONSEMA 299, Anexo I
+Resolução CONSEMA nº 299/2025;Efluente;Lançamento de efluentes;19;DBO 5 dias (por trak);Art. 9 - Efluente sanitário;;60;mg/L;sim;Condicional: 60 mg/L ou redução de pelo menos 80% da DBO. Exige o resultado de entrada para avaliar;CONSEMA 299, art. 9º, d
+Resolução CONSEMA nº 299/2025;Efluente;Lançamento de efluentes;15915;DBO 5 dias (por OD);Anexo I - Efluente industrial;;60;mg/L;sim;Condicional: 60 mg/L ou redução de pelo menos 80% da DBO. Exige o resultado de entrada para avaliar;CONSEMA 299, Anexo I
+Resolução CONSEMA nº 299/2025;Efluente;Lançamento de efluentes;15915;DBO 5 dias (por OD);Art. 9 - Efluente sanitário;;60;mg/L;sim;Condicional: 60 mg/L ou redução de pelo menos 80% da DBO. Exige o resultado de entrada para avaliar;CONSEMA 299, art. 9º, d
+Resolução CONSEMA nº 299/2025;Efluente;Lançamento de efluentes;101;Fósforo total (efluente);Anexo I - Efluente industrial;;4;mg/L;sim;Condicional: 4 mg/L ou redução de pelo menos 75% do fósforo;CONSEMA 299, Anexo I
+Resolução CONSEMA nº 299/2025;Efluente;Lançamento de efluentes;101;Fósforo total (efluente);Art. 9 - Efluente sanitário;;4;mg/L;sim;Condicional: 4 mg/L só para lançamento em lagoas, lagunas e estuários, ou redução de pelo menos 75% do fósforo;CONSEMA 299, art. 9º, g
+Resolução CONSEMA nº 299/2025;Efluente;Lançamento de efluentes;28;Fósforo total (efluente);Anexo I - Efluente industrial;;4;mg/L;sim;Condicional: 4 mg/L ou redução de pelo menos 75% do fósforo;CONSEMA 299, Anexo I
+Resolução CONSEMA nº 299/2025;Efluente;Lançamento de efluentes;28;Fósforo total (efluente);Art. 9 - Efluente sanitário;;4;mg/L;sim;Condicional: 4 mg/L só para lançamento em lagoas, lagunas e estuários, ou redução de pelo menos 75% do fósforo;CONSEMA 299, art. 9º, g
+Resolução CONSEMA nº 299/2025;Efluente;Lançamento de efluentes;936;Fósforo total (efluente);Anexo I - Efluente industrial;;4;mg/L;sim;Condicional: 4 mg/L ou redução de pelo menos 75% do fósforo;CONSEMA 299, Anexo I
+Resolução CONSEMA nº 299/2025;Efluente;Lançamento de efluentes;936;Fósforo total (efluente);Art. 9 - Efluente sanitário;;4;mg/L;sim;Condicional: 4 mg/L só para lançamento em lagoas, lagunas e estuários, ou redução de pelo menos 75% do fósforo;CONSEMA 299, art. 9º, g
+Resolução CONSEMA nº 299/2025;Efluente;Lançamento de efluentes;106;Nitrogênio amoniacal total (NA);Anexo I - Efluente industrial;;20;mg/L;não;Como N. Para efluente sanitário é só parâmetro de acompanhamento (art. 9º, i);CONSEMA 299, Anexo I
+Resolução CONSEMA nº 299/2025;Efluente;Lançamento de efluentes;33;Nitrogênio amoniacal total (NA);Anexo I - Efluente industrial;;20;mg/L;não;Como N. Para efluente sanitário é só parâmetro de acompanhamento (art. 9º, i);CONSEMA 299, Anexo I
+Resolução CONSEMA nº 299/2025;Efluente;Lançamento de efluentes;117;Sulfeto (efluente);Anexo I - Efluente industrial;;1;mg/L;não;;CONSEMA 299, Anexo I
+Resolução CONSEMA nº 299/2025;Efluente;Lançamento de efluentes;198;Ferro dissolvido (efluente);Anexo I - Efluente industrial;;15;mg/L;não;;CONSEMA 299, Anexo I
+Resolução CONSEMA nº 299/2025;Efluente;Lançamento de efluentes;282;Zinco (efluente);Anexo I - Efluente industrial;;1;mg/L;não;Limite de zinco total (o código foi assumido como total);CONSEMA 299, Anexo I
+Resolução CONSEMA nº 299/2025;Efluente;Lançamento de efluentes;270;Níquel (efluente);Anexo I - Efluente industrial;;1;mg/L;não;Limite de níquel total (o código foi assumido como total);CONSEMA 299, Anexo I
+Resolução CONSEMA nº 299/2025;Efluente;Lançamento de efluentes;257;Cádmio (efluente);Anexo I - Efluente industrial;;0,1;mg/L;não;Limite de cádmio total (o código foi assumido como total);CONSEMA 299, Anexo I
+Resolução CONSEMA nº 299/2025;Efluente;Lançamento de efluentes;263;Estanho (efluente);Anexo I - Efluente industrial;;4;mg/L;não;Limite de estanho total (o código foi assumido como total);CONSEMA 299, Anexo I
+Resolução CONSEMA nº 299/2025;Efluente;Lançamento de efluentes;196;Cromo hexavalente (efluente);Anexo I - Efluente industrial;;0,1;mg/L;não;;CONSEMA 299, Anexo I

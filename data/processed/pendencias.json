@@ -1242,7 +1242,10 @@
       "valor_minimo": "0.200000",
       "valor_maximo": "0.000000",
       "unidade_medida": "mg/L",
-      "unidade_original": "mg/L"
+      "unidade_original": "mg/L",
+      "curado": false,
+      "requer_validacao_fonte": false,
+      "observacao_fonte": null
     }
   },
   {
@@ -1277,7 +1280,10 @@
           "valor_minimo": "0.000000",
           "valor_maximo": "1.000000",
           "unidade_medida": "ppb",
-          "unidade_original": "ppb"
+          "unidade_original": "ppb",
+          "curado": false,
+          "requer_validacao_fonte": false,
+          "observacao_fonte": null
         },
         {
           "arquivo": "GM888_Agua_Consumo_Humano.csv",
@@ -1292,7 +1298,10 @@
           "valor_minimo": "0.000000",
           "valor_maximo": "1.000000",
           "unidade_medida": "µg/L",
-          "unidade_original": "µg/L"
+          "unidade_original": "µg/L",
+          "curado": false,
+          "requer_validacao_fonte": false,
+          "observacao_fonte": null
         }
       ]
     }
@@ -1326,7 +1335,10 @@
       "valor_minimo": "0.200000",
       "valor_maximo": "0.000000",
       "unidade_medida": "mg/L",
-      "unidade_original": "mg/L"
+      "unidade_original": "mg/L",
+      "curado": false,
+      "requer_validacao_fonte": false,
+      "observacao_fonte": null
     }
   },
   {
@@ -1487,7 +1499,10 @@
           "valor_minimo": "0.000000",
           "valor_maximo": "13.000000",
           "unidade_medida": "µg/L",
-          "unidade_original": "µg/L"
+          "unidade_original": "µg/L",
+          "curado": false,
+          "requer_validacao_fonte": false,
+          "observacao_fonte": null
         },
         {
           "arquivo": "GM888_Agua_Consumo_Humano.csv",
@@ -1502,7 +1517,10 @@
           "valor_minimo": "0.000000",
           "valor_maximo": "0.000000",
           "unidade_medida": "µg/L",
-          "unidade_original": "µg/L"
+          "unidade_original": "µg/L",
+          "curado": false,
+          "requer_validacao_fonte": false,
+          "observacao_fonte": null
         }
       ]
     }
@@ -1530,7 +1548,10 @@
           "valor_minimo": "0.000000",
           "valor_maximo": "60.000000",
           "unidade_medida": "µg/L",
-          "unidade_original": "µg/L"
+          "unidade_original": "µg/L",
+          "curado": false,
+          "requer_validacao_fonte": false,
+          "observacao_fonte": null
         },
         {
           "arquivo": "GM888_Agua_Consumo_Humano.csv",
@@ -1545,7 +1566,10 @@
           "valor_minimo": "0.000000",
           "valor_maximo": "0.000000",
           "unidade_medida": "µg/L",
-          "unidade_original": "µg/L"
+          "unidade_original": "µg/L",
+          "curado": false,
+          "requer_validacao_fonte": false,
+          "observacao_fonte": null
         }
       ]
     }
@@ -1861,7 +1885,10 @@
           "valor_minimo": "0.000000",
           "valor_maximo": "0.001000",
           "unidade_medida": "mg/L",
-          "unidade_original": "mg/L"
+          "unidade_original": "mg/L",
+          "curado": false,
+          "requer_validacao_fonte": false,
+          "observacao_fonte": null
         },
         {
           "arquivo": "GM888_Agua_Tratada.csv",
@@ -1876,7 +1903,10 @@
           "valor_minimo": "0.000000",
           "valor_maximo": "0.000000",
           "unidade_medida": "mg/L",
-          "unidade_original": "mg/L"
+          "unidade_original": "mg/L",
+          "curado": false,
+          "requer_validacao_fonte": false,
+          "observacao_fonte": null
         }
       ]
     }
@@ -1931,7 +1961,10 @@
           "valor_minimo": "0.000000",
           "valor_maximo": "0.300000",
           "unidade_medida": "mg/L",
-          "unidade_original": "mg/L"
+          "unidade_original": "mg/L",
+          "curado": false,
+          "requer_validacao_fonte": false,
+          "observacao_fonte": null
         },
         {
           "arquivo": "GM888_Agua_Tratada.csv",
@@ -1946,7 +1979,10 @@
           "valor_minimo": "0.000000",
           "valor_maximo": "0.000000",
           "unidade_medida": "mg/L",
-          "unidade_original": "mg/L"
+          "unidade_original": "mg/L",
+          "curado": false,
+          "requer_validacao_fonte": false,
+          "observacao_fonte": null
         }
       ]
     }
@@ -2073,6 +2109,24 @@
     "tipo": "VIGENCIA_NAO_INFORMADA",
     "importado": true,
     "descricao": "Portaria SES nº1468/2022: arquivos não trazem versão nem datas de vigência. Limites importados com versão 1 e vigência vazia; confirmar no texto oficial.",
+    "arquivo_origem": null,
+    "linhas_origem": null,
+    "dados": null
+  },
+  {
+    "chave": "VIGENCIA_NAO_INFORMADA|*||Resolução CONAMA nº 430/2011",
+    "tipo": "VIGENCIA_NAO_INFORMADA",
+    "importado": true,
+    "descricao": "Resolução CONAMA nº 430/2011: arquivos não trazem versão nem datas de vigência. Limites importados com versão 1 e vigência vazia; confirmar no texto oficial.",
+    "arquivo_origem": null,
+    "linhas_origem": null,
+    "dados": null
+  },
+  {
+    "chave": "VIGENCIA_NAO_INFORMADA|*||Resolução CONSEMA nº 299/2025",
+    "tipo": "VIGENCIA_NAO_INFORMADA",
+    "importado": true,
+    "descricao": "Resolução CONSEMA nº 299/2025: arquivos não trazem versão nem datas de vigência. Limites importados com versão 1 e vigência vazia; confirmar no texto oficial.",
     "arquivo_origem": null,
     "linhas_origem": null,
     "dados": null

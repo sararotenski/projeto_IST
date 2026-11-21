@@ -39,7 +39,7 @@ export default function Resultados({ parametro }) {
   const colunas = useMemo(() => {
     const portarias = (op.dados?.legislacoes ?? []).map((l) => ({
       chave: `portaria:${l.nome}`,
-      titulo: nomeCurto(l.nome),
+      titulo: <span title={l.descricao ?? undefined}>{nomeCurto(l.nome)}</span>,
       valorOrdem: (r) => r.portarias?.[l.nome]?.categoria ?? 'z',
       render: (r) => <CelulaPortaria p={r.portarias?.[l.nome]} />,
     }));
@@ -69,7 +69,7 @@ export default function Resultados({ parametro }) {
 
   return (
     <Secao titulo="Resultados"
-      descricao="Cada resultado é comparado com cada portaria que tem limite para o ensaio. A coluna Geral mostra a classificação mais grave entre as portarias.">
+      descricao="Cada resultado é comparado com cada legislação que tem limite para o ensaio. A coluna Geral mostra a classificação mais grave. CONAMA 430 e CONSEMA 299 valem só para amostras de efluente, e os códigos do laboratório foram associados a elas pela equipe, sem validação do IST.">
       <Estado erro={op.erro} carregando={op.carregando}>
         {op.dados && (
           <Filtros aoLimpar={() => setF(vazio)}>

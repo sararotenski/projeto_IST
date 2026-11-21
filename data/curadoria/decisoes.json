@@ -2,7 +2,9 @@
   "descricao": "Decisões de curadoria dos limites legais. Cada decisão cita a fonte oficial e é aplicada por 'npm run curadoria', com registro dos valores anteriores em etl.decisao_curadoria. Revisadas pelo agente em 23/10/2026 a partir do texto oficial; recomenda-se conferência por um responsável técnico.",
   "fontes": {
     "GM888": "Portaria GM/MS nº 888, de 4 de maio de 2021 — DOU de 07/05/2021, Edição 85, Seção 1 (https://www.in.gov.br/en/web/dou/-/portaria-gm/ms-n-888-de-4-de-maio-de-2021-318461562)",
-    "SES1468": "Portaria SES/SC nº 1468, de 21 de dezembro de 2022, Anexo I (https://www.legisweb.com.br/legislacao/?id=440215)"
+    "SES1468": "Portaria SES/SC nº 1468, de 21 de dezembro de 2022, Anexo I (https://www.legisweb.com.br/legislacao/?id=440215)",
+    "CONAMA430": "Resolução CONAMA nº 430, de 13 de maio de 2011 — DOU nº 92, de 16/05/2011, pág. 89 (data/raw/legislacoes/textos_oficiais/CONAMA_430_2011_lancamento_efluentes.pdf)",
+    "CONSEMA299": "Resolução CONSEMA nº 299, de 2 de dezembro de 2025 — DOE/SC nº 22.662-A, de 16/12/2025; errata no DOE nº 22.770 (data/raw/legislacoes/textos_oficiais/CONSEMA_299_2025_efluentes_industriais.pdf)"
   },
   "decisoes": [
     {
@@ -301,8 +303,17 @@
     {
       "chave": "DIV-691-AT",
       "acao": "definir_limite",
-      "alvo": { "legislacao": "Portaria GM/MS Nº888 5/21", "origem_amostra": "Agua Tratada", "matriz": "Água - BNU", "codigo_ensaio": "691" },
-      "valores": { "valor_minimo": "0", "valor_maximo": "0.001", "unidade_medida": "mg/L" },
+      "alvo": {
+        "legislacao": "Portaria GM/MS Nº888 5/21",
+        "origem_amostra": "Agua Tratada",
+        "matriz": "Água - BNU",
+        "codigo_ensaio": "691"
+      },
+      "valores": {
+        "valor_minimo": "0",
+        "valor_maximo": "0.001",
+        "unidade_medida": "mg/L"
+      },
       "descricao": "1,2-Diclorobenzeno: a lista trazia 0,001 µg/L para este código. O VMP é 0,001 mg/L, mesmo valor dos demais códigos; a unidade foi corrigida.",
       "fonte": "GM888, Anexo 11",
       "resolve": []
@@ -646,6 +657,42 @@
       "resolve": [
         {
           "tipo": "NOME_EM_CODIGOS_DIFERENTES"
+        }
+      ]
+    },
+    {
+      "chave": "VIG-CONAMA430",
+      "acao": "definir_vigencia",
+      "alvo": {
+        "legislacao": "Resolução CONAMA nº 430/2011"
+      },
+      "valores": {
+        "data_inicio_vigencia": "2011-05-16"
+      },
+      "descricao": "Início de vigência na publicação no DOU (art. 31). Limites de lançamento de efluentes; aplicados só a amostras de efluente. Códigos do laboratório associados pela equipe, sem validação do IST.",
+      "fonte": "CONAMA430, art. 31",
+      "resolve": [
+        {
+          "tipo": "VIGENCIA_NAO_INFORMADA",
+          "extra": "Resolução CONAMA nº 430/2011"
+        }
+      ]
+    },
+    {
+      "chave": "VIG-CONSEMA299",
+      "acao": "definir_vigencia",
+      "alvo": {
+        "legislacao": "Resolução CONSEMA nº 299/2025"
+      },
+      "valores": {
+        "data_inicio_vigencia": "2025-12-16"
+      },
+      "descricao": "Início de vigência na publicação no DOE/SC (art. 31); revoga a CONSEMA 181/2021. Aplicada só a amostras de efluente. Códigos do laboratório associados pela equipe, sem validação do IST.",
+      "fonte": "CONSEMA299, art. 31",
+      "resolve": [
+        {
+          "tipo": "VIGENCIA_NAO_INFORMADA",
+          "extra": "Resolução CONSEMA nº 299/2025"
         }
       ]
     }

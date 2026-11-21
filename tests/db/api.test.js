@@ -55,7 +55,9 @@ test('limites agrupados por parâmetro não repetem linhas e somam todos os limi
 test('curadoria: nenhuma pendência aberta e nenhum limite ativo sem vigência', { skip: !temBanco }, async () => {
   const { corpo } = await get('qualidade');
   assert.equal(corpo.contagens.abertas, 0);
-  assert.equal(corpo.contagens.requer_validacao, 0);
+  // só os limites condicionais (ex.: DBO "60 mg/L ou 80% de remoção") ficam para avaliação, com o motivo
+  const semMotivo = (await pool.query(`SELECT count(*)::int AS n FROM limite WHERE requer_validacao AND observacao_validacao NOT LIKE 'Condicional%'`)).rows[0].n;
+  assert.equal(semMotivo, 0);
   const semVig = (await pool.query('SELECT count(*)::int AS n FROM limite WHERE ativo AND data_inicio_vigencia IS NULL')).rows[0].n;
   assert.equal(semVig, 0);
 });
