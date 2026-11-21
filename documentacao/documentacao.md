@@ -143,6 +143,8 @@ Unidades: "ug/L" e "μg/L" são lidos como "µg/L", e "ppb" como "µg/L", o que 
 
 ## 5. Tendências e desvios (`server/analise/tendencia.js`)
 
+**Com os dados reais atuais não há séries.** A exportação Gerência de Amostra não traz o ponto de coleta, e a Expedição traz o ponto de só 6 amostras, cada uma num ponto diferente. A análise foi testada apenas com dados fictícios (`data/exemplos/` e `tests/`). Ela passa a funcionar sozinha quando os resultados importados tiverem o mesmo ponto em pelo menos 5 datas.
+
 Uma série reúne os resultados de um mesmo ponto de coleta, do mesmo ensaio e com a mesma unidade, em ordem de data.
 
 | Análise | Método | Critério |
@@ -234,6 +236,7 @@ O modelo original (`sql/000_script_original.sql`) foi preservado. As migrações
 
 - 001: amplia `ensaio.nome` e `limite.unidade_medida`. Adiciona o código do laboratório, a origem e a matriz no limite, a rastreabilidade, as chaves naturais, a PK da tabela associativa, a unidade no resultado e o esquema `etl`.
 - 002: limite ativo/inativo; código da amostra e ponto de coleta; um resultado por amostra e ensaio; lotes de lançamento; trilha de curadoria.
+- 003: qualificador do resultado (`<` abaixo do limite de quantificação, `>` acima da faixa), valor original como veio do arquivo, lote de cada resultado e origem "laboratorio" nos lotes. Aplicada no `db-teste` sem uma autorização separada da usuária, o que contraria o planejamento; foi registrada aqui e pode ser desfeita com `sql/003_resultados_laboratorio_reverter.sql`.
 
 Pontos que continuam em aberto no modelo:
 

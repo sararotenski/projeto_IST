@@ -1,6 +1,6 @@
 # Inventário de arquivos e diagnóstico do ambiente
 
-Levantamento feito em 23/10/2026.
+Levantamento feito em 23/10/2026 e atualizado em 21/11/2026.
 
 ## Ambiente
 
@@ -40,3 +40,25 @@ O detalhamento linha a linha está em `reports/relatorio_qualidade.md`.
 | `planejamento.md` | Requisitos do projeto |
 | `~/Downloads/listaEnsaiosLegislacaoPdf - *.pdf` (3 PDFs) | Não processados. Parecem ser a versão em PDF das listas dos CSVs. Podem ser usados para resolver as pendências. |
 | `~/Downloads/modelagem-paplicado.pdf`, `*.png`, `*.brM3` | Modelos conceitual e lógico (brModelo). Não processados. O script SQL foi usado como referência. |
+
+## Arquivos adicionados depois (novembro/2026)
+
+### Exportações do laboratório (pasta `docs/`, privada, fora do Git)
+
+| Arquivo | Formato | Conteúdo | Linhas | Uso |
+|---|---|---|---:|---|
+| `Tela_GerenciaAmostra_ResultadoColuna-_1_.csv` | CSV `,`, uma linha por amostra e uma coluna por ensaio | Resultados de amostras coletadas entre 01/06 e 29/07/2026, com datas de coleta e conclusão | 673 amostras · 323 ensaios | Importado pelo site (aba Lançar resultados) |
+| `Tela_Expedição.csv` | CSV `,`, uma linha por resultado | Ponto de coleta, unidade, limite de quantificação e VMP aplicado pelo laboratório | 15 resultados de 6 amostras | Importado junto com a Gerência, ligado pelo código externo da amostra |
+| `extratoUltraLIMS.txt` | Log técnico do UltraLIMS 5.32 | 12 segundos de uso da tela de conferência de resultados: comandos SQL e a sessão do usuário, **com senhas e tokens** | 307 linhas | Só para entender a estrutura do UltraLIMS. Não é importado |
+
+Problemas encontrados nas exportações: sem legislação, cliente nem origem da amostra; sem unidades na Gerência; valores com `<`, `Ausente`/`Presente`, vírgula e ponto misturados; campos `________` em branco; amostras que não são água (peixe). O tratamento está na seção 3.1 da documentação, e os números da importação em `relatorio_importacao_resultados.md`.
+
+### Legislações (pasta `data/raw/legislacoes/`)
+
+| Pasta | Arquivos | Uso |
+|---|---|---|
+| raiz | 6 listas de limites do UltraLIMS em CSV (GM/MS 888 e SES 1468) | Importadas |
+| `listas_ultralims_pdf/` | As mesmas 6 listas em PDF | Comprovante da fonte; conferidas e idênticas aos CSVs |
+| `textos_oficiais/` | CONAMA 357/2005, 396/2008, 420/2009 e 430/2011; CONSEMA 119/2017, 181/2021 (revogada), 182/2021 e 299/2025 | A 430 e a 299 deram origem a `data/curadoria/limites_textos_oficiais.csv` (65 limites, importados). As demais não foram cadastradas: dependem de classe do corpo d'água, uso, vazão da ETE ou tipo de amostra que os arquivos não trazem |
+
+Foram removidas 4 cópias idênticas (byte a byte): uma da CONAMA 396, uma da lista SES 1468 de água superficial e duas listas em PDF repetidas em `docs/`.

@@ -1,6 +1,6 @@
 # Relatório de importação dos resultados
 
-Gerado por `npm run relatorio` em 20/11/2026, 23:44:38, a partir do banco. Só traz números agregados: códigos de amostra, clientes e pontos de coleta não aparecem aqui.
+Gerado por `npm run relatorio` em 20/11/2026, 23:54:21, a partir do banco. Só traz números agregados: códigos de amostra, clientes e pontos de coleta não aparecem aqui.
 
 ## Situação atual
 

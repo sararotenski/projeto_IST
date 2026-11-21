@@ -48,7 +48,7 @@ export default function Tendencias({ parametro }) {
             aoSelecionar={(s) => { setSerie(s.serie); window.history.replaceState(null, '', `#tendencias/${encodeURIComponent(s.serie)}`); }}
             selecionada={serie} porPagina={15} />
         ) : (
-          <SemDados titulo="Nenhuma série encontrada">As séries aparecem quando há resultados lançados com data e valor.</SemDados>
+          <SemDados titulo="Nenhuma série encontrada">Uma série precisa de resultados do mesmo ensaio no mesmo ponto de coleta, em pelo menos 5 datas. As exportações importadas não trazem ponto de coleta para a maioria das amostras, por isso ainda não há séries com dados reais.</SemDados>
         ))}
       </Estado>
       {serie && <Detalhe serie={serie} />}
