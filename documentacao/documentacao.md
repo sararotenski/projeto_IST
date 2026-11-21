@@ -44,6 +44,7 @@ cp .env.example .env                 # credenciais do banco (o arquivo não vai 
 npm run migrar -- --confirmar        # estrutura, migrações 001 e 002 e views
 npm run importar                     # limites dos CSVs (pode repetir sem duplicar)
 npm run curadoria                    # aplica as decisões de tratamento (idempotente)
+npm run relatorio                    # reports/relatorio_importacao_resultados.md (só números agregados)
 npm start                            # compila e abre em http://127.0.0.1:3001
 ```
 

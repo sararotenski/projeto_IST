@@ -15,6 +15,7 @@
     "importar": "node --env-file-if-exists=.env scripts/importar.js",
     "curadoria": "node --env-file-if-exists=.env scripts/aplicar-curadoria.js",
     "alertas": "node --env-file-if-exists=.env scripts/gerar-alertas.js",
+    "relatorio": "node --env-file-if-exists=.env scripts/relatorio-resultados.js",
     "api": "node --env-file-if-exists=.env server/index.js",
     "web": "vite",
     "build": "vite build",

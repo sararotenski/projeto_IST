@@ -14,6 +14,7 @@ cp .env.example .env              # credenciais do banco (fora do Git)
 npm run migrar -- --confirmar     # estrutura e views
 npm run importar                  # limites legais dos CSVs
 npm run curadoria                 # tratamento documentado dos limites
+npm run relatorio                 # relatório da importação dos resultados em reports/
 npm start                         # http://127.0.0.1:3001
 ```
 
