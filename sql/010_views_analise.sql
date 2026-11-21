@@ -163,6 +163,13 @@ avaliado AS (
             WHEN c.unidade_resultado IS NULL OR c.unidade_limite IS NULL THEN 'Unidade não informada no resultado ou no limite'
             WHEN c.fator IS NULL                   THEN 'Unidades incompatíveis (sem conversão validada)'
             WHEN c.valor_minimo IS NULL AND c.valor_maximo IS NULL THEN 'Limite sem valores'
+            -- Limite condicional ("X mg/L OU eficiência de remoção"): quem atende a
+            -- concentração já cumpre a lei. Só fica pendente o que passa do valor.
+            WHEN c.requer_validacao AND c.observacao_validacao LIKE 'Condicional%'
+                 AND (c.data_inicio_vigencia IS NOT NULL OR c.data_fim_vigencia IS NOT NULL)
+                 AND c.valor_comparado <= c.valor_maximo AND c.qualificador IS DISTINCT FROM '>'
+                 AND (c.valor_minimo IS NULL OR c.valor_comparado >= c.valor_minimo)
+                                                   THEN NULL
             WHEN c.requer_validacao                THEN COALESCE(c.observacao_validacao, 'Limite marcado para validação')
             WHEN c.data_inicio_vigencia IS NULL AND c.data_fim_vigencia IS NULL THEN 'Vigência do limite não informada'
         END AS motivo_pendencia,

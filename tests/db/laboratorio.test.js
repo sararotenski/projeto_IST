@@ -77,8 +77,9 @@ test('importa Gerência + Expedição e classifica por portaria', { skip: !temBa
   assert.equal(lei('TESTE-04.FIC', '112', C430), 'Acima do limite máximo'); // OGV 60 > 50
   assert.equal(lei('TESTE-04.FIC', '106', C299), 'Acima do limite máximo'); // NA 25 > 20
   assert.equal(lei('TESTE-04.FIC', '119', C430), 'Dentro dos limites'); // S. Sed. <0,3 ≤ 1
-  assert.equal(lei('TESTE-04.FIC', '92', C299), 'Pendente de validação'); // DBO: condicional
-  assert.match(cat('TESTE-04.FIC', '92').portarias[C299].motivo, /Condicional/);
+  // DBO condicional (60 mg/L OU 80% de remoção): 30 ≤ 60 já cumpre; DBO 90 > 60 fica pendente
+  assert.equal(lei('TESTE-04.FIC', '92', C299), 'Dentro dos limites');
+  assert.equal(lei('TESTE-04.FIC', '92', C430), 'Dentro dos limites'); // 30 ≤ 120
   // limite de efluente não vale para água; amostra com DBO + ensaio de água é água
   assert.equal(cat('TESTE-02.FIC', '794').categoria, 'Sem limite aplicável identificado');
   assert.equal(cat('TESTE-05.FIC', '92').categoria, 'Sem limite aplicável identificado');

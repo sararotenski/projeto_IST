@@ -129,6 +129,15 @@ test('limite real (curado, com vigência) classifica automaticamente', { skip: !
   assert.equal(c.categoria, 'Acima do limite máximo');
 });
 
+test('limite condicional: dentro pela concentração, pendente acima dela', { skip: !temBanco }, async () => {
+  await db.query(`UPDATE limite SET requer_validacao = TRUE, observacao_validacao = 'Condicional: 1 µg/L ou remoção' WHERE fk_id_ensaio = $1`, [ids.unilateral]);
+  assert.equal((await categoria(ids.uniDentro)).categoria, 'Dentro dos limites'); // 0,5 ≤ 1
+  const acima = await categoria(ids.uniAcima); // 2 > 1: pode atender pela remoção
+  assert.equal(acima.categoria, 'Pendente de validação');
+  assert.match(acima.motivo_pendencia, /Condicional/);
+  await db.query(`UPDATE limite SET requer_validacao = FALSE, observacao_validacao = NULL WHERE fk_id_ensaio = $1`, [ids.unilateral]);
+});
+
 test('limite inativo não é aplicado', { skip: !temBanco }, async () => {
   await db.query('UPDATE limite SET ativo = FALSE WHERE fk_id_ensaio = $1', [ids.unilateral]);
   assert.equal((await categoria(ids.uniAcima)).categoria, 'Sem limite aplicável identificado');

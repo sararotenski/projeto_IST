@@ -221,7 +221,7 @@ Ficaram de fora: mercúrio (268) e chumbo (259), porque os valores do arquivo n�
 
 **Classes.** Cada lei tem dois conjuntos de regras, gravados como classes: CONAMA 430 "Art. 16 - Efluentes em geral" e "Art. 21 - Esgoto sanitário"; CONSEMA 299 "Anexo I - Efluente industrial" e "Art. 9 - Efluente sanitário". O tipo de efluente não vem nos arquivos. Quando as duas classes têm o mesmo limite, o resultado é classificado; quando têm limites diferentes, fica "Pendente de validação"; quando só uma define o parâmetro, vale essa.
 
-**Limites condicionais.** DBO e fósforo podem ser atendidos pela concentração **ou** pela eficiência de remoção do tratamento, que exige o resultado da entrada da ETE. Esses limites ficam marcados para avaliação técnica e os resultados aparecem como "Pendente de validação", com o motivo.
+**Limites condicionais.** DBO e fósforo podem ser atendidos pela concentração **ou** pela eficiência de remoção do tratamento, que exige o resultado da entrada da ETE. Quem atende a concentração já cumpre a lei, então o resultado é classificado como "Dentro dos limites". Acima da concentração, o resultado aparece como "Pendente de validação", com o motivo, porque ainda pode cumprir pela remoção.
 
 **Quais amostras são efluente.** Os limites de lançamento só valem para amostras marcadas como efluente (`amostra.matriz = 'Efluente'`), e uma amostra de efluente não é comparada com limites de água. Na importação, uma amostra é marcada como efluente quando tem DBO ou DQO e nenhum ensaio com limite de água, ou quando a descrição do ponto fala em efluente ou esgoto. Isso é uma heurística: amostras de rio ou de água bruta com DBO e sem nenhum ensaio de água potável seriam tratadas como efluente.
 
@@ -242,7 +242,7 @@ Pontos que continuam em aberto no modelo:
 
 ## 8. Situação em 18/11/2026
 
-- Legislações: 4 (GM/MS 888, SES 1468, CONAMA 430, CONSEMA 299). Limites: 804 registros, 799 ativos. Nenhuma ressalva da importação em aberto; os 15 limites condicionais (DBO e fósforo) ficam para avaliação técnica.
+- Legislações: 4 (GM/MS 888, SES 1468, CONAMA 430, CONSEMA 299). Limites: 804 registros, 799 ativos. Nenhuma ressalva da importação em aberto; nos 15 limites condicionais (DBO e fósforo), só os resultados acima da concentração ficam para avaliação técnica.
 - Resultados reais: 978, de duas importações das exportações do laboratório (Gerência de Amostra e Expedição). 92 amostras foram identificadas como efluente.
 - Testes: 37 unitários e 29 de banco/API, todos passando.
 - Limitações: a associação dos códigos às leis de efluente não foi validada pelo IST; o tipo de efluente (industrial ou sanitário) não é conhecido; as tendências dependem de um ponto de coleta fixo, que as exportações atuais não trazem.
